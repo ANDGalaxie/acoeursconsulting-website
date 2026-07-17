@@ -35,12 +35,17 @@
     --header-height: 5.25rem;
     --content-max-width: 42rem;
     --transition-base: 180ms ease;
-    --motion-fast: 160ms;
-    --motion-base: 320ms;
-    --motion-slow: 560ms;
-    --motion-stagger: 90ms;
+    --motion-fast: 220ms;
+    --motion-base: 560ms;
+    --motion-slow: 780ms;
+    --motion-image: 900ms;
+    --motion-title: 680ms;
+    --motion-text: 560ms;
+    --motion-panel: 720ms;
+    --motion-button: 460ms;
+    --motion-stagger: 110ms;
     --motion-distance-sm: 10px;
-    --motion-distance-md: 20px;
+    --motion-distance-md: 18px;
     --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -154,8 +159,8 @@ body.has-motion .reveal-on-scroll {
     opacity: 0;
     transform: translateY(var(--motion-distance-md));
     transition:
-        opacity var(--motion-base) var(--motion-ease),
-        transform var(--motion-base) var(--motion-ease);
+        opacity var(--reveal-duration, var(--motion-text)) var(--motion-ease),
+        transform var(--reveal-duration, var(--motion-text)) var(--motion-ease);
     transition-delay: var(--reveal-delay, 0ms);
     will-change: opacity, transform;
 }
@@ -169,11 +174,40 @@ body.has-motion .reveal-on-scroll[data-reveal="soft"] {
     transform: translateY(var(--motion-distance-sm));
 }
 
-body.has-motion .reveal-on-scroll[data-reveal="left"] {
+body.has-motion .reveal-on-scroll[data-reveal="title"] {
+    --reveal-duration: var(--motion-title);
+    transform: translateY(var(--motion-distance-sm));
+}
+
+body.has-motion .reveal-on-scroll[data-reveal="text"] {
+    --reveal-duration: var(--motion-text);
+    transform: translateY(var(--motion-distance-sm));
+}
+
+body.has-motion .reveal-on-scroll[data-reveal="panel"] {
+    --reveal-duration: var(--motion-panel);
+    transform: translateY(var(--motion-distance-md));
+}
+
+body.has-motion .reveal-on-scroll[data-reveal="item"] {
+    --reveal-duration: var(--motion-base);
+    transform: translateY(var(--motion-distance-sm));
+}
+
+body.has-motion .reveal-on-scroll[data-reveal="button"] {
+    --reveal-duration: var(--motion-button);
+    transform: translateY(var(--motion-distance-sm));
+}
+
+body.has-motion .reveal-on-scroll[data-reveal="left"],
+body.has-motion .reveal-on-scroll[data-reveal="image-left"] {
+    --reveal-duration: var(--motion-image);
     transform: translate3d(calc(var(--motion-distance-md) * -1), 0, 0);
 }
 
-body.has-motion .reveal-on-scroll[data-reveal="right"] {
+body.has-motion .reveal-on-scroll[data-reveal="right"],
+body.has-motion .reveal-on-scroll[data-reveal="image-right"] {
+    --reveal-duration: var(--motion-image);
     transform: translate3d(var(--motion-distance-md), 0, 0);
 }
 

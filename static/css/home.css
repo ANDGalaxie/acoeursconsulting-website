@@ -25,7 +25,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     transform-origin: center center;
-    animation: hero-media-drift 20s var(--motion-ease) both;
+    animation: hero-media-drift 22s var(--motion-ease) both;
 }
 
 .home-hero__overlay {
@@ -52,7 +52,7 @@
 .home-hero__eyebrow {
     margin-bottom: 1rem;
     color: rgba(216, 191, 118, 0.92);
-    animation: hero-fade-up var(--motion-base) var(--motion-ease) both;
+    animation: hero-fade-up var(--motion-text) var(--motion-ease) both;
 }
 
 .home-hero h1 {
@@ -62,7 +62,7 @@
     line-height: 1.04;
     letter-spacing: -0.02em;
     text-wrap: balance;
-    animation: hero-fade-up calc(var(--motion-base) + 120ms) var(--motion-ease) 80ms both;
+    animation: hero-fade-up var(--motion-title) var(--motion-ease) 70ms both;
 }
 
 .home-hero__description {
@@ -71,7 +71,7 @@
     font-size: clamp(1rem, 1.15vw, 1.12rem);
     line-height: 1.75;
     color: rgba(250, 248, 243, 0.86);
-    animation: hero-fade-up calc(var(--motion-base) + 120ms) var(--motion-ease) 160ms both;
+    animation: hero-fade-up var(--motion-text) var(--motion-ease) 160ms both;
 }
 
 .home-hero__actions {
@@ -80,7 +80,7 @@
     align-items: flex-start;
     gap: 1rem;
     margin-top: 2.25rem;
-    animation: hero-fade-up calc(var(--motion-base) + 120ms) var(--motion-ease) 240ms both;
+    animation: hero-fade-up var(--motion-button) var(--motion-ease) 260ms both;
 }
 
 .home-hero__trust {
@@ -90,7 +90,7 @@
     font-size: 0.95rem;
     line-height: 1.8;
     letter-spacing: 0.02em;
-    animation: hero-fade-up calc(var(--motion-base) + 120ms) var(--motion-ease) 320ms both;
+    animation: hero-fade-up var(--motion-text) var(--motion-ease) 360ms both;
 }
 
 .home-section {

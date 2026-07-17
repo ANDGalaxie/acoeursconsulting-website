@@ -89,35 +89,53 @@ const setupRevealAnimations = () => {
     }
 
     const revealGroups = [
-        { selector: ".about-section__copy", reveal: "soft" },
-        { selector: ".about-section__visual", reveal: "right", delayStep: 80 },
-        { selector: ".about-capability", delayStep: 80 },
-        { selector: ".stage-section .section-heading", reveal: "soft" },
-        { selector: ".stage-card", delayStep: 90 },
-        { selector: ".service-feature", reveal: "soft" },
-        { selector: ".service-item", delayStep: 80 },
-        { selector: ".home-section--personal .section-heading", reveal: "soft" },
-        { selector: ".personal-item", delayStep: 80 },
-        { selector: ".process-section .section-heading", reveal: "soft" },
-        { selector: ".process-stage", delayStep: 80 },
-        { selector: ".process-section .section-actions", delayStep: 240, reveal: "soft" },
-        { selector: ".case-study__intro", reveal: "soft" },
-        { selector: ".case-study__visual", reveal: "left", delayStep: 40 },
-        { selector: ".case-overview__content", reveal: "right", delayStep: 120 },
-        { selector: ".case-study__section", delayStep: 90 },
-        { selector: ".case-study__results li", delayStep: 90 },
-        { selector: ".case-study__footer", delayStep: 140, reveal: "soft" },
-        { selector: ".why-section__heading", reveal: "soft" },
-        { selector: ".why-stats", delayStep: 80, reveal: "soft" },
-        { selector: ".advantage-row", delayStep: 70 },
-        { selector: ".why-section__closing", delayStep: 120, reveal: "soft" },
-        { selector: ".final-cta", reveal: "soft" },
+        { selector: ".about-section__copy", reveal: "title" },
+        { selector: ".about-section__visual", reveal: "image-right", delay: 150 },
+        { selector: ".about-capability", reveal: "item", delayStep: 100, maxDelay: 330 },
+        { selector: ".stage-section .section-heading", reveal: "title" },
+        { selector: ".stage-card", reveal: "item", delayStep: 100, maxDelay: 300 },
+        { selector: ".service-feature", reveal: "panel" },
+        {
+            selector: ".service-item",
+            reveal: "item",
+            delay(index) {
+                return Math.floor(index / 2) * 130 + (index % 2) * 40;
+            },
+            maxDelay: 170,
+        },
+        { selector: ".home-section--personal .section-heading", reveal: "title" },
+        { selector: ".personal-panel", reveal: "panel", delay: 70 },
+        { selector: ".personal-item", reveal: "item", delayStep: 90, maxDelay: 180 },
+        { selector: ".process-section .section-heading", reveal: "title" },
+        { selector: ".process-timeline", reveal: "panel", delay: 80 },
+        { selector: ".process-stage", reveal: "item", delayStep: 100, maxDelay: 440 },
+        { selector: ".process-section .section-actions", delay: 520, reveal: "button" },
+        { selector: ".case-study__intro", reveal: "title" },
+        { selector: ".case-study__visual", reveal: "image-left", delay: 120 },
+        { selector: ".case-overview__content", reveal: "panel", delay: 230 },
+        { selector: ".case-study__section", reveal: "item", delayStep: 110, maxDelay: 110 },
+        { selector: ".case-study__results-panel", reveal: "panel", delay: 300 },
+        { selector: ".case-study__results li", reveal: "item", delayStep: 95, maxDelay: 190 },
+        { selector: ".case-study__footer", delay: 420, reveal: "panel" },
+        { selector: ".why-section__heading", reveal: "title" },
+        { selector: ".why-stats", delay: 90, reveal: "panel" },
+        {
+            selector: ".advantage-row",
+            reveal: "item",
+            delay(index) {
+                return Math.floor(index / 2) * 110;
+            },
+            maxDelay: 220,
+        },
+        { selector: ".why-section__closing", delay: 340, reveal: "panel" },
+        { selector: ".final-cta", reveal: "panel" },
+        { selector: ".final-cta .button", delay: 120, reveal: "button" },
         { selector: ".site-footer__inner", reveal: "soft" },
     ];
 
     const revealElements = [];
 
-    revealGroups.forEach(({ selector, delayStep = 0, reveal = "up" }) => {
+    revealGroups.forEach(({ selector, delayStep = 0, delay, maxDelay = 660, reveal = "up" }) => {
         const elements = document.querySelectorAll(selector);
 
         elements.forEach((element, index) => {
@@ -125,8 +143,22 @@ const setupRevealAnimations = () => {
             if (reveal !== "up") {
                 element.dataset.reveal = reveal;
             }
-            if (delayStep > 0) {
-                element.style.setProperty("--reveal-delay", `${index * delayStep}ms`);
+
+            let resolvedDelay = 0;
+
+            if (typeof delay === "function") {
+                resolvedDelay = delay(index, elements);
+            } else if (typeof delay === "number") {
+                resolvedDelay = delay;
+            } else if (delayStep > 0) {
+                resolvedDelay = index * delayStep;
+            }
+
+            if (resolvedDelay > 0) {
+                element.style.setProperty(
+                    "--reveal-delay",
+                    `${Math.min(resolvedDelay, maxDelay)}ms`,
+                );
             }
             revealElements.push(element);
         });
@@ -157,8 +189,8 @@ const setupRevealAnimations = () => {
             });
         },
         {
-            threshold: 0.16,
-            rootMargin: "0px 0px -12% 0px",
+            threshold: 0.08,
+            rootMargin: "0px 0px 10% 0px",
         },
     );
 
