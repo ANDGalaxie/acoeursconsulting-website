@@ -35,6 +35,13 @@
     --header-height: 5.25rem;
     --content-max-width: 42rem;
     --transition-base: 180ms ease;
+    --motion-fast: 160ms;
+    --motion-base: 320ms;
+    --motion-slow: 560ms;
+    --motion-stagger: 90ms;
+    --motion-distance-sm: 10px;
+    --motion-distance-md: 20px;
+    --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 *,
@@ -141,6 +148,43 @@ textarea {
     font-size: 0.875rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
+}
+
+body.has-motion .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(var(--motion-distance-md));
+    transition:
+        opacity var(--motion-base) var(--motion-ease),
+        transform var(--motion-base) var(--motion-ease);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+body.has-motion .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body.has-motion .reveal-on-scroll[data-reveal="soft"] {
+    transform: translateY(var(--motion-distance-sm));
+}
+
+body.has-motion .reveal-on-scroll[data-reveal="left"] {
+    transform: translate3d(calc(var(--motion-distance-md) * -1), 0, 0);
+}
+
+body.has-motion .reveal-on-scroll[data-reveal="right"] {
+    transform: translate3d(var(--motion-distance-md), 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.has-motion .reveal-on-scroll,
+    body.has-motion .reveal-on-scroll.is-visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+        will-change: auto;
+    }
 }
 
 .placeholder-page {

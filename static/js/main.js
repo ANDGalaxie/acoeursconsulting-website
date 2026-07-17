@@ -1,6 +1,7 @@
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navPanel = document.querySelector("[data-nav-panel]");
 const siteHeader = document.querySelector("[data-site-header]");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 if (siteHeader) {
     const syncHeaderState = () => {
@@ -80,4 +81,94 @@ if (navToggle && navPanel) {
 
         syncNavigationState(false);
     });
+}
+
+const setupRevealAnimations = () => {
+    if (prefersReducedMotion.matches) {
+        return;
+    }
+
+    const revealGroups = [
+        { selector: ".about-section__copy", reveal: "soft" },
+        { selector: ".about-section__visual", reveal: "right", delayStep: 80 },
+        { selector: ".about-capability", delayStep: 80 },
+        { selector: ".stage-section .section-heading", reveal: "soft" },
+        { selector: ".stage-card", delayStep: 90 },
+        { selector: ".service-feature", reveal: "soft" },
+        { selector: ".service-item", delayStep: 80 },
+        { selector: ".home-section--personal .section-heading", reveal: "soft" },
+        { selector: ".personal-item", delayStep: 80 },
+        { selector: ".process-section .section-heading", reveal: "soft" },
+        { selector: ".process-stage", delayStep: 80 },
+        { selector: ".process-section .section-actions", delayStep: 240, reveal: "soft" },
+        { selector: ".case-study__intro", reveal: "soft" },
+        { selector: ".case-study__visual", reveal: "left", delayStep: 40 },
+        { selector: ".case-overview__content", reveal: "right", delayStep: 120 },
+        { selector: ".case-study__section", delayStep: 90 },
+        { selector: ".case-study__results li", delayStep: 90 },
+        { selector: ".case-study__footer", delayStep: 140, reveal: "soft" },
+        { selector: ".why-section__heading", reveal: "soft" },
+        { selector: ".why-stats", delayStep: 80, reveal: "soft" },
+        { selector: ".advantage-row", delayStep: 70 },
+        { selector: ".why-section__closing", delayStep: 120, reveal: "soft" },
+        { selector: ".final-cta", reveal: "soft" },
+        { selector: ".site-footer__inner", reveal: "soft" },
+    ];
+
+    const revealElements = [];
+
+    revealGroups.forEach(({ selector, delayStep = 0, reveal = "up" }) => {
+        const elements = document.querySelectorAll(selector);
+
+        elements.forEach((element, index) => {
+            element.classList.add("reveal-on-scroll");
+            if (reveal !== "up") {
+                element.dataset.reveal = reveal;
+            }
+            if (delayStep > 0) {
+                element.style.setProperty("--reveal-delay", `${index * delayStep}ms`);
+            }
+            revealElements.push(element);
+        });
+    });
+
+    if (!revealElements.length) {
+        return;
+    }
+
+    document.body.classList.add("has-motion");
+
+    if (!("IntersectionObserver" in window)) {
+        revealElements.forEach((element) => {
+            element.classList.add("is-visible");
+        });
+        return;
+    }
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            });
+        },
+        {
+            threshold: 0.16,
+            rootMargin: "0px 0px -12% 0px",
+        },
+    );
+
+    revealElements.forEach((element) => {
+        observer.observe(element);
+    });
+};
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupRevealAnimations, { once: true });
+} else {
+    setupRevealAnimations();
 }

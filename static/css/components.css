@@ -59,12 +59,17 @@
     background: var(--color-white);
     color: var(--color-navy-dark);
     cursor: pointer;
-    transition: background-color var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
+    transition:
+        background-color var(--motion-fast) var(--motion-ease),
+        border-color var(--motion-fast) var(--motion-ease),
+        transform var(--motion-fast) var(--motion-ease),
+        box-shadow var(--motion-fast) var(--motion-ease);
 }
 
 .nav-toggle:hover {
     background: var(--color-warm-white);
     border-color: rgba(24, 54, 93, 0.24);
+    box-shadow: 0 8px 18px rgba(16, 40, 70, 0.06);
 }
 
 .nav-toggle__box {
@@ -157,6 +162,12 @@
     font-size: 0.98rem;
     font-weight: 700;
     cursor: pointer;
+    transition:
+        color var(--motion-fast) var(--motion-ease),
+        background-color var(--motion-fast) var(--motion-ease),
+        border-color var(--motion-fast) var(--motion-ease),
+        transform var(--motion-fast) var(--motion-ease),
+        box-shadow var(--motion-fast) var(--motion-ease);
 }
 
 .button--primary {
@@ -186,6 +197,10 @@
 
 .button:hover {
     transform: translateY(-1px);
+}
+
+.button:active {
+    transform: translateY(0);
 }
 
 .button--primary:hover,
@@ -292,6 +307,12 @@
 .site-footer__contact a,
 .site-footer__links a {
     overflow-wrap: anywhere;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 0.18em;
+    transition:
+        color var(--motion-fast) var(--motion-ease),
+        text-decoration-color var(--motion-fast) var(--motion-ease);
 }
 
 .site-footer__meta {
@@ -312,6 +333,12 @@
 
 .site-footer__links a:hover {
     color: var(--color-gold-light);
+    text-decoration-color: currentColor;
+}
+
+.site-footer__links a:focus-visible,
+.site-footer__contact a:focus-visible {
+    text-decoration-color: currentColor;
 }
 
 @media (max-width: 419px) {
