@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}首页 | Acoeurs Consulting{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="home-hero">
+    <div class="container">
+        <p class="eyebrow">Phase 1 Skeleton</p>
+        <h1>您在法国及欧洲市场的战略与执行伙伴</h1>
+    </div>
+</section>
+{% endblock %}

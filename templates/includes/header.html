@@ -1,0 +1,31 @@
+<header class="site-header">
+    <div class="container site-header__inner">
+        <a class="site-logo" href="{% url 'home' %}" aria-label="Acoeurs Consulting 首页">
+            <span class="site-logo__mark">A</span>
+            <span class="site-logo__text">Acoeurs Consulting</span>
+        </a>
+        <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-navigation"
+            data-nav-toggle
+        >
+            <span class="nav-toggle__label">菜单</span>
+        </button>
+        <nav class="site-nav" id="site-navigation" aria-label="主导航" data-nav-panel>
+            <ul class="site-nav__list">
+                <li><a href="{% url 'home' %}">首页</a></li>
+                <li><a href="{% url 'business' %}">企业服务</a></li>
+                <li><a href="{% url 'personal' %}">个人服务</a></li>
+                <li><a href="{% url 'about' %}">关于我们</a></li>
+                <li class="site-nav__languages">
+                    <a class="is-active" href="{% url 'home' %}" aria-current="page">CN</a>
+                    <a href="{% url 'fr' %}">FR</a>
+                    <a href="{% url 'en' %}">EN</a>
+                </li>
+                <li><a class="button button--primary" href="{% url 'consultation' %}">预约咨询</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,20 @@
+.home-hero {
+    padding: 7rem 0 5rem;
+}
+
+.home-hero .container {
+    padding: 3rem 2rem;
+    background:
+        linear-gradient(rgba(16, 40, 70, 0.8), rgba(16, 40, 70, 0.8)),
+        linear-gradient(135deg, rgba(201, 166, 75, 0.16), rgba(24, 54, 93, 0.08));
+    border-radius: 24px;
+    color: var(--color-white);
+    box-shadow: var(--shadow-soft);
+}
+
+.home-hero h1 {
+    margin: 0;
+    max-width: 12ch;
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.1;
+}

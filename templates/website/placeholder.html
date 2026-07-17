@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} | Acoeurs Consulting{% endblock %}
+
+{% block content %}
+<section class="placeholder-page">
+    <div class="container placeholder-page__inner">
+        <p class="eyebrow">{{ section }}</p>
+        <h1>{{ title }}</h1>
+        <p class="placeholder-page__copy">
+            此页面为第一阶段预留占位页。当前任务仅完成 Django 项目骨架、路由和基础样式。
+        </p>
+        <a class="button button--secondary" href="{% url 'home' %}">返回首页</a>
+    </div>
+</section>
+{% endblock %}
