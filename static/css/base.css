@@ -1,4 +1,20 @@
 :root {
+    --font-display:
+        "Noto Serif SC",
+        "Source Han Serif SC",
+        "Songti SC",
+        "STSong",
+        "SimSun",
+        Georgia,
+        serif;
+    --font-body:
+        "Noto Sans SC",
+        "Source Han Sans SC",
+        "PingFang SC",
+        "Microsoft YaHei",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
     --color-navy: #18365d;
     --color-navy-dark: #102846;
     --color-gold: #c9a64b;
@@ -6,7 +22,7 @@
     --color-warm-white: #faf8f3;
     --color-beige: #f1ebdf;
     --color-text-dark: #172033;
-    --color-text-muted: #667085;
+    --color-text-muted: #556277;
     --color-white: #ffffff;
     --color-surface: rgba(255, 255, 255, 0.8);
     --shadow-soft: 0 18px 44px rgba(16, 40, 70, 0.08);
@@ -33,13 +49,24 @@ html {
 
 body {
     margin: 0;
-    font-family: "Georgia", "Times New Roman", serif;
+    font-family: var(--font-body);
     color: var(--color-text-dark);
     background:
         radial-gradient(circle at top, rgba(201, 166, 75, 0.08), transparent 28%),
         linear-gradient(180deg, var(--color-warm-white) 0%, #f4eee4 100%);
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.78;
     overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -76,6 +103,13 @@ button:focus-visible {
     outline-offset: 3px;
 }
 
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
 .site-main {
     min-height: calc(100vh - var(--header-height));
     padding-top: var(--header-height);
@@ -103,6 +137,7 @@ button:focus-visible {
 .eyebrow {
     margin: 0 0 0.75rem;
     color: var(--color-gold);
+    font-family: var(--font-body);
     font-size: 0.875rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;

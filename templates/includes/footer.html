@@ -1,17 +1,58 @@
 <footer class="site-footer">
     <div class="container site-footer__inner">
-        <div class="site-footer__intro">
-            <p class="site-footer__brand">Acoeurs Consulting</p>
-            <p class="site-footer__text">
-                扎根法国，连接中国与欧洲，为企业与家庭提供稳健、可执行的本地支持。
-            </p>
+        <div class="site-footer__grid">
+            <div class="site-footer__column">
+                <p class="site-footer__brand">Acoeurs Consulting 艾克斯咨询</p>
+                <p class="site-footer__text">您在法国及欧洲市场的战略与执行伙伴</p>
+            </div>
+
+            <nav class="site-footer__column" aria-labelledby="footer-business-title">
+                <h2 class="site-footer__column-title" id="footer-business-title">企业服务</h2>
+                <ul class="site-footer__links">
+                    <li><a href="{% url 'business' %}">企业服务总览</a></li>
+                    <li><a href="{% url 'business_market_entry' %}">欧洲市场进入与战略</a></li>
+                    <li><a href="{% url 'business_company_banking' %}">公司架构与银行金融</a></li>
+                    <li><a href="{% url 'business_tax_legal_compliance' %}">财税、法律与合规</a></li>
+                    <li><a href="{% url 'business_local_operations' %}">本地运营与团队建设</a></li>
+                    <li><a href="{% url 'business_growth' %}">商务拓展与增长</a></li>
+                </ul>
+            </nav>
+
+            <nav class="site-footer__column" aria-labelledby="footer-personal-title">
+                <h2 class="site-footer__column-title" id="footer-personal-title">个人服务与公司</h2>
+                <ul class="site-footer__links">
+                    <li><a href="{% url 'personal' %}">个人服务总览</a></li>
+                    <li><a href="{% url 'personal_residency_family' %}">居留与家庭定居</a></li>
+                    <li><a href="{% url 'personal_property_wealth' %}">房产与资产配置</a></li>
+                    <li><a href="{% url 'personal_cross_border_tax_risk' %}">跨境税务与风险管理</a></li>
+                    <li><a href="{% url 'about' %}">关于我们</a></li>
+                    <li><a href="{% url 'consultation' %}">预约咨询</a></li>
+                </ul>
+            </nav>
+
+            <div class="site-footer__column">
+                <h2 class="site-footer__column-title">联系方式</h2>
+                <div class="site-footer__contact">
+                    <p><span class="site-footer__contact-label">中国热线</span><a href="tel:4006060685">400-606-0685</a></p>
+                    <p><span class="site-footer__contact-label">法国电话</span><a href="tel:+33972960573">+33 (0)9 72 96 05 73</a></p>
+                    <p><span class="site-footer__contact-label">邮箱</span><a href="mailto:contact@acoeursconsulting.com">contact@acoeursconsulting.com</a></p>
+                    <address>
+                        <span class="site-footer__contact-label">巴黎地址</span>
+                        <span>32 AV. Kl&eacute;ber 75116 Paris</span>
+                    </address>
+                    <p><span class="site-footer__contact-label">网站</span><span>www.acoeursconsulting.com</span></p>
+                </div>
+            </div>
         </div>
-        <nav aria-label="页脚导航">
-            <ul class="site-footer__links">
-                <li><a href="{% url 'legal' %}">法律声明</a></li>
-                <li><a href="{% url 'privacy' %}">隐私政策</a></li>
-                <li><a href="{% url 'cookies' %}">Cookies</a></li>
-            </ul>
-        </nav>
+        <div class="site-footer__meta">
+            <p class="site-footer__copyright">&copy; {% now "Y" %} Acoeurs Consulting</p>
+            <nav aria-label="页脚辅助导航">
+                <ul class="site-footer__links site-footer__meta-links">
+                    <li><a href="{% url 'legal' %}">法律声明</a></li>
+                    <li><a href="{% url 'privacy' %}">隐私政策</a></li>
+                    <li><a href="{% url 'cookies' %}">Cookie政策</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
 </footer>

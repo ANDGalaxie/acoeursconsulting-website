@@ -69,3 +69,42 @@ class WebsiteRouteTests(TestCase):
             with self.subTest(route_name=route_name):
                 response = self.client.get(reverse(route_name))
                 self.assertEqual(response.status_code, 200)
+
+    def test_homepage_footer_contains_confirmed_contact_information(self):
+        response = self.client.get(reverse("home"))
+
+        self.assertContains(response, "contact@acoeursconsulting.com")
+        self.assertContains(response, "+33 (0)9 72 96 05 73")
+        self.assertContains(response, "400-606-0685")
+
+    def test_homepage_contains_expected_primary_links(self):
+        response = self.client.get(reverse("home"))
+        content = response.content.decode()
+
+        self.assertIn(reverse("consultation"), content)
+        self.assertIn(reverse("case_listed_company_france"), content)
+        self.assertIn(reverse("about"), content)
+
+    def test_homepage_footer_contains_expected_navigation_links(self):
+        response = self.client.get(reverse("home"))
+        content = response.content.decode()
+
+        expected_routes = [
+            "business",
+            "business_market_entry",
+            "business_company_banking",
+            "business_tax_legal_compliance",
+            "business_local_operations",
+            "business_growth",
+            "personal",
+            "personal_residency_family",
+            "personal_property_wealth",
+            "personal_cross_border_tax_risk",
+            "legal",
+            "privacy",
+            "cookies",
+        ]
+
+        for route_name in expected_routes:
+            with self.subTest(route_name=route_name):
+                self.assertIn(reverse(route_name), content)
