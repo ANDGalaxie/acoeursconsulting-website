@@ -236,25 +236,37 @@
                 提供专业支持。
             </p>
         </div>
-        <div class="personal-grid">
-            <a class="personal-card" href="{% url 'personal_residency_family' %}">
-                <h3>居留与家庭定居</h3>
-                <p>协助企业主、人才与家庭完成法国居留及长期生活安排。</p>
+        <div class="personal-panel">
+            <a class="personal-item" href="{% url 'personal_residency_family' %}">
+                <span class="personal-item__index">01</span>
+                <div class="personal-item__content">
+                    <h3>居留与家庭定居</h3>
+                    <p>协助企业主、人才与家庭完成法国居留及长期生活安排。</p>
+                </div>
+                <span class="personal-item__arrow" aria-hidden="true">↗</span>
             </a>
-            <a class="personal-card" href="{% url 'personal_property_wealth' %}">
-                <h3>房产与资产配置</h3>
-                <p>从房产选择、法律尽调到持有架构和后续管理，降低跨境投资风险。</p>
+            <a class="personal-item" href="{% url 'personal_property_wealth' %}">
+                <span class="personal-item__index">02</span>
+                <div class="personal-item__content">
+                    <h3>房产与资产配置</h3>
+                    <p>从房产选择、法律尽调到持有架构和后续管理，降低跨境投资风险。</p>
+                </div>
+                <span class="personal-item__arrow" aria-hidden="true">↗</span>
             </a>
-            <a class="personal-card" href="{% url 'personal_cross_border_tax_risk' %}">
-                <h3>跨境税务与风险管理</h3>
-                <p>协调个人、家庭与企业之间的跨境税务、传承与风险安排。</p>
+            <a class="personal-item" href="{% url 'personal_cross_border_tax_risk' %}">
+                <span class="personal-item__index">03</span>
+                <div class="personal-item__content">
+                    <h3>跨境税务与风险管理</h3>
+                    <p>协调个人、家庭与企业之间的跨境税务、传承与风险安排。</p>
+                </div>
+                <span class="personal-item__arrow" aria-hidden="true">↗</span>
             </a>
         </div>
     </div>
 </section>
 
 <section class="home-section home-section--process" aria-labelledby="process-title">
-    <div class="container">
+    <div class="container process-section">
         <div class="section-heading">
             <h2 id="process-title">从判断到执行，一套清晰的项目路径</h2>
             <p>
@@ -263,25 +275,50 @@
             </p>
         </div>
         <ol class="process-timeline" aria-label="项目执行五步路径">
-            <li class="process-step">
-                <span class="process-step__number">01</span>
-                <h3>需求诊断</h3>
+            <li class="process-stage">
+                <div class="process-stage__rail" aria-hidden="true">
+                    <span class="process-stage__number">01</span>
+                </div>
+                <div class="process-stage__content">
+                    <h3>需求诊断</h3>
+                    <p>了解客户当前阶段、目标与核心问题。</p>
+                </div>
             </li>
-            <li class="process-step">
-                <span class="process-step__number">02</span>
-                <h3>评估与路径设计</h3>
+            <li class="process-stage">
+                <div class="process-stage__rail" aria-hidden="true">
+                    <span class="process-stage__number">02</span>
+                </div>
+                <div class="process-stage__content">
+                    <h3>评估与路径设计</h3>
+                    <p>判断可行性、风险与优先级，形成实施方案。</p>
+                </div>
             </li>
-            <li class="process-step">
-                <span class="process-step__number">03</span>
-                <h3>项目确认与启动</h3>
+            <li class="process-stage">
+                <div class="process-stage__rail" aria-hidden="true">
+                    <span class="process-stage__number">03</span>
+                </div>
+                <div class="process-stage__content">
+                    <h3>项目确认与启动</h3>
+                    <p>明确交付范围、负责人、时间表与协作方式。</p>
+                </div>
             </li>
-            <li class="process-step">
-                <span class="process-step__number">04</span>
-                <h3>本地执行与交付</h3>
+            <li class="process-stage">
+                <div class="process-stage__rail" aria-hidden="true">
+                    <span class="process-stage__number">04</span>
+                </div>
+                <div class="process-stage__content">
+                    <h3>本地执行与交付</h3>
+                    <p>协调法国及中方团队，推进各项任务真正落地。</p>
+                </div>
             </li>
-            <li class="process-step">
-                <span class="process-step__number">05</span>
-                <h3>持续运营与增长</h3>
+            <li class="process-stage">
+                <div class="process-stage__rail" aria-hidden="true">
+                    <span class="process-stage__number">05</span>
+                </div>
+                <div class="process-stage__content">
+                    <h3>持续运营与增长</h3>
+                    <p>根据企业后续发展继续提供本地支持。</p>
+                </div>
             </li>
         </ol>
         <div class="section-actions">
