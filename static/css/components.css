@@ -60,10 +60,10 @@
     color: var(--color-navy-dark);
     cursor: pointer;
     transition:
-        background-color var(--motion-fast) var(--motion-ease),
-        border-color var(--motion-fast) var(--motion-ease),
-        transform var(--motion-fast) var(--motion-ease),
-        box-shadow var(--motion-fast) var(--motion-ease);
+        background-color var(--motion-fast) var(--motion-ease-interaction),
+        border-color var(--motion-fast) var(--motion-ease-interaction),
+        transform var(--motion-fast) var(--motion-ease-interaction),
+        box-shadow var(--motion-fast) var(--motion-ease-interaction);
 }
 
 .nav-toggle:hover {
@@ -163,11 +163,11 @@
     font-weight: 700;
     cursor: pointer;
     transition:
-        color var(--motion-fast) var(--motion-ease),
-        background-color var(--motion-fast) var(--motion-ease),
-        border-color var(--motion-fast) var(--motion-ease),
-        transform var(--motion-fast) var(--motion-ease),
-        box-shadow var(--motion-fast) var(--motion-ease);
+        color var(--motion-fast) var(--motion-ease-interaction),
+        background-color var(--motion-fast) var(--motion-ease-interaction),
+        border-color var(--motion-fast) var(--motion-ease-interaction),
+        transform var(--motion-fast) var(--motion-ease-interaction),
+        box-shadow var(--motion-fast) var(--motion-ease-interaction);
 }
 
 .button--primary {
@@ -311,8 +311,8 @@
     text-decoration-color: transparent;
     text-underline-offset: 0.18em;
     transition:
-        color var(--motion-fast) var(--motion-ease),
-        text-decoration-color var(--motion-fast) var(--motion-ease);
+        color var(--motion-fast) var(--motion-ease-interaction),
+        text-decoration-color var(--motion-fast) var(--motion-ease-interaction);
 }
 
 .site-footer__meta {

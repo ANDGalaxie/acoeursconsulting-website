@@ -88,60 +88,72 @@ const setupRevealAnimations = () => {
         return;
     }
 
+    const isCompactMotion = window.innerWidth < 768;
+    const staggerStep = isCompactMotion ? 120 : 160;
+
     const revealGroups = [
-        { selector: ".about-section__copy", reveal: "title" },
-        { selector: ".about-section__visual", reveal: "image-right", delay: 150 },
-        { selector: ".about-capability", reveal: "item", delayStep: 100, maxDelay: 330 },
-        { selector: ".stage-section .section-heading", reveal: "title" },
-        { selector: ".stage-card", reveal: "item", delayStep: 100, maxDelay: 300 },
-        { selector: ".service-feature", reveal: "panel" },
+        { selector: ".about-section__copy", reveal: "title", repeat: true },
+        { selector: ".about-section__visual", reveal: "image-right", delay: 180, repeat: true },
+        { selector: ".about-capability", reveal: "item", delayStep: staggerStep, maxDelay: 480, repeat: true },
+        { selector: ".stage-section .section-heading", reveal: "title", repeat: true },
+        { selector: ".stage-card", reveal: "item", delayStep: staggerStep, maxDelay: 480, repeat: true },
+        { selector: ".service-feature", reveal: "panel", repeat: true },
         {
             selector: ".service-item",
             reveal: "item",
+            repeat: true,
             delay(index) {
-                return Math.floor(index / 2) * 130 + (index % 2) * 40;
+                const rowDelay = isCompactMotion ? 120 : 200;
+                return Math.floor(index / 2) * rowDelay + (index % 2) * 40;
             },
-            maxDelay: 170,
+            maxDelay: 240,
         },
-        { selector: ".home-section--personal .section-heading", reveal: "title" },
-        { selector: ".personal-panel", reveal: "panel", delay: 70 },
-        { selector: ".personal-item", reveal: "item", delayStep: 90, maxDelay: 180 },
-        { selector: ".process-section .section-heading", reveal: "title" },
-        { selector: ".process-timeline", reveal: "panel", delay: 80 },
-        { selector: ".process-stage", reveal: "item", delayStep: 100, maxDelay: 440 },
-        { selector: ".process-section .section-actions", delay: 520, reveal: "button" },
-        { selector: ".case-study__intro", reveal: "title" },
-        { selector: ".case-study__visual", reveal: "image-left", delay: 120 },
-        { selector: ".case-overview__content", reveal: "panel", delay: 230 },
-        { selector: ".case-study__section", reveal: "item", delayStep: 110, maxDelay: 110 },
-        { selector: ".case-study__results-panel", reveal: "panel", delay: 300 },
-        { selector: ".case-study__results li", reveal: "item", delayStep: 95, maxDelay: 190 },
-        { selector: ".case-study__footer", delay: 420, reveal: "panel" },
-        { selector: ".why-section__heading", reveal: "title" },
-        { selector: ".why-stats", delay: 90, reveal: "panel" },
+        { selector: ".home-section--personal .section-heading", reveal: "title", repeat: true },
+        { selector: ".personal-panel", reveal: "panel", delay: 90, repeat: true },
+        { selector: ".personal-item", reveal: "item", delayStep: isCompactMotion ? 110 : 140, maxDelay: 280, repeat: true },
+        { selector: ".process-section .section-heading", reveal: "title", repeat: true },
+        { selector: ".process-timeline", reveal: "panel", delay: 120, repeat: true },
+        { selector: ".process-stage", reveal: "item", delayStep: staggerStep, maxDelay: 640, repeat: true },
+        { selector: ".process-section .section-actions", delay: 760, maxDelay: 760, reveal: "button", repeat: true },
+        { selector: ".case-study__intro", reveal: "title", repeat: true },
+        { selector: ".case-study__visual", reveal: "image-left", delay: 220, repeat: true },
+        { selector: ".case-overview__content", reveal: "panel", delay: 420, repeat: true },
+        { selector: ".case-study__section", reveal: "item", delayStep: 160, maxDelay: 160, repeat: true },
+        { selector: ".case-study__results-panel", reveal: "panel", delay: 620, repeat: true },
+        { selector: ".case-study__results li", reveal: "item", delayStep: 150, maxDelay: 300, repeat: true },
+        { selector: ".case-study__footer", delay: 900, maxDelay: 900, reveal: "panel", repeat: true },
+        { selector: ".why-section__heading", reveal: "title", repeat: true },
+        { selector: ".why-stats", delay: 160, reveal: "panel", repeat: true },
         {
             selector: ".advantage-row",
             reveal: "item",
+            repeat: true,
             delay(index) {
-                return Math.floor(index / 2) * 110;
+                const rowDelay = isCompactMotion ? 120 : 200;
+                return Math.floor(index / 2) * rowDelay;
             },
-            maxDelay: 220,
+            maxDelay: 400,
         },
-        { selector: ".why-section__closing", delay: 340, reveal: "panel" },
-        { selector: ".final-cta", reveal: "panel" },
-        { selector: ".final-cta .button", delay: 120, reveal: "button" },
-        { selector: ".site-footer__inner", reveal: "soft" },
+        { selector: ".why-section__closing", delay: 620, maxDelay: 620, reveal: "panel", repeat: true },
+        { selector: ".final-cta", reveal: "panel", repeat: true },
+        { selector: ".final-cta .button", delay: 180, maxDelay: 180, reveal: "button", repeat: true },
+        { selector: ".site-footer__inner", reveal: "soft", repeat: true },
     ];
 
     const revealElements = [];
+    const repeatElements = new Set();
 
-    revealGroups.forEach(({ selector, delayStep = 0, delay, maxDelay = 660, reveal = "up" }) => {
+    revealGroups.forEach(({ selector, delayStep = 0, delay, maxDelay = 660, reveal = "up", repeat = false }) => {
         const elements = document.querySelectorAll(selector);
 
         elements.forEach((element, index) => {
             element.classList.add("reveal-on-scroll");
             if (reveal !== "up") {
                 element.dataset.reveal = reveal;
+            }
+            if (repeat) {
+                element.dataset.revealRepeat = "true";
+                repeatElements.add(element);
             }
 
             let resolvedDelay = 0;
@@ -177,25 +189,68 @@ const setupRevealAnimations = () => {
         return;
     }
 
-    const observer = new IntersectionObserver(
+    const resetRevealElement = (element) => {
+        if (prefersReducedMotion.matches || !element.classList.contains("is-visible")) {
+            return;
+        }
+
+        element.classList.add("is-resetting");
+        element.classList.remove("is-visible");
+
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                element.classList.remove("is-resetting");
+            });
+        });
+    };
+
+    const revealObserver = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
-                if (!entry.isIntersecting) {
+                if (!entry.isIntersecting || entry.intersectionRatio < 0.16) {
                     return;
                 }
 
                 entry.target.classList.add("is-visible");
-                observer.unobserve(entry.target);
+
+                if (!repeatElements.has(entry.target)) {
+                    revealObserver.unobserve(entry.target);
+                }
             });
         },
         {
-            threshold: 0.08,
-            rootMargin: "0px 0px 10% 0px",
+            threshold: [0, 0.16],
+            rootMargin: "0px 0px -6% 0px",
+        },
+    );
+
+    const resetObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (!repeatElements.has(entry.target) || entry.isIntersecting) {
+                    return;
+                }
+
+                const { top, bottom } = entry.boundingClientRect;
+                const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+                const isFullyOutOfView = bottom <= 0 || top >= viewportHeight;
+
+                if (isFullyOutOfView) {
+                    resetRevealElement(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0,
+            rootMargin: "0px",
         },
     );
 
     revealElements.forEach((element) => {
-        observer.observe(element);
+        revealObserver.observe(element);
+        if (repeatElements.has(element)) {
+            resetObserver.observe(element);
+        }
     });
 };
 

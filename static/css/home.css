@@ -25,7 +25,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     transform-origin: center center;
-    animation: hero-media-drift 22s var(--motion-ease) both;
+    animation: hero-media-drift 22s var(--motion-ease-reveal) both;
 }
 
 .home-hero__overlay {
@@ -52,7 +52,7 @@
 .home-hero__eyebrow {
     margin-bottom: 1rem;
     color: rgba(216, 191, 118, 0.92);
-    animation: hero-fade-up var(--motion-text) var(--motion-ease) both;
+    animation: hero-fade-up var(--motion-text) var(--motion-ease-reveal) both;
 }
 
 .home-hero h1 {
@@ -62,7 +62,7 @@
     line-height: 1.04;
     letter-spacing: -0.02em;
     text-wrap: balance;
-    animation: hero-fade-up var(--motion-title) var(--motion-ease) 70ms both;
+    animation: hero-fade-up var(--motion-title) var(--motion-ease-reveal) 70ms both;
 }
 
 .home-hero__description {
@@ -71,7 +71,7 @@
     font-size: clamp(1rem, 1.15vw, 1.12rem);
     line-height: 1.75;
     color: rgba(250, 248, 243, 0.86);
-    animation: hero-fade-up var(--motion-text) var(--motion-ease) 160ms both;
+    animation: hero-fade-up var(--motion-text) var(--motion-ease-reveal) 160ms both;
 }
 
 .home-hero__actions {
@@ -80,7 +80,7 @@
     align-items: flex-start;
     gap: 1rem;
     margin-top: 2.25rem;
-    animation: hero-fade-up var(--motion-button) var(--motion-ease) 260ms both;
+    animation: hero-fade-up var(--motion-button) var(--motion-ease-reveal) 260ms both;
 }
 
 .home-hero__trust {
@@ -90,7 +90,7 @@
     font-size: 0.95rem;
     line-height: 1.8;
     letter-spacing: 0.02em;
-    animation: hero-fade-up var(--motion-text) var(--motion-ease) 360ms both;
+    animation: hero-fade-up var(--motion-text) var(--motion-ease-reveal) 360ms both;
 }
 
 .home-section {
@@ -201,8 +201,8 @@
     padding: 1.2rem 0;
     border-bottom: 1px solid rgba(24, 54, 93, 0.14);
     transition:
-        border-color var(--motion-fast) var(--motion-ease),
-        color var(--motion-fast) var(--motion-ease);
+        border-color var(--motion-fast) var(--motion-ease-interaction),
+        color var(--motion-fast) var(--motion-ease-interaction);
 }
 
 .about-capability__index,
@@ -344,7 +344,7 @@
     cursor: pointer;
     color: var(--color-navy);
     font-weight: 600;
-    transition: color var(--motion-fast) var(--motion-ease);
+    transition: color var(--motion-fast) var(--motion-ease-interaction);
 }
 
 .stage-card__details summary:hover {
@@ -365,7 +365,7 @@
     margin-left: 0.55rem;
     color: var(--color-gold);
     display: inline-block;
-    transition: transform var(--motion-fast) var(--motion-ease), color var(--motion-fast) var(--motion-ease);
+    transition: transform var(--motion-fast) var(--motion-ease-interaction), color var(--motion-fast) var(--motion-ease-interaction);
 }
 
 .stage-card__details[open] summary::after {
@@ -377,7 +377,7 @@
     margin: 0;
     padding-left: 1.1rem;
     color: var(--color-text-muted);
-    animation: details-fade var(--motion-base) var(--motion-ease);
+    animation: details-fade var(--motion-item) var(--motion-ease-reveal);
 }
 
 .stage-card__details li {
@@ -402,9 +402,9 @@
     color: var(--color-white);
     box-shadow: var(--shadow-card);
     transition:
-        transform var(--motion-fast) var(--motion-ease),
-        box-shadow var(--motion-base) var(--motion-ease),
-        background-position var(--motion-base) var(--motion-ease);
+        transform var(--motion-fast) var(--motion-ease-interaction),
+        box-shadow var(--motion-fast) var(--motion-ease-interaction),
+        background-position var(--motion-fast) var(--motion-ease-interaction);
 }
 
 .service-feature::before {
@@ -451,7 +451,7 @@
 .service-feature__link {
     color: rgba(250, 248, 243, 0.74);
     font-weight: 600;
-    transition: color var(--motion-fast) var(--motion-ease), transform var(--motion-fast) var(--motion-ease);
+    transition: color var(--motion-fast) var(--motion-ease-interaction), transform var(--motion-fast) var(--motion-ease-interaction);
 }
 
 .service-feature:hover,
@@ -478,7 +478,7 @@
     align-items: start;
     padding: 1.3rem 0;
     border-bottom: 1px solid rgba(24, 54, 93, 0.14);
-    transition: border-color var(--motion-fast) var(--motion-ease), color var(--motion-fast) var(--motion-ease);
+    transition: border-color var(--motion-fast) var(--motion-ease-interaction), color var(--motion-fast) var(--motion-ease-interaction);
 }
 
 .service-item:hover,
@@ -514,7 +514,7 @@
     padding: 1.35rem 1.25rem;
     color: var(--color-text-dark);
     border-bottom: 1px solid rgba(24, 54, 93, 0.14);
-    transition: background-color var(--motion-fast) var(--motion-ease), border-color var(--motion-fast) var(--motion-ease);
+    transition: background-color var(--motion-fast) var(--motion-ease-interaction), border-color var(--motion-fast) var(--motion-ease-interaction);
 }
 
 .personal-item:last-child {
@@ -603,7 +603,7 @@
     width: 1px;
     background: linear-gradient(180deg, rgba(24, 54, 93, 0.7), rgba(201, 166, 75, 0.34));
     transform: translateX(-50%);
-    transition: opacity var(--motion-slow) var(--motion-ease), transform var(--motion-slow) var(--motion-ease);
+    transition: opacity var(--motion-slow) var(--motion-ease-reveal), transform var(--motion-slow) var(--motion-ease-reveal);
 }
 
 .process-stage:last-child .process-stage__rail::before {
@@ -626,7 +626,7 @@
     font-weight: 700;
     letter-spacing: 0.16em;
     box-shadow: 0 8px 18px rgba(16, 40, 70, 0.12);
-    transition: transform var(--motion-fast) var(--motion-ease), box-shadow var(--motion-fast) var(--motion-ease);
+    transition: transform var(--motion-fast) var(--motion-ease-interaction), box-shadow var(--motion-fast) var(--motion-ease-interaction);
 }
 
 .process-stage__content {
@@ -680,7 +680,7 @@
     border-radius: 0.8rem;
     background: linear-gradient(135deg, rgba(24, 54, 93, 0.96), rgba(39, 76, 121, 0.62));
     border: 1px solid rgba(24, 54, 93, 0.12);
-    transition: transform var(--motion-slow) var(--motion-ease), border-color var(--motion-fast) var(--motion-ease);
+    transition: transform var(--motion-slow) var(--motion-ease-reveal), border-color var(--motion-fast) var(--motion-ease-interaction);
 }
 
 .case-study__visual::before {
@@ -701,7 +701,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center 24%;
-    transition: transform calc(var(--motion-slow) + 120ms) var(--motion-ease);
+    transition: transform calc(var(--motion-slow) + 120ms) var(--motion-ease-reveal);
 }
 
 .case-overview__content {
@@ -756,7 +756,7 @@
     align-items: start;
     padding-top: 1rem;
     border-top: 1px solid rgba(24, 54, 93, 0.12);
-    transition: border-color var(--motion-fast) var(--motion-ease);
+    transition: border-color var(--motion-fast) var(--motion-ease-interaction);
 }
 
 .case-study__section:hover {
@@ -822,7 +822,7 @@
     gap: 1rem;
     padding: 1rem 0;
     border-bottom: 1px solid rgba(24, 54, 93, 0.12);
-    transition: border-color var(--motion-fast) var(--motion-ease);
+    transition: border-color var(--motion-fast) var(--motion-ease-interaction);
 }
 
 .case-study__results li:last-child {
@@ -909,7 +909,7 @@
     align-items: start;
     padding: 1.25rem 0;
     border-bottom: 1px solid rgba(24, 54, 93, 0.12);
-    transition: border-color var(--motion-fast) var(--motion-ease), transform var(--motion-fast) var(--motion-ease);
+    transition: border-color var(--motion-fast) var(--motion-ease-interaction), transform var(--motion-fast) var(--motion-ease-interaction);
 }
 
 .advantage-row:hover {
