@@ -9,8 +9,14 @@
             type="button"
             aria-expanded="false"
             aria-controls="site-navigation"
+            aria-label="打开主导航菜单"
             data-nav-toggle
         >
+            <span class="nav-toggle__box" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
             <span class="nav-toggle__label">菜单</span>
         </button>
         <nav class="site-nav" id="site-navigation" aria-label="主导航" data-nav-panel>
@@ -21,7 +27,9 @@
                 <li><a href="{% url 'about' %}">关于我们</a></li>
                 <li class="site-nav__languages">
                     <a class="is-active" href="{% url 'home' %}" aria-current="page">CN</a>
+                    <span aria-hidden="true">/</span>
                     <a href="{% url 'fr' %}">FR</a>
+                    <span aria-hidden="true">/</span>
                     <a href="{% url 'en' %}">EN</a>
                 </li>
                 <li><a class="button button--primary" href="{% url 'consultation' %}">预约咨询</a></li>
