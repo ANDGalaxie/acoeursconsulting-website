@@ -1,6 +1,7 @@
 import re
 
 from django.test import TestCase
+from django.test import override_settings
 from django.urls import reverse
 
 
@@ -108,3 +109,17 @@ class WebsiteRouteTests(TestCase):
         for route_name in expected_routes:
             with self.subTest(route_name=route_name):
                 self.assertIn(reverse(route_name), content)
+
+    def test_health_endpoint_returns_http_200(self):
+        response = self.client.get(reverse("health"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertJSONEqual(response.content.decode(), {"status": "ok"})
+
+    @override_settings(DEBUG=False, ALLOWED_HOSTS=["testserver"])
+    def test_custom_404_template_is_used(self):
+        response = self.client.get("/missing-page/")
+
+        self.assertEqual(response.status_code, 404)
+        self.assertTemplateUsed(response, "404.html")
+        self.assertIn("返回首页", response.content.decode())

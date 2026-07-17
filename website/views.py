@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render
 
 
@@ -11,3 +12,7 @@ def placeholder(request, title, section):
         "section": section,
     }
     return render(request, "website/placeholder.html", context)
+
+
+def health(request):
+    return JsonResponse({"status": "ok"})

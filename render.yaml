@@ -1,0 +1,35 @@
+# Select the final paid or team plan in the Render Dashboard if your traffic,
+# uptime, or database requirements exceed the default starter tier below.
+databases:
+  - name: acoeursconsulting-db
+    databaseName: acoeursconsulting
+    user: acoeursconsulting
+    plan: starter
+
+services:
+  - type: web
+    name: acoeursconsulting-web
+    runtime: python
+    plan: starter
+    buildCommand: ./build.sh
+    startCommand: gunicorn config.wsgi:application --bind 0.0.0.0:$PORT
+    healthCheckPath: /health/
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.4
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: acoeursconsulting.com,www.acoeursconsulting.com,staging.acoeursconsulting.com
+      - key: CSRF_TRUSTED_ORIGINS
+        value: https://acoeursconsulting.com,https://www.acoeursconsulting.com,https://staging.acoeursconsulting.com
+      - key: SECURE_SSL_REDIRECT
+        value: "True"
+      - key: SECURE_HSTS_SECONDS
+        value: "0"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: acoeursconsulting-db
+          property: connectionString
