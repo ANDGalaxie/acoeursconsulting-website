@@ -1,8 +1,19 @@
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navPanel = document.querySelector("[data-nav-panel]");
+const siteHeader = document.querySelector("[data-site-header]");
+
+if (siteHeader) {
+    const syncHeaderState = () => {
+        siteHeader.classList.toggle("is-scrolled", window.scrollY > 8);
+    };
+
+    syncHeaderState();
+    window.addEventListener("scroll", syncHeaderState, { passive: true });
+}
 
 if (navToggle && navPanel) {
     const navLinks = Array.from(navPanel.querySelectorAll("a"));
+    const getFocusableItems = () => [navToggle, ...navLinks];
 
     const syncNavigationState = (isOpen) => {
         navToggle.setAttribute("aria-expanded", String(isOpen));
@@ -37,6 +48,24 @@ if (navToggle && navPanel) {
     document.addEventListener("keydown", (event) => {
         if (event.key === "Escape") {
             syncNavigationState(false);
+        }
+
+        if (
+            event.key === "Tab" &&
+            window.innerWidth < 768 &&
+            navToggle.getAttribute("aria-expanded") === "true"
+        ) {
+            const focusableItems = getFocusableItems();
+            const firstItem = focusableItems[0];
+            const lastItem = focusableItems[focusableItems.length - 1];
+
+            if (event.shiftKey && document.activeElement === firstItem) {
+                event.preventDefault();
+                lastItem?.focus();
+            } else if (!event.shiftKey && document.activeElement === lastItem) {
+                event.preventDefault();
+                firstItem?.focus();
+            }
         }
     });
 

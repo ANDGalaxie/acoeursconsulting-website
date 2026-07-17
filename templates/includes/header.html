@@ -1,8 +1,15 @@
-<header class="site-header">
+{% load static %}
+<header class="site-header" data-site-header>
     <div class="container site-header__inner">
         <a class="site-logo" href="{% url 'home' %}" aria-label="Acoeurs Consulting 首页">
-            <span class="site-logo__mark">A</span>
-            <span class="site-logo__text">Acoeurs Consulting</span>
+            <img
+                class="site-logo__image"
+                src="{% static 'images/brand/acoeurs-logo.png' %}"
+                alt="Acoeurs Consulting"
+                width="2302"
+                height="2514"
+            >
+            <span class="site-logo__name" aria-hidden="true">Acoeurs Consulting</span>
         </a>
         <button
             class="nav-toggle"
