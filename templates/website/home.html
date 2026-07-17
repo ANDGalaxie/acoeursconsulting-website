@@ -47,89 +47,121 @@
                 <a class="button button--secondary" href="{% url 'about' %}">了解我们</a>
             </div>
             <figure class="about-section__visual">
-                <img src="{% static 'images/about.jpg' %}" alt="法国商务环境中的现代办公建筑与城市天际线">
+                <img src="{% static 'images/about.jpg' %}" alt="商务团队围绕项目资料进行讨论">
             </figure>
         </div>
-        <div class="about-grid" aria-label="Acoeurs 核心能力">
-            <a class="about-card" href="{% url 'business_market_entry' %}">
-                <span class="about-card__index">01</span>
-                <h3>战略判断</h3>
-                <p>市场、赛道与进入方式评估</p>
+        <div class="about-capabilities" aria-label="Acoeurs 核心能力">
+            <a class="about-capability" href="{% url 'business_market_entry' %}">
+                <span class="about-capability__index">01</span>
+                <div class="about-capability__content">
+                    <h3>战略判断</h3>
+                    <p>市场、赛道与进入方式评估</p>
+                </div>
+                <span class="about-capability__arrow" aria-hidden="true">↗</span>
             </a>
-            <a class="about-card" href="{% url 'business_company_banking' %}">
-                <span class="about-card__index">02</span>
-                <h3>本地落地</h3>
-                <p>公司、银行与合规体系搭建</p>
+            <a class="about-capability" href="{% url 'business_company_banking' %}">
+                <span class="about-capability__index">02</span>
+                <div class="about-capability__content">
+                    <h3>本地落地</h3>
+                    <p>公司、银行与合规体系搭建</p>
+                </div>
+                <span class="about-capability__arrow" aria-hidden="true">↗</span>
             </a>
-            <a class="about-card" href="{% url 'business_local_operations' %}">
-                <span class="about-card__index">03</span>
-                <h3>持续运营</h3>
-                <p>财税、法律、人力与行政支持</p>
+            <a class="about-capability" href="{% url 'business_local_operations' %}">
+                <span class="about-capability__index">03</span>
+                <div class="about-capability__content">
+                    <h3>持续运营</h3>
+                    <p>财税、法律、人力与行政支持</p>
+                </div>
+                <span class="about-capability__arrow" aria-hidden="true">↗</span>
             </a>
-            <a class="about-card" href="{% url 'business_growth' %}">
-                <span class="about-card__index">04</span>
-                <h3>商业增长</h3>
-                <p>渠道、资源与项目落地推进</p>
+            <a class="about-capability" href="{% url 'business_growth' %}">
+                <span class="about-capability__index">04</span>
+                <div class="about-capability__content">
+                    <h3>商业增长</h3>
+                    <p>渠道、资源与项目落地推进</p>
+                </div>
+                <span class="about-capability__arrow" aria-hidden="true">↗</span>
             </a>
         </div>
     </div>
 </section>
 
 <section class="home-section home-section--stage" aria-labelledby="stage-title">
-    <div class="container">
+    <div class="container stage-section">
         <div class="section-heading">
             <h2 id="stage-title">您的欧洲业务正处于哪个阶段？</h2>
         </div>
         <ol class="stage-path" aria-label="欧洲业务四阶段路径">
             <li class="stage-card">
-                <div class="stage-card__marker">1</div>
+                <div class="stage-card__rail" aria-hidden="true">
+                    <div class="stage-card__marker">1</div>
+                </div>
                 <div class="stage-card__body">
                     <h3>市场评估</h3>
                     <p>正在考虑进入法国或欧洲，但尚未确定方向。</p>
-                    <ul>
-                        <li>进入哪个市场</li>
-                        <li>产品和商业模式是否适合欧洲</li>
-                        <li>直接设立公司还是先验证市场</li>
-                    </ul>
+                    <details class="stage-card__details">
+                        <summary>查看典型问题</summary>
+                        <ul>
+                            <li>进入哪个市场</li>
+                            <li>产品和商业模式是否适合欧洲</li>
+                            <li>直接设立公司还是先验证市场</li>
+                        </ul>
+                    </details>
                 </div>
             </li>
             <li class="stage-card">
-                <div class="stage-card__marker">2</div>
+                <div class="stage-card__rail" aria-hidden="true">
+                    <div class="stage-card__marker">2</div>
+                </div>
                 <div class="stage-card__body">
                     <h3>落地搭建</h3>
                     <p>已经决定进入欧洲，需要建立可运营的基础。</p>
-                    <ul>
-                        <li>公司与股权架构</li>
-                        <li>银行账户与支付</li>
-                        <li>税务、法律及基础合规</li>
-                        <li>人员和行政准备</li>
-                    </ul>
+                    <details class="stage-card__details">
+                        <summary>查看典型问题</summary>
+                        <ul>
+                            <li>公司与股权架构</li>
+                            <li>银行账户与支付</li>
+                            <li>税务、法律及基础合规</li>
+                            <li>人员和行政准备</li>
+                        </ul>
+                    </details>
                 </div>
             </li>
             <li class="stage-card">
-                <div class="stage-card__marker">3</div>
+                <div class="stage-card__rail" aria-hidden="true">
+                    <div class="stage-card__marker">3</div>
+                </div>
                 <div class="stage-card__body">
                     <h3>稳定运营</h3>
                     <p>公司已经设立，但本地管理复杂、成本和风险增加。</p>
-                    <ul>
-                        <li>会计、税务和工资社保</li>
-                        <li>法律与合规</li>
-                        <li>招聘、团队和行政</li>
-                        <li>中法团队协同</li>
-                    </ul>
+                    <details class="stage-card__details">
+                        <summary>查看典型问题</summary>
+                        <ul>
+                            <li>会计、税务和工资社保</li>
+                            <li>法律与合规</li>
+                            <li>招聘、团队和行政</li>
+                            <li>中法团队协同</li>
+                        </ul>
+                    </details>
                 </div>
             </li>
             <li class="stage-card">
-                <div class="stage-card__marker">4</div>
+                <div class="stage-card__rail" aria-hidden="true">
+                    <div class="stage-card__marker">4</div>
+                </div>
                 <div class="stage-card__body">
                     <h3>拓展增长</h3>
                     <p>已经完成落地，希望获得客户、渠道和持续增长。</p>
-                    <ul>
-                        <li>市场拓展</li>
-                        <li>经销商与合作伙伴</li>
-                        <li>本地商业资源</li>
-                        <li>项目、投资与并购</li>
-                    </ul>
+                    <details class="stage-card__details">
+                        <summary>查看典型问题</summary>
+                        <ul>
+                            <li>市场拓展</li>
+                            <li>经销商与合作伙伴</li>
+                            <li>本地商业资源</li>
+                            <li>项目、投资与并购</li>
+                        </ul>
+                    </details>
                 </div>
             </li>
         </ol>
@@ -146,27 +178,49 @@
             </p>
         </div>
         <div class="service-layout">
-            <a class="service-card service-card--featured" href="{% url 'business_market_entry' %}">
-                <p class="service-card__eyebrow">重点服务</p>
-                <h3>欧洲市场进入与战略</h3>
-                <p>判断市场机会，设计清晰、可执行的进入路径。</p>
+            <a class="service-feature" href="{% url 'business_market_entry' %}">
+                <div class="service-feature__meta">
+                    <span class="service-feature__eyebrow">重点服务</span>
+                    <span class="service-feature__index">01</span>
+                </div>
+                <div class="service-feature__body">
+                    <h3>欧洲市场进入与战略</h3>
+                    <p>判断市场机会，设计清晰、可执行的进入路径。</p>
+                </div>
+                <span class="service-feature__link" aria-hidden="true">进入服务 ↗</span>
             </a>
-            <div class="service-grid">
-                <a class="service-card" href="{% url 'business_company_banking' %}">
-                    <h3>公司架构与银行金融</h3>
-                    <p>建立能够真正开始经营的欧洲业务基础。</p>
+            <div class="service-list">
+                <a class="service-item" href="{% url 'business_company_banking' %}">
+                    <span class="service-item__index">02</span>
+                    <div class="service-item__content">
+                        <h3>公司架构与银行金融</h3>
+                        <p>建立能够真正开始经营的欧洲业务基础。</p>
+                    </div>
+                    <span class="service-item__arrow" aria-hidden="true">↗</span>
                 </a>
-                <a class="service-card" href="{% url 'business_tax_legal_compliance' %}">
-                    <h3>财税、法律与合规</h3>
-                    <p>降低长期经营风险，建立稳定的合规管理体系。</p>
+                <a class="service-item" href="{% url 'business_tax_legal_compliance' %}">
+                    <span class="service-item__index">03</span>
+                    <div class="service-item__content">
+                        <h3>财税、法律与合规</h3>
+                        <p>降低长期经营风险，建立稳定的合规管理体系。</p>
+                    </div>
+                    <span class="service-item__arrow" aria-hidden="true">↗</span>
                 </a>
-                <a class="service-card" href="{% url 'business_local_operations' %}">
-                    <h3>本地运营与团队建设</h3>
-                    <p>为中国总部提供稳定、可管理的法国本地运营支持。</p>
+                <a class="service-item" href="{% url 'business_local_operations' %}">
+                    <span class="service-item__index">04</span>
+                    <div class="service-item__content">
+                        <h3>本地运营与团队建设</h3>
+                        <p>为中国总部提供稳定、可管理的法国本地运营支持。</p>
+                    </div>
+                    <span class="service-item__arrow" aria-hidden="true">↗</span>
                 </a>
-                <a class="service-card" href="{% url 'business_growth' %}">
-                    <h3>商务拓展与增长</h3>
-                    <p>连接本地市场、渠道与合作资源，推动业务持续增长。</p>
+                <a class="service-item" href="{% url 'business_growth' %}">
+                    <span class="service-item__index">05</span>
+                    <div class="service-item__content">
+                        <h3>商务拓展与增长</h3>
+                        <p>连接本地市场、渠道与合作资源，推动业务持续增长。</p>
+                    </div>
+                    <span class="service-item__arrow" aria-hidden="true">↗</span>
                 </a>
             </div>
         </div>
