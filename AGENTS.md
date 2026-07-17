@@ -131,3 +131,27 @@ Production domains:
 
 Do not change DNS or deployment configuration during Phase 1.
 Keep production host and HTTPS settings environment-driven.
+
+## Homepage visual refinement rules
+
+The complete homepage structure and Chinese copy have already been approved.
+
+During visual refinement:
+
+- Preserve all approved homepage sections and their order.
+- Preserve existing URL names and internal links.
+- Do not add new homepage sections.
+- Do not rewrite approved Chinese copy unless explicitly requested.
+- Refactor the current implementation instead of rebuilding the Django project.
+- The Hero must be full-width and near full-screen, not a centered card.
+- Use the official logo at:
+  static/images/brand/acoeurs-logo.png
+- Use one coherent design system across all eight sections.
+- Avoid making every section a grid of identical cards.
+- Alternate editorial layouts, timelines, featured cards, split layouts, and data rows.
+- Enterprise services must remain visually more prominent than personal services.
+- Use restrained animation only.
+- Respect prefers-reduced-motion.
+- Do not introduce React, Vue, Tailwind, Bootstrap, animation libraries, or CDN dependencies.
+- Keep CSS reusable and avoid page-specific duplication.
+- Test desktop, tablet, and mobile layouts after every visual task.
