@@ -1,0 +1,320 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}企业服务｜法国及欧洲市场进入与本地运营｜Acoeurs Consulting{% endblock %}
+{% block meta_description %}Acoeurs Consulting 为中国企业提供欧洲市场进入、公司架构、财税法律合规、本地运营、团队建设与商务拓展支持。{% endblock %}
+{% block body_class %}page-enterprise-services{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/services.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="services-hero">
+    <div class="services-hero__backdrop" aria-hidden="true">
+        <span class="services-hero__orb services-hero__orb--one"></span>
+        <span class="services-hero__orb services-hero__orb--two"></span>
+        <span class="services-hero__grid"></span>
+    </div>
+    <div class="container services-hero__inner">
+        <nav class="breadcrumb" aria-label="面包屑" data-reveal="soft">
+            <ol class="breadcrumb__list">
+                <li><a href="{% url 'home' %}">首页</a></li>
+                <li aria-current="page">企业服务</li>
+            </ol>
+        </nav>
+        <div class="services-hero__content">
+            <p class="eyebrow" data-reveal="text" data-reveal-delay="60">企业服务</p>
+            <h1 data-reveal="title" data-reveal-delay="120">从市场判断到本地增长，构建可持续的欧洲业务体系</h1>
+            <p class="services-hero__summary" data-reveal="text" data-reveal-delay="220">
+                我们为中国企业提供从欧洲市场进入判断、公司架构与合规搭建，到本地运营、商业拓展与持续增长的一体化支持。
+            </p>
+            <div class="services-hero__actions" data-reveal="button" data-reveal-delay="320">
+                <a class="button button--gold" href="{% url 'consultation' %}">预约30分钟咨询</a>
+                <a class="button button--hero-secondary" href="#enterprise-service-scope">查看服务范围</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services-section services-positioning" aria-labelledby="services-positioning-title">
+    <div class="container services-two-column">
+        <div class="services-two-column__intro">
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">服务定位</p>
+            <h2 id="services-positioning-title" data-reveal="title" data-reveal-repeat="true">您的欧洲项目，需要的不只是单项手续</h2>
+            <p data-reveal="text" data-reveal-repeat="true">
+                进入法国及欧洲市场往往同时涉及市场判断、公司架构、银行金融、财税法律、人力资源、本地运营与商业拓展。任何一个环节缺乏统筹，都可能造成时间延误、成本增加或后续经营风险。
+            </p>
+            <p data-reveal="text" data-reveal-delay="120" data-reveal-repeat="true">
+                Acoeurs 以统一项目管理为基础，协调中法团队和本地专业资源，把分散的跨境事项转化为一条清晰、可执行并能够持续推进的项目路径。
+            </p>
+        </div>
+        <div class="numbered-list" aria-label="四个典型状态">
+            <article class="numbered-list__item" data-reveal="item" data-reveal-repeat="true">
+                <p class="numbered-list__index">01</p>
+                <div>
+                    <h3>进入前缺少清晰判断</h3>
+                    <p>尚未确定目标市场、优先赛道、进入模式与风险边界。</p>
+                </div>
+            </article>
+            <article class="numbered-list__item" data-reveal="item" data-reveal-delay="120" data-reveal-repeat="true">
+                <p class="numbered-list__index">02</p>
+                <div>
+                    <h3>落地事项彼此割裂</h3>
+                    <p>公司、银行、财税、法律和人员事务由不同机构处理，缺少统一协调。</p>
+                </div>
+            </article>
+            <article class="numbered-list__item" data-reveal="item" data-reveal-delay="240" data-reveal-repeat="true">
+                <p class="numbered-list__index">03</p>
+                <div>
+                    <h3>公司设立后难以运营</h3>
+                    <p>实体已经建立，但本地团队、行政管理和持续合规尚未形成稳定体系。</p>
+                </div>
+            </article>
+            <article class="numbered-list__item" data-reveal="item" data-reveal-delay="360" data-reveal-repeat="true">
+                <p class="numbered-list__index">04</p>
+                <div>
+                    <h3>市场进入但增长缓慢</h3>
+                    <p>缺少本地客户、渠道、合作网络和可持续推进的商务路径。</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="services-section services-scope" id="enterprise-service-scope" aria-labelledby="enterprise-service-scope-title">
+    <div class="container">
+        <div class="section-heading services-scope__heading">
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">五类服务</p>
+            <h2 id="enterprise-service-scope-title" data-reveal="title" data-reveal-repeat="true">覆盖欧洲业务全生命周期的企业服务</h2>
+            <p data-reveal="text" data-reveal-delay="120" data-reveal-repeat="true">
+                根据企业所处阶段，我们将战略判断、专业合规、本地运营和商业增长组织在同一项目体系中。
+            </p>
+        </div>
+        <div class="services-scope__layout">
+            <a class="scope-feature" href="{% url 'business_market_entry' %}" data-reveal="panel" data-reveal-repeat="true">
+                <div class="scope-feature__meta">
+                    <span class="scope-feature__eyebrow">重点服务</span>
+                    <span class="scope-feature__index">01</span>
+                </div>
+                <div class="scope-feature__body">
+                    <h3>欧洲市场进入与战略</h3>
+                    <p>评估市场机会、竞争环境、进入模式和资源优先级，为企业建立清晰、可执行的欧洲市场路径。</p>
+                    <ul class="scope-points" aria-label="欧洲市场进入与战略服务要点">
+                        <li>市场与赛道评估</li>
+                        <li>竞争与客户研究</li>
+                        <li>进入模式与风险判断</li>
+                        <li>品牌、渠道与商业路径</li>
+                        <li>市场进入路线图</li>
+                    </ul>
+                </div>
+                <span class="scope-link" aria-hidden="true">进入详情页 ↗</span>
+            </a>
+            <div class="scope-list">
+                <a class="scope-item" href="{% url 'business_company_banking' %}" data-reveal="item" data-reveal-repeat="true">
+                    <div class="scope-item__header">
+                        <span class="scope-item__index">02</span>
+                        <h3>公司架构与银行金融</h3>
+                    </div>
+                    <p>根据企业经营目标设计法国及欧洲公司架构，并协调设立、银行和基础金融事项。</p>
+                    <ul class="scope-points" aria-label="公司架构与银行金融服务要点">
+                        <li>公司形式与股权结构</li>
+                        <li>公司设立与行政协调</li>
+                        <li>银行开户支持</li>
+                        <li>跨境资金与基础金融安排</li>
+                        <li>启动阶段项目管理</li>
+                    </ul>
+                </a>
+                <a class="scope-item" href="{% url 'business_tax_legal_compliance' %}" data-reveal="item" data-reveal-delay="120" data-reveal-repeat="true">
+                    <div class="scope-item__header">
+                        <span class="scope-item__index">03</span>
+                        <h3>财税、法律与合规</h3>
+                    </div>
+                    <p>协调会计、税务、法律及行业合规资源，帮助企业建立能够长期运行的风险管理体系。</p>
+                    <ul class="scope-points" aria-label="财税、法律与合规服务要点">
+                        <li>会计与税务协调</li>
+                        <li>合同与商业法律支持</li>
+                        <li>劳动与用工合规</li>
+                        <li>跨境交易与申报</li>
+                        <li>日常合规管理</li>
+                    </ul>
+                </a>
+                <a class="scope-item" href="{% url 'business_local_operations' %}" data-reveal="item" data-reveal-delay="240" data-reveal-repeat="true">
+                    <div class="scope-item__header">
+                        <span class="scope-item__index">04</span>
+                        <h3>本地运营与团队建设</h3>
+                    </div>
+                    <p>协助企业建立法国本地运营能力，使公司从注册完成进入可持续的正常经营状态。</p>
+                    <ul class="scope-points" aria-label="本地运营与团队建设服务要点">
+                        <li>本地行政与运营支持</li>
+                        <li>招聘与人力资源协调</li>
+                        <li>办公及供应商管理</li>
+                        <li>财务、申报与专业机构协调</li>
+                        <li>中法团队协作机制</li>
+                    </ul>
+                </a>
+                <a class="scope-item" href="{% url 'business_growth' %}" data-reveal="item" data-reveal-delay="360" data-reveal-repeat="true">
+                    <div class="scope-item__header">
+                        <span class="scope-item__index">05</span>
+                        <h3>商务拓展与增长</h3>
+                    </div>
+                    <p>通过本地客户、渠道、合作伙伴和行业网络，推动企业由市场进入逐步转向真实业务增长。</p>
+                    <ul class="scope-points" aria-label="商务拓展与增长服务要点">
+                        <li>商务开发与客户拓展</li>
+                        <li>渠道与合作伙伴对接</li>
+                        <li>行业与本地商业网络</li>
+                        <li>品牌传播、展会与公关协调</li>
+                        <li>项目谈判与后续推进</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+        <p class="services-disclaimer" data-reveal="text" data-reveal-delay="160" data-reveal-repeat="true">
+            具体法律、会计及受监管专业事项由具备相应资质的合作专业人士提供或执行，Acoeurs 负责项目协调与统一管理。
+        </p>
+    </div>
+</section>
+
+<section class="services-section services-path" id="services-path" aria-labelledby="services-path-title">
+    <div class="container">
+        <div class="section-heading services-path__heading">
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">发展路径</p>
+            <h2 id="services-path-title" data-reveal="title" data-reveal-repeat="true">从判断到增长，一条连续的欧洲项目路径</h2>
+        </div>
+        <ol class="services-timeline" aria-label="企业四阶段发展路径">
+            <li class="services-timeline__item" data-reveal="item" data-reveal-repeat="true">
+                <div class="services-timeline__node" aria-hidden="true">
+                    <span>01</span>
+                </div>
+                <div class="services-timeline__body">
+                    <h3>前期判断</h3>
+                    <p>评估市场、赛道、竞争、进入方式和风险边界，明确进入、观望或暂缓的条件。</p>
+                </div>
+            </li>
+            <li class="services-timeline__item" data-reveal="item" data-reveal-delay="120" data-reveal-repeat="true">
+                <div class="services-timeline__node" aria-hidden="true">
+                    <span>02</span>
+                </div>
+                <div class="services-timeline__body">
+                    <h3>落地执行</h3>
+                    <p>协调实体设立、公司架构、银行、税务、法律和基础合规，使企业具备正常运营条件。</p>
+                </div>
+            </li>
+            <li class="services-timeline__item" data-reveal="item" data-reveal-delay="240" data-reveal-repeat="true">
+                <div class="services-timeline__node" aria-hidden="true">
+                    <span>03</span>
+                </div>
+                <div class="services-timeline__body">
+                    <h3>运营支持</h3>
+                    <p>持续统筹财税、法务、行政、人员和申报事项，降低日常经营中的不确定性。</p>
+                </div>
+            </li>
+            <li class="services-timeline__item" data-reveal="item" data-reveal-delay="360" data-reveal-repeat="true">
+                <div class="services-timeline__node" aria-hidden="true">
+                    <span>04</span>
+                </div>
+                <div class="services-timeline__body">
+                    <h3>项目对接与增长</h3>
+                    <p>连接本地商业资源、客户与合作伙伴，推动市场拓展、项目合作和长期增长。</p>
+                </div>
+            </li>
+        </ol>
+    </div>
+</section>
+
+<section class="services-section services-management" aria-labelledby="services-management-title">
+    <div class="container services-two-column services-two-column--management">
+        <div class="services-two-column__intro services-management__intro">
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">项目管理方式</p>
+            <h2 id="services-management-title" data-reveal="title" data-reveal-repeat="true">由一个项目负责人，统筹复杂的本地协作</h2>
+            <p data-reveal="text" data-reveal-repeat="true">
+                跨境项目通常需要企业管理层、法国本地团队以及会计、税务、法律、人力和行业合作方共同参与。Acoeurs 通过统一负责人、项目路径和阶段管理，减少多方沟通中的信息断层和责任模糊。
+            </p>
+            <div class="management-diagram" aria-hidden="true" data-reveal="panel" data-reveal-delay="120" data-reveal-repeat="true">
+                <div class="management-diagram__hub">项目负责人</div>
+                <div class="management-diagram__ring management-diagram__ring--one"></div>
+                <div class="management-diagram__ring management-diagram__ring--two"></div>
+                <span class="management-diagram__label management-diagram__label--north">总部管理层</span>
+                <span class="management-diagram__label management-diagram__label--east">本地合作资源</span>
+                <span class="management-diagram__label management-diagram__label--south">运营与合规</span>
+                <span class="management-diagram__label management-diagram__label--west">中法团队协同</span>
+            </div>
+        </div>
+        <div class="numbered-list numbered-list--dense" aria-label="项目管理方式四项说明">
+            <article class="numbered-list__item" data-reveal="item" data-reveal-repeat="true">
+                <p class="numbered-list__index">01</p>
+                <div>
+                    <h3>单一对接窗口</h3>
+                    <p>一位项目负责人统筹需求、进度、专业合作方和中法团队沟通。</p>
+                </div>
+            </article>
+            <article class="numbered-list__item" data-reveal="item" data-reveal-delay="120" data-reveal-repeat="true">
+                <p class="numbered-list__index">02</p>
+                <div>
+                    <h3>中法双语协同</h3>
+                    <p>在中文商业目标与法国本地规则之间建立准确、持续的沟通机制。</p>
+                </div>
+            </article>
+            <article class="numbered-list__item" data-reveal="item" data-reveal-delay="240" data-reveal-repeat="true">
+                <p class="numbered-list__index">03</p>
+                <div>
+                    <h3>路径与里程碑管理</h3>
+                    <p>明确当前阶段、交付范围、关键节点、风险和下一步行动。</p>
+                </div>
+            </article>
+            <article class="numbered-list__item" data-reveal="item" data-reveal-delay="360" data-reveal-repeat="true">
+                <p class="numbered-list__index">04</p>
+                <div>
+                    <h3>专业资源协调</h3>
+                    <p>根据项目需要协调具备相应资质的会计、律师及其他本地专业合作方。</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="services-section services-principles" aria-labelledby="services-principles-title">
+    <div class="container">
+        <div class="section-heading section-heading--light services-principles__heading">
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">服务原则</p>
+            <h2 id="services-principles-title" data-reveal="title" data-reveal-repeat="true">我们重视的不只是完成，而是项目能否真正运行</h2>
+        </div>
+        <div class="principles-grid" aria-label="四项服务原则">
+            <article class="principle" data-reveal="item" data-reveal-repeat="true">
+                <span class="principle__index">01</span>
+                <h3>判断优先</h3>
+                <p>先确认市场机会、风险和投入边界，再进入执行阶段。</p>
+            </article>
+            <article class="principle" data-reveal="item" data-reveal-delay="120" data-reveal-repeat="true">
+                <span class="principle__index">02</span>
+                <h3>可运行的落地</h3>
+                <p>公司设立只是起点，交付目标是让企业具备持续经营的实际条件。</p>
+            </article>
+            <article class="principle" data-reveal="item" data-reveal-delay="240" data-reveal-repeat="true">
+                <span class="principle__index">03</span>
+                <h3>长期连续</h3>
+                <p>从进入、设立到运营和增长，保持项目背景、责任人和执行路径的连续性。</p>
+            </article>
+            <article class="principle" data-reveal="item" data-reveal-delay="360" data-reveal-repeat="true">
+                <span class="principle__index">04</span>
+                <h3>结果导向</h3>
+                <p>在合规与可执行的前提下，让每一项工作服务于明确的业务目标。</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="services-section services-cta" aria-labelledby="services-cta-title">
+    <div class="container services-cta__inner" data-reveal="panel" data-reveal-repeat="true">
+        <div>
+            <p class="eyebrow">预约咨询</p>
+            <h2 id="services-cta-title">您的欧洲业务正处于哪个阶段？</h2>
+            <p>
+                预约30分钟咨询，与我们的顾问讨论当前目标、主要问题和下一步可行路径。
+            </p>
+            <a class="services-cta__text-link" href="#services-path">或先了解我们的服务流程</a>
+        </div>
+        <a class="button button--gold" href="{% url 'consultation' %}">预约30分钟咨询</a>
+    </div>
+</section>
+{% endblock %}

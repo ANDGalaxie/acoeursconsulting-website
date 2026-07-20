@@ -8,8 +8,7 @@ urlpatterns = [
     path("health/", views.health, name="health"),
     path(
         "business/",
-        views.placeholder,
-        {"title": "企业服务", "section": "企业服务总览占位页"},
+        views.enterprise_services,
         name="business",
     ),
     path(

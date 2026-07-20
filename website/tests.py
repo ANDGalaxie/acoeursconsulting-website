@@ -7,7 +7,6 @@ from django.urls import reverse
 
 class WebsiteRouteTests(TestCase):
     placeholder_routes = [
-        "business",
         "business_market_entry",
         "business_company_banking",
         "business_tax_legal_compliance",
@@ -36,6 +35,63 @@ class WebsiteRouteTests(TestCase):
         response = self.client.get(reverse("home"))
 
         self.assertTemplateUsed(response, "website/home.html")
+
+    def test_enterprise_services_page_returns_http_200(self):
+        response = self.client.get(reverse("business"))
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_enterprise_services_page_uses_expected_template(self):
+        response = self.client.get(reverse("business"))
+
+        self.assertTemplateUsed(response, "website/enterprise_services.html")
+
+    def test_enterprise_services_page_contains_expected_seo_metadata(self):
+        response = self.client.get(reverse("business"))
+        content = response.content.decode()
+
+        self.assertIn(
+            "<title>企业服务｜法国及欧洲市场进入与本地运营｜Acoeurs Consulting</title>",
+            content,
+        )
+        self.assertIn(
+            'content="Acoeurs Consulting 为中国企业提供欧洲市场进入、公司架构、财税法律合规、本地运营、团队建设与商务拓展支持。"',
+            content,
+        )
+
+    def test_enterprise_services_page_contains_single_h1_and_breadcrumb(self):
+        response = self.client.get(reverse("business"))
+        content = response.content.decode()
+
+        self.assertContains(response, "从市场判断到本地增长，构建可持续的欧洲业务体系")
+        self.assertEqual(content.count("<h1"), 1)
+        self.assertContains(response, 'aria-label="面包屑"', html=False)
+        self.assertContains(response, ">首页</a>", html=False)
+        self.assertContains(response, 'aria-current="page">企业服务<', html=False)
+
+    def test_enterprise_services_page_contains_all_service_categories_and_links(self):
+        response = self.client.get(reverse("business"))
+        content = response.content.decode()
+
+        expected_services = [
+            ("欧洲市场进入与战略", "business_market_entry"),
+            ("公司架构与银行金融", "business_company_banking"),
+            ("财税、法律与合规", "business_tax_legal_compliance"),
+            ("本地运营与团队建设", "business_local_operations"),
+            ("商务拓展与增长", "business_growth"),
+        ]
+
+        for label, route_name in expected_services:
+            with self.subTest(label=label):
+                self.assertContains(response, label)
+                self.assertIn(reverse(route_name), content)
+
+    def test_enterprise_services_page_contains_consultation_links(self):
+        response = self.client.get(reverse("business"))
+        content = response.content.decode()
+
+        self.assertGreaterEqual(content.count(reverse("consultation")), 2)
+        self.assertIn('href="#enterprise-service-scope"', content)
 
     def test_homepage_contains_required_sections(self):
         response = self.client.get(reverse("home"))

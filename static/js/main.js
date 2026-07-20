@@ -142,11 +142,17 @@ const setupRevealAnimations = () => {
 
     const revealElements = [];
     const repeatElements = new Set();
+    const seenElements = new Set();
 
     revealGroups.forEach(({ selector, delayStep = 0, delay, maxDelay = 660, reveal = "up", repeat = false }) => {
         const elements = document.querySelectorAll(selector);
 
         elements.forEach((element, index) => {
+            if (seenElements.has(element)) {
+                return;
+            }
+
+            seenElements.add(element);
             element.classList.add("reveal-on-scroll");
             if (reveal !== "up") {
                 element.dataset.reveal = reveal;
@@ -174,6 +180,25 @@ const setupRevealAnimations = () => {
             }
             revealElements.push(element);
         });
+    });
+
+    document.querySelectorAll("[data-reveal]").forEach((element) => {
+        if (seenElements.has(element)) {
+            return;
+        }
+
+        seenElements.add(element);
+        element.classList.add("reveal-on-scroll");
+
+        if (element.dataset.revealRepeat === "true") {
+            repeatElements.add(element);
+        }
+
+        if (element.dataset.revealDelay) {
+            element.style.setProperty("--reveal-delay", `${element.dataset.revealDelay}ms`);
+        }
+
+        revealElements.push(element);
     });
 
     if (!revealElements.length) {

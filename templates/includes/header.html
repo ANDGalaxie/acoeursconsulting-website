@@ -28,10 +28,10 @@
         </button>
         <nav class="site-nav" id="site-navigation" aria-label="主导航" data-nav-panel>
             <ul class="site-nav__list">
-                <li><a href="{% url 'home' %}">首页</a></li>
-                <li><a href="{% url 'business' %}">企业服务</a></li>
-                <li><a href="{% url 'personal' %}">个人服务</a></li>
-                <li><a href="{% url 'about' %}">关于我们</a></li>
+                <li><a{% if current_nav == 'home' %} aria-current="page"{% endif %} href="{% url 'home' %}">首页</a></li>
+                <li><a{% if current_nav == 'business' %} aria-current="page"{% endif %} href="{% url 'business' %}">企业服务</a></li>
+                <li><a{% if current_nav == 'personal' %} aria-current="page"{% endif %} href="{% url 'personal' %}">个人服务</a></li>
+                <li><a{% if current_nav == 'about' %} aria-current="page"{% endif %} href="{% url 'about' %}">关于我们</a></li>
                 <li class="site-nav__languages">
                     <a class="is-active" href="{% url 'home' %}" aria-current="page">CN</a>
                     <span aria-hidden="true">/</span>

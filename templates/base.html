@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Acoeurs Consulting{% endblock %}</title>
     <meta name="description" content="{% block meta_description %}Acoeurs Consulting corporate introduction website.{% endblock %}">
+    {% block canonical %}{% if canonical_url %}<link rel="canonical" href="{{ canonical_url }}">{% endif %}{% endblock %}
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/components.css' %}">
     {% block extra_css %}{% endblock %}
 </head>
-<body>
+<body class="{% block body_class %}{% endblock %}">
     <a class="skip-link" href="#main-content">跳到主要内容</a>
-    {% include "includes/header.html" %}
+    {% include "includes/header.html" with current_nav=current_nav %}
     <main id="main-content" class="site-main">
         {% block content %}{% endblock %}
     </main>
