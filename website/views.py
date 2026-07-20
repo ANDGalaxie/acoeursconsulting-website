@@ -38,6 +38,14 @@ def tax_legal_compliance_service(request):
     return render(request, "website/service_tax_legal_compliance.html", context)
 
 
+def local_operations_service(request):
+    context = {
+        "canonical_url": request.build_absolute_uri(request.path),
+        "current_nav": "business",
+    }
+    return render(request, "website/service_local_operations.html", context)
+
+
 def placeholder(request, title, section):
     context = {
         "title": title,

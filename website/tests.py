@@ -7,7 +7,6 @@ from django.urls import reverse
 
 class WebsiteRouteTests(TestCase):
     placeholder_routes = [
-        "business_local_operations",
         "business_growth",
         "personal",
         "personal_residency_family",
@@ -274,6 +273,65 @@ class WebsiteRouteTests(TestCase):
         self.assertNotIn("保证完全合规", content)
         self.assertNotIn("税务最优", content)
         self.assertNotIn("零风险", content)
+
+    def test_local_operations_service_page_returns_http_200(self):
+        response = self.client.get(reverse("business_local_operations"))
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_local_operations_service_page_uses_expected_template(self):
+        response = self.client.get(reverse("business_local_operations"))
+
+        self.assertTemplateUsed(response, "website/service_local_operations.html")
+
+    def test_local_operations_service_page_contains_expected_seo_metadata(self):
+        response = self.client.get(reverse("business_local_operations"))
+        content = response.content.decode()
+
+        self.assertIn(
+            "<title>本地运营与团队建设｜法国企业运营与团队支持｜Acoeurs Consulting</title>",
+            content,
+        )
+        self.assertIn(
+            'content="Acoeurs Consulting 协助中国企业协调法国本地招聘、人员行政、办公与日常运营事项，连接中国总部、本地团队和专业服务方。"',
+            content,
+        )
+
+    def test_local_operations_service_page_contains_single_h1_breadcrumb_and_required_links(self):
+        response = self.client.get(reverse("business_local_operations"))
+        content = response.content.decode()
+
+        self.assertContains(response, "让法国本地团队与日常运营真正运转起来")
+        self.assertEqual(content.count("<h1"), 1)
+        self.assertContains(response, 'aria-label="面包屑"', html=False)
+        self.assertContains(response, ">首页</a>", html=False)
+        self.assertContains(response, ">企业服务</a>", html=False)
+        self.assertContains(response, 'aria-current="page">本地运营与团队建设<', html=False)
+        self.assertIn(reverse("consultation"), content)
+        self.assertIn(reverse("business"), content)
+
+    def test_local_operations_service_page_contains_scope_headings_and_boundary_copy(self):
+        response = self.client.get(reverse("business_local_operations"))
+        content = response.content.decode()
+
+        expected_headings = [
+            "招聘与团队搭建协调",
+            "人员与日常行政协调",
+            "办公与运营空间支持",
+            "文件、翻译与行政支持",
+            "商标与本地运营事项协调",
+        ]
+
+        for heading in expected_headings:
+            with self.subTest(heading=heading):
+                self.assertContains(response, heading)
+
+        self.assertIn("相关工作由具备相应资质的专业人士提供或执行。", content)
+        self.assertNotIn("价格", content)
+        self.assertNotIn("固定项目周期", content)
+        self.assertNotIn("保证招聘成功", content)
+        self.assertNotIn("零风险用工", content)
+        self.assertNotIn("客户案例", content)
 
     def test_homepage_contains_required_sections(self):
         response = self.client.get(reverse("home"))

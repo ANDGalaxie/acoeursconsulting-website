@@ -28,8 +28,7 @@ urlpatterns = [
     ),
     path(
         "business/local-operations/",
-        views.placeholder,
-        {"title": "本地运营与团队建设", "section": "企业服务"},
+        views.local_operations_service,
         name="business_local_operations",
     ),
     path(
