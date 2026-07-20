@@ -84,15 +84,15 @@
 
 <section class="services-section services-scope" id="enterprise-service-scope" aria-labelledby="enterprise-service-scope-title">
     <div class="container">
-        <div class="section-heading services-scope__heading">
+        <header class="section-heading services-scope__heading" data-reveal="title" data-reveal-repeat="true">
             <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">五类服务</p>
-            <h2 id="enterprise-service-scope-title" data-reveal="title" data-reveal-repeat="true">覆盖欧洲业务全生命周期的企业服务</h2>
+            <h2 id="enterprise-service-scope-title">覆盖欧洲业务全生命周期的企业服务</h2>
             <p data-reveal="text" data-reveal-delay="120" data-reveal-repeat="true">
                 根据企业所处阶段，我们将战略判断、专业合规、本地运营和商业增长组织在同一项目体系中。
             </p>
-        </div>
-        <div class="services-scope__layout">
-            <a class="scope-feature" href="{% url 'business_market_entry' %}" data-reveal="panel" data-reveal-repeat="true">
+        </header>
+        <article class="scope-feature" data-reveal="panel" data-reveal-repeat="true">
+            <div class="scope-feature__intro">
                 <div class="scope-feature__meta">
                     <span class="scope-feature__eyebrow">重点服务</span>
                     <span class="scope-feature__index">01</span>
@@ -100,18 +100,22 @@
                 <div class="scope-feature__body">
                     <h3>欧洲市场进入与战略</h3>
                     <p>评估市场机会、竞争环境、进入模式和资源优先级，为企业建立清晰、可执行的欧洲市场路径。</p>
-                    <ul class="scope-points" aria-label="欧洲市场进入与战略服务要点">
-                        <li>市场与赛道评估</li>
-                        <li>竞争与客户研究</li>
-                        <li>进入模式与风险判断</li>
-                        <li>品牌、渠道与商业路径</li>
-                        <li>市场进入路线图</li>
-                    </ul>
                 </div>
-                <span class="scope-link" aria-hidden="true">进入详情页 ↗</span>
-            </a>
-            <div class="scope-list">
-                <a class="scope-item" href="{% url 'business_company_banking' %}" data-reveal="item" data-reveal-repeat="true">
+                <a class="scope-link" href="{% url 'business_market_entry' %}">进入详情页 ↗</a>
+            </div>
+            <div class="scope-feature__details">
+                <ul class="scope-points" aria-label="欧洲市场进入与战略服务要点">
+                    <li>市场与赛道评估</li>
+                    <li>竞争与客户研究</li>
+                    <li>进入模式与风险判断</li>
+                    <li>品牌、渠道与商业路径</li>
+                    <li>市场进入路线图</li>
+                </ul>
+            </div>
+        </article>
+        <div class="scope-grid">
+            <div class="scope-grid__row" data-reveal="item" data-reveal-repeat="true">
+                <a class="scope-item" href="{% url 'business_company_banking' %}">
                     <div class="scope-item__header">
                         <span class="scope-item__index">02</span>
                         <h3>公司架构与银行金融</h3>
@@ -124,8 +128,9 @@
                         <li>跨境资金与基础金融安排</li>
                         <li>启动阶段项目管理</li>
                     </ul>
+                    <span class="scope-item__link" aria-hidden="true">进入详情页 ↗</span>
                 </a>
-                <a class="scope-item" href="{% url 'business_tax_legal_compliance' %}" data-reveal="item" data-reveal-delay="120" data-reveal-repeat="true">
+                <a class="scope-item" href="{% url 'business_tax_legal_compliance' %}">
                     <div class="scope-item__header">
                         <span class="scope-item__index">03</span>
                         <h3>财税、法律与合规</h3>
@@ -138,8 +143,11 @@
                         <li>跨境交易与申报</li>
                         <li>日常合规管理</li>
                     </ul>
+                    <span class="scope-item__link" aria-hidden="true">进入详情页 ↗</span>
                 </a>
-                <a class="scope-item" href="{% url 'business_local_operations' %}" data-reveal="item" data-reveal-delay="240" data-reveal-repeat="true">
+            </div>
+            <div class="scope-grid__row" data-reveal="item" data-reveal-delay="140" data-reveal-repeat="true">
+                <a class="scope-item" href="{% url 'business_local_operations' %}">
                     <div class="scope-item__header">
                         <span class="scope-item__index">04</span>
                         <h3>本地运营与团队建设</h3>
@@ -152,8 +160,9 @@
                         <li>财务、申报与专业机构协调</li>
                         <li>中法团队协作机制</li>
                     </ul>
+                    <span class="scope-item__link" aria-hidden="true">进入详情页 ↗</span>
                 </a>
-                <a class="scope-item" href="{% url 'business_growth' %}" data-reveal="item" data-reveal-delay="360" data-reveal-repeat="true">
+                <a class="scope-item" href="{% url 'business_growth' %}">
                     <div class="scope-item__header">
                         <span class="scope-item__index">05</span>
                         <h3>商务拓展与增长</h3>
@@ -166,12 +175,13 @@
                         <li>品牌传播、展会与公关协调</li>
                         <li>项目谈判与后续推进</li>
                     </ul>
+                    <span class="scope-item__link" aria-hidden="true">进入详情页 ↗</span>
                 </a>
             </div>
         </div>
-        <p class="services-disclaimer" data-reveal="text" data-reveal-delay="160" data-reveal-repeat="true">
+        <aside class="services-disclaimer" data-reveal="soft" data-reveal-delay="200" data-reveal-repeat="true">
             具体法律、会计及受监管专业事项由具备相应资质的合作专业人士提供或执行，Acoeurs 负责项目协调与统一管理。
-        </p>
+        </aside>
     </div>
 </section>
 
