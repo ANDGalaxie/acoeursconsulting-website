@@ -1,0 +1,297 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}公司架构与银行金融｜法国公司设立与账户准备｜Acoeurs Consulting{% endblock %}
+{% block meta_description %}Acoeurs Consulting 协助中国企业梳理法国及跨境公司架构，协调公司设立、税务基础登记、银行KYC材料、Fintech账户与支付方案。{% endblock %}
+{% block body_class %}page-service-detail page-company-banking{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/service-detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="service-detail-hero service-detail-hero--company-banking">
+    <div class="service-detail-hero__backdrop" aria-hidden="true">
+        <span class="service-detail-hero__grid"></span>
+        <span class="service-detail-hero__line service-detail-hero__line--top"></span>
+        <span class="service-detail-hero__line service-detail-hero__line--bottom"></span>
+        <span class="service-detail-hero__glow service-detail-hero__glow--one"></span>
+        <span class="service-detail-hero__glow service-detail-hero__glow--two"></span>
+        <span class="company-banking-hero__rail company-banking-hero__rail--left"></span>
+        <span class="company-banking-hero__rail company-banking-hero__rail--right"></span>
+        <span class="company-banking-hero__node company-banking-hero__node--one"></span>
+        <span class="company-banking-hero__node company-banking-hero__node--two"></span>
+        <span class="company-banking-hero__node company-banking-hero__node--three"></span>
+    </div>
+    <div class="container service-detail-hero__inner">
+        <nav class="breadcrumb" aria-label="面包屑" data-reveal="soft">
+            <ol class="breadcrumb__list">
+                <li><a href="{% url 'home' %}">首页</a></li>
+                <li><a href="{% url 'business' %}">企业服务</a></li>
+                <li aria-current="page">公司架构与银行金融</li>
+            </ol>
+        </nav>
+        <div class="service-detail-hero__content">
+            <p class="eyebrow" data-reveal="text" data-reveal-delay="60">公司架构与银行金融</p>
+            <h1 data-reveal="title" data-reveal-delay="120">让公司结构、经营需求与金融安排从一开始相互匹配</h1>
+            <p class="service-detail-hero__summary" data-reveal="text" data-reveal-delay="220">
+                Acoeurs 协助企业梳理法国及跨境公司架构，协调公司设立、基础登记、银行与支付准备，让企业从注册完成进一步具备运营基础。
+            </p>
+            <div class="service-detail-hero__actions" data-reveal="button" data-reveal-delay="320">
+                <a class="button button--gold" href="{% url 'consultation' %}">预约30分钟咨询</a>
+                <a class="button button--hero-secondary" href="#company-banking-scope">查看服务范围</a>
+            </div>
+            <ul class="service-detail-hero__keywords" aria-label="公司与金融准备关键词" data-reveal="soft" data-reveal-delay="420">
+                <li>公司架构</li>
+                <li>股东治理</li>
+                <li>银行准备</li>
+                <li>运营基础</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="service-detail-section service-detail-section--intro" aria-labelledby="company-banking-importance-title">
+    <div class="container">
+        <header class="section-heading service-detail-heading service-detail-heading--wide">
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">架构判断</p>
+            <h2 id="company-banking-importance-title" data-reveal="title" data-reveal-repeat="true">公司注册只是开始，结构和账户准备需要一起考虑</h2>
+            <p data-reveal="text" data-reveal-repeat="true">
+                公司设立、股权与治理安排、银行开户和基础合规准备通常是同一条执行线上的工作。注册本身只是程序，真正影响后续运营的是结构、治理和金融安排是否匹配。
+            </p>
+            <p data-reveal="text" data-reveal-delay="120" data-reveal-repeat="true">
+                Acoeurs 的工作重点，是把企业功能、股东关系、经营活动、基础登记和账户准备放在同一条推进线上。
+            </p>
+        </header>
+        <div class="relationship-grid" aria-label="公司架构四项核心关系">
+            <article class="relationship-grid__item" data-reveal="item" data-reveal-repeat="true">
+                <span class="relationship-grid__index">01</span>
+                <div class="relationship-grid__body">
+                    <h3>公司形式与业务功能</h3>
+                    <p>经营活动、客户类型和运营安排，会影响公司形式与持股关系的选择。</p>
+                </div>
+            </article>
+            <article class="relationship-grid__item" data-reveal="item" data-reveal-delay="100" data-reveal-repeat="true">
+                <span class="relationship-grid__index">02</span>
+                <div class="relationship-grid__body">
+                    <h3>股东关系与治理安排</h3>
+                    <p>股权比例、管理权限和治理责任需要在设立前形成清晰安排。</p>
+                </div>
+            </article>
+            <article class="relationship-grid__item" data-reveal="item" data-reveal-delay="200" data-reveal-repeat="true">
+                <span class="relationship-grid__index">03</span>
+                <div class="relationship-grid__body">
+                    <h3>银行与金融准备</h3>
+                    <p>业务逻辑、股东背景、资金来源和预计交易，是账户审查的重要基础。</p>
+                </div>
+            </article>
+            <article class="relationship-grid__item" data-reveal="item" data-reveal-delay="300" data-reveal-repeat="true">
+                <span class="relationship-grid__index">04</span>
+                <div class="relationship-grid__body">
+                    <h3>基础登记与实际运营</h3>
+                    <p>注册完成后，企业通常还需要税务、跨境贸易、支付和持续经营相关基础配置。</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="service-detail-section service-detail-section--scope" id="company-banking-scope" aria-labelledby="company-banking-scope-title">
+    <div class="container">
+        <header class="section-heading service-detail-heading service-detail-heading--wide">
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">服务范围</p>
+            <h2 id="company-banking-scope-title" data-reveal="title" data-reveal-repeat="true">Acoeurs 可以提供什么</h2>
+            <p data-reveal="text" data-reveal-delay="120" data-reveal-repeat="true">
+                以下是 Acoeurs 在公司架构、基础登记和银行准备中的核心工作内容。
+            </p>
+        </header>
+        <div class="scope-sections">
+            <article class="scope-section" data-reveal="panel" data-reveal-repeat="true">
+                <div class="scope-section__rail">
+                    <span class="scope-section__index">01</span>
+                </div>
+                <div class="scope-section__content">
+                    <div class="scope-section__intro">
+                        <h3>公司形式与架构梳理</h3>
+                        <p>根据企业功能、股东关系和经营安排，比较适合的公司形式和持股关系。</p>
+                    </div>
+                    <div class="scope-section__details">
+                        <ul class="scope-section__list">
+                            <li>法国公司功能定位</li>
+                            <li>SAS、SARL、SCI 等形式比较</li>
+                            <li>股东与管理关系梳理</li>
+                            <li>法国公司与境外股东关系整理</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="scope-section" data-reveal="panel" data-reveal-delay="90" data-reveal-repeat="true">
+                <div class="scope-section__rail">
+                    <span class="scope-section__index">02</span>
+                </div>
+                <div class="scope-section__content">
+                    <div class="scope-section__intro">
+                        <h3>法国公司设立协调</h3>
+                        <p>在架构明确后，协调公司设立所需的文件、流程和基础登记事项。</p>
+                    </div>
+                    <div class="scope-section__details">
+                        <ul class="scope-section__list">
+                            <li>公司名称和基础信息准备</li>
+                            <li>设立文件协调</li>
+                            <li>注册地址安排</li>
+                            <li>K-bis 等登记结果跟进</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="scope-section" data-reveal="panel" data-reveal-delay="180" data-reveal-repeat="true">
+                <div class="scope-section__rail">
+                    <span class="scope-section__index">03</span>
+                </div>
+                <div class="scope-section__content">
+                    <div class="scope-section__intro">
+                        <h3>税务与跨境基础登记</h3>
+                        <p>围绕公司启动阶段的经营活动，协调税务和跨境贸易相关的基础登记。</p>
+                    </div>
+                    <div class="scope-section__details">
+                        <ul class="scope-section__list">
+                            <li>TVA 增值税登记</li>
+                            <li>EORI 海关识别号</li>
+                            <li>VIES 相关事项</li>
+                            <li>会计和税务合作方衔接</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="scope-section" data-reveal="panel" data-reveal-delay="270" data-reveal-repeat="true">
+                <div class="scope-section__rail">
+                    <span class="scope-section__index">04</span>
+                </div>
+                <div class="scope-section__content">
+                    <div class="scope-section__intro">
+                        <h3>银行账户准备与协调</h3>
+                        <p>围绕业务逻辑、股东背景和资金来源，准备金融机构审查所需的基础材料。</p>
+                    </div>
+                    <div class="scope-section__details">
+                        <ul class="scope-section__list">
+                            <li>KYC 材料整理</li>
+                            <li>业务说明与交易逻辑准备</li>
+                            <li>资金来源与财力证明材料协调</li>
+                            <li>预约、沟通与进度跟进</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="scope-section" data-reveal="panel" data-reveal-delay="360" data-reveal-repeat="true">
+                <div class="scope-section__rail">
+                    <span class="scope-section__index">05</span>
+                </div>
+                <div class="scope-section__content">
+                    <div class="scope-section__intro">
+                        <h3>Fintech 与支付配置</h3>
+                        <p>根据企业启动阶段的收付款需求，协调适合的数字账户和支付方案。</p>
+                    </div>
+                    <div class="scope-section__details">
+                        <ul class="scope-section__list">
+                            <li>Qonto 或 Revolut Pro 等 Fintech 账户协调</li>
+                            <li>线上收款方案</li>
+                            <li>POS 线下收单</li>
+                            <li>商户接入基础材料</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="scope-section" data-reveal="panel" data-reveal-delay="450" data-reveal-repeat="true">
+                <div class="scope-section__rail">
+                    <span class="scope-section__index">06</span>
+                </div>
+                <div class="scope-section__content">
+                    <div class="scope-section__intro">
+                        <h3>公司生命周期事项</h3>
+                        <p>在企业后续经营过程中，协调公司信息、资本和股权结构变化相关事项。</p>
+                    </div>
+                    <div class="scope-section__details">
+                        <ul class="scope-section__list">
+                            <li>公司变更与地址调整</li>
+                            <li>增资与资本调整协调</li>
+                            <li>股权转让流程协调</li>
+                            <li>清算与注销流程协调</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="service-detail-section service-detail-section--participation" aria-labelledby="company-banking-role-title">
+    <div class="container">
+        <header class="section-heading service-detail-heading service-detail-heading--wide">
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">Acoeurs 如何参与</p>
+            <h2 id="company-banking-role-title" data-reveal="title" data-reveal-repeat="true">把结构、材料和本地协调放在同一条推进线上</h2>
+            <p data-reveal="text" data-reveal-delay="120" data-reveal-repeat="true">
+                Acoeurs 的角色不是替代所有专业执业工作，而是做需求梳理、项目协调和推进组织。
+            </p>
+        </header>
+        <div class="open-list" aria-label="公司与银行项目中的 Acoeurs 角色">
+            <article class="open-list__item" data-reveal="item" data-reveal-repeat="true">
+                <span class="open-list__index">01</span>
+                <div class="open-list__body">
+                    <h3>客户需求和业务背景梳理</h3>
+                    <p>围绕公司功能、股东安排、经营活动和账户需求，先把核心信息整理清楚。</p>
+                </div>
+            </article>
+            <article class="open-list__item" data-reveal="item" data-reveal-delay="120" data-reveal-repeat="true">
+                <span class="open-list__index">02</span>
+                <div class="open-list__body">
+                    <h3>材料清单与流程组织</h3>
+                    <p>协调公司设立、基础登记、KYC 和支付接入所需材料与推进顺序。</p>
+                </div>
+            </article>
+            <article class="open-list__item" data-reveal="item" data-reveal-delay="240" data-reveal-repeat="true">
+                <span class="open-list__index">03</span>
+                <div class="open-list__body">
+                    <h3>中法双语沟通与机构协调</h3>
+                    <p>在中文商业目标和法国本地执行之间，提供持续沟通与对接支持。</p>
+                </div>
+            </article>
+            <article class="open-list__item" data-reveal="item" data-reveal-delay="360" data-reveal-repeat="true">
+                <span class="open-list__index">04</span>
+                <div class="open-list__body">
+                    <h3>与会计、律师及其他专业人士衔接</h3>
+                    <p>在需要专业执业支持的事项上，协调相应合作方并保持项目推进不断线。</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="service-detail-section service-detail-section--notes" aria-labelledby="company-banking-boundaries-title">
+    <div class="container">
+        <aside class="service-detail-note" data-reveal="panel" data-reveal-repeat="true">
+            <p class="service-detail-note__label">专业事项与审批边界</p>
+            <h2 id="company-banking-boundaries-title">专业事项与审批边界</h2>
+            <p class="service-detail-note__copy">
+                涉及法律、会计、税务及其他受监管专业事项时，相关工作由具备相应资质的专业人士提供或执行；Acoeurs 负责需求梳理、材料协调与项目推进。
+            </p>
+            <p class="service-detail-note__copy">
+                银行、支付机构及其他金融机构对账户申请拥有独立审核和决定权。Acoeurs 提供的材料准备、沟通与流程支持不构成开户、授信或其他金融服务获批的保证。
+            </p>
+        </aside>
+    </div>
+</section>
+
+<section class="service-detail-section service-detail-cta" aria-labelledby="company-banking-cta-title">
+    <div class="container service-detail-cta__inner" data-reveal="panel" data-reveal-repeat="true">
+        <div class="service-detail-cta__content">
+            <p class="eyebrow">预约咨询</p>
+            <h2 id="company-banking-cta-title">准备建立您的法国公司与运营基础？</h2>
+            <p>预约30分钟咨询，与我们的顾问讨论公司功能、股东安排、银行准备和下一步实施路径。</p>
+            <div class="service-detail-cta__actions">
+                <a class="button button--gold" href="{% url 'consultation' %}">预约30分钟咨询</a>
+                <a class="service-detail-cta__back-link" href="{% url 'business' %}">返回企业服务总览</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

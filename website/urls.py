@@ -18,8 +18,7 @@ urlpatterns = [
     ),
     path(
         "business/company-banking/",
-        views.placeholder,
-        {"title": "公司架构与银行金融", "section": "企业服务"},
+        views.company_banking_service,
         name="business_company_banking",
     ),
     path(

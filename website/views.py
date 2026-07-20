@@ -22,6 +22,14 @@ def market_entry_service(request):
     return render(request, "website/service_market_entry.html", context)
 
 
+def company_banking_service(request):
+    context = {
+        "canonical_url": request.build_absolute_uri(request.path),
+        "current_nav": "business",
+    }
+    return render(request, "website/service_company_banking.html", context)
+
+
 def placeholder(request, title, section):
     context = {
         "title": title,

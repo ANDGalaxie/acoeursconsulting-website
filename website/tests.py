@@ -7,7 +7,6 @@ from django.urls import reverse
 
 class WebsiteRouteTests(TestCase):
     placeholder_routes = [
-        "business_company_banking",
         "business_tax_legal_compliance",
         "business_local_operations",
         "business_growth",
@@ -145,8 +144,78 @@ class WebsiteRouteTests(TestCase):
             with self.subTest(heading=heading):
                 self.assertContains(response, heading)
 
-        self.assertIn("具体工作范围与成果形式将根据项目目标、行业特点和双方确认的服务范围确定。", content)
-        self.assertIn("涉及法律、税务、会计及其他受监管专业事项时", content)
+        self.assertIn("中国上市公司｜法国市场拓展", content)
+        self.assertIn(reverse("case_listed_company_france"), content)
+        self.assertNotIn("企业进入欧洲前，通常需要先回答这些关键问题", content)
+        self.assertNotIn("典型问题", content)
+        self.assertNotIn("固定项目周期", content)
+        self.assertNotIn("标准套餐", content)
+        self.assertNotIn("项目成果", content)
+        self.assertNotIn("价格", content)
+        self.assertNotIn("4–6 周", content)
+
+    def test_company_banking_service_page_returns_http_200(self):
+        response = self.client.get(reverse("business_company_banking"))
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_company_banking_service_page_uses_expected_template(self):
+        response = self.client.get(reverse("business_company_banking"))
+
+        self.assertTemplateUsed(response, "website/service_company_banking.html")
+
+    def test_company_banking_service_page_contains_expected_seo_metadata(self):
+        response = self.client.get(reverse("business_company_banking"))
+        content = response.content.decode()
+
+        self.assertIn(
+            "<title>公司架构与银行金融｜法国公司设立与账户准备｜Acoeurs Consulting</title>",
+            content,
+        )
+        self.assertIn(
+            'content="Acoeurs Consulting 协助中国企业梳理法国及跨境公司架构，协调公司设立、税务基础登记、银行KYC材料、Fintech账户与支付方案。"',
+            content,
+        )
+
+    def test_company_banking_service_page_contains_single_h1_breadcrumb_and_required_links(self):
+        response = self.client.get(reverse("business_company_banking"))
+        content = response.content.decode()
+
+        self.assertContains(response, "让公司结构、经营需求与金融安排从一开始相互匹配")
+        self.assertEqual(content.count("<h1"), 1)
+        self.assertContains(response, 'aria-label="面包屑"', html=False)
+        self.assertContains(response, ">首页</a>", html=False)
+        self.assertContains(response, ">企业服务</a>", html=False)
+        self.assertContains(response, 'aria-current="page">公司架构与银行金融<', html=False)
+        self.assertIn(reverse("consultation"), content)
+        self.assertIn(reverse("business"), content)
+
+    def test_company_banking_service_page_contains_scope_headings_and_boundary_copy(self):
+        response = self.client.get(reverse("business_company_banking"))
+        content = response.content.decode()
+
+        expected_headings = [
+            "公司形式与架构梳理",
+            "法国公司设立协调",
+            "税务与跨境基础登记",
+            "银行账户准备与协调",
+            "Fintech 与支付配置",
+            "公司生命周期事项",
+        ]
+
+        for heading in expected_headings:
+            with self.subTest(heading=heading):
+                self.assertContains(response, heading)
+
+        self.assertIn("银行、支付机构及其他金融机构对账户申请拥有独立审核和决定权。", content)
+        self.assertNotIn("保证开户", content)
+        self.assertNotIn("开户成功率", content)
+        self.assertNotIn("价格", content)
+        self.assertNotIn("典型场景", content)
+        self.assertNotIn("项目成果", content)
+        self.assertNotIn("六个前期问题", content)
+        self.assertNotIn("固定项目周期", content)
+        self.assertNotIn("4–6 周", content)
 
     def test_homepage_contains_required_sections(self):
         response = self.client.get(reverse("home"))
