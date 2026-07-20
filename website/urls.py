@@ -13,8 +13,7 @@ urlpatterns = [
     ),
     path(
         "business/market-entry/",
-        views.placeholder,
-        {"title": "欧洲市场进入与战略", "section": "企业服务"},
+        views.market_entry_service,
         name="business_market_entry",
     ),
     path(

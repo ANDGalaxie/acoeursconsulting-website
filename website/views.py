@@ -14,6 +14,14 @@ def enterprise_services(request):
     return render(request, "website/enterprise_services.html", context)
 
 
+def market_entry_service(request):
+    context = {
+        "canonical_url": request.build_absolute_uri(request.path),
+        "current_nav": "business",
+    }
+    return render(request, "website/service_market_entry.html", context)
+
+
 def placeholder(request, title, section):
     context = {
         "title": title,

@@ -1,0 +1,391 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}欧洲市场进入与战略｜法国及欧洲市场咨询｜Acoeurs Consulting{% endblock %}
+{% block meta_description %}Acoeurs Consulting 帮助中国企业评估欧洲市场机会、竞争环境、进入模式、渠道与风险，并制定清晰、可执行的市场进入路径。{% endblock %}
+{% block body_class %}page-service-detail page-market-entry{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/service-detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="service-detail-hero">
+    <div class="service-detail-hero__backdrop" aria-hidden="true">
+        <span class="service-detail-hero__grid"></span>
+        <span class="service-detail-hero__line service-detail-hero__line--top"></span>
+        <span class="service-detail-hero__line service-detail-hero__line--bottom"></span>
+        <span class="service-detail-hero__glow service-detail-hero__glow--one"></span>
+        <span class="service-detail-hero__glow service-detail-hero__glow--two"></span>
+    </div>
+    <div class="container service-detail-hero__inner">
+        <nav class="breadcrumb" aria-label="面包屑" data-reveal="soft">
+            <ol class="breadcrumb__list">
+                <li><a href="{% url 'home' %}">首页</a></li>
+                <li><a href="{% url 'business' %}">企业服务</a></li>
+                <li aria-current="page">欧洲市场进入与战略</li>
+            </ol>
+        </nav>
+        <div class="service-detail-hero__content">
+            <p class="eyebrow" data-reveal="text" data-reveal-delay="60">欧洲市场进入与战略</p>
+            <h1 data-reveal="title" data-reveal-delay="120">在投入资源之前，先建立清晰、可执行的欧洲市场路径</h1>
+            <p class="service-detail-hero__summary" data-reveal="text" data-reveal-delay="220">
+                我们帮助企业评估市场机会、竞争环境、进入方式和资源优先级，识别真正值得投入的方向，并将战略判断转化为可执行的本地行动。
+            </p>
+            <div class="service-detail-hero__actions" data-reveal="button" data-reveal-delay="320">
+                <a class="button button--gold" href="{% url 'consultation' %}">预约30分钟咨询</a>
+                <a class="button button--hero-secondary" href="#market-entry-scope">查看服务范围</a>
+            </div>
+            <ul class="service-detail-hero__keywords" aria-label="战略项目关键词" data-reveal="soft" data-reveal-delay="420">
+                <li>市场判断</li>
+                <li>竞争研究</li>
+                <li>进入路径</li>
+                <li>本地验证</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="service-detail-section service-detail-section--intro" aria-labelledby="market-entry-importance-title">
+    <div class="container editorial-split">
+        <div class="editorial-split__intro">
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">前期判断</p>
+            <h2 id="market-entry-importance-title" data-reveal="title" data-reveal-repeat="true">很多欧洲项目的结果，在正式落地之前就已经被决定</h2>
+            <p data-reveal="text" data-reveal-repeat="true">
+                欧洲市场具有较高的商业价值，但同时对产品、合规、品牌、本地关系和持续投入提出更高要求。企业如果在市场选择、进入方式和资源配置尚未明确时直接开始落地，往往容易出现投入分散、推进缓慢或后续经营成本失控。
+            </p>
+            <p data-reveal="text" data-reveal-delay="120" data-reveal-repeat="true">
+                Acoeurs 将市场进入视为一个连续决策过程：先判断是否值得进入，再明确从哪里进入、如何进入，以及进入之后如何形成稳定的本地经营和增长能力。
+            </p>
+        </div>
+        <div class="open-list" aria-label="欧洲市场三项特征">
+            <article class="open-list__item" data-reveal="item" data-reveal-repeat="true">
+                <span class="open-list__index">01</span>
+                <div class="open-list__body">
+                    <h3>高价值市场</h3>
+                    <p>客户价值、品牌空间与长期商业回报具有吸引力。</p>
+                </div>
+            </article>
+            <article class="open-list__item" data-reveal="item" data-reveal-delay="120" data-reveal-repeat="true">
+                <span class="open-list__index">02</span>
+                <div class="open-list__body">
+                    <h3>高监管门槛</h3>
+                    <p>市场准入、产品、数据、税务、劳动和行业规则需要系统判断。</p>
+                </div>
+            </article>
+            <article class="open-list__item" data-reveal="item" data-reveal-delay="240" data-reveal-repeat="true">
+                <span class="open-list__index">03</span>
+                <div class="open-list__body">
+                    <h3>长期经营要求</h3>
+                    <p>欧洲市场更适合持续投入和本地能力建设，而不是短期试水。</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="service-detail-section service-detail-section--questions" aria-labelledby="market-entry-questions-title">
+    <div class="container">
+        <header class="section-heading service-detail-heading">
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">典型问题</p>
+            <h2 id="market-entry-questions-title" data-reveal="title" data-reveal-repeat="true">企业进入欧洲前，通常需要先回答这些关键问题</h2>
+        </header>
+        <div class="question-index" aria-label="进入欧洲前的关键问题">
+            <article class="question-index__item" data-reveal="item" data-reveal-repeat="true">
+                <span class="question-index__index">01</span>
+                <div class="question-index__body">
+                    <h3>应该先进入哪个市场？</h3>
+                    <p>法国是否是首选市场，还是应先比较德国、比荷卢、西班牙或其他欧洲区域？</p>
+                </div>
+            </article>
+            <article class="question-index__item" data-reveal="item" data-reveal-delay="90" data-reveal-repeat="true">
+                <span class="question-index__index">02</span>
+                <div class="question-index__body">
+                    <h3>产品或服务是否适配？</h3>
+                    <p>现有产品、价格、定位和销售方式是否符合目标市场的客户需求与监管环境？</p>
+                </div>
+            </article>
+            <article class="question-index__item" data-reveal="item" data-reveal-delay="180" data-reveal-repeat="true">
+                <span class="question-index__index">03</span>
+                <div class="question-index__body">
+                    <h3>应采用什么进入模式？</h3>
+                    <p>直接设立公司、寻找渠道伙伴、开展试点项目，还是先通过本地代表验证市场？</p>
+                </div>
+            </article>
+            <article class="question-index__item" data-reveal="item" data-reveal-delay="270" data-reveal-repeat="true">
+                <span class="question-index__index">04</span>
+                <div class="question-index__body">
+                    <h3>客户和渠道从哪里开始？</h3>
+                    <p>优先客户、关键渠道、合作伙伴和行业网络应如何识别与排序？</p>
+                </div>
+            </article>
+            <article class="question-index__item" data-reveal="item" data-reveal-delay="360" data-reveal-repeat="true">
+                <span class="question-index__index">05</span>
+                <div class="question-index__body">
+                    <h3>需要投入哪些资源？</h3>
+                    <p>预算、团队、时间、专业支持和本地执行能力需要达到什么条件？</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="service-detail-section service-detail-section--scope" id="market-entry-scope" aria-labelledby="market-entry-scope-title">
+    <div class="container">
+        <header class="section-heading service-detail-heading service-detail-heading--wide">
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">服务范围</p>
+            <h2 id="market-entry-scope-title" data-reveal="title" data-reveal-repeat="true">从市场研究到进入路线图，建立完整的决策依据</h2>
+            <p data-reveal="text" data-reveal-delay="120" data-reveal-repeat="true">
+                具体工作范围根据企业行业、目标市场、产品成熟度和当前资源进行组合。
+            </p>
+        </header>
+        <div class="scope-sections">
+            <article class="scope-section" data-reveal="panel" data-reveal-repeat="true">
+                <div class="scope-section__rail">
+                    <span class="scope-section__index">01</span>
+                </div>
+                <div class="scope-section__content">
+                    <div class="scope-section__intro">
+                        <h3>市场与赛道评估</h3>
+                        <p>评估目标市场的规模、发展趋势、竞争强度和企业自身的进入条件，识别值得优先投入的市场与赛道。</p>
+                    </div>
+                    <div class="scope-section__details">
+                        <p class="scope-section__label">可包括</p>
+                        <ul class="scope-section__list">
+                            <li>市场规模与趋势研究</li>
+                            <li>行业结构与价值链分析</li>
+                            <li>国家和区域优先级比较</li>
+                            <li>市场准入条件初步扫描</li>
+                            <li>机会、限制与风险判断</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="scope-section" data-reveal="panel" data-reveal-delay="90" data-reveal-repeat="true">
+                <div class="scope-section__rail">
+                    <span class="scope-section__index">02</span>
+                </div>
+                <div class="scope-section__content">
+                    <div class="scope-section__intro">
+                        <h3>竞争与客户研究</h3>
+                        <p>分析主要竞争者、目标客户、采购逻辑和市场空白，明确企业真正可能建立优势的位置。</p>
+                    </div>
+                    <div class="scope-section__details">
+                        <p class="scope-section__label">可包括</p>
+                        <ul class="scope-section__list">
+                            <li>核心竞争者分析</li>
+                            <li>产品、价格与定位比较</li>
+                            <li>目标客户与采购角色</li>
+                            <li>客户需求与决策因素</li>
+                            <li>潜在差异化机会</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="scope-section" data-reveal="panel" data-reveal-delay="180" data-reveal-repeat="true">
+                <div class="scope-section__rail">
+                    <span class="scope-section__index">03</span>
+                </div>
+                <div class="scope-section__content">
+                    <div class="scope-section__intro">
+                        <h3>进入模式与风险判断</h3>
+                        <p>比较不同进入方式的资源要求、风险、控制力和推进效率，帮助企业选择与当前阶段相匹配的路径。</p>
+                    </div>
+                    <div class="scope-section__details">
+                        <p class="scope-section__label">可包括</p>
+                        <ul class="scope-section__list">
+                            <li>直接设立与轻资产进入比较</li>
+                            <li>渠道、代理与合作模式</li>
+                            <li>试点项目与阶段性验证</li>
+                            <li>法规和运营风险识别</li>
+                            <li>进入、观望或暂缓的边界条件</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="scope-section" data-reveal="panel" data-reveal-delay="270" data-reveal-repeat="true">
+                <div class="scope-section__rail">
+                    <span class="scope-section__index">04</span>
+                </div>
+                <div class="scope-section__content">
+                    <div class="scope-section__intro">
+                        <h3>品牌、渠道与商业路径</h3>
+                        <p>围绕客户、渠道、合作伙伴和市场定位，形成从被市场看见到产生真实商业接触的行动路径。</p>
+                    </div>
+                    <div class="scope-section__details">
+                        <p class="scope-section__label">可包括</p>
+                        <ul class="scope-section__list">
+                            <li>品牌与价值主张本地化</li>
+                            <li>渠道结构与优先顺序</li>
+                            <li>潜在合作伙伴类型</li>
+                            <li>客户接触与商务拓展路径</li>
+                            <li>展会、行业网络与市场传播建议</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="scope-section" data-reveal="panel" data-reveal-delay="360" data-reveal-repeat="true">
+                <div class="scope-section__rail">
+                    <span class="scope-section__index">05</span>
+                </div>
+                <div class="scope-section__content">
+                    <div class="scope-section__intro">
+                        <h3>市场进入路线图</h3>
+                        <p>将前期研究和战略判断转化为分阶段、可执行的进入计划，明确优先事项和下一步行动。</p>
+                    </div>
+                    <div class="scope-section__details">
+                        <p class="scope-section__label">可包括</p>
+                        <ul class="scope-section__list">
+                            <li>关键决策与优先事项</li>
+                            <li>阶段性行动计划</li>
+                            <li>资源和团队配置建议</li>
+                            <li>风险清单与应对方向</li>
+                            <li>后续落地与本地执行衔接</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <p class="scope-sections__note" data-reveal="soft" data-reveal-delay="180" data-reveal-repeat="true">
+            具体工作范围与成果形式将根据项目目标、行业特点和双方确认的服务范围确定。
+        </p>
+        <aside class="service-detail-note" data-reveal="soft" data-reveal-delay="260" data-reveal-repeat="true">
+            <p class="service-detail-note__label">专业协作说明</p>
+            <p class="service-detail-note__copy">
+                涉及法律、税务、会计及其他受监管专业事项时，相关工作由具备相应资质的合作专业人士提供或执行，Acoeurs 负责项目协调与统一管理。
+            </p>
+        </aside>
+    </div>
+</section>
+
+<section class="service-detail-section service-detail-section--process" aria-labelledby="market-entry-process-title">
+    <div class="container">
+        <header class="section-heading service-detail-heading service-detail-heading--wide">
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">项目方式</p>
+            <h2 id="market-entry-process-title" data-reveal="title" data-reveal-repeat="true">从企业目标出发，逐步形成能够执行的进入路径</h2>
+            <p data-reveal="text" data-reveal-delay="120" data-reveal-repeat="true">
+                具体研究深度、验证方式和参与方根据项目范围确定。
+            </p>
+        </header>
+        <ol class="project-path" aria-label="欧洲市场进入项目推进方式">
+            <li class="project-path__item" data-reveal="item" data-reveal-repeat="true">
+                <span class="project-path__index">01</span>
+                <div class="project-path__body">
+                    <h3>明确目标与边界</h3>
+                    <p>了解企业当前业务、产品、资源、欧洲目标和管理层最关心的问题。</p>
+                </div>
+            </li>
+            <li class="project-path__item" data-reveal="item" data-reveal-delay="120" data-reveal-repeat="true">
+                <span class="project-path__index">02</span>
+                <div class="project-path__body">
+                    <h3>市场研究与本地验证</h3>
+                    <p>结合公开研究、行业资料和法国本地商业环境，对关键判断进行验证。</p>
+                </div>
+            </li>
+            <li class="project-path__item" data-reveal="item" data-reveal-delay="240" data-reveal-repeat="true">
+                <span class="project-path__index">03</span>
+                <div class="project-path__body">
+                    <h3>进入模式与优先级判断</h3>
+                    <p>比较不同市场、客户、渠道和进入方式，明确优先级与风险边界。</p>
+                </div>
+            </li>
+            <li class="project-path__item" data-reveal="item" data-reveal-delay="360" data-reveal-repeat="true">
+                <span class="project-path__index">04</span>
+                <div class="project-path__body">
+                    <h3>路线图与执行衔接</h3>
+                    <p>将研究结论转化为阶段性行动，并与后续公司落地、本地运营或商务拓展衔接。</p>
+                </div>
+            </li>
+        </ol>
+    </div>
+</section>
+
+<section class="service-detail-section service-detail-section--outcomes" aria-labelledby="market-entry-outcomes-title">
+    <div class="container">
+        <header class="section-heading service-detail-heading">
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">项目成果</p>
+            <h2 id="market-entry-outcomes-title" data-reveal="title" data-reveal-repeat="true">让管理层获得清晰的判断依据和下一步行动</h2>
+            <p data-reveal="text" data-reveal-delay="120" data-reveal-repeat="true">
+                根据项目目标、研究范围和双方确认的交付内容，项目成果可包括以下形式。
+            </p>
+        </header>
+        <div class="outcome-grid" aria-label="项目成果目录">
+            <article class="outcome-grid__item" data-reveal="item" data-reveal-repeat="true">
+                <span class="outcome-grid__index">01</span>
+                <h3>市场与竞争分析摘要</h3>
+            </article>
+            <article class="outcome-grid__item" data-reveal="item" data-reveal-delay="90" data-reveal-repeat="true">
+                <span class="outcome-grid__index">02</span>
+                <h3>核心机会与风险清单</h3>
+            </article>
+            <article class="outcome-grid__item" data-reveal="item" data-reveal-delay="180" data-reveal-repeat="true">
+                <span class="outcome-grid__index">03</span>
+                <h3>目标市场、客户和渠道优先级建议</h3>
+            </article>
+            <article class="outcome-grid__item" data-reveal="item" data-reveal-delay="270" data-reveal-repeat="true">
+                <span class="outcome-grid__index">04</span>
+                <h3>不同进入模式的比较与判断</h3>
+            </article>
+            <article class="outcome-grid__item" data-reveal="item" data-reveal-delay="360" data-reveal-repeat="true">
+                <span class="outcome-grid__index">05</span>
+                <h3>阶段性市场进入路线图</h3>
+            </article>
+            <article class="outcome-grid__item" data-reveal="item" data-reveal-delay="450" data-reveal-repeat="true">
+                <span class="outcome-grid__index">06</span>
+                <h3>管理层汇报与后续行动建议</h3>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="service-detail-section service-detail-section--case" aria-labelledby="market-entry-case-title">
+    <div class="container case-strip">
+        <div class="case-strip__intro">
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">客户案例</p>
+            <p class="case-strip__meta" data-reveal="soft" data-reveal-repeat="true">中国上市公司｜法国市场拓展</p>
+            <h2 id="market-entry-case-title" data-reveal="title" data-reveal-repeat="true">从长期摸索到清晰、可执行的欧洲增长路径</h2>
+            <p data-reveal="text" data-reveal-repeat="true">
+                客户已进入法国市场多年，但市场开拓进展缓慢，商业与销售基础薄弱，本地资源对接困难，进入路径与战略方向不够清晰。
+            </p>
+            <p class="case-strip__privacy" data-reveal="soft" data-reveal-delay="120" data-reveal-repeat="true">为保护客户信息，本案例采用匿名方式呈现。</p>
+        </div>
+        <div class="case-strip__content">
+            <section class="case-strip__group" aria-labelledby="case-intervention-title" data-reveal="panel" data-reveal-repeat="true">
+                <h3 id="case-intervention-title">Acoeurs 的介入</h3>
+                <ul class="case-strip__list">
+                    <li>重新评估并重构市场进入逻辑与战略定位</li>
+                    <li>明确识别应战略放弃的方向</li>
+                    <li>聚焦核心机会</li>
+                    <li>锁定可落地的市场切入点</li>
+                    <li>制定清晰执行路径</li>
+                    <li>协调并激活本地关键资源</li>
+                    <li>推动实质性项目落地</li>
+                </ul>
+            </section>
+            <section class="case-strip__group" aria-labelledby="case-results-title" data-reveal="panel" data-reveal-delay="140" data-reveal-repeat="true">
+                <h3 id="case-results-title">阶段性成果</h3>
+                <ul class="case-strip__list">
+                    <li>建立真实、高价值的本地商业接触与合作关系</li>
+                    <li>市场识别度与品牌影响力显著提升</li>
+                    <li>项目进入可持续推进阶段，形成清晰增长路径</li>
+                </ul>
+            </section>
+            <a class="service-detail-text-link" href="{% url 'case_listed_company_france' %}" data-reveal="button" data-reveal-delay="240" data-reveal-repeat="true">查看完整案例</a>
+        </div>
+    </div>
+</section>
+
+<section class="service-detail-section service-detail-cta" aria-labelledby="market-entry-cta-title">
+    <div class="container service-detail-cta__inner" data-reveal="panel" data-reveal-repeat="true">
+        <div class="service-detail-cta__content">
+            <p class="eyebrow">预约咨询</p>
+            <h2 id="market-entry-cta-title">您的企业是否已经准备好进入欧洲市场？</h2>
+            <p>预约30分钟咨询，与我们的顾问讨论目标市场、主要问题和下一步可行路径。</p>
+            <div class="service-detail-cta__actions">
+                <a class="button button--gold" href="{% url 'consultation' %}">预约30分钟咨询</a>
+                <a class="service-detail-cta__back-link" href="{% url 'business' %}">返回企业服务总览</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -7,7 +7,6 @@ from django.urls import reverse
 
 class WebsiteRouteTests(TestCase):
     placeholder_routes = [
-        "business_market_entry",
         "business_company_banking",
         "business_tax_legal_compliance",
         "business_local_operations",
@@ -92,6 +91,62 @@ class WebsiteRouteTests(TestCase):
 
         self.assertGreaterEqual(content.count(reverse("consultation")), 2)
         self.assertIn('href="#enterprise-service-scope"', content)
+
+    def test_market_entry_service_page_returns_http_200(self):
+        response = self.client.get(reverse("business_market_entry"))
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_market_entry_service_page_uses_expected_template(self):
+        response = self.client.get(reverse("business_market_entry"))
+
+        self.assertTemplateUsed(response, "website/service_market_entry.html")
+
+    def test_market_entry_service_page_contains_expected_seo_metadata(self):
+        response = self.client.get(reverse("business_market_entry"))
+        content = response.content.decode()
+
+        self.assertIn(
+            "<title>欧洲市场进入与战略｜法国及欧洲市场咨询｜Acoeurs Consulting</title>",
+            content,
+        )
+        self.assertIn(
+            'content="Acoeurs Consulting 帮助中国企业评估欧洲市场机会、竞争环境、进入模式、渠道与风险，并制定清晰、可执行的市场进入路径。"',
+            content,
+        )
+
+    def test_market_entry_service_page_contains_single_h1_breadcrumb_and_required_links(self):
+        response = self.client.get(reverse("business_market_entry"))
+        content = response.content.decode()
+
+        self.assertContains(response, "在投入资源之前，先建立清晰、可执行的欧洲市场路径")
+        self.assertEqual(content.count("<h1"), 1)
+        self.assertContains(response, 'aria-label="面包屑"', html=False)
+        self.assertContains(response, ">首页</a>", html=False)
+        self.assertContains(response, ">企业服务</a>", html=False)
+        self.assertContains(response, 'aria-current="page">欧洲市场进入与战略<', html=False)
+        self.assertIn(reverse("consultation"), content)
+        self.assertIn(reverse("business"), content)
+        self.assertIn(reverse("case_listed_company_france"), content)
+
+    def test_market_entry_service_page_contains_scope_headings_and_professional_note(self):
+        response = self.client.get(reverse("business_market_entry"))
+        content = response.content.decode()
+
+        expected_headings = [
+            "市场与赛道评估",
+            "竞争与客户研究",
+            "进入模式与风险判断",
+            "品牌、渠道与商业路径",
+            "市场进入路线图",
+        ]
+
+        for heading in expected_headings:
+            with self.subTest(heading=heading):
+                self.assertContains(response, heading)
+
+        self.assertIn("具体工作范围与成果形式将根据项目目标、行业特点和双方确认的服务范围确定。", content)
+        self.assertIn("涉及法律、税务、会计及其他受监管专业事项时", content)
 
     def test_homepage_contains_required_sections(self):
         response = self.client.get(reverse("home"))
