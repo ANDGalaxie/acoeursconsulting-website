@@ -30,6 +30,14 @@ def company_banking_service(request):
     return render(request, "website/service_company_banking.html", context)
 
 
+def tax_legal_compliance_service(request):
+    context = {
+        "canonical_url": request.build_absolute_uri(request.path),
+        "current_nav": "business",
+    }
+    return render(request, "website/service_tax_legal_compliance.html", context)
+
+
 def placeholder(request, title, section):
     context = {
         "title": title,

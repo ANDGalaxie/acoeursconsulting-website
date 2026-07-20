@@ -23,8 +23,7 @@ urlpatterns = [
     ),
     path(
         "business/tax-legal-compliance/",
-        views.placeholder,
-        {"title": "财税、法律与合规", "section": "企业服务"},
+        views.tax_legal_compliance_service,
         name="business_tax_legal_compliance",
     ),
     path(

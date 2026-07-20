@@ -7,7 +7,6 @@ from django.urls import reverse
 
 class WebsiteRouteTests(TestCase):
     placeholder_routes = [
-        "business_tax_legal_compliance",
         "business_local_operations",
         "business_growth",
         "personal",
@@ -216,6 +215,65 @@ class WebsiteRouteTests(TestCase):
         self.assertNotIn("六个前期问题", content)
         self.assertNotIn("固定项目周期", content)
         self.assertNotIn("4–6 周", content)
+
+    def test_tax_legal_compliance_service_page_returns_http_200(self):
+        response = self.client.get(reverse("business_tax_legal_compliance"))
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_tax_legal_compliance_service_page_uses_expected_template(self):
+        response = self.client.get(reverse("business_tax_legal_compliance"))
+
+        self.assertTemplateUsed(response, "website/service_tax_legal_compliance.html")
+
+    def test_tax_legal_compliance_service_page_contains_expected_seo_metadata(self):
+        response = self.client.get(reverse("business_tax_legal_compliance"))
+        content = response.content.decode()
+
+        self.assertIn(
+            "<title>财税、法律与合规｜法国企业会计税务与法律协调｜Acoeurs Consulting</title>",
+            content,
+        )
+        self.assertIn(
+            'content="Acoeurs Consulting 协调法国企业会计报税、工资社保、跨境申报、GDPR、KYC及法律专业支持，帮助中国企业持续管理本地经营事项。"',
+            content,
+        )
+
+    def test_tax_legal_compliance_service_page_contains_single_h1_breadcrumb_and_required_links(self):
+        response = self.client.get(reverse("business_tax_legal_compliance"))
+        content = response.content.decode()
+
+        self.assertContains(response, "让企业在法国的日常经营保持有序、连续并可持续管理")
+        self.assertEqual(content.count("<h1"), 1)
+        self.assertContains(response, 'aria-label="面包屑"', html=False)
+        self.assertContains(response, ">首页</a>", html=False)
+        self.assertContains(response, ">企业服务</a>", html=False)
+        self.assertContains(response, 'aria-current="page">财税、法律与合规<', html=False)
+        self.assertIn(reverse("consultation"), content)
+        self.assertIn(reverse("business"), content)
+
+    def test_tax_legal_compliance_service_page_contains_scope_headings_and_boundary_copy(self):
+        response = self.client.get(reverse("business_tax_legal_compliance"))
+        content = response.content.decode()
+
+        expected_headings = [
+            "会计记账与年度申报",
+            "工资、社保与人员申报",
+            "跨境税务与专项申报",
+            "数据、KYC与反洗钱合规",
+            "合同与法律事务协调",
+        ]
+
+        for heading in expected_headings:
+            with self.subTest(heading=heading):
+                self.assertContains(response, heading)
+
+        self.assertIn("相关工作由具备相应资质的专业人士提供或执行。", content)
+        self.assertNotIn("价格", content)
+        self.assertNotIn("固定项目周期", content)
+        self.assertNotIn("保证完全合规", content)
+        self.assertNotIn("税务最优", content)
+        self.assertNotIn("零风险", content)
 
     def test_homepage_contains_required_sections(self):
         response = self.client.get(reverse("home"))
