@@ -7,7 +7,6 @@ from django.urls import reverse
 
 class WebsiteRouteTests(TestCase):
     placeholder_routes = [
-        "business_growth",
         "personal",
         "personal_residency_family",
         "personal_property_wealth",
@@ -331,6 +330,67 @@ class WebsiteRouteTests(TestCase):
         self.assertNotIn("固定项目周期", content)
         self.assertNotIn("保证招聘成功", content)
         self.assertNotIn("零风险用工", content)
+        self.assertNotIn("客户案例", content)
+
+    def test_business_growth_service_page_returns_http_200(self):
+        response = self.client.get(reverse("business_growth"))
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_business_growth_service_page_uses_expected_template(self):
+        response = self.client.get(reverse("business_growth"))
+
+        self.assertTemplateUsed(response, "website/service_business_growth.html")
+
+    def test_business_growth_service_page_contains_expected_seo_metadata(self):
+        response = self.client.get(reverse("business_growth"))
+        content = response.content.decode()
+
+        self.assertIn(
+            "<title>商务拓展与增长｜法国市场客户渠道与品牌拓展｜Acoeurs Consulting</title>",
+            content,
+        )
+        self.assertIn(
+            'content="Acoeurs Consulting 协助中国企业在法国及欧洲推进客户、渠道、合作伙伴、商务活动和本地市场连接事项，并提供持续的法国本地协调支持。"',
+            content,
+        )
+
+    def test_business_growth_service_page_contains_single_h1_breadcrumb_and_required_links(self):
+        response = self.client.get(reverse("business_growth"))
+        content = response.content.decode()
+
+        self.assertContains(response, "让企业在法国市场被看见，并建立真实的商业连接")
+        self.assertEqual(content.count("<h1"), 1)
+        self.assertContains(response, 'aria-label="面包屑"', html=False)
+        self.assertContains(response, ">首页</a>", html=False)
+        self.assertContains(response, ">企业服务</a>", html=False)
+        self.assertContains(response, 'aria-current="page">商务拓展与增长<', html=False)
+        self.assertIn(reverse("consultation"), content)
+        self.assertIn(reverse("business"), content)
+
+    def test_business_growth_service_page_contains_scope_headings_and_boundary_copy(self):
+        response = self.client.get(reverse("business_growth"))
+        content = response.content.decode()
+
+        expected_headings = [
+            "目标客户与商务接触",
+            "渠道与合作伙伴拓展",
+            "商务会面与项目推进",
+            "展会与行业活动支持",
+            "本地资源与长期市场推进",
+        ]
+
+        for heading in expected_headings:
+            with self.subTest(heading=heading):
+                self.assertContains(response, heading)
+
+        self.assertIn("具体合作、签约及业务结果不能预先保证。", content)
+        self.assertNotIn("价格", content)
+        self.assertNotIn("固定项目周期", content)
+        self.assertNotIn("保证获客", content)
+        self.assertNotIn("保证签约", content)
+        self.assertNotIn("精准获客", content)
+        self.assertNotIn("固定客户数量", content)
         self.assertNotIn("客户案例", content)
 
     def test_homepage_contains_required_sections(self):

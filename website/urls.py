@@ -33,8 +33,7 @@ urlpatterns = [
     ),
     path(
         "business/growth/",
-        views.placeholder,
-        {"title": "商务拓展与增长", "section": "企业服务"},
+        views.business_growth_service,
         name="business_growth",
     ),
     path(

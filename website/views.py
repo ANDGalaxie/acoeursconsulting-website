@@ -46,6 +46,14 @@ def local_operations_service(request):
     return render(request, "website/service_local_operations.html", context)
 
 
+def business_growth_service(request):
+    context = {
+        "canonical_url": request.build_absolute_uri(request.path),
+        "current_nav": "business",
+    }
+    return render(request, "website/service_business_growth.html", context)
+
+
 def placeholder(request, title, section):
     context = {
         "title": title,
