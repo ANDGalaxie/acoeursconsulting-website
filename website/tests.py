@@ -7,7 +7,6 @@ from django.urls import reverse
 
 class WebsiteRouteTests(TestCase):
     placeholder_routes = [
-        "personal",
         "personal_residency_family",
         "personal_property_wealth",
         "personal_cross_border_tax_risk",
@@ -392,6 +391,68 @@ class WebsiteRouteTests(TestCase):
         self.assertNotIn("精准获客", content)
         self.assertNotIn("固定客户数量", content)
         self.assertNotIn("客户案例", content)
+
+    def test_personal_services_page_returns_http_200(self):
+        response = self.client.get(reverse("personal"))
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_personal_services_page_uses_expected_template(self):
+        response = self.client.get(reverse("personal"))
+
+        self.assertTemplateUsed(response, "website/personal_services.html")
+
+    def test_personal_services_page_contains_expected_seo_metadata(self):
+        response = self.client.get(reverse("personal"))
+        content = response.content.decode()
+
+        self.assertIn(
+            "<title>个人服务｜法国居留、家庭与资产事务协调｜Acoeurs Consulting</title>",
+            content,
+        )
+        self.assertIn(
+            'content="Acoeurs Consulting 为企业主、投资人与家庭提供法国居留、家庭事务、房产资产及跨境税务等本地协调服务。"',
+            content,
+        )
+
+    def test_personal_services_page_contains_single_h1_breadcrumb_and_detail_links(self):
+        response = self.client.get(reverse("personal"))
+        content = response.content.decode()
+
+        self.assertContains(response, "面向企业主、投资人与家庭的法国本地服务")
+        self.assertEqual(content.count("<h1"), 1)
+        self.assertContains(response, 'aria-label="面包屑"', html=False)
+        self.assertContains(response, ">首页</a>", html=False)
+        self.assertContains(response, 'aria-current="page">个人服务<', html=False)
+        self.assertContains(response, '<a aria-current="page" href="/personal/">个人服务</a>', html=False)
+        self.assertNotIn('<a aria-current="page" href="/business/">企业服务</a>', content)
+        self.assertIn(reverse("personal_residency_family"), content)
+        self.assertIn(reverse("personal_property_wealth"), content)
+        self.assertIn(reverse("personal_cross_border_tax_risk"), content)
+        self.assertIn(reverse("consultation"), content)
+
+    def test_personal_services_page_contains_service_categories_and_boundary_copy(self):
+        response = self.client.get(reverse("personal"))
+        content = response.content.decode()
+
+        expected_headings = [
+            "居留与家庭定居",
+            "房产与资产配置",
+            "跨境税务与风险管理",
+        ]
+
+        for heading in expected_headings:
+            with self.subTest(heading=heading):
+                self.assertContains(response, heading)
+
+        self.assertIn("相关决定或专业工作由政府机构、金融机构或具备相应资质的专业人士独立完成。", content)
+        self.assertNotIn("价格", content)
+        self.assertNotIn("固定办理周期", content)
+        self.assertNotIn("保证获批", content)
+        self.assertNotIn("保证贷款", content)
+        self.assertNotIn("保证升值", content)
+        self.assertNotIn("客户案例", content)
+        self.assertNotIn("银行级安全", content)
 
     def test_homepage_contains_required_sections(self):
         response = self.client.get(reverse("home"))

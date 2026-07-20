@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}个人服务｜法国居留、家庭与资产事务协调｜Acoeurs Consulting{% endblock %}
+{% block meta_description %}Acoeurs Consulting 为企业主、投资人与家庭提供法国居留、家庭事务、房产资产及跨境税务等本地协调服务。{% endblock %}
+{% block body_class %}page-personal-services page-services-overview{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/services.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="services-hero personal-services-hero">
+    <div class="services-hero__backdrop" aria-hidden="true">
+        <span class="services-hero__orb services-hero__orb--one"></span>
+        <span class="services-hero__orb services-hero__orb--two"></span>
+        <span class="services-hero__grid"></span>
+    </div>
+    <div class="container services-hero__inner">
+        <nav class="breadcrumb" aria-label="面包屑" data-reveal="soft">
+            <ol class="breadcrumb__list">
+                <li><a href="{% url 'home' %}">首页</a></li>
+                <li aria-current="page">个人服务</li>
+            </ol>
+        </nav>
+        <div class="services-hero__content">
+            <p class="eyebrow" data-reveal="text" data-reveal-delay="60">个人服务</p>
+            <h1 data-reveal="title" data-reveal-delay="120">面向企业主、投资人与家庭的法国本地服务</h1>
+            <p class="services-hero__summary" data-reveal="text" data-reveal-delay="220">
+                Acoeurs 协助客户协调法国居留、家庭事务、房产资产及跨境税务等事项，并对接相应的法国本地专业服务方。
+            </p>
+            <div class="services-hero__actions" data-reveal="button" data-reveal-delay="320">
+                <a class="button button--gold" href="{% url 'consultation' %}">预约30分钟咨询</a>
+                <a class="button button--hero-secondary" href="#personal-services-scope">查看服务范围</a>
+            </div>
+            <ul class="personal-services-hero__keywords" aria-label="个人服务关键词" data-reveal="soft" data-reveal-delay="420">
+                <li>居留与家庭</li>
+                <li>房产与资产</li>
+                <li>跨境税务</li>
+                <li>法国本地协调</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="personal-services-section personal-services-positioning" aria-labelledby="personal-positioning-title">
+    <div class="container">
+        <div class="personal-services-positioning__intro">
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">法国本地协调</p>
+            <h2 id="personal-positioning-title" data-reveal="title" data-reveal-repeat="true">跨越语言、制度与专业分工，减少个人事务中的反复沟通</h2>
+            <p data-reveal="text" data-reveal-repeat="true">
+                在法国处理居留、家庭、房产和跨境税务事项时，客户往往需要与不同机构和专业人士沟通。Acoeurs 可以协助梳理需求、准备信息并协调法国本地服务方。
+            </p>
+            <p data-reveal="text" data-reveal-delay="120" data-reveal-repeat="true">
+                中法双语沟通和单一项目窗口，有助于减少跨境事务中的信息断层和反复确认。
+            </p>
+        </div>
+        <div class="numbered-list personal-services-positioning__list" aria-label="个人服务协调重点">
+            <article class="numbered-list__item" data-reveal="item" data-reveal-repeat="true">
+                <p class="numbered-list__index">01</p>
+                <div>
+                    <h3>事项梳理</h3>
+                    <p>了解客户当前情况，确认需要协调的法国本地事项。</p>
+                </div>
+            </article>
+            <article class="numbered-list__item" data-reveal="item" data-reveal-delay="120" data-reveal-repeat="true">
+                <p class="numbered-list__index">02</p>
+                <div>
+                    <h3>中法双语沟通</h3>
+                    <p>协助客户与法国本地机构及专业人士保持准确沟通。</p>
+                </div>
+            </article>
+            <article class="numbered-list__item" data-reveal="item" data-reveal-delay="240" data-reveal-repeat="true">
+                <p class="numbered-list__index">03</p>
+                <div>
+                    <h3>项目协调与跟进</h3>
+                    <p>整理信息、协调参与方并跟进已确认事项的进度。</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="personal-services-section personal-services-scope" id="personal-services-scope" aria-labelledby="personal-services-scope-title">
+    <div class="container">
+        <header class="section-heading personal-services-scope__heading">
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">服务范围</p>
+            <h2 id="personal-services-scope-title" data-reveal="title" data-reveal-repeat="true">围绕在法生活、家庭与资产事务提供本地支持</h2>
+            <p data-reveal="text" data-reveal-delay="120" data-reveal-repeat="true">
+                当前个人服务分为三类，覆盖居留与家庭、房产与资产，以及跨境税务与风险管理事项。
+            </p>
+        </header>
+        <div class="personal-services-catalog">
+            <article class="personal-service" data-reveal="panel" data-reveal-repeat="true">
+                <div class="personal-service__number">
+                    <span class="personal-service__index">01</span>
+                </div>
+                <div class="personal-service__summary">
+                    <h3>居留与家庭定居</h3>
+                    <p>围绕法国居留、家庭成员和长期生活安排，协调本地办理与专业支持事项。</p>
+                </div>
+                <div class="personal-service__scope">
+                    <ul class="personal-service__points" aria-label="居留与家庭定居服务事项">
+                        <li>非盈利居留</li>
+                        <li>人才护照、学生及工作签证事项</li>
+                        <li>家庭团聚</li>
+                        <li>居留续签与入籍申请协助</li>
+                        <li>子女入学、CPAM 与 Mutuelle 事项</li>
+                        <li>国际驾照换法国驾照</li>
+                    </ul>
+                </div>
+                <div class="personal-service__actions">
+                    <a class="personal-service__link" href="{% url 'personal_residency_family' %}">查看详情 ↗</a>
+                </div>
+            </article>
+            <article class="personal-service" data-reveal="panel" data-reveal-delay="120" data-reveal-repeat="true">
+                <div class="personal-service__number">
+                    <span class="personal-service__index">02</span>
+                </div>
+                <div class="personal-service__summary">
+                    <h3>房产与资产配置</h3>
+                    <p>围绕法国房产购置、持有与后续管理，协调本地执行和相关专业服务方。</p>
+                </div>
+                <div class="personal-service__scope">
+                    <ul class="personal-service__points" aria-label="房产与资产配置服务事项">
+                        <li>房产寻找与看房安排</li>
+                        <li>购置流程与法律尽调协调</li>
+                        <li>法国本地按揭贷款咨询对接</li>
+                        <li>SCI 家族控股架构相关事项</li>
+                        <li>租赁管理</li>
+                        <li>翻新与装修项目管理</li>
+                    </ul>
+                </div>
+                <div class="personal-service__actions">
+                    <a class="personal-service__link" href="{% url 'personal_property_wealth' %}">查看详情 ↗</a>
+                </div>
+            </article>
+            <article class="personal-service" data-reveal="panel" data-reveal-delay="240" data-reveal-repeat="true">
+                <div class="personal-service__number">
+                    <span class="personal-service__index">03</span>
+                </div>
+                <div class="personal-service__summary">
+                    <h3>跨境税务与风险管理</h3>
+                    <p>围绕跨境税务、家族资产与风险管理事项，协调相应的法国本地专业支持。</p>
+                </div>
+                <div class="personal-service__scope">
+                    <ul class="personal-service__points" aria-label="跨境税务与风险管理服务事项">
+                        <li>中法税收居民身份规划</li>
+                        <li>中法双边税收协定相关事项</li>
+                        <li>CRS 合规审查与 Exit Tax 事项</li>
+                        <li>遗产与赠与税规划</li>
+                        <li>家族信托与控股架构事项</li>
+                        <li>保险与风险管理事项对接</li>
+                    </ul>
+                </div>
+                <div class="personal-service__actions">
+                    <a class="personal-service__link" href="{% url 'personal_cross_border_tax_risk' %}">查看详情 ↗</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="personal-services-section personal-services-role" aria-labelledby="personal-services-role-title">
+    <div class="container">
+        <header class="section-heading personal-services-role__heading">
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">服务角色</p>
+            <h2 id="personal-services-role-title" data-reveal="title" data-reveal-repeat="true">一个本地沟通窗口，协调不同事项与专业服务方</h2>
+            <p data-reveal="text" data-reveal-delay="120" data-reveal-repeat="true">
+                Acoeurs 负责需求梳理、中法双语沟通、专业服务方对接和事项进度跟进。
+            </p>
+        </header>
+        <div class="management-list" aria-label="Acoeurs 在个人服务中的角色">
+            <article class="management-list__item" data-reveal="item" data-reveal-repeat="true">
+                <p class="management-list__index">01</p>
+                <div class="management-list__body">
+                    <h3>需求与资料梳理</h3>
+                    <p>了解客户情况，整理需要处理的事项和基础资料。</p>
+                </div>
+            </article>
+            <article class="management-list__item" data-reveal="item" data-reveal-delay="100" data-reveal-repeat="true">
+                <p class="management-list__index">02</p>
+                <div class="management-list__body">
+                    <h3>中法双语协调</h3>
+                    <p>协助客户与法国本地机构及专业人士进行沟通。</p>
+                </div>
+            </article>
+            <article class="management-list__item" data-reveal="item" data-reveal-delay="200" data-reveal-repeat="true">
+                <p class="management-list__index">03</p>
+                <div class="management-list__body">
+                    <h3>专业服务方对接</h3>
+                    <p>根据具体事项，协调律师、税务顾问、公证、保险或其他专业人士。</p>
+                </div>
+            </article>
+            <article class="management-list__item" data-reveal="item" data-reveal-delay="300" data-reveal-repeat="true">
+                <p class="management-list__index">04</p>
+                <div class="management-list__body">
+                    <h3>事项进度跟进</h3>
+                    <p>跟进已确认事项的进展，并帮助客户汇总信息。</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="personal-services-section personal-services-note" aria-labelledby="personal-services-note-title">
+    <div class="container">
+        <aside class="services-scope__professional-note" data-reveal="panel" data-reveal-repeat="true">
+            <p class="services-scope__professional-label">专业服务说明</p>
+            <h2 id="personal-services-note-title">专业服务说明</h2>
+            <p class="services-scope__professional-copy">
+                涉及签证居留审批、法律意见、税务处理、公证、贷款、保险及其他受监管专业事项时，相关决定或专业工作由政府机构、金融机构或具备相应资质的专业人士独立完成。Acoeurs 负责需求梳理、信息协调与项目跟进。
+            </p>
+        </aside>
+    </div>
+</section>
+
+<section class="personal-services-section services-cta" aria-labelledby="personal-services-cta-title">
+    <div class="container services-cta__inner" data-reveal="panel" data-reveal-repeat="true">
+        <div class="services-cta__content">
+            <p class="eyebrow">预约咨询</p>
+            <h2 id="personal-services-cta-title">有一项法国本地事务，需要先确认从哪里开始？</h2>
+            <p>预约30分钟咨询，向我们的顾问说明当前情况和需要协调的事项。</p>
+            <div class="services-hero__actions">
+                <a class="button button--gold" href="{% url 'consultation' %}">预约30分钟咨询</a>
+                <a class="button button--hero-secondary" href="{% url 'home' %}">返回首页</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

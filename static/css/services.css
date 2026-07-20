@@ -9,7 +9,19 @@
         linear-gradient(180deg, #f8f4eb 0%, #f4eee4 100%);
 }
 
+.page-personal-services {
+    --services-section-space: 4.25rem;
+    --services-line: rgba(24, 54, 93, 0.14);
+    background:
+        radial-gradient(circle at top left, rgba(201, 166, 75, 0.07), transparent 28%),
+        linear-gradient(180deg, #f9f5ed 0%, #f5efe5 100%);
+}
+
 .page-enterprise-services .site-main {
+    overflow: clip;
+}
+
+.page-personal-services .site-main {
     overflow: clip;
 }
 
@@ -538,6 +550,191 @@
     text-underline-offset: 0.18em;
 }
 
+.personal-services-hero .services-hero__content {
+    width: min(100%, 47rem);
+}
+
+.personal-services-hero__keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem 1.2rem;
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none;
+    color: rgba(250, 248, 243, 0.74);
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+}
+
+.personal-services-hero__keywords li {
+    position: relative;
+    padding-left: 1rem;
+}
+
+.personal-services-hero__keywords li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.88rem;
+    width: 0.38rem;
+    height: 1px;
+    background: rgba(216, 191, 118, 0.78);
+}
+
+.personal-services-section {
+    padding: var(--services-section-space) 0;
+}
+
+.personal-services-positioning {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(248, 244, 235, 0.98));
+}
+
+.personal-services-positioning__intro,
+.personal-services-role__heading {
+    max-width: 47rem;
+    margin-bottom: 2.35rem;
+}
+
+.personal-services-positioning__intro {
+    display: grid;
+    gap: 1rem;
+}
+
+.personal-services-positioning__intro p:last-child,
+.personal-services-role__heading p:last-child,
+.personal-services-scope__heading p:last-child {
+    margin: 0;
+    color: var(--color-text-muted);
+}
+
+.personal-services-positioning__list {
+    max-width: 58rem;
+}
+
+.personal-services-scope {
+    background: linear-gradient(180deg, rgba(241, 235, 223, 0.82), rgba(250, 248, 243, 0.98));
+}
+
+.personal-services-scope__heading {
+    max-width: 46rem;
+    margin-bottom: 2.4rem;
+}
+
+.personal-services-catalog {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--services-line);
+}
+
+.personal-service {
+    display: grid;
+    gap: 1rem;
+    align-items: start;
+    padding: 1.55rem 0;
+    border-bottom: 1px solid var(--services-line);
+}
+
+.personal-service__number,
+.personal-service__summary,
+.personal-service__scope,
+.personal-service__actions {
+    min-width: 0;
+}
+
+.personal-service__summary {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.personal-service__summary h3 {
+    margin: 0;
+    font-size: 1.28rem;
+    line-height: 1.25;
+    text-wrap: balance;
+    line-break: strict;
+    word-break: normal;
+}
+
+.personal-service__summary p,
+.personal-service__points li {
+    margin: 0;
+    color: var(--color-text-muted);
+    text-wrap: pretty;
+    line-break: strict;
+    word-break: normal;
+}
+
+.personal-service__index {
+    color: var(--color-gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.personal-service__points {
+    display: grid;
+    gap: 0.65rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.personal-service__points li {
+    position: relative;
+    padding-left: 1rem;
+}
+
+.personal-service__points li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.78rem;
+    width: 0.36rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.56;
+}
+
+.personal-service__actions {
+    display: flex;
+    align-items: start;
+}
+
+.personal-service__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    width: fit-content;
+    color: var(--color-navy);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 0.18em;
+    transition:
+        color var(--motion-fast) var(--motion-ease-interaction),
+        text-decoration-color var(--motion-fast) var(--motion-ease-interaction),
+        transform var(--motion-fast) var(--motion-ease-interaction);
+}
+
+.personal-service__link:hover,
+.personal-service__link:focus-visible {
+    color: var(--color-navy-dark);
+    text-decoration-color: currentColor;
+    transform: translateX(0.12rem);
+}
+
+.personal-services-role {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(248, 244, 235, 0.94));
+}
+
+.personal-services-note {
+    background: linear-gradient(180deg, rgba(241, 235, 223, 0.9), rgba(250, 248, 243, 0.98));
+}
+
+#personal-services-scope {
+    scroll-margin-top: calc(var(--header-height) + 1.25rem);
+}
+
 @media (min-width: 768px) {
     .services-hero__actions {
         flex-direction: row;
@@ -566,6 +763,16 @@
     .services-cta__inner {
         grid-template-columns: minmax(0, 1fr) auto;
     }
+
+    .personal-service {
+        grid-template-columns: minmax(64px, 0.24fr) minmax(0, 1fr);
+        gap: 1rem 1.4rem;
+    }
+
+    .personal-service__scope,
+    .personal-service__actions {
+        grid-column: 2;
+    }
 }
 
 @media (min-width: 900px) {
@@ -588,6 +795,19 @@
 
     .management-list__item {
         grid-template-columns: auto 1fr;
+    }
+
+    .personal-service {
+        grid-template-columns:
+            minmax(72px, 0.28fr)
+            minmax(220px, 0.9fr)
+            minmax(280px, 1.15fr);
+        gap: 1rem 1.6rem;
+    }
+
+    .personal-service__scope,
+    .personal-service__actions {
+        grid-column: auto;
     }
 }
 
@@ -625,6 +845,22 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 1.25rem 2rem;
     }
+
+    .personal-services-positioning__list {
+        max-width: none;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        border-bottom: 1px solid var(--services-line);
+    }
+
+    .personal-services-positioning__list .numbered-list__item {
+        border-bottom: 0;
+        padding-right: 1.4rem;
+    }
+
+    .personal-services-positioning__list .numbered-list__item:not(:first-child) {
+        padding-left: 1.4rem;
+        border-left: 1px solid var(--services-line);
+    }
 }
 
 @media (min-width: 1200px) {
@@ -633,6 +869,15 @@
             minmax(72px, 0.3fr)
             minmax(260px, 1.1fr)
             minmax(360px, 1.6fr)
+            auto;
+        gap: 1rem 1.8rem;
+    }
+
+    .personal-service {
+        grid-template-columns:
+            minmax(72px, 0.28fr)
+            minmax(250px, 1fr)
+            minmax(360px, 1.45fr)
             auto;
         gap: 1rem 1.8rem;
     }
@@ -663,6 +908,10 @@
         width: 100%;
     }
 
+    .personal-services-hero__keywords {
+        gap: 0.75rem 1rem;
+    }
+
     .services-scope__heading {
         margin-bottom: 2.2rem;
     }
@@ -678,6 +927,11 @@
 
     .services-scope__professional-note {
         margin-top: 1.5rem;
+    }
+
+    .personal-service {
+        gap: 0.9rem;
+        padding: 1.35rem 0;
     }
 }
 
@@ -701,6 +955,10 @@
     .service-index__item h3,
     .management-list__body h3 {
         font-size: 1.12rem;
+    }
+
+    .personal-service__summary h3 {
+        font-size: 1.14rem;
     }
 
     .breadcrumb {

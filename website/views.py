@@ -54,6 +54,14 @@ def business_growth_service(request):
     return render(request, "website/service_business_growth.html", context)
 
 
+def personal_services(request):
+    context = {
+        "canonical_url": request.build_absolute_uri(request.path),
+        "current_nav": "personal",
+    }
+    return render(request, "website/personal_services.html", context)
+
+
 def placeholder(request, title, section):
     context = {
         "title": title,

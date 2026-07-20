@@ -38,8 +38,7 @@ urlpatterns = [
     ),
     path(
         "personal/",
-        views.placeholder,
-        {"title": "个人服务", "section": "个人服务总览占位页"},
+        views.personal_services,
         name="personal",
     ),
     path(
