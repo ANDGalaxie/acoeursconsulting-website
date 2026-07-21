@@ -33,8 +33,24 @@
 - Render blueprint 已在 `render.yaml` 定义
 - Web Service 名称：
   - `acoeursconsulting-web`
+- Web Service 套餐：
+  - `free`
 - 数据库名称：
   - `acoeursconsulting-db`
+- PostgreSQL 套餐：
+  - `free`
+
+## 2.1 当前 staging 免费资源限制
+
+- 当前 staging 使用免费 Web Service
+- Render 免费 Web Service 空闲约 15 分钟后会休眠
+- 首次唤醒可能需要约 1 分钟
+- 当前 staging 使用免费 PostgreSQL
+- 免费 PostgreSQL 容量为 1 GB
+- 免费 PostgreSQL 创建 30 天后会过期
+- 免费 PostgreSQL 不提供备份
+- 当前免费方案仅用于 staging 验收
+- 在正式上线或开始保存咨询表单数据前，必须确认长期数据库方案
 
 ## 3. Render 默认域名
 
@@ -200,6 +216,12 @@ SITE_NOINDEX=true
 - JS 正常加载
 - Logo 与图片正常加载
 - `collectstatic` 在 Render 构建阶段成功
+
+## 17.1 免费资源验收提醒
+
+- staging 首次访问若遇到较慢响应，先确认是否为免费 Web Service 从休眠中唤醒
+- 不要将免费 PostgreSQL 视为长期保存正式业务数据的方案
+- 在咨询表单、Admin 内容录入或其他持续写入上线前，先确认数据库升级或替代方案
 
 ## 18. Admin 登录检查
 
