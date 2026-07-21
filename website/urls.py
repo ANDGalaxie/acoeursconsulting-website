@@ -43,20 +43,17 @@ urlpatterns = [
     ),
     path(
         "personal/residency-family/",
-        views.placeholder,
-        {"title": "居留与家庭定居", "section": "个人服务"},
+        views.residency_family_service,
         name="personal_residency_family",
     ),
     path(
         "personal/property-wealth/",
-        views.placeholder,
-        {"title": "房产与资产配置", "section": "个人服务"},
+        views.property_wealth_service,
         name="personal_property_wealth",
     ),
     path(
         "personal/cross-border-tax-risk/",
-        views.placeholder,
-        {"title": "跨境税务与风险管理", "section": "个人服务"},
+        views.cross_border_tax_risk_service,
         name="personal_cross_border_tax_risk",
     ),
     path(

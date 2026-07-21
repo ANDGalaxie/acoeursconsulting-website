@@ -62,6 +62,30 @@ def personal_services(request):
     return render(request, "website/personal_services.html", context)
 
 
+def residency_family_service(request):
+    context = {
+        "canonical_url": request.build_absolute_uri(request.path),
+        "current_nav": "personal",
+    }
+    return render(request, "website/service_residency_family.html", context)
+
+
+def property_wealth_service(request):
+    context = {
+        "canonical_url": request.build_absolute_uri(request.path),
+        "current_nav": "personal",
+    }
+    return render(request, "website/service_property_wealth.html", context)
+
+
+def cross_border_tax_risk_service(request):
+    context = {
+        "canonical_url": request.build_absolute_uri(request.path),
+        "current_nav": "personal",
+    }
+    return render(request, "website/service_cross_border_tax_risk.html", context)
+
+
 def placeholder(request, title, section):
     context = {
         "title": title,

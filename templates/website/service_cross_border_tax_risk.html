@@ -1,0 +1,241 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}跨境税务与风险管理｜中法个人税务事务协调｜Acoeurs Consulting{% endblock %}
+{% block meta_description %}Acoeurs Consulting 协助客户梳理中法跨境税务、个人申报及家庭资产相关事项，并协调具备资质的专业服务方。{% endblock %}
+{% block body_class %}page-service-detail page-personal-service-detail page-cross-border-tax{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/service-detail.css' %}">
+<link rel="stylesheet" href="{% static 'css/personal-service-detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="service-detail-hero personal-detail-hero personal-detail-hero--tax">
+    <div class="service-detail-hero__backdrop" aria-hidden="true">
+        <span class="service-detail-hero__grid"></span>
+        <span class="service-detail-hero__line service-detail-hero__line--top"></span>
+        <span class="service-detail-hero__line service-detail-hero__line--bottom"></span>
+        <span class="service-detail-hero__glow service-detail-hero__glow--one"></span>
+        <span class="service-detail-hero__glow service-detail-hero__glow--two"></span>
+    </div>
+    <div class="container service-detail-hero__inner">
+        <nav class="breadcrumb" aria-label="面包屑" data-reveal="soft">
+            <ol class="breadcrumb__list">
+                <li><a href="{% url 'home' %}">首页</a></li>
+                <li><a href="{% url 'personal' %}">个人服务</a></li>
+                <li aria-current="page">跨境税务与风险管理</li>
+            </ol>
+        </nav>
+        <div class="service-detail-hero__content">
+            <p class="eyebrow" data-reveal="text" data-reveal-delay="60">跨境税务与风险管理</p>
+            <h1 data-reveal="title" data-reveal-delay="120">协调中法跨境税务与家庭资产事项，连接不同专业判断</h1>
+            <p class="service-detail-hero__summary" data-reveal="text" data-reveal-delay="220">
+                Acoeurs 协助客户梳理中法跨境税务、个人申报、家庭资产及相关风险事项，并对接具备相应资质的专业服务方。
+            </p>
+            <div class="service-detail-hero__actions" data-reveal="button" data-reveal-delay="320">
+                <a class="button button--gold" href="{% url 'consultation' %}">预约30分钟咨询</a>
+                <a class="button button--hero-secondary" href="#cross-border-tax-scope">查看服务范围</a>
+            </div>
+            <ul class="service-detail-hero__keywords" aria-label="跨境税务与风险管理关键词" data-reveal="soft" data-reveal-delay="420">
+                <li>税务居民</li>
+                <li>跨境申报</li>
+                <li>家庭资产</li>
+                <li>风险管理</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="service-detail-section service-detail-section--intro" aria-labelledby="cross-border-tax-intro-title">
+    <div class="container">
+        <header class="section-heading service-detail-heading service-detail-heading--wide">
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">专业协调</p>
+            <h2 id="cross-border-tax-intro-title" data-reveal="title" data-reveal-repeat="true">跨境身份、收入与资产事项往往需要综合判断</h2>
+            <p data-reveal="text" data-reveal-repeat="true">
+                客户的居住地、收入、资产和家庭关系，可能同时涉及不同国家和不同专业领域。税务、法律、会计、保险等专业人士也可能分别参与。
+            </p>
+            <p data-reveal="text" data-reveal-delay="120" data-reveal-repeat="true">
+                Acoeurs 负责信息梳理、中法沟通和项目协调，帮助客户更清楚地推进已确认事项。
+            </p>
+        </header>
+        <div class="open-list open-list--three" aria-label="跨境税务与风险管理重点">
+            <article class="open-list__item" data-reveal="item" data-reveal-repeat="true">
+                <p class="open-list__index">01</p>
+                <div class="open-list__body">
+                    <h3>情况与资料梳理</h3>
+                    <p>先确认客户当前情况以及需要协调的税务、资产和风险事项。</p>
+                </div>
+            </article>
+            <article class="open-list__item" data-reveal="item" data-reveal-delay="120" data-reveal-repeat="true">
+                <p class="open-list__index">02</p>
+                <div class="open-list__body">
+                    <h3>中法专业沟通</h3>
+                    <p>协助客户与相关税务、法律、会计或保险专业人士保持准确沟通。</p>
+                </div>
+            </article>
+            <article class="open-list__item" data-reveal="item" data-reveal-delay="240" data-reveal-repeat="true">
+                <p class="open-list__index">03</p>
+                <div class="open-list__body">
+                    <h3>多事项协调与跟进</h3>
+                    <p>整理信息、协调参与方，并跟进已确认事项的进展。</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="service-detail-section service-detail-section--scope" id="cross-border-tax-scope" aria-labelledby="cross-border-tax-scope-title">
+    <div class="container">
+        <header class="section-heading service-detail-heading service-detail-heading--wide">
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">服务范围</p>
+            <h2 id="cross-border-tax-scope-title" data-reveal="title" data-reveal-repeat="true">围绕中法税务、家庭资产与风险事项提供协调支持</h2>
+            <p data-reveal="text" data-reveal-delay="120" data-reveal-repeat="true">
+                具体服务内容根据客户情况和已确认事项安排。
+            </p>
+        </header>
+        <div class="scope-sections">
+            <article class="scope-section" data-reveal="panel" data-reveal-repeat="true">
+                <div class="scope-section__rail">
+                    <p class="scope-section__index">01</p>
+                </div>
+                <div class="scope-section__content">
+                    <div class="scope-section__intro">
+                        <h3>税务居民与协定事项协调</h3>
+                        <p>围绕中法跨境税务中的身份和协定相关事项，协调信息与专业沟通。</p>
+                    </div>
+                    <div class="scope-section__details">
+                        <ul class="scope-section__list" aria-label="税务居民与协定事项">
+                            <li>中法税收居民身份规划相关事项</li>
+                            <li>中法双边税收协定相关事项</li>
+                            <li>跨境信息梳理与专业沟通</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="scope-section" data-reveal="panel" data-reveal-delay="120" data-reveal-repeat="true">
+                <div class="scope-section__rail">
+                    <p class="scope-section__index">02</p>
+                </div>
+                <div class="scope-section__content">
+                    <div class="scope-section__intro">
+                        <h3>跨境申报与 Exit Tax 事项</h3>
+                        <p>围绕跨境申报与特定税务事项，协调资料、信息和专业支持。</p>
+                    </div>
+                    <div class="scope-section__details">
+                        <ul class="scope-section__list" aria-label="跨境申报与 Exit Tax 事项">
+                            <li>CRS 信息申报合规审查</li>
+                            <li>出境税务清算（Exit Tax）事项</li>
+                            <li>中法跨境申报沟通协调</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="scope-section" data-reveal="panel" data-reveal-delay="240" data-reveal-repeat="true">
+                <div class="scope-section__rail">
+                    <p class="scope-section__index">03</p>
+                </div>
+                <div class="scope-section__content">
+                    <div class="scope-section__intro">
+                        <h3>家庭资产、继承与赠与事项</h3>
+                        <p>围绕家族资产安排和传承相关事项，协调相应的专业判断与沟通。</p>
+                    </div>
+                    <div class="scope-section__details">
+                        <ul class="scope-section__list" aria-label="家庭资产、继承与赠与事项">
+                            <li>家族信托与控股架构事项</li>
+                            <li>遗产与赠与税规划相关事项</li>
+                            <li>家庭资产相关专业方对接</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <article class="scope-section" data-reveal="panel" data-reveal-delay="360" data-reveal-repeat="true">
+                <div class="scope-section__rail">
+                    <p class="scope-section__index">04</p>
+                </div>
+                <div class="scope-section__content">
+                    <div class="scope-section__intro">
+                        <h3>保险与风险管理协调</h3>
+                        <p>围绕个人和家庭的保险与风险事项，协调信息准备和专业服务方沟通。</p>
+                    </div>
+                    <div class="scope-section__details">
+                        <ul class="scope-section__list" aria-label="保险与风险管理事项">
+                            <li>个人重疾、人寿与海外医疗事项</li>
+                            <li>房产保险事项</li>
+                            <li>保险与风险管理专业方对接</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="service-detail-section service-detail-section--participation" aria-labelledby="cross-border-tax-role-title">
+    <div class="container">
+        <header class="section-heading service-detail-heading service-detail-heading--wide">
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">Acoeurs 如何参与</p>
+            <h2 id="cross-border-tax-role-title" data-reveal="title" data-reveal-repeat="true">在中法信息和专业判断之间承担协调角色</h2>
+            <p data-reveal="text" data-reveal-delay="120" data-reveal-repeat="true">
+                Acoeurs 负责情况梳理、中法双语沟通、专业服务方对接和事项进度汇总。
+            </p>
+        </header>
+        <div class="relationship-grid" aria-label="Acoeurs 在跨境税务与风险管理中的角色">
+            <article class="relationship-grid__item" data-reveal="item" data-reveal-repeat="true">
+                <p class="relationship-grid__index">01</p>
+                <div class="relationship-grid__body">
+                    <h3>客户情况与资料梳理</h3>
+                    <p>先整理客户当前情况、相关收入资产和需要协调的专业事项。</p>
+                </div>
+            </article>
+            <article class="relationship-grid__item" data-reveal="item" data-reveal-delay="120" data-reveal-repeat="true">
+                <p class="relationship-grid__index">02</p>
+                <div class="relationship-grid__body">
+                    <h3>中法双语信息协调</h3>
+                    <p>协助客户与不同国家的相关参与方保持更准确的沟通。</p>
+                </div>
+            </article>
+            <article class="relationship-grid__item" data-reveal="item" data-reveal-delay="240" data-reveal-repeat="true">
+                <p class="relationship-grid__index">03</p>
+                <div class="relationship-grid__body">
+                    <h3>税务、法律、会计与保险专业方对接</h3>
+                    <p>根据具体事项协调具备资质的专业人士，并跟进所需信息。</p>
+                </div>
+            </article>
+            <article class="relationship-grid__item" data-reveal="item" data-reveal-delay="360" data-reveal-repeat="true">
+                <p class="relationship-grid__index">04</p>
+                <div class="relationship-grid__body">
+                    <h3>项目进度和信息汇总</h3>
+                    <p>跟进已确认事项的推进状态，并帮助客户汇总相关信息。</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="service-detail-section service-detail-section--notes personal-detail-boundary" aria-labelledby="cross-border-tax-note-title">
+    <div class="container">
+        <aside class="service-detail-note" data-reveal="panel" data-reveal-repeat="true">
+            <p class="service-detail-note__label">专业服务说明</p>
+            <h2 id="cross-border-tax-note-title">税务与专业服务边界</h2>
+            <p class="service-detail-note__copy">
+                税务居民身份、纳税申报、法律关系、保险安排及其他受监管事项，需要由相关机构或具备相应资质的专业人士根据客户实际情况判断和执行。Acoeurs 负责需求梳理、中法沟通与项目协调，不对税务结果、投资收益、保险承保或风险消除作出保证。
+            </p>
+        </aside>
+    </div>
+</section>
+
+<section class="service-detail-section service-detail-cta personal-detail-cta" aria-labelledby="cross-border-tax-cta-title">
+    <div class="container service-detail-cta__inner" data-reveal="panel" data-reveal-repeat="true">
+        <div class="service-detail-cta__content">
+            <p class="eyebrow">预约咨询</p>
+            <h2 id="cross-border-tax-cta-title">需要梳理一项中法跨境税务或家庭资产事务？</h2>
+            <p>预约30分钟咨询，向我们的顾问说明当前情况和需要协调的专业事项。</p>
+            <div class="service-detail-cta__actions">
+                <a class="button button--gold" href="{% url 'consultation' %}">预约30分钟咨询</a>
+                <a class="service-detail-cta__back-link personal-detail-cta__secondary-link" href="{% url 'personal' %}">返回个人服务总览</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

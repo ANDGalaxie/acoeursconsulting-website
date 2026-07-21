@@ -1,0 +1,166 @@
+.page-personal-service-detail {
+    --detail-section-space: 4rem;
+    --detail-line: rgba(24, 54, 93, 0.14);
+    background:
+        radial-gradient(circle at top left, rgba(201, 166, 75, 0.07), transparent 28%),
+        linear-gradient(180deg, #f9f5ed 0%, #f4eee4 100%);
+}
+
+.page-personal-service-detail .service-detail-hero__content {
+    width: min(100%, 47rem);
+}
+
+.page-personal-service-detail .service-detail-note__copy,
+.page-personal-service-detail .service-detail-cta__content p,
+.page-personal-service-detail .scope-section__intro p,
+.page-personal-service-detail .relationship-grid__body p,
+.page-personal-service-detail .open-list__body p {
+    max-width: 44rem;
+}
+
+.page-personal-service-detail .service-detail-heading--wide,
+.page-personal-service-detail .service-detail-cta__content {
+    width: min(100%, 46rem);
+}
+
+.page-personal-service-detail .service-detail-note {
+    position: static;
+    gap: 0.9rem;
+    padding-top: 0;
+    background: none;
+    border-top: 0;
+}
+
+.page-personal-service-detail .personal-detail-boundary {
+    position: static;
+    z-index: auto;
+    padding-top: clamp(4rem, 5.5vw, 5.25rem);
+    padding-bottom: clamp(4rem, 5.5vw, 5rem);
+    background: linear-gradient(180deg, rgba(241, 235, 223, 0.96), rgba(248, 244, 235, 0.98));
+}
+
+.page-personal-service-detail .personal-detail-boundary .container,
+.page-personal-service-detail .personal-detail-cta .container {
+    position: static;
+}
+
+.page-personal-service-detail .service-detail-note h2 {
+    max-width: 20ch;
+    font-size: clamp(1.7rem, 2.6vw, 2.25rem);
+    line-height: 1.14;
+}
+
+.page-personal-service-detail .service-detail-note__copy {
+    max-width: 54rem;
+    font-size: 1rem;
+    line-height: 1.82;
+}
+
+.page-personal-service-detail .personal-detail-cta {
+    position: static;
+    padding-top: clamp(4rem, 5vw, 4.75rem);
+    padding-bottom: clamp(4rem, 5vw, 4.75rem);
+}
+
+.page-personal-service-detail .service-detail-cta__inner {
+    position: static;
+    display: block;
+}
+
+.page-personal-service-detail .service-detail-cta__content {
+    gap: 1.15rem;
+    width: min(100%, 52rem);
+}
+
+.page-personal-service-detail .service-detail-cta__content h2 {
+    max-width: 24ch;
+    font-size: clamp(2.15rem, 3.15vw, 3.65rem);
+    line-height: 1.12;
+}
+
+.page-personal-service-detail .service-detail-cta__content p {
+    max-width: 42rem;
+    color: rgba(250, 248, 243, 0.86);
+}
+
+.page-personal-service-detail .service-detail-cta__actions {
+    margin-top: 0.9rem;
+    gap: 1rem 1.35rem;
+    align-items: center;
+}
+
+.page-personal-service-detail .personal-detail-cta__secondary-link,
+.page-personal-service-detail .personal-detail-cta__secondary-link:visited {
+    color: rgba(250, 248, 243, 0.94);
+    text-decoration-color: rgba(250, 248, 243, 0.38);
+}
+
+.page-personal-service-detail .personal-detail-cta__secondary-link:hover,
+.page-personal-service-detail .personal-detail-cta__secondary-link:focus-visible {
+    color: var(--color-gold-light);
+    text-decoration-color: currentColor;
+}
+
+.page-personal-service-detail .scope-section__intro h3,
+.page-personal-service-detail .relationship-grid__body h3,
+.page-personal-service-detail .open-list__body h3 {
+    font-size: 1.18rem;
+}
+
+#residency-family-scope,
+#property-assets-scope,
+#cross-border-tax-scope {
+    scroll-margin-top: calc(var(--header-height) + 1.25rem);
+}
+
+.personal-detail-hero--property .service-detail-hero__line--top {
+    width: clamp(9rem, 20vw, 16rem);
+    height: clamp(9rem, 20vw, 16rem);
+}
+
+.personal-detail-hero--tax .service-detail-hero__line--bottom {
+    width: clamp(9rem, 20vw, 15rem);
+    height: clamp(9rem, 20vw, 15rem);
+}
+
+@media (min-width: 960px) {
+    .page-personal-service-detail .scope-section__content {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    }
+
+    .page-personal-service-detail .scope-section__list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1024px) {
+    .page-personal-service-detail .service-detail-cta__content {
+        width: min(100%, 46rem);
+    }
+
+    .page-personal-service-detail .service-detail-cta__content h2 {
+        max-width: 20ch;
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+}
+
+@media (max-width: 767px) {
+    .page-personal-service-detail .service-detail-hero__keywords {
+        gap: 0.7rem 1rem;
+    }
+
+    .page-personal-service-detail .service-detail-note h2,
+    .page-personal-service-detail .service-detail-cta__content h2 {
+        max-width: none;
+    }
+
+    .page-personal-service-detail .service-detail-cta__content {
+        width: 100%;
+    }
+
+    .page-personal-service-detail .service-detail-cta__actions .button,
+    .page-personal-service-detail .service-detail-cta__back-link {
+        width: 100%;
+        justify-content: center;
+    }
+}
