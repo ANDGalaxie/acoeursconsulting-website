@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Cookie政策｜Acoeurs Consulting{% endblock %}
+{% block meta_description %}了解Acoeurs Consulting网站当前使用的必要Cookie，以及有关追踪技术和浏览器设置的信息。{% endblock %}
+{% block body_class %}page-legal page-legal-cookie{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/legal.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="legal-hero">
+    <div class="container legal-hero__inner">
+        <nav class="breadcrumb legal-breadcrumb" aria-label="面包屑" data-reveal="soft">
+            <ol class="breadcrumb__list">
+                <li><a href="{% url 'home' %}">首页</a></li>
+                <li aria-current="page">Cookie政策</li>
+            </ol>
+        </nav>
+        <div class="legal-hero__content">
+            <p class="eyebrow" data-reveal="text" data-reveal-delay="60">法律信息</p>
+            <h1 data-reveal="title" data-reveal-delay="120">Cookie政策</h1>
+            <p class="legal-hero__summary" data-reveal="text" data-reveal-delay="220">
+                本政策说明 Acoeurs Consulting 网站当前使用的必要 Cookie、当前未使用的追踪技术，以及浏览器层面的管理方式。
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="legal-page-section" aria-labelledby="cookie-policy-title">
+    <div class="container legal-page__layout">
+        <nav class="legal-toc" aria-label="Cookie政策目录" data-reveal="panel" data-reveal-repeat="true">
+            <p class="legal-toc__eyebrow">目录</p>
+            <ol class="legal-toc__list">
+                <li><a href="#cookie-purpose">本政策的目的</a></li>
+                <li><a href="#cookie-meaning">什么是 Cookie</a></li>
+                <li><a href="#cookie-current">当前网站使用的 Cookie</a></li>
+                <li><a href="#cookie-no-tracking">当前未使用的追踪技术</a></li>
+                <li><a href="#cookie-banner">是否需要同意</a></li>
+                <li><a href="#cookie-browser">浏览器设置</a></li>
+                <li><a href="#cookie-changes">未来变更</a></li>
+                <li><a href="#cookie-contact">联系方式</a></li>
+            </ol>
+        </nav>
+
+        <article class="legal-article" aria-labelledby="cookie-policy-title">
+            <header class="legal-article__header" data-reveal="title" data-reveal-repeat="true">
+                <p class="eyebrow">Cookie政策</p>
+                <h2 id="cookie-policy-title">当前网站状态下的 Cookie 说明</h2>
+            </header>
+
+            <section id="cookie-purpose" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>本政策的目的</h2>
+                <p>
+                    本政策用于说明 Acoeurs Consulting 网站在当前公开版本中，哪些 Cookie 可能被使用、这些 Cookie 的用途是什么，以及当前是否存在需要用户事先同意的追踪技术。
+                </p>
+            </section>
+
+            <section id="cookie-meaning" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>什么是 Cookie</h2>
+                <p>
+                    Cookie 是网站或相关技术组件在访问设备浏览器中存储的小型文本信息，可用于维持安全会话、保护表单请求，或在某些网站中支持统计、个性化和第三方内容功能。
+                </p>
+            </section>
+
+            <section id="cookie-current" class="legal-article__section" data-reveal="panel" data-reveal-repeat="true">
+                <h2>当前网站使用的 Cookie</h2>
+                <div class="legal-table-wrap">
+                    <table class="legal-table">
+                        <caption>当前网站可能使用的严格必要 Cookie</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">名称</th>
+                                <th scope="col">来源</th>
+                                <th scope="col">用途</th>
+                                <th scope="col">当前状态</th>
+                                <th scope="col">期限</th>
+                                <th scope="col">是否需要同意</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">csrftoken</th>
+                                <td>Acoeurs Consulting 网站使用的 Django 系统</td>
+                                <td>帮助保护表单和管理后台请求，防止跨站请求伪造。</td>
+                                <td>当前匿名公开页面通常不设置；在需要 CSRF 保护的页面或 Django Admin 中可能设置。</td>
+                                <td>根据当前 Django 配置，约一年。</td>
+                                <td>否。该 Cookie 仅用于严格必要的安全目的。</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">sessionid</th>
+                                <td>Acoeurs Consulting 网站使用的 Django 系统</td>
+                                <td>在使用会话功能时维持安全会话状态。</td>
+                                <td>当前匿名公开页面未实测到；管理功能或未来必要功能可能使用。</td>
+                                <td>根据当前 Django 配置，通常约两周。</td>
+                                <td>否。仅在严格必要用途下使用时，无需事先同意。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="legal-article__note">
+                    当前代码中未启用 <code>LocaleMiddleware</code>，因此 <code>django_language</code> 不作为当前实际使用中的 Cookie 列出；如未来启用语言偏好 Cookie，本政策将更新。
+                </p>
+            </section>
+
+            <section id="cookie-no-tracking" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>当前未使用的追踪技术</h2>
+                <p>
+                    根据当前网站代码和公开页面审计，未发现访问分析 Cookie、广告 Cookie、社交媒体追踪、第三方视频、地图或聊天组件 Cookie，也未发现用于跟踪的网站 <code>localStorage</code> 或 <code>sessionStorage</code> 实现。
+                </p>
+            </section>
+
+            <section id="cookie-banner" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>是否需要用户同意</h2>
+                <p>
+                    当前网站仅存在或可能存在严格必要 Cookie，且未发现需要在同意前阻止的统计、营销或第三方追踪脚本。因此，网站当前未设置 Cookie 同意 Banner。
+                </p>
+                <p>
+                    如未来引入非必要统计、营销或第三方追踪技术，网站将更新本政策，并在适用情况下于相关脚本启用前征求同意。
+                </p>
+            </section>
+
+            <section id="cookie-browser" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>浏览器设置</h2>
+                <p>
+                    您可以通过浏览器设置删除或限制 Cookie。请注意，禁用某些严格必要 Cookie 后，网站的安全功能、管理后台访问或未来表单功能可能无法正常工作。
+                </p>
+            </section>
+
+            <section id="cookie-changes" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>未来变更</h2>
+                <p>
+                    如果网站未来增加在线咨询表单、统计工具、视频嵌入、地图、聊天工具或其他第三方服务，本政策将据此更新，以说明新增 Cookie 或追踪技术的用途、期限和同意机制。
+                </p>
+            </section>
+
+            <section id="cookie-contact" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>联系方式</h2>
+                <p>
+                    如您对本 Cookie 政策有疑问，可通过 <a href="mailto:contact@acoeursconsulting.com">contact@acoeursconsulting.com</a> 与我们联系。
+                </p>
+            </section>
+
+            <footer class="legal-article__footer" data-reveal="soft" data-reveal-repeat="true">
+                <p>最后更新：2026年7月</p>
+                <nav class="legal-links" aria-label="相关法律页面">
+                    <a href="{% url 'legal' %}">法律声明</a>
+                    <a href="{% url 'privacy' %}">隐私政策</a>
+                    <a href="{% url 'cookies' %}" aria-current="page">Cookie政策</a>
+                </nav>
+            </footer>
+        </article>
+    </div>
+</section>
+{% endblock %}

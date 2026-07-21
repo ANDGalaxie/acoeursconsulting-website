@@ -1,6 +1,7 @@
 import importlib.util
 import os
 from pathlib import Path
+from urllib.parse import urlparse
 
 from django.core.exceptions import ImproperlyConfigured
 
@@ -35,11 +36,106 @@ def env_int(name, default=0):
         raise ImproperlyConfigured(f"{name} must be an integer.") from exc
 
 
-def env_list(name, default=None):
-    value = os.getenv(name)
+def env_value(name, aliases=None):
+    aliases = aliases or []
+    for candidate in [name, *aliases]:
+        value = os.getenv(candidate)
+        if value is not None:
+            return value
+    return None
+
+
+def env_list(name, default=None, aliases=None):
+    value = env_value(name, aliases=aliases)
     if value is None:
         return list(default or [])
     return [item.strip() for item in value.split(",") if item.strip()]
+
+
+def dedupe_keep_order(items):
+    seen = set()
+    result = []
+    for item in items:
+        if item not in seen:
+            seen.add(item)
+            result.append(item)
+    return result
+
+
+def build_allowed_hosts(debug, configured_hosts=None, render_hostname=None):
+    local_hosts = ["127.0.0.1", "localhost", "[::1]"]
+    default_production_hosts = [
+        "staging.acoeursconsulting.com",
+        "acoeursconsulting.com",
+        "www.acoeursconsulting.com",
+    ]
+
+    hosts = list(local_hosts)
+    if configured_hosts:
+        hosts.extend(configured_hosts)
+    elif not debug:
+        hosts.extend(default_production_hosts)
+
+    if render_hostname:
+        hosts.append(render_hostname)
+
+    hosts = dedupe_keep_order(hosts)
+
+    if not debug and "*" in hosts:
+        raise ImproperlyConfigured("ALLOWED_HOSTS must not contain '*' when DEBUG is False.")
+
+    return hosts
+
+
+def validate_origin(origin, debug):
+    parsed = urlparse(origin)
+    if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+        raise ImproperlyConfigured(
+            "CSRF_TRUSTED_ORIGINS entries must include a valid http or https scheme."
+        )
+
+    hostname = parsed.hostname or ""
+    if not debug and hostname not in {"localhost", "127.0.0.1", "::1"} and parsed.scheme != "https":
+        raise ImproperlyConfigured(
+            "Production CSRF_TRUSTED_ORIGINS entries must use https."
+        )
+
+    return origin.rstrip("/")
+
+
+def build_csrf_trusted_origins(debug, configured_origins=None, render_hostname=None):
+    default_production_origins = [
+        "https://staging.acoeursconsulting.com",
+        "https://acoeursconsulting.com",
+        "https://www.acoeursconsulting.com",
+    ]
+
+    origins = []
+    if configured_origins:
+        origins.extend(configured_origins)
+    elif not debug:
+        origins.extend(default_production_origins)
+
+    if render_hostname:
+        origins.append(f"https://{render_hostname}")
+
+    validated = [validate_origin(origin, debug) for origin in origins]
+    return dedupe_keep_order(validated)
+
+
+def normalize_site_url(raw_site_url):
+    if raw_site_url is None or not raw_site_url.strip():
+        return None
+
+    candidate = raw_site_url.strip().rstrip("/")
+    parsed = urlparse(candidate)
+    if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+        raise ImproperlyConfigured("SITE_URL must be a valid absolute URL.")
+
+    if parsed.hostname in {"localhost", "127.0.0.1", "::1"}:
+        return None
+
+    return candidate
 
 
 DEBUG = env_bool("DEBUG", default=True)
@@ -49,36 +145,29 @@ SECRET_KEY = os.getenv("SECRET_KEY", local_secret_key if DEBUG else "")
 if not SECRET_KEY:
     raise ImproperlyConfigured("SECRET_KEY must be set when DEBUG is False.")
 
-default_hosts = ["127.0.0.1", "localhost"]
-production_hosts = [
-    "staging.acoeursconsulting.com",
-    "acoeursconsulting.com",
-    "www.acoeursconsulting.com",
-]
 render_hostname = os.getenv("RENDER_EXTERNAL_HOSTNAME")
-
-allowed_hosts_default = list(default_hosts)
-if not DEBUG:
-    allowed_hosts_default.extend(production_hosts)
-    if render_hostname:
-        allowed_hosts_default.append(render_hostname)
-
-ALLOWED_HOSTS = env_list("ALLOWED_HOSTS", default=allowed_hosts_default)
-
-default_csrf_trusted_origins = []
-if not DEBUG:
-    default_csrf_trusted_origins = [
-        "https://staging.acoeursconsulting.com",
-        "https://acoeursconsulting.com",
-        "https://www.acoeursconsulting.com",
-    ]
-    if render_hostname:
-        default_csrf_trusted_origins.append(f"https://{render_hostname}")
-
-CSRF_TRUSTED_ORIGINS = env_list(
-    "CSRF_TRUSTED_ORIGINS",
-    default=default_csrf_trusted_origins,
+configured_allowed_hosts = env_list(
+    "ALLOWED_HOSTS",
+    aliases=["DJANGO_ALLOWED_HOSTS"],
 )
+ALLOWED_HOSTS = build_allowed_hosts(
+    debug=DEBUG,
+    configured_hosts=configured_allowed_hosts,
+    render_hostname=render_hostname,
+)
+
+configured_csrf_trusted_origins = env_list(
+    "CSRF_TRUSTED_ORIGINS",
+    aliases=["DJANGO_CSRF_TRUSTED_ORIGINS"],
+)
+CSRF_TRUSTED_ORIGINS = build_csrf_trusted_origins(
+    debug=DEBUG,
+    configured_origins=configured_csrf_trusted_origins,
+    render_hostname=render_hostname,
+)
+
+SITE_URL = normalize_site_url(env_value("SITE_URL"))
+SITE_NOINDEX = env_bool("SITE_NOINDEX", default=False)
 
 WHITENOISE_AVAILABLE = importlib.util.find_spec("whitenoise") is not None
 DJ_DATABASE_URL_AVAILABLE = dj_database_url is not None
@@ -127,6 +216,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'website.context_processors.site_meta',
             ],
         },
     },

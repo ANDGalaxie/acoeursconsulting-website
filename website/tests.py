@@ -1,5 +1,8 @@
 import re
 
+import config.settings as project_settings
+from django.conf import settings
+from django.core.exceptions import ImproperlyConfigured
 from django.test import TestCase
 from django.test import override_settings
 from django.urls import reverse
@@ -9,9 +12,6 @@ class WebsiteRouteTests(TestCase):
     placeholder_routes = [
         "consultation",
         "case_listed_company_france",
-        "legal",
-        "privacy",
-        "cookies",
         "fr",
         "en",
     ]
@@ -721,6 +721,113 @@ class WebsiteRouteTests(TestCase):
         self.assertNotIn("客户Logo", content)
         self.assertNotIn("价格", content)
 
+    def test_cookie_policy_page_returns_http_200(self):
+        response = self.client.get(reverse("cookies"))
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_cookie_policy_page_uses_expected_template(self):
+        response = self.client.get(reverse("cookies"))
+
+        self.assertTemplateUsed(response, "website/cookie_policy.html")
+
+    def test_cookie_policy_page_contains_current_cookie_facts(self):
+        response = self.client.get(reverse("cookies"))
+        content = response.content.decode()
+
+        self.assertEqual(content.count("<h1"), 1)
+        self.assertIn("<title>Cookie政策｜Acoeurs Consulting</title>", content)
+        self.assertContains(response, "csrftoken")
+        self.assertContains(response, "sessionid")
+        self.assertContains(response, "未发现访问分析 Cookie、广告 Cookie")
+        self.assertContains(response, "当前未设置 Cookie 同意 Banner")
+        self.assertNotIn("继续浏览即表示同意", content)
+        self.assertIn(reverse("legal"), content)
+        self.assertIn(reverse("privacy"), content)
+
+    def test_privacy_policy_page_returns_http_200(self):
+        response = self.client.get(reverse("privacy"))
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_privacy_policy_page_uses_expected_template(self):
+        response = self.client.get(reverse("privacy"))
+
+        self.assertTemplateUsed(response, "website/privacy_policy.html")
+
+    def test_privacy_policy_page_contains_current_processing_and_boundaries(self):
+        response = self.client.get(reverse("privacy"))
+        content = response.content.decode()
+
+        self.assertEqual(content.count("<h1"), 1)
+        self.assertIn("<title>隐私政策｜Acoeurs Consulting</title>", content)
+        self.assertContains(response, "服务器访问和安全日志")
+        self.assertContains(response, "用户主动发送的电子邮件")
+        self.assertContains(response, "Render 提供应用和数据库托管")
+        self.assertContains(response, "访问、更正、删除、限制处理、反对处理和数据可携带")
+        self.assertContains(response, "向法国国家信息与自由委员会（CNIL）提出投诉")
+        self.assertContains(response, "网站当前未启用在线咨询表单")
+        self.assertNotIn("保存 30 天", content)
+        self.assertNotIn("银行级加密", content)
+        self.assertNotIn("绝对保密", content)
+        self.assertNotIn("HiChina 提供网站托管", content)
+        self.assertNotIn("zhe jiang", content)
+        self.assertNotIn("数据控制者地址位于中国", content)
+
+    def test_legal_notice_page_returns_http_200(self):
+        response = self.client.get(reverse("legal"))
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_legal_notice_page_uses_expected_template(self):
+        response = self.client.get(reverse("legal"))
+
+        self.assertTemplateUsed(response, "website/legal_notice.html")
+
+    def test_legal_notice_page_stays_in_development_stage_and_avoids_unverified_fields(self):
+        response = self.client.get(reverse("legal"))
+        content = response.content.decode()
+
+        self.assertEqual(content.count("<h1"), 1)
+        self.assertIn("<title>法律声明｜Acoeurs Consulting</title>", content)
+        self.assertContains(response, "完整法律声明将在运营主体和托管信息确认后、网站正式上线前发布")
+        self.assertContains(response, "acoeursconsulting.com")
+        self.assertContains(response, "contact@acoeursconsulting.com")
+        self.assertContains(response, "400-606-0685")
+        self.assertContains(response, "+33 (0)9 72 96 05 73")
+        self.assertContains(response, "Render 提供应用和数据库技术托管")
+        self.assertNotIn("SIREN：", content)
+        self.assertNotIn("注册资本", content)
+        self.assertNotIn("TVA", content)
+        self.assertNotIn("成立于 2022", content)
+        self.assertNotIn("HiChina 提供网站托管", content)
+        self.assertNotIn("2732990287_DOMAIN_COM-VRSN", content)
+        self.assertNotIn("DomainAbuse@service.aliyun.com", content)
+        self.assertNotIn("2026-10-19", content)
+        self.assertNotIn("zhe jiang", content)
+        self.assertNotIn("最终正式版本", content)
+
+    def test_internal_legal_documents_include_domain_management_reminders(self):
+        with open("docs/LEGAL_NOTICE_DRAFT.md", encoding="utf-8") as draft_file:
+            draft = draft_file.read()
+        with open("docs/legal-info-checklist.md", encoding="utf-8") as checklist_file:
+            checklist = checklist_file.read()
+
+        self.assertIn("Alibaba Cloud Computing Ltd. d/b/a HiChina", draft)
+        self.assertIn("2026-10-19", checklist)
+        self.assertIn("自动续费是否开启", checklist)
+        self.assertIn("DNSSEC", checklist)
+
+    def test_public_legal_notice_does_not_expose_internal_domain_management_details(self):
+        response = self.client.get(reverse("legal"))
+        content = response.content.decode()
+
+        self.assertNotIn("Registrar IANA ID", content)
+        self.assertNotIn("DNS7.HICHINA.COM", content)
+        self.assertNotIn("DNS8.HICHINA.COM", content)
+        self.assertNotIn("unsigned", content)
+        self.assertNotIn("自动续费", content)
+
     def test_homepage_contains_required_sections(self):
         response = self.client.get(reverse("home"))
 
@@ -799,6 +906,92 @@ class WebsiteRouteTests(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertJSONEqual(response.content.decode(), {"status": "ok"})
+
+    def test_allowed_hosts_builder_keeps_localhost_and_staging(self):
+        hosts = project_settings.build_allowed_hosts(
+            debug=False,
+            configured_hosts=["staging.acoeursconsulting.com"],
+            render_hostname=None,
+        )
+
+        self.assertIn("localhost", hosts)
+        self.assertIn("127.0.0.1", hosts)
+        self.assertIn("[::1]", hosts)
+        self.assertIn("staging.acoeursconsulting.com", hosts)
+
+    def test_allowed_hosts_builder_appends_render_hostname(self):
+        hosts = project_settings.build_allowed_hosts(
+            debug=False,
+            configured_hosts=["staging.acoeursconsulting.com"],
+            render_hostname="acoeursconsulting-web.onrender.com",
+        )
+
+        self.assertIn("acoeursconsulting-web.onrender.com", hosts)
+
+    def test_allowed_hosts_builder_rejects_wildcard_in_production(self):
+        with self.assertRaises(ImproperlyConfigured):
+            project_settings.build_allowed_hosts(
+                debug=False,
+                configured_hosts=["*"],
+                render_hostname=None,
+            )
+
+    def test_csrf_trusted_origins_builder_requires_https_for_staging(self):
+        origins = project_settings.build_csrf_trusted_origins(
+            debug=False,
+            configured_origins=["https://staging.acoeursconsulting.com"],
+            render_hostname=None,
+        )
+
+        self.assertIn("https://staging.acoeursconsulting.com", origins)
+
+    def test_csrf_trusted_origins_builder_rejects_entries_without_scheme(self):
+        with self.assertRaises(ImproperlyConfigured):
+            project_settings.build_csrf_trusted_origins(
+                debug=False,
+                configured_origins=["staging.acoeursconsulting.com"],
+                render_hostname=None,
+            )
+
+    @override_settings(SITE_URL="http://localhost:8000", SITE_NOINDEX=False)
+    def test_site_url_does_not_emit_localhost_canonical(self):
+        response = self.client.get(reverse("home"))
+        content = response.content.decode()
+
+        self.assertNotIn('<link rel="canonical"', content)
+        self.assertNotIn("localhost:8000", content)
+
+    @override_settings(
+        SITE_URL="https://staging.acoeursconsulting.com",
+        SITE_NOINDEX=True,
+    )
+    def test_staging_can_output_noindex_and_staging_canonical(self):
+        response = self.client.get(reverse("business"))
+        content = response.content.decode()
+
+        self.assertIn('content="noindex, nofollow"', content)
+        self.assertIn(
+            '<link rel="canonical" href="https://staging.acoeursconsulting.com/business/">',
+            content,
+        )
+
+    @override_settings(
+        SITE_URL="https://acoeursconsulting.com",
+        SITE_NOINDEX=False,
+    )
+    def test_production_can_disable_noindex(self):
+        response = self.client.get(reverse("about"))
+        content = response.content.decode()
+
+        self.assertNotIn('content="noindex, nofollow"', content)
+        self.assertIn(
+            '<link rel="canonical" href="https://acoeursconsulting.com/about/">',
+            content,
+        )
+
+    def test_settings_do_not_include_real_secret_key(self):
+        self.assertNotEqual(settings.SECRET_KEY, "")
+        self.assertNotIn("sk_live", settings.SECRET_KEY.lower())
 
     @override_settings(DEBUG=False, ALLOWED_HOSTS=["testserver"])
     def test_custom_404_template_is_used(self):

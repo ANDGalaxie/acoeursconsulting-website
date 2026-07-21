@@ -1,0 +1,219 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}隐私政策｜Acoeurs Consulting{% endblock %}
+{% block meta_description %}了解Acoeurs Consulting网站当前如何处理访问日志、电子邮件联系及相关个人数据。{% endblock %}
+{% block body_class %}page-legal page-legal-privacy{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/legal.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="legal-hero">
+    <div class="container legal-hero__inner">
+        <nav class="breadcrumb legal-breadcrumb" aria-label="面包屑" data-reveal="soft">
+            <ol class="breadcrumb__list">
+                <li><a href="{% url 'home' %}">首页</a></li>
+                <li aria-current="page">隐私政策</li>
+            </ol>
+        </nav>
+        <div class="legal-hero__content">
+            <p class="eyebrow" data-reveal="text" data-reveal-delay="60">法律信息</p>
+            <h1 data-reveal="title" data-reveal-delay="120">隐私政策</h1>
+            <p class="legal-hero__summary" data-reveal="text" data-reveal-delay="220">
+                本政策说明 Acoeurs Consulting 网站在当前公开版本中可能处理哪些个人数据、出于何种目的处理，以及当前已确认的技术托管与 Cookie 情况。
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="legal-page-section" aria-labelledby="privacy-policy-title">
+    <div class="container legal-page__layout">
+        <nav class="legal-toc" aria-label="隐私政策目录" data-reveal="panel" data-reveal-repeat="true">
+            <p class="legal-toc__eyebrow">目录</p>
+            <ol class="legal-toc__list">
+                <li><a href="#privacy-scope">适用范围</a></li>
+                <li><a href="#privacy-controller">数据控制者与联系方式</a></li>
+                <li><a href="#privacy-current-data">当前可能处理的数据</a></li>
+                <li><a href="#privacy-no-form">当前不存在的处理</a></li>
+                <li><a href="#privacy-basis">处理目的与法律依据</a></li>
+                <li><a href="#privacy-recipients">接收方和技术服务提供商</a></li>
+                <li><a href="#privacy-domain">域名注册与 DNS 服务说明</a></li>
+                <li><a href="#privacy-transfer">国际数据传输</a></li>
+                <li><a href="#privacy-retention">保存期限</a></li>
+                <li><a href="#privacy-security">数据安全</a></li>
+                <li><a href="#privacy-rights">用户权利</a></li>
+                <li><a href="#privacy-cnil">向 CNIL 投诉</a></li>
+                <li><a href="#privacy-cookies">Cookie</a></li>
+                <li><a href="#privacy-minors">未成年人</a></li>
+                <li><a href="#privacy-future-form">咨询表单未来更新</a></li>
+            </ol>
+        </nav>
+
+        <article class="legal-article" aria-labelledby="privacy-policy-title">
+            <header class="legal-article__header" data-reveal="title" data-reveal-repeat="true">
+                <p class="eyebrow">隐私政策</p>
+                <h2 id="privacy-policy-title">当前网站功能对应的个人数据说明</h2>
+            </header>
+
+            <section id="privacy-scope" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>本政策适用范围</h2>
+                <p>
+                    本政策适用于 Acoeurs Consulting 当前公开网站在访问、浏览以及通过电子邮件主动联系场景下可能涉及的个人数据处理活动。
+                </p>
+            </section>
+
+            <section id="privacy-controller" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>数据控制者与联系方式</h2>
+                <p>
+                    Acoeurs Consulting 网站的运营主体负责本网站相关个人数据处理。运营主体的完整法定信息将在法律声明确认后补充。
+                </p>
+                <p>
+                    在当前阶段，您可以通过 <a href="mailto:contact@acoeursconsulting.com">contact@acoeursconsulting.com</a> 与网站运营方联系。该邮箱目前也作为数据权利联系入口；如未来设立隐私专用邮箱，本政策将更新。
+                </p>
+            </section>
+
+            <section id="privacy-current-data" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>当前可能处理的数据</h2>
+                <h3>服务器访问和安全日志</h3>
+                <p>
+                    在访问网站时，技术托管环境和服务器日志可能记录与网站运行、安全和故障排查有关的技术信息，例如 IP 地址、浏览器和设备基础信息、请求时间、访问路径以及 HTTP 响应状态。
+                </p>
+                <h3>管理后台相关数据</h3>
+                <p>
+                    当前项目启用了 Django Admin。对于获授权管理员，后台可能处理账户标识、认证和会话信息，以及与后台访问安全有关的技术数据。
+                </p>
+                <h3>用户主动发送的电子邮件</h3>
+                <p>
+                    网站公开了联系邮箱 <a href="mailto:contact@acoeursconsulting.com">contact@acoeursconsulting.com</a>。访问者主动发送邮件时，网站运营方可能处理发件人姓名、邮箱地址、邮件正文及用户自行提供的其他信息。
+                </p>
+                <p class="legal-article__note">
+                    当前请避免通过普通电子邮件发送不必要的敏感资料。
+                </p>
+            </section>
+
+            <section id="privacy-no-form" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>当前不存在的处理</h2>
+                <p>
+                    当前网站没有公开在线咨询表单、没有前台用户账户、没有在线支付、没有文件上传，也没有网站分析、广告或营销追踪工具。
+                </p>
+                <p>
+                    当前网站也未发现自动客户画像、自动化决策、邮件营销或 CRM 集成。
+                </p>
+            </section>
+
+            <section id="privacy-basis" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>处理目的与法律依据</h2>
+                <p>
+                    当前网站相关数据处理主要基于以下目的：提供网站访问、维护网站安全、排查技术故障，以及在访问者主动发送电子邮件时处理相关联系沟通。
+                </p>
+                <p>
+                    对应的法律依据通常包括：网站运营者维护网站可用性和安全性的合法利益、根据用户请求开展沟通或采取前期联系措施，以及在适用情况下遵守法律义务。
+                </p>
+            </section>
+
+            <section id="privacy-recipients" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>数据接收方和技术服务提供商</h2>
+                <p>
+                    当前数据接收方可能包括经授权的网站管理人员、必要的技术托管服务提供商，以及在法律要求下的主管机关。
+                </p>
+                <p>
+                    若未来因正式服务需要与律师、税务顾问、会计、公证、银行或保险等专业服务方沟通，相关信息将仅在适当条件下、并结合具体事项处理。
+                </p>
+            </section>
+
+            <section id="privacy-domain" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>域名注册与 DNS 服务说明</h2>
+                <p>
+                    根据当前已确认的域名管理信息，本网站域名通过 Alibaba Cloud Computing Ltd. d/b/a HiChina 注册，WHOIS 记录显示当前域名服务器为 DNS7.HICHINA.COM 和 DNS8.HICHINA.COM。
+                </p>
+                <p>
+                    仅凭域名注册和 DNS 记录，当前不足以将 HiChina 认定为本网站访客个人数据的现有处理者。若后续站点配置引入由其实际处理访客流量或数据的相关服务，本政策将更新。
+                </p>
+            </section>
+
+            <section id="privacy-transfer" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>国际数据传输</h2>
+                <p>
+                    网站当前计划由 Render 提供应用和数据库托管。Render 可能作为技术服务提供商处理托管数据和访问日志。
+                </p>
+                <p>
+                    具体部署区域、子处理者链条和保存安排仍需最终部署配置确认。托管服务可能涉及欧洲经济区以外的数据处理；在适用情况下，网站运营方将依据合同安排、标准合同条款或其他合法机制采取适当保障。
+                </p>
+            </section>
+
+            <section id="privacy-retention" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>保存期限</h2>
+                <p>
+                    当前网站相关数据仅在实现相应目的所必要的期间内保存。技术日志期限将取决于安全、故障排查和托管配置，主动联系邮件的保存也将根据沟通处理和必要后续记录需求确定。
+                </p>
+                <p>
+                    具体保存期限将在正式上线配置和内部流程确认后补充。
+                </p>
+            </section>
+
+            <section id="privacy-security" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>数据安全</h2>
+                <p>
+                    网站运营方将采取与风险相称的技术和组织措施，以维护网站安全、限制后台访问并使用 Django 及托管平台提供的基础安全机制。
+                </p>
+            </section>
+
+            <section id="privacy-rights" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>用户权利</h2>
+                <p>
+                    在适用情况下，您可以依据相关法律行使访问、更正、删除、限制处理、反对处理和数据可携带等权利。若某项处理确实基于同意，您也可以依法撤回该同意。
+                </p>
+                <p>
+                    您可以通过 <a href="mailto:contact@acoeursconsulting.com">contact@acoeursconsulting.com</a> 联系网站运营方以提出相关请求。
+                </p>
+            </section>
+
+            <section id="privacy-cnil" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>向 CNIL 投诉</h2>
+                <p>
+                    如果您认为个人数据处理违反了适用法律，您有权向法国国家信息与自由委员会（CNIL）提出投诉。
+                </p>
+            </section>
+
+            <section id="privacy-cookies" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>Cookie</h2>
+                <p>
+                    当前网站仅存在或可能存在严格必要 Cookie。有关当前 Cookie 的详细信息，请参阅本网站的 <a href="{% url 'cookies' %}">Cookie政策</a>。
+                </p>
+            </section>
+
+            <section id="privacy-minors" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>未成年人</h2>
+                <p>
+                    当前网站没有面向未成年人单独设计的在线服务或注册功能。若未来某些服务事项涉及未成年人信息，网站运营方将在适用情况下提供相应说明并谨慎处理。
+                </p>
+            </section>
+
+            <section id="privacy-future-form" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>咨询表单未来更新</h2>
+                <p>
+                    网站当前未启用在线咨询表单。若未来启用，网站将在表单附近提供相应的数据处理信息，并更新本政策，以说明收集字段、目的、法律依据、接收方和保存期限。
+                </p>
+            </section>
+
+            <section id="privacy-changes" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>政策变更</h2>
+                <p>
+                    如果网站功能、托管方式或相关法律要求发生变化，本政策也会相应更新。
+                </p>
+            </section>
+
+            <footer class="legal-article__footer" data-reveal="soft" data-reveal-repeat="true">
+                <p>最后更新：2026年7月</p>
+                <nav class="legal-links" aria-label="相关法律页面">
+                    <a href="{% url 'legal' %}">法律声明</a>
+                    <a href="{% url 'privacy' %}" aria-current="page">隐私政策</a>
+                    <a href="{% url 'cookies' %}">Cookie政策</a>
+                </nav>
+            </footer>
+        </article>
+    </div>
+</section>
+{% endblock %}

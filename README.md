@@ -62,8 +62,15 @@ The application supports these environment variables:
   - Boolean string: `True` / `False`
 - `ALLOWED_HOSTS`
   - Comma-separated hosts
+  - Also accepted as `DJANGO_ALLOWED_HOSTS`
 - `CSRF_TRUSTED_ORIGINS`
   - Comma-separated origins including scheme
+  - Also accepted as `DJANGO_CSRF_TRUSTED_ORIGINS`
+- `SITE_URL`
+  - Primary absolute site URL used for canonical generation
+  - Leave unset in local development if you do not want canonical tags
+- `SITE_NOINDEX`
+  - Boolean string used to emit `noindex, nofollow` on staging or private environments
 - `DATABASE_URL`
   - PostgreSQL connection string for Render production
 - `SECURE_SSL_REDIRECT`
@@ -71,7 +78,7 @@ The application supports these environment variables:
 - `SECURE_HSTS_SECONDS`
   - Integer, default `0`
 
-Render also provides `RENDER_EXTERNAL_HOSTNAME`, which the settings append to production hosts and trusted origins when present.
+Render also provides `RENDER_EXTERNAL_HOSTNAME`, which the settings append to accepted hosts and trusted origins when present.
 
 ## Local SQLite and Production PostgreSQL
 
@@ -152,8 +159,12 @@ Bind:
 
 Recommended environment values:
 
-- `ALLOWED_HOSTS=staging.acoeursconsulting.com,<render-hostname>`
+- `ALLOWED_HOSTS=staging.acoeursconsulting.com`
 - `CSRF_TRUSTED_ORIGINS=https://staging.acoeursconsulting.com`
+- `SITE_URL=https://staging.acoeursconsulting.com`
+- `SITE_NOINDEX=True`
+
+The Render runtime hostname is automatically added when `RENDER_EXTERNAL_HOSTNAME` is present.
 
 ### Production
 
@@ -164,10 +175,12 @@ Bind:
 
 Recommended environment values:
 
-- `ALLOWED_HOSTS=acoeursconsulting.com,www.acoeursconsulting.com,<render-hostname>`
+- `ALLOWED_HOSTS=acoeursconsulting.com,www.acoeursconsulting.com`
 - `CSRF_TRUSTED_ORIGINS=https://acoeursconsulting.com,https://www.acoeursconsulting.com`
+- `SITE_URL=https://acoeursconsulting.com`
+- `SITE_NOINDEX=False`
 
-You can also keep staging and production domains together in one shared host list if the same service serves all environments.
+If the same Render service temporarily serves both staging and production-style hostnames, you can include all required domains in the same environment variable. The Render runtime hostname will still be appended automatically.
 
 ## HTTPS and HSTS Rollout
 

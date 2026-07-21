@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}法律声明｜Acoeurs Consulting{% endblock %}
+{% block meta_description %}Acoeurs Consulting网站发布、托管、知识产权和网站使用相关法律信息。{% endblock %}
+{% block body_class %}page-legal page-legal-notice{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/legal.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="legal-hero">
+    <div class="container legal-hero__inner">
+        <nav class="breadcrumb legal-breadcrumb" aria-label="面包屑" data-reveal="soft">
+            <ol class="breadcrumb__list">
+                <li><a href="{% url 'home' %}">首页</a></li>
+                <li aria-current="page">法律声明</li>
+            </ol>
+        </nav>
+        <div class="legal-hero__content">
+            <p class="eyebrow" data-reveal="text" data-reveal-delay="60">法律信息</p>
+            <h1 data-reveal="title" data-reveal-delay="120">法律声明</h1>
+            <p class="legal-hero__summary" data-reveal="text" data-reveal-delay="220">
+                本页提供当前可以确认的网站品牌、域名、联系信息和技术托管说明。完整法律声明将在运营主体和托管信息确认后、网站正式上线前发布。
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="legal-page-section" aria-labelledby="legal-notice-title">
+    <div class="container legal-page__layout">
+        <nav class="legal-toc" aria-label="法律声明目录" data-reveal="panel" data-reveal-repeat="true">
+            <p class="legal-toc__eyebrow">目录</p>
+            <ol class="legal-toc__list">
+                <li><a href="#legal-status">当前页面状态</a></li>
+                <li><a href="#legal-site-info">已确认的网站信息</a></li>
+                <li><a href="#legal-hosting">技术托管说明</a></li>
+                <li><a href="#legal-ip">知识产权与内容性质</a></li>
+                <li><a href="#legal-links">外部链接与责任限制</a></li>
+                <li><a href="#legal-related">相关法律页面</a></li>
+            </ol>
+        </nav>
+
+        <article class="legal-article" aria-labelledby="legal-notice-title">
+            <header class="legal-article__header" data-reveal="title" data-reveal-repeat="true">
+                <p class="eyebrow">开发阶段页面</p>
+                <h2 id="legal-notice-title">当前可公开的法律信息</h2>
+            </header>
+
+            <section id="legal-status" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>当前页面状态</h2>
+                <p>
+                    本网站的完整法律声明将在运营主体和托管信息确认后、网站正式上线前发布。当前页面仅公开已经在网站代码、资料和技术审计中明确确认的信息。
+                </p>
+            </section>
+
+            <section id="legal-site-info" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>已确认的网站信息</h2>
+                <h3>品牌与网站名称</h3>
+                <p>
+                    当前网站展示名称为 <strong>Acoeurs Consulting 艾克斯咨询</strong>。
+                </p>
+                <h3>域名</h3>
+                <p>
+                    当前网站使用的域名为 <strong>acoeursconsulting.com</strong>，并使用 <strong>www.acoeursconsulting.com</strong> 作为公开网站地址。
+                </p>
+                <h3>联系信息</h3>
+                <ul class="legal-plain-list">
+                    <li>邮箱：<a href="mailto:contact@acoeursconsulting.com">contact@acoeursconsulting.com</a></li>
+                    <li>中国电话：<a href="tel:4006060685">400-606-0685</a></li>
+                    <li>法国电话：<a href="tel:+33972960573">+33 (0)9 72 96 05 73</a></li>
+                    <li>当前联系地址：32 AV. Kléber 75116 Paris</li>
+                </ul>
+                <p class="legal-article__note">
+                    上述巴黎地址当前仅作为代码中已确认的联系地址展示，不代表法定注册地址或公司注册信息。
+                </p>
+            </section>
+
+            <section id="legal-hosting" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>技术托管说明</h2>
+                <p>
+                    根据当前部署配置，本网站计划由 Render 提供应用和数据库技术托管。完整托管商法务信息将在正式上线前补充。
+                </p>
+                <p>
+                    当前公开页面不展示域名注册商、域名登记技术信息或内部运维信息。
+                </p>
+            </section>
+
+            <section id="legal-ip" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>知识产权与内容性质</h2>
+                <p>
+                    本网站中的文案、结构、图像和品牌识别元素受适用的知识产权规则保护。相关权利主体将在完整法律声明确认后补充。
+                </p>
+                <p>
+                    网站内容仅用于介绍 Acoeurs Consulting 当前公开的服务范围与品牌信息，不构成对具体审批、交易、贷款、税务或其他受监管事项结果的保证。
+                </p>
+            </section>
+
+            <section id="legal-links" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>外部链接与责任限制</h2>
+                <p>
+                    若本网站未来包含指向第三方网站的链接，其内容和处理方式将由第三方自行负责。涉及法律、税务、会计、公证、贷款、保险及其他受监管专业事项时，相关判断和执行应由具备相应资质的专业人士或机构完成。
+                </p>
+            </section>
+
+            <section id="legal-related" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>相关法律页面</h2>
+                <p>
+                    有关当前个人数据处理和 Cookie 使用情况，请查阅本网站的隐私政策和 Cookie 政策。
+                </p>
+            </section>
+
+            <footer class="legal-article__footer" data-reveal="soft" data-reveal-repeat="true">
+                <p>最后更新：2026年7月</p>
+                <nav class="legal-links" aria-label="相关法律页面">
+                    <a href="{% url 'legal' %}" aria-current="page">法律声明</a>
+                    <a href="{% url 'privacy' %}">隐私政策</a>
+                    <a href="{% url 'cookies' %}">Cookie政策</a>
+                </nav>
+            </footer>
+        </article>
+    </div>
+</section>
+{% endblock %}

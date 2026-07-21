@@ -75,20 +75,17 @@ urlpatterns = [
     ),
     path(
         "legal/",
-        views.placeholder,
-        {"title": "法律声明", "section": "站点信息"},
+        views.legal_notice,
         name="legal",
     ),
     path(
         "privacy/",
-        views.placeholder,
-        {"title": "隐私政策", "section": "站点信息"},
+        views.privacy_policy,
         name="privacy",
     ),
     path(
         "cookies/",
-        views.placeholder,
-        {"title": "Cookies 政策", "section": "站点信息"},
+        views.cookie_policy,
         name="cookies",
     ),
     path(

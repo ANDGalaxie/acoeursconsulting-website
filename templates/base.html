@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Acoeurs Consulting{% endblock %}</title>
     <meta name="description" content="{% block meta_description %}Acoeurs Consulting corporate introduction website.{% endblock %}">
-    {% block canonical %}{% if canonical_url %}<link rel="canonical" href="{{ canonical_url }}">{% endif %}{% endblock %}
+    {% if site_noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+    {% block canonical %}{% firstof canonical_url site_canonical_url as resolved_canonical %}{% if resolved_canonical %}<link rel="canonical" href="{{ resolved_canonical }}">{% endif %}{% endblock %}
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/components.css' %}">
     {% block extra_css %}{% endblock %}
