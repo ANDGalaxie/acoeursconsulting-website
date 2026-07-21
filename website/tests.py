@@ -7,7 +7,6 @@ from django.urls import reverse
 
 class WebsiteRouteTests(TestCase):
     placeholder_routes = [
-        "about",
         "consultation",
         "case_listed_company_france",
         "legal",
@@ -646,6 +645,81 @@ class WebsiteRouteTests(TestCase):
         self.assertNotIn("固定节税结果", content)
         self.assertNotIn("零风险", content)
         self.assertNotIn("投资收益保证", content)
+
+    def test_about_page_returns_http_200(self):
+        response = self.client.get(reverse("about"))
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_about_page_uses_expected_template(self):
+        response = self.client.get(reverse("about"))
+
+        self.assertTemplateUsed(response, "website/about.html")
+
+    def test_about_page_contains_expected_seo_metadata(self):
+        response = self.client.get(reverse("about"))
+        content = response.content.decode()
+
+        self.assertIn(
+            "<title>关于Acoeurs｜法国及欧洲市场咨询与本地执行｜Acoeurs Consulting</title>",
+            content,
+        )
+        self.assertIn(
+            'content="Acoeurs Consulting 专注中国企业在法国和欧洲市场的进入、落地与持续运营，并为企业主、投资人与家庭提供法国本地事务协调服务。"',
+            content,
+        )
+
+    def test_about_page_contains_required_content_links_and_navigation_state(self):
+        response = self.client.get(reverse("about"))
+        content = response.content.decode()
+
+        self.assertEqual(content.count("<h1"), 1)
+        self.assertContains(response, "扎根法国，连接中国与欧洲")
+        self.assertContains(response, 'aria-label="面包屑"', html=False)
+        self.assertContains(response, ">首页</a>", html=False)
+        self.assertContains(response, 'aria-current="page">关于我们<', html=False)
+        self.assertContains(response, '<a aria-current="page" href="/about/">关于我们</a>', html=False)
+        self.assertNotIn('<a aria-current="page" href="/business/">企业服务</a>', content)
+        self.assertNotIn('<a aria-current="page" href="/personal/">个人服务</a>', content)
+        self.assertIn(reverse("consultation"), content)
+        self.assertIn(reverse("business"), content)
+        self.assertIn(reverse("personal"), content)
+        self.assertContains(response, "企业服务")
+        self.assertContains(response, "个人服务")
+
+    def test_about_page_contains_confirmed_roles_and_reasons_without_unverified_claims(self):
+        response = self.client.get(reverse("about"))
+        content = response.content.decode()
+
+        required_roles = [
+            "法国本地执行",
+            "中法双语协同",
+            "统一项目管理",
+            "长期陪伴",
+        ]
+        required_reasons = [
+            "法国本地执行",
+            "中法沟通能力",
+            "统一事项窗口",
+            "长期项目支持",
+        ]
+
+        for item in required_roles:
+            with self.subTest(role=item):
+                self.assertContains(response, item)
+
+        for item in required_reasons:
+            with self.subTest(reason=item):
+                self.assertContains(response, item)
+
+        self.assertNotIn("500", content)
+        self.assertNotIn("92%", content)
+        self.assertNotIn("15+", content)
+        self.assertNotIn("10+", content)
+        self.assertNotIn("团队人数", content)
+        self.assertNotIn("创始人", content)
+        self.assertNotIn("客户Logo", content)
+        self.assertNotIn("价格", content)
 
     def test_homepage_contains_required_sections(self):
         response = self.client.get(reverse("home"))

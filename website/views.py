@@ -86,6 +86,14 @@ def cross_border_tax_risk_service(request):
     return render(request, "website/service_cross_border_tax_risk.html", context)
 
 
+def about(request):
+    context = {
+        "canonical_url": request.build_absolute_uri(request.path),
+        "current_nav": "about",
+    }
+    return render(request, "website/about.html", context)
+
+
 def placeholder(request, title, section):
     context = {
         "title": title,

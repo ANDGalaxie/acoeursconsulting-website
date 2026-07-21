@@ -58,8 +58,7 @@ urlpatterns = [
     ),
     path(
         "about/",
-        views.placeholder,
-        {"title": "关于我们", "section": "公司信息"},
+        views.about,
         name="about",
     ),
     path(
