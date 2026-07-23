@@ -1,7 +1,11 @@
 import re
+from pathlib import Path
+from unittest.mock import patch
 
 import config.settings as project_settings
+from django.apps import apps
 from django.conf import settings
+from django.core import mail
 from django.core.exceptions import ImproperlyConfigured
 from django.test import TestCase
 from django.test import override_settings
@@ -10,11 +14,49 @@ from django.urls import reverse
 
 class WebsiteRouteTests(TestCase):
     placeholder_routes = [
-        "consultation",
-        "case_listed_company_france",
         "fr",
         "en",
     ]
+    formal_page_routes = [
+        "home",
+        "business",
+        "business_market_entry",
+        "business_company_banking",
+        "business_tax_legal_compliance",
+        "business_local_operations",
+        "business_growth",
+        "personal",
+        "personal_residency_family",
+        "personal_property_wealth",
+        "personal_cross_border_tax_risk",
+        "about",
+        "contact",
+        "legal",
+        "privacy",
+        "cookies",
+    ]
+
+    def valid_contact_payload(self, **overrides):
+        payload = {
+            "identity": "company",
+            "organization_name": "Acoeurs Demo",
+            "consultation_direction": "business_market_entry",
+            "subject": "计划在法国设立公司",
+            "message": "我们计划在法国推进公司设立和市场进入，希望了解下一步应该如何开始。",
+            "name": "张三",
+            "phone": "+33 6 12 34 56 78",
+            "email": "zhangsan@example.com",
+            "preferred_language": "zh",
+            "contact_time": "工作日下午",
+            "privacy_consent": "on",
+            "website": "",
+        }
+        payload.update(overrides)
+        return payload
+
+    def assert_no_duplicate_ids(self, html):
+        ids = re.findall(r'\bid="([^"]+)"', html)
+        self.assertEqual(len(ids), len(set(ids)))
 
     def test_homepage_returns_http_200(self):
         response = self.client.get(reverse("home"))
@@ -80,7 +122,7 @@ class WebsiteRouteTests(TestCase):
         response = self.client.get(reverse("business"))
         content = response.content.decode()
 
-        self.assertGreaterEqual(content.count(reverse("consultation")), 2)
+        self.assertGreaterEqual(content.count(reverse("contact")), 2)
         self.assertIn('href="#enterprise-service-scope"', content)
 
     def test_market_entry_service_page_returns_http_200(self):
@@ -116,9 +158,9 @@ class WebsiteRouteTests(TestCase):
         self.assertContains(response, ">首页</a>", html=False)
         self.assertContains(response, ">企业服务</a>", html=False)
         self.assertContains(response, 'aria-current="page">欧洲市场进入与战略<', html=False)
-        self.assertIn(reverse("consultation"), content)
+        self.assertIn(reverse("contact"), content)
         self.assertIn(reverse("business"), content)
-        self.assertIn(reverse("case_listed_company_france"), content)
+        self.assertNotIn("查看完整案例", content)
 
     def test_market_entry_service_page_contains_scope_headings_and_professional_note(self):
         response = self.client.get(reverse("business_market_entry"))
@@ -137,7 +179,7 @@ class WebsiteRouteTests(TestCase):
                 self.assertContains(response, heading)
 
         self.assertIn("中国上市公司｜法国市场拓展", content)
-        self.assertIn(reverse("case_listed_company_france"), content)
+        self.assertNotIn(reverse("case_listed_company_france"), content)
         self.assertNotIn("企业进入欧洲前，通常需要先回答这些关键问题", content)
         self.assertNotIn("典型问题", content)
         self.assertNotIn("固定项目周期", content)
@@ -179,7 +221,7 @@ class WebsiteRouteTests(TestCase):
         self.assertContains(response, ">首页</a>", html=False)
         self.assertContains(response, ">企业服务</a>", html=False)
         self.assertContains(response, 'aria-current="page">公司架构与银行金融<', html=False)
-        self.assertIn(reverse("consultation"), content)
+        self.assertIn(reverse("contact"), content)
         self.assertIn(reverse("business"), content)
 
     def test_company_banking_service_page_contains_scope_headings_and_boundary_copy(self):
@@ -242,7 +284,7 @@ class WebsiteRouteTests(TestCase):
         self.assertContains(response, ">首页</a>", html=False)
         self.assertContains(response, ">企业服务</a>", html=False)
         self.assertContains(response, 'aria-current="page">财税、法律与合规<', html=False)
-        self.assertIn(reverse("consultation"), content)
+        self.assertIn(reverse("contact"), content)
         self.assertIn(reverse("business"), content)
 
     def test_tax_legal_compliance_service_page_contains_scope_headings_and_boundary_copy(self):
@@ -301,7 +343,7 @@ class WebsiteRouteTests(TestCase):
         self.assertContains(response, ">首页</a>", html=False)
         self.assertContains(response, ">企业服务</a>", html=False)
         self.assertContains(response, 'aria-current="page">本地运营与团队建设<', html=False)
-        self.assertIn(reverse("consultation"), content)
+        self.assertIn(reverse("contact"), content)
         self.assertIn(reverse("business"), content)
 
     def test_local_operations_service_page_contains_scope_headings_and_boundary_copy(self):
@@ -360,7 +402,7 @@ class WebsiteRouteTests(TestCase):
         self.assertContains(response, ">首页</a>", html=False)
         self.assertContains(response, ">企业服务</a>", html=False)
         self.assertContains(response, 'aria-current="page">商务拓展与增长<', html=False)
-        self.assertIn(reverse("consultation"), content)
+        self.assertIn(reverse("contact"), content)
         self.assertIn(reverse("business"), content)
 
     def test_business_growth_service_page_contains_scope_headings_and_boundary_copy(self):
@@ -425,7 +467,7 @@ class WebsiteRouteTests(TestCase):
         self.assertIn(reverse("personal_residency_family"), content)
         self.assertIn(reverse("personal_property_wealth"), content)
         self.assertIn(reverse("personal_cross_border_tax_risk"), content)
-        self.assertIn(reverse("consultation"), content)
+        self.assertIn(reverse("contact"), content)
 
     def test_personal_services_page_contains_service_categories_and_boundary_copy(self):
         response = self.client.get(reverse("personal"))
@@ -492,7 +534,7 @@ class WebsiteRouteTests(TestCase):
         self.assertContains(response, 'aria-current="page">居留与家庭定居<', html=False)
         self.assertContains(response, '<a aria-current="page" href="/personal/">个人服务</a>', html=False)
         self.assertNotIn('<a aria-current="page" href="/business/">企业服务</a>', content)
-        self.assertIn(reverse("consultation"), content)
+        self.assertIn(reverse("contact"), content)
         self.assertIn(reverse("personal"), content)
         self.assertIn("page-service-detail page-personal-service-detail", content)
         self.assertIn("personal-detail-boundary", content)
@@ -557,7 +599,7 @@ class WebsiteRouteTests(TestCase):
         self.assertContains(response, 'aria-current="page">房产与资产配置<', html=False)
         self.assertContains(response, '<a aria-current="page" href="/personal/">个人服务</a>', html=False)
         self.assertNotIn('<a aria-current="page" href="/business/">企业服务</a>', content)
-        self.assertIn(reverse("consultation"), content)
+        self.assertIn(reverse("contact"), content)
         self.assertIn(reverse("personal"), content)
         self.assertIn("page-service-detail page-personal-service-detail", content)
         self.assertIn("personal-detail-boundary", content)
@@ -622,7 +664,7 @@ class WebsiteRouteTests(TestCase):
         self.assertContains(response, 'aria-current="page">跨境税务与风险管理<', html=False)
         self.assertContains(response, '<a aria-current="page" href="/personal/">个人服务</a>', html=False)
         self.assertNotIn('<a aria-current="page" href="/business/">企业服务</a>', content)
-        self.assertIn(reverse("consultation"), content)
+        self.assertIn(reverse("contact"), content)
         self.assertIn(reverse("personal"), content)
         self.assertIn("page-service-detail page-personal-service-detail", content)
         self.assertIn("personal-detail-boundary", content)
@@ -681,7 +723,7 @@ class WebsiteRouteTests(TestCase):
         self.assertContains(response, '<a aria-current="page" href="/about/">关于我们</a>', html=False)
         self.assertNotIn('<a aria-current="page" href="/business/">企业服务</a>', content)
         self.assertNotIn('<a aria-current="page" href="/personal/">个人服务</a>', content)
-        self.assertIn(reverse("consultation"), content)
+        self.assertIn(reverse("contact"), content)
         self.assertIn(reverse("business"), content)
         self.assertIn(reverse("personal"), content)
         self.assertContains(response, "企业服务")
@@ -720,6 +762,281 @@ class WebsiteRouteTests(TestCase):
         self.assertNotIn("创始人", content)
         self.assertNotIn("客户Logo", content)
         self.assertNotIn("价格", content)
+
+    def test_contact_page_returns_http_200_and_uses_expected_template(self):
+        response = self.client.get(reverse("contact"))
+        content = response.content.decode()
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "website/contact.html")
+        self.assertEqual(content.count("<h1"), 1)
+        self.assertContains(response, "联系我们")
+        self.assertContains(response, "<h1", html=False)
+        self.assertContains(response, "联系我们")
+        self.assertNotContains(response, "请填写联系问卷")
+        self.assertContains(response, "用3个步骤告诉我们您的情况、需求和联系方式。")
+        self.assertNotIn("预约30分钟咨询", content)
+        self.assertNotIn("也可以直接联系我们", content)
+        self.assertNotIn("contact-hero", content)
+        self.assertNotIn(">提交说明</h2>", content)
+        self.assertContains(response, "信息说明")
+
+    def test_contact_page_breadcrumb_has_no_default_numbering_text(self):
+        response = self.client.get(reverse("contact"))
+        content = response.content.decode()
+
+        self.assertContains(response, 'aria-label="面包屑"', html=False)
+        self.assertNotIn("1. 首页", content)
+        self.assertNotIn("2. 联系我们", content)
+
+    def test_contact_page_uses_identity_specific_direction_groups(self):
+        response = self.client.get(reverse("contact"))
+        groups = {group["key"]: [value for value, _ in group["options"]] for group in response.context["contact_direction_groups"]}
+
+        self.assertEqual(
+            groups["company"],
+            [
+                "business_market_entry",
+                "business_company_banking",
+                "business_tax_legal",
+                "business_local_operations",
+                "business_growth",
+                "other",
+                "unsure",
+            ],
+        )
+        self.assertEqual(
+            groups["individual_family"],
+            [
+                "personal_residency_family",
+                "personal_property_assets",
+                "personal_cross_border_tax",
+                "other",
+                "unsure",
+            ],
+        )
+        self.assertEqual(
+            groups["owner_investor"],
+            [
+                "business_market_entry",
+                "business_company_banking",
+                "business_tax_legal",
+                "personal_property_assets",
+                "personal_cross_border_tax",
+                "other",
+                "unsure",
+            ],
+        )
+        self.assertIn("business_growth", groups["unsure"])
+        self.assertIn("personal_cross_border_tax", groups["unsure"])
+
+    def test_contact_page_contains_compact_contact_specific_classes(self):
+        response = self.client.get(reverse("contact"))
+        content = response.content.decode()
+
+        self.assertIn("contact-page-header", content)
+        self.assertIn("contact-note", content)
+        self.assertNotIn("contact-info-section", content)
+
+    def test_consultation_route_permanently_redirects_to_contact(self):
+        response = self.client.get(reverse("consultation"), follow=False)
+
+        self.assertEqual(response.status_code, 301)
+        self.assertEqual(response["Location"], reverse("contact"))
+
+    def test_legacy_case_route_permanently_redirects_to_home_case_section(self):
+        response = self.client.get(reverse("case_listed_company_france"), follow=False)
+
+        self.assertEqual(response.status_code, 301)
+        self.assertEqual(response["Location"], f"{reverse('home')}#case-title")
+
+    @override_settings(EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend")
+    def test_valid_contact_submission_sends_one_email_and_redirects(self):
+        response = self.client.post(reverse("contact"), data=self.valid_contact_payload())
+
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response["Location"], f"{reverse('contact')}?submitted=1")
+        self.assertEqual(len(mail.outbox), 1)
+
+        email = mail.outbox[0]
+        self.assertEqual(email.to, ["contact@acoeursconsulting.com"])
+        self.assertEqual(email.reply_to, ["zhangsan@example.com"])
+        self.assertIn("欧洲市场进入与战略", email.subject)
+        self.assertIn("计划在法国设立公司", email.subject)
+        self.assertIn("张三", email.subject)
+        self.assertIn("身份：企业或机构", email.body)
+        self.assertIn("公司或机构：Acoeurs Demo", email.body)
+        self.assertIn("咨询方向：欧洲市场进入与战略", email.body)
+        self.assertIn("咨询主题：计划在法国设立公司", email.body)
+        self.assertIn("咨询内容：", email.body)
+        self.assertIn("姓名：张三", email.body)
+        self.assertIn("联系电话：+33 6 12 34 56 78", email.body)
+        self.assertIn("电子邮箱：zhangsan@example.com", email.body)
+        self.assertIn("沟通语言：中文", email.body)
+        self.assertIn("方便联系的时间：工作日下午", email.body)
+
+        follow_up = self.client.get(response["Location"])
+        self.assertEqual(follow_up.status_code, 200)
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertContains(follow_up, "信息已提交")
+
+    @override_settings(EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend")
+    def test_contact_submission_allows_phone_without_email(self):
+        payload = self.valid_contact_payload(email="")
+        response = self.client.post(reverse("contact"), data=payload)
+
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(mail.outbox[0].reply_to, [])
+        self.assertIn("电子邮箱：未填写", mail.outbox[0].body)
+
+    @override_settings(EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend")
+    def test_contact_submission_allows_empty_subject_and_message(self):
+        payload = self.valid_contact_payload(subject="", message="", email="")
+        response = self.client.post(reverse("contact"), data=payload)
+
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertIn("未填写主题", mail.outbox[0].subject)
+        self.assertIn("咨询主题：未填写", mail.outbox[0].body)
+        self.assertIn("咨询内容：\n未填写", mail.outbox[0].body)
+
+    @override_settings(EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend")
+    def test_contact_submission_requires_phone_or_email(self):
+        payload = self.valid_contact_payload(phone="", email="")
+        response = self.client.post(reverse("contact"), data=payload)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(mail.outbox), 0)
+        self.assertContains(response, "请至少填写联系电话或电子邮箱中的一项。")
+
+    @override_settings(EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend")
+    def test_contact_submission_requires_core_fields_and_privacy(self):
+        payload = self.valid_contact_payload(
+            identity="",
+            consultation_direction="",
+            subject="",
+            message="",
+            name="",
+        )
+        payload.pop("privacy_consent", None)
+        response = self.client.post(reverse("contact"), data=payload)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(mail.outbox), 0)
+        self.assertContains(response, "请选择最接近您当前情况的一项。")
+        self.assertContains(response, "请选择最接近的咨询方向。")
+        self.assertContains(response, "请填写您的姓名。")
+        self.assertContains(response, "请先阅读并同意隐私政策。")
+
+    @override_settings(EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend")
+    def test_company_identity_rejects_personal_direction(self):
+        payload = self.valid_contact_payload(
+            identity="company",
+            consultation_direction="personal_residency_family",
+        )
+        response = self.client.post(reverse("contact"), data=payload)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(mail.outbox), 0)
+        self.assertContains(response, "请根据您的身份选择合适的咨询方向。")
+
+    @override_settings(EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend")
+    def test_individual_identity_rejects_business_direction(self):
+        payload = self.valid_contact_payload(
+            identity="individual_family",
+            consultation_direction="business_growth",
+        )
+        response = self.client.post(reverse("contact"), data=payload)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(mail.outbox), 0)
+        self.assertContains(response, "请根据您的身份选择合适的咨询方向。")
+
+    @override_settings(EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend")
+    def test_owner_investor_allows_mixed_direction_and_rejects_excluded_business_direction(self):
+        valid_payload = self.valid_contact_payload(
+            identity="owner_investor",
+            consultation_direction="personal_property_assets",
+        )
+        valid_response = self.client.post(reverse("contact"), data=valid_payload)
+
+        self.assertEqual(valid_response.status_code, 302)
+        self.assertEqual(len(mail.outbox), 1)
+
+        mail.outbox.clear()
+        invalid_payload = self.valid_contact_payload(
+            identity="owner_investor",
+            consultation_direction="business_growth",
+        )
+        invalid_response = self.client.post(reverse("contact"), data=invalid_payload)
+
+        self.assertEqual(invalid_response.status_code, 200)
+        self.assertEqual(len(mail.outbox), 0)
+        self.assertContains(invalid_response, "请根据您的身份选择合适的咨询方向。")
+
+    @override_settings(EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend")
+    def test_unsure_identity_allows_all_supported_directions(self):
+        payload = self.valid_contact_payload(
+            identity="unsure",
+            consultation_direction="personal_cross_border_tax",
+            organization_name="",
+        )
+        response = self.client.post(reverse("contact"), data=payload)
+
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(len(mail.outbox), 1)
+
+    @override_settings(EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend")
+    def test_contact_honeypot_does_not_send_email(self):
+        payload = self.valid_contact_payload(website="https://spam.example.com")
+        response = self.client.post(reverse("contact"), data=payload)
+
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(len(mail.outbox), 0)
+        self.assertEqual(response["Location"], f"{reverse('contact')}?submitted=1")
+
+    @override_settings(EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend")
+    def test_contact_email_failure_shows_error_and_preserves_form(self):
+        with patch("website.views.EmailMultiAlternatives.send", side_effect=Exception("mail failure")):
+            response = self.client.post(reverse("contact"), data=self.valid_contact_payload())
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(
+            response,
+            "信息暂时未能发送，请稍后重试。您也可以直接发送邮件至 contact@acoeursconsulting.com。",
+        )
+        self.assertContains(response, 'value="张三"', html=False)
+        self.assertNotContains(response, "信息已提交")
+
+    def test_contact_submission_does_not_create_database_inquiry_models(self):
+        model_names = {model.__name__ for model in apps.get_app_config("website").get_models()}
+
+        self.assertFalse({"Contact", "Inquiry", "Lead"} & model_names)
+
+    def test_public_ctas_now_point_to_contact_route(self):
+        route_names = [
+            "home",
+            "business",
+            "personal",
+            "about",
+            "business_market_entry",
+            "business_company_banking",
+            "business_tax_legal_compliance",
+            "business_local_operations",
+            "business_growth",
+            "personal_residency_family",
+            "personal_property_wealth",
+            "personal_cross_border_tax_risk",
+        ]
+
+        for route_name in route_names:
+            with self.subTest(route_name=route_name):
+                response = self.client.get(reverse(route_name))
+                content = response.content.decode()
+                self.assertIn(reverse("contact"), content)
+                self.assertNotIn(reverse("consultation"), content)
+                self.assertNotIn("预约30分钟咨询", content)
 
     def test_cookie_policy_page_returns_http_200(self):
         response = self.client.get(reverse("cookies"))
@@ -763,14 +1080,20 @@ class WebsiteRouteTests(TestCase):
         self.assertIn("<title>隐私政策｜Acoeurs Consulting</title>", content)
         self.assertContains(response, "服务器访问和安全日志")
         self.assertContains(response, "用户主动发送的电子邮件")
-        self.assertContains(response, "Render 提供应用和数据库托管")
+        self.assertContains(response, "必要的技术服务提供商")
         self.assertContains(response, "访问、更正、删除、限制处理、反对处理和数据可携带")
         self.assertContains(response, "向法国国家信息与自由委员会（CNIL）提出投诉")
-        self.assertContains(response, "网站当前未启用在线咨询表单")
+        self.assertContains(response, "当前网站提供在线联系表单")
+        self.assertContains(response, "表单信息用于处理访问者主动提交的联系请求")
+        self.assertContains(response, "当前阶段，这些表单内容不写入网站咨询数据库、不进入 CRM")
+        self.assertContains(response, "建议自最后一次相关沟通起保存不超过 12 个月")
         self.assertNotIn("保存 30 天", content)
         self.assertNotIn("银行级加密", content)
         self.assertNotIn("绝对保密", content)
-        self.assertNotIn("HiChina 提供网站托管", content)
+        self.assertNotIn("Alibaba Cloud Computing Ltd. d/b/a HiChina", content)
+        self.assertNotIn("DNS7.HICHINA.COM", content)
+        self.assertNotIn("DNS8.HICHINA.COM", content)
+        self.assertNotIn("Render", content)
         self.assertNotIn("zhe jiang", content)
         self.assertNotIn("数据控制者地址位于中国", content)
 
@@ -795,7 +1118,7 @@ class WebsiteRouteTests(TestCase):
         self.assertContains(response, "contact@acoeursconsulting.com")
         self.assertContains(response, "400-606-0685")
         self.assertContains(response, "+33 (0)9 72 96 05 73")
-        self.assertContains(response, "Render 提供应用和数据库技术托管")
+        self.assertNotIn("Render", content)
         self.assertNotIn("SIREN：", content)
         self.assertNotIn("注册资本", content)
         self.assertNotIn("TVA", content)
@@ -856,6 +1179,12 @@ class WebsiteRouteTests(TestCase):
                     linked_response = self.client.get(href)
                     self.assertEqual(linked_response.status_code, 200)
 
+    def test_formal_chinese_pages_return_http_200(self):
+        for route_name in self.formal_page_routes:
+            with self.subTest(route_name=route_name):
+                response = self.client.get(reverse(route_name))
+                self.assertEqual(response.status_code, 200)
+
     def test_placeholder_routes_return_http_200(self):
         for route_name in self.placeholder_routes:
             with self.subTest(route_name=route_name):
@@ -868,14 +1197,39 @@ class WebsiteRouteTests(TestCase):
         self.assertContains(response, "contact@acoeursconsulting.com")
         self.assertContains(response, "+33 (0)9 72 96 05 73")
         self.assertContains(response, "400-606-0685")
+        self.assertContains(response, "Acoeurs Consulting在巴黎、上海和香港设有办公室与团队。")
 
     def test_homepage_contains_expected_primary_links(self):
         response = self.client.get(reverse("home"))
         content = response.content.decode()
 
-        self.assertIn(reverse("consultation"), content)
-        self.assertIn(reverse("case_listed_company_france"), content)
+        self.assertIn(reverse("contact"), content)
         self.assertIn(reverse("about"), content)
+        self.assertNotIn(reverse("case_listed_company_france"), content)
+
+    def test_homepage_case_section_still_exists_without_detail_link(self):
+        response = self.client.get(reverse("home"))
+        content = response.content.decode()
+
+        self.assertContains(response, "从市场进入到业务增长的真实实践")
+        self.assertContains(response, "中国上市公司｜法国市场拓展")
+        self.assertNotIn("查看完整案例", content)
+        self.assertNotIn("查看更多案例", content)
+
+    def test_no_public_case_links_are_exposed_in_shared_navigation_or_homepage(self):
+        checked_routes = ["home", "business", "personal", "about", "contact"]
+
+        for route_name in checked_routes:
+            with self.subTest(route_name=route_name):
+                response = self.client.get(reverse(route_name))
+                self.assertNotIn(reverse("case_listed_company_france"), response.content.decode())
+
+    def test_no_public_language_placeholder_links_are_exposed(self):
+        response = self.client.get(reverse("home"))
+        content = response.content.decode()
+
+        self.assertNotIn(reverse("fr"), content)
+        self.assertNotIn(reverse("en"), content)
 
     def test_homepage_footer_contains_expected_navigation_links(self):
         response = self.client.get(reverse("home"))
@@ -892,6 +1246,7 @@ class WebsiteRouteTests(TestCase):
             "personal_residency_family",
             "personal_property_wealth",
             "personal_cross_border_tax_risk",
+            "contact",
             "legal",
             "privacy",
             "cookies",
@@ -900,6 +1255,80 @@ class WebsiteRouteTests(TestCase):
         for route_name in expected_routes:
             with self.subTest(route_name=route_name):
                 self.assertIn(reverse(route_name), content)
+
+    def test_header_main_navigation_links_are_valid(self):
+        response = self.client.get(reverse("home"))
+        content = response.content.decode()
+
+        for route_name in ["home", "business", "personal", "about", "contact"]:
+            with self.subTest(route_name=route_name):
+                url = reverse(route_name)
+                self.assertIn(url, content)
+                self.assertEqual(self.client.get(url).status_code, 200)
+
+    def test_footer_legal_links_are_valid(self):
+        response = self.client.get(reverse("home"))
+        content = response.content.decode()
+
+        for route_name in ["legal", "privacy", "cookies"]:
+            with self.subTest(route_name=route_name):
+                url = reverse(route_name)
+                self.assertIn(url, content)
+                self.assertEqual(self.client.get(url).status_code, 200)
+
+    def test_service_detail_pages_are_accessible_from_overview_pages(self):
+        business_content = self.client.get(reverse("business")).content.decode()
+        personal_content = self.client.get(reverse("personal")).content.decode()
+
+        for route_name in [
+            "business_market_entry",
+            "business_company_banking",
+            "business_tax_legal_compliance",
+            "business_local_operations",
+            "business_growth",
+        ]:
+            with self.subTest(route_name=route_name):
+                self.assertIn(reverse(route_name), business_content)
+
+        for route_name in [
+            "personal_residency_family",
+            "personal_property_wealth",
+            "personal_cross_border_tax_risk",
+        ]:
+            with self.subTest(route_name=route_name):
+                self.assertIn(reverse(route_name), personal_content)
+
+    def test_public_templates_do_not_use_removed_consultation_cta_copy(self):
+        forbidden_phrases = [
+            "预约30分钟咨询",
+            "立即预约咨询",
+        ]
+
+        for route_name in self.formal_page_routes:
+            with self.subTest(route_name=route_name):
+                content = self.client.get(reverse(route_name)).content.decode()
+                for phrase in forbidden_phrases:
+                    self.assertNotIn(phrase, content)
+
+    def test_public_template_sources_do_not_contain_removed_cta_copy_or_empty_hash_links(self):
+        forbidden_phrases = [
+            "预约30分钟咨询",
+            "立即预约咨询",
+        ]
+        template_paths = list(Path("templates").rglob("*.html"))
+
+        for template_path in template_paths:
+            with self.subTest(template=str(template_path)):
+                source = template_path.read_text(encoding="utf-8")
+                self.assertNotIn('href="#"', source)
+                for phrase in forbidden_phrases:
+                    self.assertNotIn(phrase, source)
+
+    def test_pages_do_not_contain_duplicate_html_ids(self):
+        for route_name in self.formal_page_routes:
+            with self.subTest(route_name=route_name):
+                content = self.client.get(reverse(route_name)).content.decode()
+                self.assert_no_duplicate_ids(content)
 
     def test_health_endpoint_returns_http_200(self):
         response = self.client.get(reverse("health"))

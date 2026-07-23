@@ -169,6 +169,28 @@ CSRF_TRUSTED_ORIGINS = build_csrf_trusted_origins(
 SITE_URL = normalize_site_url(env_value("SITE_URL"))
 SITE_NOINDEX = env_bool("SITE_NOINDEX", default=False)
 
+EMAIL_BACKEND = env_value("EMAIL_BACKEND") or (
+    "django.core.mail.backends.console.EmailBackend"
+    if DEBUG
+    else "django.core.mail.backends.smtp.EmailBackend"
+)
+EMAIL_HOST = env_value("EMAIL_HOST", aliases=["DJANGO_EMAIL_HOST"]) or "localhost"
+EMAIL_PORT = env_int("EMAIL_PORT", default=25)
+EMAIL_HOST_USER = env_value("EMAIL_HOST_USER", aliases=["DJANGO_EMAIL_HOST_USER"]) or ""
+EMAIL_HOST_PASSWORD = (
+    env_value("EMAIL_HOST_PASSWORD", aliases=["DJANGO_EMAIL_HOST_PASSWORD"]) or ""
+)
+EMAIL_USE_TLS = env_bool("EMAIL_USE_TLS", default=False)
+EMAIL_USE_SSL = env_bool("EMAIL_USE_SSL", default=False)
+DEFAULT_FROM_EMAIL = (
+    env_value("DEFAULT_FROM_EMAIL", aliases=["DJANGO_DEFAULT_FROM_EMAIL"])
+    or "Acoeurs Consulting <contact@acoeursconsulting.com>"
+)
+CONTACT_RECIPIENT_EMAIL = (
+    env_value("CONTACT_RECIPIENT_EMAIL", aliases=["DJANGO_CONTACT_RECIPIENT_EMAIL"])
+    or "contact@acoeursconsulting.com"
+)
+
 WHITENOISE_AVAILABLE = importlib.util.find_spec("whitenoise") is not None
 DJ_DATABASE_URL_AVAILABLE = dj_database_url is not None
 

@@ -1,0 +1,394 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}联系我们｜Acoeurs Consulting{% endblock %}
+{% block meta_description %}联系我们。填写 3 步联系问卷，Acoeurs Consulting 会根据您留下的信息与您联系。{% endblock %}
+{% block body_class %}page-contact{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="contact-page-header">
+    <div class="contact-page-header__backdrop" aria-hidden="true">
+        <span class="contact-page-header__grid"></span>
+        <span class="contact-page-header__line contact-page-header__line--one"></span>
+        <span class="contact-page-header__line contact-page-header__line--two"></span>
+    </div>
+    <div class="container contact-page-header__inner">
+        <nav class="breadcrumb" aria-label="面包屑" data-reveal="soft">
+            <ol class="breadcrumb__list">
+                <li><a href="{% url 'home' %}">首页</a></li>
+                <li aria-current="page">联系我们</li>
+            </ol>
+        </nav>
+        <div class="contact-page-header__content">
+            <p class="eyebrow" data-reveal="text" data-reveal-delay="60">联系我们</p>
+            <h1 data-reveal="title" data-reveal-delay="120">联系我们</h1>
+            <p class="contact-page-header__summary" data-reveal="text" data-reveal-delay="200">
+                用3个步骤告诉我们您的情况、需求和联系方式。
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="contact-page-section" aria-labelledby="contact-form-title">
+    <div class="container contact-page__layout">
+        {% if submitted %}
+            <div class="contact-success" data-reveal="panel" data-reveal-repeat="true">
+                <p class="eyebrow">联系我们</p>
+                <h2 id="contact-form-title">信息已提交</h2>
+                <p>
+                    我们已经收到您的联系请求。Acoeurs Consulting 会根据您提供的信息，通过电话或电子邮件与您取得联系。
+                </p>
+                <div class="contact-success__actions">
+                    <a class="button button--gold" href="{% url 'home' %}">返回首页</a>
+                </div>
+                <dl class="contact-success__details">
+                    <div>
+                        <dt>电子邮箱</dt>
+                        <dd><a href="mailto:contact@acoeursconsulting.com">contact@acoeursconsulting.com</a></dd>
+                    </div>
+                    <div>
+                        <dt>中国电话</dt>
+                        <dd><a href="tel:4006060685">400-606-0685</a></dd>
+                    </div>
+                    <div>
+                        <dt>法国电话</dt>
+                        <dd><a href="tel:+33972960573">+33 (0)9 72 96 05 73</a></dd>
+                    </div>
+                </dl>
+            </div>
+        {% else %}
+            <div class="contact-form-panel" data-current-step="{{ current_step }}" data-reveal="panel" data-reveal-repeat="true">
+                <header class="contact-form-panel__header">
+                    <div class="contact-progress" aria-label="联系表单步骤">
+                        <ol class="contact-progress__list">
+                            <li class="contact-progress__item{% if current_step == 1 %} is-current{% elif current_step > 1 %} is-complete{% endif %}"{% if current_step == 1 %} aria-current="step"{% endif %}>
+                                <span class="contact-progress__number">{% if current_step > 1 %}✓{% else %}01{% endif %}</span>
+                                <span class="contact-progress__label">关于您</span>
+                            </li>
+                            <li class="contact-progress__item{% if current_step == 2 %} is-current{% elif current_step > 2 %} is-complete{% endif %}"{% if current_step == 2 %} aria-current="step"{% endif %}>
+                                <span class="contact-progress__number">{% if current_step > 2 %}✓{% else %}02{% endif %}</span>
+                                <span class="contact-progress__label">您的需求</span>
+                            </li>
+                            <li class="contact-progress__item{% if current_step == 3 %} is-current{% endif %}"{% if current_step == 3 %} aria-current="step"{% endif %}>
+                                <span class="contact-progress__number">03</span>
+                                <span class="contact-progress__label">联系方式</span>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="contact-progress-mobile" aria-live="polite">
+                        <p class="contact-progress-mobile__step">第 {{ current_step }} 步，共 3 步</p>
+                        <p class="contact-progress-mobile__label">
+                            {% if current_step == 1 %}关于您{% elif current_step == 2 %}您的需求{% else %}联系方式{% endif %}
+                        </p>
+                        <div class="contact-progress-mobile__track" aria-hidden="true">
+                            <span class="contact-progress-mobile__bar contact-progress-mobile__bar--step-{{ current_step }}"></span>
+                        </div>
+                    </div>
+                </header>
+
+                {% if form.errors %}
+                    <div class="contact-form-errors" aria-live="polite">
+                        <h2 class="contact-form-errors__title">请检查以下内容</h2>
+                        <ul class="contact-form-errors__list">
+                            {% for error in form.non_field_errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <li><a href="#{{ field.id_for_label }}">{{ field.label }}：{{ error }}</a></li>
+                                {% endfor %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+
+                <form method="post" class="contact-form" novalidate data-contact-form>
+                    {% csrf_token %}
+                    <input type="text" name="{{ form.website.html_name }}" id="{{ form.website.id_for_label }}" value="{{ form.website.value|default:'' }}" class="contact-form__honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                    <section class="contact-step" id="contact-step-1" data-step-panel="1">
+                        <fieldset class="contact-fieldset">
+                            <legend class="contact-step__legend" id="contact-form-title" tabindex="-1" data-step-title>先了解一下您的情况</legend>
+                            <p class="contact-step__intro">请选择最接近您当前情况的一项。</p>
+
+                            <div class="contact-choice-grid" role="radiogroup" aria-labelledby="{{ form.identity.id_for_label }}-label">
+                                <p class="sr-only" id="{{ form.identity.id_for_label }}-label">{{ form.identity.label }}</p>
+                                {% with current_identity=form.identity.value %}
+                                    {% for value, label in form.fields.identity.choices %}
+                                        <label class="contact-choice-card">
+                                            <input
+                                                type="radio"
+                                                name="{{ form.identity.html_name }}"
+                                                id="id_identity_{{ forloop.counter0 }}"
+                                                value="{{ value }}"
+                                                {% if current_identity == value %}checked{% endif %}
+                                                required
+                                                aria-describedby="contact-identity-note-{{ forloop.counter0 }}{% if form.identity.errors %} {{ form.identity.id_for_label }}-error{% endif %}"
+                                            >
+                                            <span class="contact-choice-card__content">
+                                                <span class="contact-choice-card__label">{{ label }}</span>
+                                                <span class="contact-choice-card__note" id="contact-identity-note-{{ forloop.counter0 }}">
+                                                    {% if value == "company" %}计划进入法国或欧洲，或需要本地运营支持{% elif value == "owner_investor" %}涉及企业经营、投资、资产或跨境事务{% elif value == "individual_family" %}涉及居留、家庭定居或法国本地事务{% else %}还不清楚应选择哪类服务{% endif %}
+                                                </span>
+                                            </span>
+                                        </label>
+                                    {% endfor %}
+                                {% endwith %}
+                            </div>
+                            {% if form.identity.errors %}
+                                <p class="contact-field__error" id="{{ form.identity.id_for_label }}-error">{{ form.identity.errors.0 }}</p>
+                            {% endif %}
+
+                            <div class="contact-field contact-field--optional" data-company-field>
+                                <label for="{{ form.organization_name.id_for_label }}">公司或机构名称（选填）</label>
+                                <input
+                                    type="text"
+                                    name="{{ form.organization_name.html_name }}"
+                                    id="{{ form.organization_name.id_for_label }}"
+                                    maxlength="200"
+                                    value="{{ form.organization_name.value|default:'' }}"
+                                >
+                            </div>
+                        </fieldset>
+
+                        <div class="contact-step__actions contact-step__actions--js">
+                            <button type="button" class="button button--gold" data-step-next="2">下一步：说明需求</button>
+                        </div>
+                    </section>
+
+                    <section class="contact-step" id="contact-step-2" data-step-panel="2">
+                        <fieldset class="contact-fieldset">
+                            <legend class="contact-step__legend" tabindex="-1" data-step-title>您希望我们协助什么？</legend>
+                            <p class="contact-step__intro">请选择最接近的方向。如有需要，可补充更具体的主题或情况说明。</p>
+
+                            <div class="contact-direction-groups">
+                                {% with current_direction=form.consultation_direction.value %}
+                                    {% for group in contact_direction_groups %}
+                                        <section class="contact-direction-group" data-direction-group data-identities="{{ group.identities|join:' ' }}">
+                                            <h3>{{ group.title }}</h3>
+                                            <div class="contact-direction-options">
+                                                {% for value, label in group.options %}
+                                                    <label class="contact-direction-card">
+                                                        <input
+                                                            type="radio"
+                                                            name="{{ form.consultation_direction.html_name }}"
+                                                            id="id_consultation_direction_{{ group.key }}_{{ value }}"
+                                                            value="{{ value }}"
+                                                            {% if current_direction == value %}checked{% endif %}
+                                                            required
+                                                            {% if form.consultation_direction.errors %}aria-describedby="{{ form.consultation_direction.id_for_label }}-error"{% endif %}
+                                                        >
+                                                        <span>{{ label }}</span>
+                                                    </label>
+                                                {% endfor %}
+                                            </div>
+                                        </section>
+                                    {% endfor %}
+                                {% endwith %}
+                            </div>
+                            {% if form.consultation_direction.errors %}
+                                <p class="contact-field__error" id="{{ form.consultation_direction.id_for_label }}-error">{{ form.consultation_direction.errors.0 }}</p>
+                            {% endif %}
+
+                            <div class="contact-optional" data-contact-optional>
+                                <button
+                                    type="button"
+                                    class="contact-optional__toggle"
+                                    data-contact-optional-toggle
+                                    aria-expanded="{% if form.subject.value or form.message.value or form.subject.errors or form.message.errors %}true{% else %}false{% endif %}"
+                                    aria-controls="contact-optional-details"
+                                >
+                                    {% if form.subject.value or form.message.value or form.subject.errors or form.message.errors %}
+                                        收起补充信息
+                                    {% else %}
+                                        ＋ 补充咨询信息（选填）
+                                    {% endif %}
+                                </button>
+                                <div
+                                    class="contact-optional__details"
+                                    id="contact-optional-details"
+                                    data-contact-optional-details
+                                >
+                                    <div class="contact-field">
+                                        <label for="{{ form.subject.id_for_label }}">咨询主题（选填）</label>
+                                        <input
+                                            type="text"
+                                            name="{{ form.subject.html_name }}"
+                                            id="{{ form.subject.id_for_label }}"
+                                            maxlength="150"
+                                            value="{{ form.subject.value|default:'' }}"
+                                            aria-describedby="contact-subject-help{% if form.subject.errors %} {{ form.subject.id_for_label }}-error{% endif %}"
+                                            placeholder="请用一句话概括您的咨询主题"
+                                        >
+                                        <p class="contact-field__help" id="contact-subject-help">例如：计划在法国设立公司、家庭准备迁居巴黎、希望了解欧洲市场渠道。</p>
+                                        {% if form.subject.errors %}
+                                            <p class="contact-field__error" id="{{ form.subject.id_for_label }}-error">{{ form.subject.errors.0 }}</p>
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="contact-field">
+                                        <label for="{{ form.message.id_for_label }}">情况描述（选填）</label>
+                                        <textarea
+                                            name="{{ form.message.html_name }}"
+                                            id="{{ form.message.id_for_label }}"
+                                            rows="4"
+                                            maxlength="3000"
+                                            aria-describedby="contact-message-help{% if form.message.errors %} {{ form.message.id_for_label }}-error{% endif %}"
+                                            placeholder="如您愿意，可简要说明当前情况、目标或希望协调的事项"
+                                        >{{ form.message.value|default:'' }}</textarea>
+                                        <p class="contact-field__help" id="contact-message-help">请勿在此提交护照、身份证、银行账户、税号、健康信息或其他敏感资料。</p>
+                                        {% if form.message.errors %}
+                                            <p class="contact-field__error" id="{{ form.message.id_for_label }}-error">{{ form.message.errors.0 }}</p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="contact-step__actions contact-step__actions--js">
+                            <button type="button" class="button button--secondary" data-step-prev="1">上一步</button>
+                            <button type="button" class="button button--gold" data-step-next="3">下一步：留下联系方式</button>
+                        </div>
+                    </section>
+
+                    <section class="contact-step" id="contact-step-3" data-step-panel="3">
+                        <fieldset class="contact-fieldset">
+                            <legend class="contact-step__legend" tabindex="-1" data-step-title>我们如何联系您？</legend>
+                            <p class="contact-step__intro">请至少留下一个有效联系方式。我们会根据您提交的内容，通过电话或电子邮件与您取得联系。</p>
+
+                            <div class="contact-field-grid">
+                                <div class="contact-field">
+                                    <label for="{{ form.name.id_for_label }}">姓名</label>
+                                    <input
+                                        type="text"
+                                        name="{{ form.name.html_name }}"
+                                        id="{{ form.name.id_for_label }}"
+                                        maxlength="100"
+                                        value="{{ form.name.value|default:'' }}"
+                                        {% if form.name.errors %}aria-describedby="{{ form.name.id_for_label }}-error"{% endif %}
+                                        required
+                                    >
+                                    {% if form.name.errors %}
+                                        <p class="contact-field__error" id="{{ form.name.id_for_label }}-error">{{ form.name.errors.0 }}</p>
+                                    {% endif %}
+                                </div>
+                                <div class="contact-field">
+                                    <label for="{{ form.phone.id_for_label }}">联系电话</label>
+                                    <input
+                                        type="tel"
+                                        name="{{ form.phone.html_name }}"
+                                        id="{{ form.phone.id_for_label }}"
+                                        maxlength="50"
+                                        value="{{ form.phone.value|default:'' }}"
+                                        {% if form.phone.errors %}aria-describedby="{{ form.phone.id_for_label }}-error contact-contact-method-help"{% else %}aria-describedby="contact-contact-method-help"{% endif %}
+                                    >
+                                    {% if form.phone.errors %}
+                                        <p class="contact-field__error" id="{{ form.phone.id_for_label }}-error">{{ form.phone.errors.0 }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="contact-field-grid">
+                                <div class="contact-field">
+                                    <label for="{{ form.email.id_for_label }}">电子邮箱</label>
+                                    <input
+                                        type="email"
+                                        name="{{ form.email.html_name }}"
+                                        id="{{ form.email.id_for_label }}"
+                                        maxlength="254"
+                                        value="{{ form.email.value|default:'' }}"
+                                        {% if form.email.errors %}aria-describedby="{{ form.email.id_for_label }}-error contact-contact-method-help"{% else %}aria-describedby="contact-contact-method-help"{% endif %}
+                                    >
+                                    {% if form.email.errors %}
+                                        <p class="contact-field__error" id="{{ form.email.id_for_label }}-error">{{ form.email.errors.0 }}</p>
+                                    {% endif %}
+                                </div>
+                                <div class="contact-field">
+                                    <label for="{{ form.preferred_language.id_for_label }}">希望使用的沟通语言</label>
+                                    <select
+                                        name="{{ form.preferred_language.html_name }}"
+                                        id="{{ form.preferred_language.id_for_label }}"
+                                        required
+                                    >
+                                        {% with current_language=form.preferred_language.value|default:'zh' %}
+                                            {% for value, label in form.fields.preferred_language.choices %}
+                                                <option value="{{ value }}"{% if current_language == value %} selected{% endif %}>{{ label }}</option>
+                                            {% endfor %}
+                                        {% endwith %}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <p class="contact-field__help" id="contact-contact-method-help">请至少填写联系电话或电子邮箱中的一项。</p>
+
+                            <div class="contact-field">
+                                <label for="{{ form.contact_time.id_for_label }}">方便联系的时间（选填）</label>
+                                <input
+                                    type="text"
+                                    name="{{ form.contact_time.html_name }}"
+                                    id="{{ form.contact_time.id_for_label }}"
+                                    maxlength="150"
+                                    value="{{ form.contact_time.value|default:'' }}"
+                                    placeholder="例如：工作日下午、北京时间18点以后、法国时间上午"
+                                >
+                            </div>
+
+                            <div class="contact-consent">
+                                <label class="contact-consent__label">
+                                    <input
+                                        type="checkbox"
+                                        name="{{ form.privacy_consent.html_name }}"
+                                        id="{{ form.privacy_consent.id_for_label }}"
+                                        value="on"
+                                        {% if form.privacy_consent.value %}checked{% endif %}
+                                        {% if form.privacy_consent.errors %}aria-describedby="{{ form.privacy_consent.id_for_label }}-error"{% endif %}
+                                        required
+                                    >
+                                    <span>我已阅读并同意<a href="{% url 'privacy' %}">《隐私政策》</a>，并同意Acoeurs Consulting为处理本次联系请求而使用我提交的信息。</span>
+                                </label>
+                                {% if form.privacy_consent.errors %}
+                                    <p class="contact-field__error" id="{{ form.privacy_consent.id_for_label }}-error">{{ form.privacy_consent.errors.0 }}</p>
+                                {% endif %}
+                            </div>
+                        </fieldset>
+
+                        <div class="contact-step__actions contact-step__actions--js">
+                            <button type="button" class="button button--secondary" data-step-prev="2">上一步</button>
+                            <button type="submit" class="button button--gold">提交咨询</button>
+                        </div>
+                    </section>
+
+                    <div class="contact-step__actions contact-step__actions--nojs">
+                        <button type="submit" class="button button--gold">提交咨询</button>
+                    </div>
+                </form>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+<section class="contact-note-section" aria-labelledby="contact-note-title">
+    <div class="container">
+        <aside class="contact-note" data-reveal="soft" data-reveal-repeat="true">
+            <p class="contact-note__label" id="contact-note-title">信息说明</p>
+            <p>
+                提交表单不构成正式委托或专业意见。
+            </p>
+            <p>
+                法律、税务、会计及其他专业事项，由具备相应资格的专业人士或机构独立提供。
+            </p>
+            <p>
+                您提交的信息仅用于处理本次联系请求，不用于未经同意的营销推广。
+            </p>
+        </aside>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/contact.js' %}"></script>
+{% endblock %}

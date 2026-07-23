@@ -62,15 +62,18 @@ urlpatterns = [
         name="about",
     ),
     path(
+        "contact/",
+        views.contact,
+        name="contact",
+    ),
+    path(
         "consultation/",
-        views.placeholder,
-        {"title": "预约咨询", "section": "咨询入口"},
+        views.consultation_redirect,
         name="consultation",
     ),
     path(
         "cases/listed-company-france/",
-        views.placeholder,
-        {"title": "案例：法国上市公司项目", "section": "案例研究"},
+        views.case_study_redirect,
         name="case_listed_company_france",
     ),
     path(
