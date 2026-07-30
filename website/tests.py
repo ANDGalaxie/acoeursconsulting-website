@@ -1266,6 +1266,21 @@ class WebsiteRouteTests(TestCase):
                 self.assertIn(url, content)
                 self.assertEqual(self.client.get(url).status_code, 200)
 
+    def test_header_uses_transparent_mark_branding(self):
+        response = self.client.get(reverse("home"))
+        content = response.content.decode()
+        header = content.split("<header", 1)[1].split("</header>", 1)[0]
+
+        self.assertIn('class="site-brand"', header)
+        self.assertIn(f'href="{reverse("home")}"', header)
+        self.assertRegex(header, r'/static/images/branding/acoeurs-mark(?:\.[a-f0-9]+)?\.svg')
+        self.assertIn('alt=""', header)
+        self.assertIn('width="52"', header)
+        self.assertIn('height="48"', header)
+        self.assertIn("Acoeurs Consulting", header)
+        self.assertNotIn("images/brand/acoeurs-logo.png", header)
+        self.assertNotIn('aria-hidden="true">Acoeurs Consulting', header)
+
     def test_footer_legal_links_are_valid(self):
         response = self.client.get(reverse("home"))
         content = response.content.decode()
