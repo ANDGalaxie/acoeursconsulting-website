@@ -1003,6 +1003,41 @@ body.has-motion .reveal-on-scroll.is-visible.case-study__visual img {
     transform: scale(1.02);
 }
 
+.home-hero__description-line {
+    display: block;
+}
+
+.about-section__copy h2 span {
+    display: block;
+    white-space: nowrap;
+}
+
+.about-section__copy > p:not(.eyebrow) {
+    max-width: 100%;
+    text-align: justify;
+    text-align-last: left;
+    text-justify: inter-character;
+    text-wrap: wrap;
+    line-break: strict;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+@media (max-width: 767px) {
+    .home-hero__description-line {
+        display: inline;
+    }
+
+    .about-section__copy h2 span {
+        white-space: normal;
+    }
+
+    .about-section__copy > p:not(.eyebrow) {
+        text-align: left;
+        text-align-last: auto;
+    }
+}
+
 @media (min-width: 768px) {
     .home-hero {
         min-height: calc(100vh - var(--header-height));
