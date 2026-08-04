@@ -245,6 +245,8 @@
 
 .site-footer__column {
     min-width: 0;
+    justify-self: stretch;
+    text-align: left;
 }
 
 .site-footer__column-title {
@@ -305,7 +307,7 @@
 }
 
 .site-footer__contact a {
-    white-space: nowrap;
+    overflow-wrap: anywhere;
 }
 
 .site-footer__meta {
@@ -428,11 +430,8 @@
 
 @media (min-width: 1024px) {
     .site-footer__grid {
-        grid-template-columns:
-            minmax(0, 1.25fr)
-            minmax(0, 0.9fr)
-            minmax(18rem, 1.1fr);
-        column-gap: 2rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: clamp(3rem, 5vw, 6rem);
     }
 
     .site-footer__column:last-child {

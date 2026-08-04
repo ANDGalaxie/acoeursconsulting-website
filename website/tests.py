@@ -716,7 +716,8 @@ class WebsiteRouteTests(TestCase):
         content = response.content.decode()
 
         self.assertEqual(content.count("<h1"), 1)
-        self.assertContains(response, "扎根法国，连接中国与欧洲")
+        self.assertContains(response, "扎根法国")
+        self.assertContains(response, "连接中国与欧洲")
         self.assertContains(response, 'aria-label="面包屑"', html=False)
         self.assertContains(response, ">首页</a>", html=False)
         self.assertContains(response, 'aria-current="page">关于我们<', html=False)
@@ -1155,7 +1156,8 @@ class WebsiteRouteTests(TestCase):
         response = self.client.get(reverse("home"))
 
         required_headings = [
-            "扎根法国，连接中国与欧洲",
+            "扎根法国",
+            "连接中国与欧洲",
             "您的欧洲业务正处于哪个阶段？",
             "覆盖欧洲业务全生命周期的企业服务",
             "面向企业主、投资人与家庭的法国本地服务",
@@ -1243,10 +1245,50 @@ class WebsiteRouteTests(TestCase):
     def test_homepage_final_cta_still_points_to_contact(self):
         response = self.client.get(reverse("home"))
         content = response.content.decode()
-        final_cta = content.split('class="home-section home-section--final-cta"', 1)[1].split("</section>", 1)[0]
+        final_cta = content.split("class=\"home-section home-section--final-cta\"", 1)[1].split("</section>", 1)[0]
 
         self.assertIn("准备开始您的法国及欧洲市场项目？", final_cta)
-        self.assertIn(f'href="{reverse("contact")}"', final_cta)
+        self.assertIn(
+            "告诉我们您正在推进的事项，我们会根据您提交的信息，通过电话或电子邮件与您取得联系。",
+            final_cta,
+        )
+        self.assertIn("href=\"{}\"".format(reverse("contact")), final_cta)
+        self.assertNotIn("<br", final_cta)
+
+    def test_final_cta_css_allows_text_to_wrap_naturally(self):
+        home_css = Path("static/css/home.css").read_text(encoding="utf-8")
+        final_cta_rules = home_css.split(".home-section--final-cta", 1)[1]
+        final_cta_text_rules = final_cta_rules.split(".final-cta h2,", 1)[1].split(
+            ".case-study__footer", 1
+        )[0]
+
+        self.assertIn("grid-template-columns: minmax(0, 1fr) auto", final_cta_rules)
+        self.assertIn("white-space: normal", final_cta_text_rules)
+        self.assertNotIn("white-space: nowrap", final_cta_text_rules)
+        self.assertNotIn("max-width: 38rem", final_cta_rules)
+
+    def test_footer_column_order_and_confirmed_contact_content_are_stable(self):
+        response = self.client.get(reverse("home"))
+        footer = response.content.decode().split("<footer", 1)[1].split("</footer>", 1)[0]
+
+        titles = re.findall(
+            r"class=\x22site-footer__column-title\x22[^>]*>([^<]+)</h2>",
+            footer,
+        )
+        self.assertEqual(titles, ["企业服务", "个人服务", "联系方式"])
+        for text in [
+            "中国电话",
+            "400-606-0685",
+            "法国电话",
+            "+33 (0)9 72 96 05 73",
+            "电子邮箱",
+            "contact@acoeursconsulting.com",
+            "32 AV. Kl&eacute;ber",
+            "75116 Paris",
+            "办公地点",
+            "巴黎 · 上海 · 香港",
+        ]:
+            self.assertIn(text, footer)
 
     def test_homepage_contains_expected_primary_links(self):
         response = self.client.get(reverse("home"))

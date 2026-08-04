@@ -953,8 +953,9 @@
 .final-cta {
     display: grid;
     gap: 1.4rem;
-    max-width: 62rem;
-    padding: 3rem 0;
+    width: 100%;
+    margin-inline: auto;
+    padding-block: clamp(2.75rem, 4vw, 3.75rem);
     border: 0;
     border-radius: 0;
     background: none;
@@ -965,6 +966,8 @@
 .final-cta p {
     color: var(--color-white);
     margin: 0;
+    max-width: none;
+    white-space: normal;
 }
 
 .final-cta h2 {
@@ -974,7 +977,6 @@
 .final-cta p {
     color: rgba(250, 248, 243, 0.82);
     margin-top: 0.75rem;
-    max-width: 38rem;
 }
 
 .case-study__footer .button,
@@ -1108,10 +1110,9 @@ body.has-motion .reveal-on-scroll.is-visible.case-study__visual img {
     }
 
     .final-cta {
-        grid-template-columns: minmax(0, 38rem) max-content;
+        grid-template-columns: minmax(0, 1fr) auto;
         align-items: center;
-        gap: clamp(3rem, 5vw, 4rem);
-        padding: 3.35rem 0;
+        gap: clamp(3rem, 5vw, 5rem);
     }
 }
 
@@ -1318,7 +1319,9 @@ body.has-motion .reveal-on-scroll.is-visible.case-study__visual img {
     }
 
     .final-cta {
-        padding: 2.5rem 0;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding-block: 2.75rem;
     }
 }
 
