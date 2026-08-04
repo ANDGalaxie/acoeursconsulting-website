@@ -1197,7 +1197,56 @@ class WebsiteRouteTests(TestCase):
         self.assertContains(response, "contact@acoeursconsulting.com")
         self.assertContains(response, "+33 (0)9 72 96 05 73")
         self.assertContains(response, "400-606-0685")
-        self.assertContains(response, "Acoeurs Consulting在巴黎、上海和香港设有办公室与团队。")
+        self.assertContains(response, "32 AV. Kl&eacute;ber", html=False)
+        self.assertContains(response, "巴黎 · 上海 · 香港")
+
+    def test_footer_uses_three_service_and_contact_columns_without_brand_column(self):
+        response = self.client.get(reverse("home"))
+        footer = response.content.decode().split("<footer", 1)[1].split("</footer>", 1)[0]
+
+        self.assertEqual(footer.count("site-footer__column-title"), 3)
+        for title in ["企业服务", "个人服务", "联系方式"]:
+            self.assertIn(f">{title}</h2>", footer)
+        self.assertNotIn("个人服务与公司信息", footer)
+        self.assertNotIn("site-footer__brand", footer)
+        self.assertNotIn("您在法国及欧洲市场的战略与执行伙伴", footer)
+        self.assertNotIn("Acoeurs Consulting在巴黎、上海和香港设有办公室与团队。", footer)
+
+    def test_footer_contact_labels_and_real_contact_links_are_present(self):
+        response = self.client.get(reverse("home"))
+        footer = response.content.decode().split("<footer", 1)[1].split("</footer>", 1)[0]
+
+        self.assertIn("中国电话", footer)
+        self.assertNotIn("中国热线", footer)
+        self.assertIn('href="tel:4006060685"', footer)
+        self.assertIn('href="tel:+33972960573"', footer)
+        self.assertIn('href="mailto:contact@acoeursconsulting.com"', footer)
+
+    def test_about_and_contact_are_only_in_footer_auxiliary_navigation(self):
+        response = self.client.get(reverse("home"))
+        footer = response.content.decode().split("<footer", 1)[1].split("</footer>", 1)[0]
+        personal_column = footer.split('id="footer-personal-title"', 1)[1].split("</nav>", 1)[0]
+        auxiliary_navigation = footer.split('aria-label="页脚辅助导航"', 1)[1].split("</nav>", 1)[0]
+
+        self.assertNotIn(reverse("about"), personal_column)
+        self.assertNotIn(reverse("contact"), personal_column)
+        self.assertIn(reverse("about"), auxiliary_navigation)
+        self.assertIn(reverse("contact"), auxiliary_navigation)
+        self.assertIn("Cookie 政策", auxiliary_navigation)
+
+    def test_footer_is_rendered_on_every_formal_page(self):
+        for route_name in self.formal_page_routes:
+            with self.subTest(route_name=route_name):
+                response = self.client.get(reverse(route_name))
+                self.assertContains(response, '<footer class="site-footer">', html=False)
+
+    def test_homepage_final_cta_still_points_to_contact(self):
+        response = self.client.get(reverse("home"))
+        content = response.content.decode()
+        final_cta = content.split('class="home-section home-section--final-cta"', 1)[1].split("</section>", 1)[0]
+
+        self.assertIn("准备开始您的法国及欧洲市场项目？", final_cta)
+        self.assertIn(f'href="{reverse("contact")}"', final_cta)
 
     def test_homepage_contains_expected_primary_links(self):
         response = self.client.get(reverse("home"))

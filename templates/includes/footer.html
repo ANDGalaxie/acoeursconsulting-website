@@ -1,12 +1,6 @@
 <footer class="site-footer">
     <div class="container site-footer__inner">
         <div class="site-footer__grid">
-            <div class="site-footer__column">
-                <p class="site-footer__brand">Acoeurs Consulting 艾克斯咨询</p>
-                <p class="site-footer__text">您在法国及欧洲市场的战略与执行伙伴</p>
-                <p class="site-footer__text">Acoeurs Consulting在巴黎、上海和香港设有办公室与团队。</p>
-            </div>
-
             <nav class="site-footer__column" aria-labelledby="footer-business-title">
                 <h2 class="site-footer__column-title" id="footer-business-title">企业服务</h2>
                 <ul class="site-footer__links">
@@ -20,28 +14,26 @@
             </nav>
 
             <nav class="site-footer__column" aria-labelledby="footer-personal-title">
-                <h2 class="site-footer__column-title" id="footer-personal-title">个人服务与公司信息</h2>
+                <h2 class="site-footer__column-title" id="footer-personal-title">个人服务</h2>
                 <ul class="site-footer__links">
                     <li><a href="{% url 'personal' %}">个人服务总览</a></li>
                     <li><a href="{% url 'personal_residency_family' %}">居留与家庭定居</a></li>
                     <li><a href="{% url 'personal_property_wealth' %}">房产与资产配置</a></li>
                     <li><a href="{% url 'personal_cross_border_tax_risk' %}">跨境税务与风险管理</a></li>
-                    <li><a href="{% url 'about' %}">关于我们</a></li>
-                    <li><a href="{% url 'contact' %}">联系我们</a></li>
                 </ul>
             </nav>
 
             <div class="site-footer__column">
                 <h2 class="site-footer__column-title">联系方式</h2>
                 <div class="site-footer__contact">
-                    <p><span class="site-footer__contact-label">中国热线</span><a href="tel:4006060685">400-606-0685</a></p>
+                    <p><span class="site-footer__contact-label">中国电话</span><a href="tel:4006060685">400-606-0685</a></p>
                     <p><span class="site-footer__contact-label">法国电话</span><a href="tel:+33972960573">+33 (0)9 72 96 05 73</a></p>
-                    <p><span class="site-footer__contact-label">邮箱</span><a href="mailto:contact@acoeursconsulting.com">contact@acoeursconsulting.com</a></p>
+                    <p><span class="site-footer__contact-label">电子邮箱</span><a href="mailto:contact@acoeursconsulting.com">contact@acoeursconsulting.com</a></p>
                     <address>
                         <span class="site-footer__contact-label">巴黎地址</span>
                         <span>32 AV. Kl&eacute;ber<br>75116 Paris</span>
                     </address>
-                    <p><span class="site-footer__contact-label">办公室与团队</span><span>巴黎 · 上海 · 香港</span></p>
+                    <p><span class="site-footer__contact-label">办公地点</span><span>巴黎 · 上海 · 香港</span></p>
                 </div>
             </div>
         </div>
@@ -49,9 +41,11 @@
             <p class="site-footer__copyright">&copy; {% now "Y" %} Acoeurs Consulting</p>
             <nav aria-label="页脚辅助导航">
                 <ul class="site-footer__links site-footer__meta-links">
+                    <li><a href="{% url 'about' %}">关于我们</a></li>
+                    <li><a href="{% url 'contact' %}">联系我们</a></li>
                     <li><a href="{% url 'legal' %}">法律声明</a></li>
                     <li><a href="{% url 'privacy' %}">隐私政策</a></li>
-                    <li><a href="{% url 'cookies' %}">Cookie政策</a></li>
+                    <li><a href="{% url 'cookies' %}">Cookie 政策</a></li>
                 </ul>
             </nav>
         </div>

@@ -946,14 +946,14 @@
 
 .home-section--final-cta {
     padding: 0;
-    background:
-        linear-gradient(140deg, rgba(16, 40, 70, 1), rgba(24, 54, 93, 0.96)),
-        linear-gradient(90deg, rgba(201, 166, 75, 0.1), transparent 42%);
+    background: linear-gradient(135deg, var(--color-navy) 0%, #234b78 100%);
+    border-bottom: 1px solid rgba(216, 191, 118, 0.38);
 }
 
 .final-cta {
     display: grid;
     gap: 1.4rem;
+    max-width: 62rem;
     padding: 3rem 0;
     border: 0;
     border-radius: 0;
@@ -1108,9 +1108,9 @@ body.has-motion .reveal-on-scroll.is-visible.case-study__visual img {
     }
 
     .final-cta {
-        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-columns: minmax(0, 38rem) max-content;
         align-items: center;
-        gap: 2rem;
+        gap: clamp(3rem, 5vw, 4rem);
         padding: 3.35rem 0;
     }
 }
@@ -1230,10 +1230,6 @@ body.has-motion .reveal-on-scroll.is-visible.case-study__visual img {
 
     .process-stage__content {
         max-width: 15rem;
-    }
-
-    .final-cta .button {
-        justify-self: end;
     }
 }
 
