@@ -13,10 +13,28 @@
 
 .about-hero {
     position: relative;
+    isolation: isolate;
     overflow: clip;
     color: var(--color-white);
-    background:
-        linear-gradient(145deg, rgba(7, 20, 39, 0.99) 0%, rgba(16, 40, 70, 1) 48%, rgba(24, 54, 93, 0.96) 100%);
+    background: var(--color-navy-dark);
+}
+
+.about-hero::before,
+.about-hero::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+}
+
+.about-hero::before {
+    z-index: -2;
+    background: url("../images/about/about-hero-paris-shanghai.webp") center / cover no-repeat;
+}
+
+.about-hero::after {
+    z-index: -1;
+    background: linear-gradient(90deg, rgba(7, 20, 39, 0.94) 0%, rgba(12, 29, 51, 0.83) 48%, rgba(18, 42, 70, 0.56) 100%);
 }
 
 .about-hero__backdrop,
@@ -26,6 +44,10 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
+}
+
+.about-hero__backdrop {
+    display: none;
 }
 
 .about-hero__grid {
@@ -142,11 +164,8 @@
     word-break: keep-all;
 }
 
-.about-hero__title span {
+.about-hero__title-line {
     display: block;
-    width: max-content;
-    max-width: 100%;
-    white-space: nowrap;
 }
 
 .about-hero__summary {
@@ -207,7 +226,7 @@
 }
 
 .about-heading--wide {
-    max-width: 48rem;
+    max-width: none;
 }
 
 .about-heading h2 {
@@ -216,6 +235,10 @@
     line-height: 1.1;
     letter-spacing: -0.02em;
     text-wrap: balance;
+}
+
+.about-heading-line {
+    display: block;
 }
 
 .about-heading p:last-child,
@@ -349,22 +372,26 @@
 }
 
 .about-cta__inner {
-    display: block;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
 }
 
 .about-cta__content {
     display: grid;
     gap: 1.2rem;
+    min-width: 0;
     width: min(100%, 52rem);
 }
 
-.about-cta__content h2 {
+.about-cta__title {
     margin: 0;
-    max-width: 20ch;
+    max-width: none;
     font-size: clamp(2.15rem, 3.25vw, 3.75rem);
     line-height: 1.12;
     letter-spacing: -0.02em;
-    text-wrap: balance;
+    text-wrap: pretty;
 }
 
 .about-cta__content p {
@@ -377,7 +404,8 @@
     flex-wrap: wrap;
     gap: 1rem 1.35rem;
     align-items: center;
-    margin-top: 0.6rem;
+    justify-content: flex-end;
+    justify-self: end;
 }
 
 .about-cta__link,
@@ -398,7 +426,7 @@
 
 @media (min-width: 900px) {
     .about-identity {
-        grid-template-columns: minmax(0, 0.74fr) minmax(0, 1.1fr);
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
         gap: 2.4rem;
     }
 
@@ -423,8 +451,7 @@
         font-size: clamp(3rem, 6.4vw, 4.2rem);
     }
 
-    .about-cta__content h2 {
-        max-width: 18ch;
+    .about-cta__title {
         font-size: clamp(2rem, 5vw, 3rem);
     }
 }
@@ -432,6 +459,10 @@
 @media (max-width: 767px) {
     .page-about {
         --about-section-space: 3.5rem;
+    }
+
+    .about-hero::after {
+        background: linear-gradient(90deg, rgba(7, 20, 39, 0.95), rgba(12, 29, 51, 0.84));
     }
 
     .about-hero__inner {
@@ -446,20 +477,25 @@
         letter-spacing: -0.025em;
     }
 
-    .about-cta__content h2 {
-        max-width: none;
+    .about-cta__inner {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
     }
 
-    .about-hero__actions,
-    .about-cta__actions {
+    .about-hero__actions {
         flex-direction: column;
         align-items: stretch;
     }
 
-    .about-hero__actions .button,
-    .about-cta__actions .button,
-    .about-cta__link {
+    .about-hero__actions .button {
         width: 100%;
         justify-content: center;
+    }
+
+    .about-cta__actions {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        justify-self: start;
     }
 }

@@ -1158,10 +1158,14 @@ class WebsiteRouteTests(TestCase):
         required_headings = [
             "扎根法国",
             "连接中国与欧洲",
-            "您的欧洲业务正处于哪个阶段？",
-            "覆盖欧洲业务全生命周期的企业服务",
-            "面向企业主、投资人与家庭的法国本地服务",
-            "从判断到执行，一套清晰的项目路径",
+            "您的欧洲业务",
+            "正处于哪个阶段？",
+            "覆盖欧洲业务",
+            "全生命周期的企业服务",
+            "面向企业主、投资人与家庭",
+            "提供法国本地服务",
+            "从判断到执行",
+            "一套清晰的项目路径",
             "从市场进入到业务增长的真实实践",
             "为什么选择 Acoeurs",
             "准备开始您的法国及欧洲市场项目？",
@@ -1170,6 +1174,32 @@ class WebsiteRouteTests(TestCase):
         for heading in required_headings:
             with self.subTest(heading=heading):
                 self.assertContains(response, heading)
+
+    def test_homepage_uses_responsive_heading_lines_and_updated_feature_link(self):
+        response = self.client.get(reverse("home"))
+        content = response.content.decode()
+
+        expected_heading_lines = [
+            "<span class=\"home-heading-line\">您的欧洲业务</span>",
+            "<span class=\"home-heading-line\">正处于哪个阶段？</span>",
+            "<span class=\"home-heading-line\">覆盖欧洲业务</span>",
+            "<span class=\"home-heading-line\">全生命周期的企业服务</span>",
+            "<span class=\"home-heading-line\">面向企业主、投资人与家庭</span>",
+            "<span class=\"home-heading-line\">提供法国本地服务</span>",
+            "<span class=\"home-heading-line\">从判断到执行</span>",
+            "<span class=\"home-heading-line\">一套清晰的项目路径</span>",
+        ]
+        for heading_line in expected_heading_lines:
+            self.assertIn(heading_line, content)
+        self.assertIn("查看服务详情 ↗", content)
+        self.assertNotIn("进入服务 ↗", content)
+        self.assertNotIn("从判断到执行，一套清晰的项目路径", content)
+        self.assertIn(
+            "<span class=\"case-title-line\">从长期摸索</span>"
+            "<span class=\"case-title-line\">到清晰、可执行的欧洲增长路径</span>",
+            content,
+        )
+        self.assertNotIn("从长期摸索到清晰、可执行的欧洲增长路径", content)
 
     def test_homepage_internal_links_resolve(self):
         response = self.client.get(reverse("home"))
@@ -1304,6 +1334,11 @@ class WebsiteRouteTests(TestCase):
 
         self.assertContains(response, "从市场进入到业务增长的真实实践")
         self.assertContains(response, "中国上市公司｜法国市场拓展")
+        self.assertContains(response, "阶段性成果", count=1)
+        self.assertIn(
+            "<h3 id=\"case-results-title\" class=\"case-study__section-label\">阶段性成果</h3>",
+            content,
+        )
         self.assertNotIn("查看完整案例", content)
         self.assertNotIn("查看更多案例", content)
 

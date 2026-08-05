@@ -28,8 +28,8 @@
         <div class="about-hero__content">
             <p class="eyebrow" data-reveal="text" data-reveal-delay="60">关于Acoeurs</p>
             <h1 class="about-hero__title" data-reveal="title" data-reveal-delay="120">
-                <span>扎根法国</span>
-                <span>连接中国与欧洲</span>
+                <span class="about-hero__title-line">扎根法国</span>
+                <span class="about-hero__title-line">连接中国与欧洲</span>
             </h1>
             <p class="about-hero__summary" data-reveal="text" data-reveal-delay="220">
                 Acoeurs Consulting 是一家专注于中国企业国际化发展的咨询与落地执行机构，为客户提供从欧洲市场评估、进入策略、本地化落地，到持续运营与业务拓展的全流程支持。
@@ -69,7 +69,10 @@
     <div class="container">
         <header class="section-heading about-heading about-heading--wide">
             <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">服务对象</p>
-            <h2 id="about-audiences-title" data-reveal="title" data-reveal-repeat="true">面向进入欧洲的企业，也服务在法发展的企业主与家庭</h2>
+            <h2 id="about-audiences-title" data-reveal="title" data-reveal-repeat="true">
+                <span class="about-heading-line">面向进入欧洲的企业</span>
+                <span class="about-heading-line">也服务在法发展的企业主与家庭</span>
+            </h2>
         </header>
         <div class="about-grid about-grid--two" aria-label="Acoeurs 服务对象">
             <article class="about-item" data-reveal="item" data-reveal-repeat="true">
@@ -108,7 +111,10 @@
     <div class="container">
         <header class="section-heading about-heading about-heading--wide">
             <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">我们的角色</p>
-            <h2 id="about-roles-title" data-reveal="title" data-reveal-repeat="true">一个本地窗口，连接中国总部与法国执行</h2>
+            <h2 id="about-roles-title" data-reveal="title" data-reveal-repeat="true">
+                <span class="about-heading-line">一个本地窗口</span>
+                <span class="about-heading-line">连接中国总部与法国执行</span>
+            </h2>
         </header>
         <div class="about-grid about-grid--two" aria-label="Acoeurs 在项目中的角色">
             <article class="about-item" data-reveal="item" data-reveal-repeat="true">
@@ -147,7 +153,10 @@
     <div class="container">
         <header class="section-heading about-heading about-heading--wide">
             <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">服务能力</p>
-            <h2 id="about-services-title" data-reveal="title" data-reveal-repeat="true">从企业发展到个人事务，提供法国本地协调支持</h2>
+            <h2 id="about-services-title" data-reveal="title" data-reveal-repeat="true">
+                <span class="about-heading-line">从企业发展到个人事务</span>
+                <span class="about-heading-line">提供法国本地协调支持</span>
+            </h2>
         </header>
         <div class="about-services">
             <article class="about-services__column" data-reveal="panel" data-reveal-repeat="true">
@@ -182,7 +191,10 @@
     <div class="container">
         <header class="section-heading about-heading about-heading--wide">
             <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">为什么选择Acoeurs</p>
-            <h2 id="about-why-title" data-reveal="title" data-reveal-repeat="true">跨境项目需要的不只是建议，也需要有人在本地持续推进</h2>
+            <h2 id="about-why-title" data-reveal="title" data-reveal-repeat="true">
+                <span class="about-heading-line">跨境项目需要的不只是建议</span>
+                <span class="about-heading-line">也需要有人在本地持续推进</span>
+            </h2>
         </header>
         <div class="about-grid about-grid--two" aria-label="选择 Acoeurs 的理由">
             <article class="about-item" data-reveal="item" data-reveal-repeat="true">
@@ -220,13 +232,12 @@
 <section class="about-cta" aria-labelledby="about-cta-title">
     <div class="container about-cta__inner" data-reveal="panel" data-reveal-repeat="true">
         <div class="about-cta__content">
-            <p class="eyebrow">联系我们</p>
-            <h2 id="about-cta-title">正在规划一项法国或欧洲项目？</h2>
+            <h2 id="about-cta-title" class="about-cta__title">准备推进您的法国或欧洲项目？</h2>
             <p>告诉我们您的目标、当前情况和需要协调的事项，我们会根据您提交的信息与您取得联系。</p>
-            <div class="about-cta__actions">
-                <a class="button button--gold" href="{% url 'contact' %}">联系我们</a>
-                <a class="about-cta__link" href="{% url 'business' %}">了解企业服务</a>
-            </div>
+        </div>
+        <div class="about-cta__actions">
+            <a class="button button--gold" href="{% url 'contact' %}">联系我们</a>
+            <a class="about-cta__link" href="{% url 'business' %}">了解企业服务</a>
         </div>
     </div>
 </section>
