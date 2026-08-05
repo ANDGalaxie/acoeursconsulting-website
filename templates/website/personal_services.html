@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-<section class="services-hero personal-services-hero">
+<section class="services-hero personal-services-hero personal-services-hero--photo">
     <div class="services-hero__backdrop" aria-hidden="true">
         <span class="services-hero__orb services-hero__orb--one"></span>
         <span class="services-hero__orb services-hero__orb--two"></span>
@@ -25,7 +25,7 @@
         </nav>
         <div class="services-hero__content">
             <p class="eyebrow" data-reveal="text" data-reveal-delay="60">个人服务</p>
-            <h1 data-reveal="title" data-reveal-delay="120">面向企业主、投资人与家庭的法国本地服务</h1>
+            <h1 data-reveal="title" data-reveal-delay="120"><span class="personal-services-hero__title-line">面向企业主、投资人与家庭</span><span class="personal-services-hero__title-line">提供法国本地服务</span></h1>
             <p class="services-hero__summary" data-reveal="text" data-reveal-delay="220">
                 Acoeurs 协助客户协调法国居留、家庭事务、房产资产及跨境税务等事项，并对接相应的法国本地专业服务方。
             </p>
@@ -50,9 +50,6 @@
             <h2 id="personal-positioning-title" data-reveal="title" data-reveal-repeat="true">跨越语言、制度与专业分工，减少个人事务中的反复沟通</h2>
             <p data-reveal="text" data-reveal-repeat="true">
                 在法国处理居留、家庭、房产和跨境税务事项时，客户往往需要与不同机构和专业人士沟通。Acoeurs 可以协助梳理需求、准备信息并协调法国本地服务方。
-            </p>
-            <p data-reveal="text" data-reveal-delay="120" data-reveal-repeat="true">
-                中法双语沟通和单一项目窗口，有助于减少跨境事务中的信息断层和反复确认。
             </p>
         </div>
         <div class="numbered-list personal-services-positioning__list" aria-label="个人服务协调重点">
@@ -86,9 +83,6 @@
         <header class="section-heading personal-services-scope__heading">
             <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">服务范围</p>
             <h2 id="personal-services-scope-title" data-reveal="title" data-reveal-repeat="true">围绕在法生活、家庭与资产事务提供本地支持</h2>
-            <p data-reveal="text" data-reveal-delay="120" data-reveal-repeat="true">
-                当前个人服务分为三类，覆盖居留与家庭、房产与资产，以及跨境税务与风险管理事项。
-            </p>
         </header>
         <div class="personal-services-catalog">
             <article class="personal-service" data-reveal="panel" data-reveal-repeat="true">
@@ -109,9 +103,7 @@
                         <li>国际驾照换法国驾照</li>
                     </ul>
                 </div>
-                <div class="personal-service__actions">
-                    <a class="personal-service__link" href="{% url 'personal_residency_family' %}">查看详情 ↗</a>
-                </div>
+
             </article>
             <article class="personal-service" data-reveal="panel" data-reveal-delay="120" data-reveal-repeat="true">
                 <div class="personal-service__number">
@@ -131,9 +123,7 @@
                         <li>翻新与装修项目管理</li>
                     </ul>
                 </div>
-                <div class="personal-service__actions">
-                    <a class="personal-service__link" href="{% url 'personal_property_wealth' %}">查看详情 ↗</a>
-                </div>
+
             </article>
             <article class="personal-service" data-reveal="panel" data-reveal-delay="240" data-reveal-repeat="true">
                 <div class="personal-service__number">
@@ -153,9 +143,7 @@
                         <li>保险与风险管理事项对接</li>
                     </ul>
                 </div>
-                <div class="personal-service__actions">
-                    <a class="personal-service__link" href="{% url 'personal_cross_border_tax_risk' %}">查看详情 ↗</a>
-                </div>
+
             </article>
         </div>
     </div>
@@ -166,9 +154,6 @@
         <header class="section-heading personal-services-role__heading">
             <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">服务角色</p>
             <h2 id="personal-services-role-title" data-reveal="title" data-reveal-repeat="true">一个本地沟通窗口，协调不同事项与专业服务方</h2>
-            <p data-reveal="text" data-reveal-delay="120" data-reveal-repeat="true">
-                Acoeurs 负责需求梳理、中法双语沟通、专业服务方对接和事项进度跟进。
-            </p>
         </header>
         <div class="management-list" aria-label="Acoeurs 在个人服务中的角色">
             <article class="management-list__item" data-reveal="item" data-reveal-repeat="true">
@@ -205,26 +190,29 @@
 
 <section class="personal-services-section personal-services-note" aria-labelledby="personal-services-note-title">
     <div class="container">
-        <aside class="services-scope__professional-note" data-reveal="panel" data-reveal-repeat="true">
-            <p class="services-scope__professional-label">专业服务说明</p>
-            <h2 id="personal-services-note-title">专业服务说明</h2>
-            <p class="services-scope__professional-copy">
-                涉及签证居留审批、法律意见、税务处理、公证、贷款、保险及其他受监管专业事项时，相关决定或专业工作由政府机构、金融机构或具备相应资质的专业人士独立完成。Acoeurs 负责需求梳理、信息协调与项目跟进。
-            </p>
+        <aside class="services-scope__professional-note personal-services-note__inner" data-reveal="panel" data-reveal-repeat="true">
+            <div class="personal-services-note__heading">
+                <h2 id="personal-services-note-title">专业服务说明</h2>
+            </div>
+            <div class="personal-services-note__body">
+                <p class="services-scope__professional-copy">
+                    涉及签证居留审批、法律意见、税务处理、公证、贷款、保险及其他受监管专业事项时，相关决定或专业工作由政府机构、金融机构或具备相应资质的专业人士独立完成。Acoeurs 负责需求梳理、信息协调与项目跟进。
+                </p>
+            </div>
         </aside>
     </div>
 </section>
 
-<section class="personal-services-section services-cta" aria-labelledby="personal-services-cta-title">
-    <div class="container services-cta__inner" data-reveal="panel" data-reveal-repeat="true">
-        <div class="services-cta__content">
+<section class="personal-services-section services-cta personal-services-cta" aria-labelledby="personal-services-cta-title">
+    <div class="container services-cta__inner personal-services-cta__inner" data-reveal="panel" data-reveal-repeat="true">
+        <div class="services-cta__content personal-services-cta__content">
             <p class="eyebrow">联系我们</p>
             <h2 id="personal-services-cta-title">有一项法国本地事务，需要先确认从哪里开始？</h2>
             <p>告诉我们当前情况和需要协调的事项，我们会根据您提交的信息与您取得联系。</p>
-            <div class="services-hero__actions">
-                <a class="button button--gold" href="{% url 'contact' %}">联系我们</a>
-                <a class="button button--hero-secondary" href="{% url 'home' %}">返回首页</a>
-            </div>
+        </div>
+        <div class="personal-services-cta__actions">
+            <a class="button button--gold" href="{% url 'contact' %}">联系我们</a>
+            <a class="services-cta__text-link" href="{% url 'home' %}">返回首页</a>
         </div>
     </div>
 </section>

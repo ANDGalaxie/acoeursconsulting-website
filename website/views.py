@@ -220,29 +220,6 @@ def personal_services(request):
     )
 
 
-def residency_family_service(request):
-    return render(
-        request,
-        "website/service_residency_family.html",
-        page_context(current_nav="personal"),
-    )
-
-
-def property_wealth_service(request):
-    return render(
-        request,
-        "website/service_property_wealth.html",
-        page_context(current_nav="personal"),
-    )
-
-
-def cross_border_tax_risk_service(request):
-    return render(
-        request,
-        "website/service_cross_border_tax_risk.html",
-        page_context(current_nav="personal"),
-    )
-
 
 def about(request):
     return render(request, "website/about.html", page_context(current_nav="about"))

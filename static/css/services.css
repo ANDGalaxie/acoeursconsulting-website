@@ -758,8 +758,7 @@
 
 .personal-service__number,
 .personal-service__summary,
-.personal-service__scope,
-.personal-service__actions {
+.personal-service__scope {
     min-width: 0;
 }
 
@@ -817,33 +816,6 @@
     opacity: 0.56;
 }
 
-.personal-service__actions {
-    display: flex;
-    align-items: start;
-}
-
-.personal-service__link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    width: fit-content;
-    color: var(--color-navy);
-    font-weight: 600;
-    text-decoration: underline;
-    text-decoration-color: transparent;
-    text-underline-offset: 0.18em;
-    transition:
-        color var(--motion-fast) var(--motion-ease-interaction),
-        text-decoration-color var(--motion-fast) var(--motion-ease-interaction),
-        transform var(--motion-fast) var(--motion-ease-interaction);
-}
-
-.personal-service__link:hover,
-.personal-service__link:focus-visible {
-    color: var(--color-navy-dark);
-    text-decoration-color: currentColor;
-    transform: translateX(0.12rem);
-}
 
 .personal-services-role {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(248, 244, 235, 0.94));
@@ -895,8 +867,7 @@
         gap: 1rem 1.4rem;
     }
 
-    .personal-service__scope,
-    .personal-service__actions {
+    .personal-service__scope {
         grid-column: 2;
     }
 }
@@ -923,16 +894,15 @@
         grid-template-columns: auto 1fr;
     }
 
-    .personal-service {
+    .page-personal-services .personal-service {
         grid-template-columns:
             minmax(72px, 0.28fr)
             minmax(220px, 0.9fr)
-            minmax(280px, 1.15fr);
+            minmax(280px, 1.35fr);
         gap: 1rem 1.6rem;
     }
 
-    .personal-service__scope,
-    .personal-service__actions {
+    .page-personal-services .personal-service__scope {
         grid-column: auto;
     }
 }
@@ -1022,13 +992,12 @@
         gap: 1rem 1.8rem;
     }
 
-    .personal-service {
+    .page-personal-services .personal-service {
         grid-template-columns:
-            minmax(72px, 0.28fr)
-            minmax(250px, 1fr)
-            minmax(360px, 1.45fr)
-            auto;
-        gap: 1rem 1.8rem;
+            minmax(72px, 0.25fr)
+            minmax(270px, 1fr)
+            minmax(420px, 1.65fr);
+        gap: 1rem clamp(2rem, 3vw, 3.5rem);
     }
 }
 
@@ -1145,5 +1114,241 @@
 
     .breadcrumb {
         margin-bottom: 1.4rem;
+    }
+}
+
+
+/* Personal-services overview: Paris street photography and page-specific layout. */
+.page-personal-services {
+    --personal-hero-image: url("../images/services/personal-hero-paris-street.webp");
+    --personal-hero-position: 66% 50%;
+}
+
+.page-personal-services .personal-services-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: calc(100svh - var(--header-height));
+    margin: 0;
+    border: 0;
+    background: #071426;
+}
+
+.page-personal-services .personal-services-hero::before,
+.page-personal-services .personal-services-hero::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+}
+
+.page-personal-services .personal-services-hero::before {
+    z-index: -2;
+    background-image: var(--personal-hero-image);
+    background-repeat: no-repeat;
+    background-position: var(--personal-hero-position);
+    background-size: cover;
+}
+
+.page-personal-services .personal-services-hero::after {
+    z-index: -1;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4, 15, 30, 0.97) 0%,
+            rgba(6, 22, 43, 0.93) 33%,
+            rgba(9, 32, 58, 0.68) 55%,
+            rgba(10, 39, 68, 0.32) 77%,
+            rgba(9, 34, 60, 0.17) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(4, 15, 30, 0.13) 0%,
+            rgba(4, 15, 30, 0.06) 58%,
+            rgba(4, 15, 30, 0.41) 100%
+        );
+}
+
+.page-personal-services .personal-services-hero .services-hero__backdrop {
+    display: none;
+}
+
+.page-personal-services .personal-services-hero .services-hero__inner {
+    grid-template-rows: auto minmax(0, 1fr);
+    align-content: stretch;
+}
+
+.page-personal-services .personal-services-hero .services-hero__content {
+    align-self: center;
+}
+
+.page-personal-services .personal-services-hero h1 {
+    max-width: none;
+    text-wrap: pretty;
+}
+
+.page-personal-services .personal-services-hero .services-hero__summary {
+    max-width: 45rem;
+}
+
+.page-personal-services .personal-services-positioning,
+.page-personal-services .personal-services-note {
+    margin-top: 0;
+    border: 0;
+}
+
+.page-personal-services .personal-services-positioning__intro {
+    max-width: 72rem;
+    margin-bottom: 2rem;
+}
+
+.page-personal-services .personal-services-scope__heading,
+.page-personal-services .personal-services-role__heading {
+    margin-bottom: 1.75rem;
+}
+
+.page-personal-services .personal-services-note__inner {
+    margin-top: 0;
+}
+
+.page-personal-services .personal-services-note__heading h2 {
+    margin: 0;
+    max-width: none;
+    font-size: clamp(1.9rem, 2.8vw, 2.65rem);
+    line-height: 1.14;
+    text-wrap: pretty;
+}
+
+.page-personal-services .personal-services-note__body {
+    min-width: 0;
+}
+
+.page-personal-services .personal-services-note__body .services-scope__professional-copy {
+    max-width: 72rem;
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.page-personal-services .personal-services-cta {
+    padding: clamp(3.5rem, 5vw, 4.75rem) 0;
+    border-top: 1px solid rgba(216, 191, 118, 0.28);
+}
+
+.page-personal-services .personal-services-cta__inner {
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 4vw, 5rem);
+    align-items: center;
+}
+
+.page-personal-services .personal-services-cta__content {
+    min-width: 0;
+}
+
+.page-personal-services .personal-services-cta__content h2 {
+    margin: 0;
+    max-width: 50rem;
+    font-size: clamp(2.15rem, 3.2vw, 3rem);
+    line-height: 1.12;
+    text-wrap: pretty;
+}
+
+.page-personal-services .personal-services-cta__content > p:not(.eyebrow) {
+    margin: 1rem 0 0;
+    max-width: 54rem;
+    color: rgba(250, 248, 243, 0.78);
+}
+
+.page-personal-services .personal-services-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    justify-self: start;
+    justify-content: flex-start;
+}
+
+.page-personal-services .personal-services-cta__actions .button {
+    white-space: nowrap;
+}
+
+.page-personal-services .personal-services-cta__actions .services-cta__text-link {
+    align-items: center;
+    margin: 0;
+}
+
+.page-personal-services .personal-services-cta__actions .services-cta__text-link:hover,
+.page-personal-services .personal-services-cta__actions .services-cta__text-link:focus-visible {
+    color: var(--color-gold-light);
+    text-decoration-color: currentColor;
+}
+
+@media (min-width: 768px) {
+    .page-personal-services .personal-services-hero__title-line {
+        display: block;
+    }
+}
+
+@media (min-width: 1024px) {
+    .page-personal-services .personal-services-hero .services-hero__content {
+        width: min(56vw, 58rem);
+        padding-bottom: clamp(1rem, 4vh, 3rem);
+    }
+
+    .page-personal-services .personal-services-hero h1 {
+        margin: 0;
+        max-width: none;
+        font-size: clamp(2.65rem, 3.7vw, 4rem);
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        text-wrap: pretty;
+    }
+
+    .page-personal-services .personal-services-note__inner {
+        display: grid;
+        grid-template-columns: minmax(14rem, 0.34fr) minmax(0, 1fr);
+        column-gap: clamp(3rem, 5vw, 6rem);
+        align-items: start;
+    }
+
+    .page-personal-services .personal-services-cta__inner {
+        grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .page-personal-services .personal-services-cta__actions {
+        justify-self: end;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-personal-services {
+        --personal-hero-position: 58% center;
+    }
+
+    .page-personal-services .personal-services-hero::after {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(4, 15, 30, 0.95) 0%,
+                rgba(6, 22, 43, 0.84) 68%,
+                rgba(9, 32, 58, 0.5) 100%
+            ),
+            linear-gradient(
+                180deg,
+                rgba(4, 15, 30, 0.08) 0%,
+                rgba(4, 15, 30, 0.38) 100%
+            );
+    }
+
+    .page-personal-services .personal-services-hero__title-line {
+        display: inline;
+    }
+
+    .page-personal-services .personal-services-hero__title-line + .personal-services-hero__title-line::before {
+        content: " ";
+    }
+
+    .page-personal-services .personal-services-cta__inner {
+        grid-template-columns: 1fr;
     }
 }
