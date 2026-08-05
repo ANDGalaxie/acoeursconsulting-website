@@ -546,6 +546,118 @@
     margin-top: 0.5rem;
 }
 
+
+/* Shared presentation for the five enterprise service detail pages. */
+.page-business-service-detail .service-detail-hero {
+    isolation: isolate;
+}
+
+.page-business-service-detail .service-detail-hero::before,
+.page-business-service-detail .service-detail-hero::after {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+}
+
+.page-business-service-detail .service-detail-hero::before {
+    background-image: var(--detail-hero-image, none);
+    background-repeat: no-repeat;
+    background-position: var(--detail-hero-position, center);
+    background-size: cover;
+}
+
+.page-business-service-detail .service-detail-hero::after {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(6, 18, 34, 0.96) 0%,
+            rgba(8, 24, 45, 0.88) 42%,
+            rgba(10, 29, 52, 0.56) 68%,
+            rgba(10, 29, 52, 0.28) 100%
+        );
+}
+
+.page-business-service-detail .service-detail-hero__backdrop,
+.page-business-service-detail .service-detail-hero__grid,
+.page-business-service-detail .service-detail-hero__line,
+.page-business-service-detail .service-detail-hero__glow,
+.page-business-service-detail .company-banking-hero__rail,
+.page-business-service-detail .company-banking-hero__node {
+    display: none;
+}
+
+.page-business-service-detail .service-detail-hero__content {
+    width: 100%;
+}
+
+.page-business-service-detail .service-detail-hero h1 {
+    max-width: none;
+    font-size: clamp(2.7rem, 4.4vw, 4.5rem);
+    line-height: 1.08;
+    text-wrap: pretty;
+}
+
+.page-business-service-detail .service-detail-hero__title-line {
+    display: block;
+}
+
+.page-business-service-detail .service-detail-hero__summary {
+    max-width: 43rem;
+}
+
+.page-business-service-detail .service-detail-heading--wide {
+    max-width: none;
+}
+
+.page-business-service-detail .service-detail-heading h2 {
+    max-width: 68rem;
+    text-wrap: pretty;
+}
+
+.page-business-service-detail .service-detail-heading p:not(.eyebrow) {
+    max-width: 62rem;
+}
+
+.page-business-service-detail .service-detail-cta {
+    padding: clamp(3.5rem, 5vw, 4.75rem) 0;
+    border-top: 1px solid rgba(216, 191, 118, 0.28);
+}
+
+.page-business-service-detail .service-detail-cta__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(3rem, 5vw, 5.5rem);
+}
+
+.page-business-service-detail .service-detail-cta__content {
+    width: auto;
+    min-width: 0;
+    gap: 1rem;
+}
+
+.page-business-service-detail .service-detail-cta__content h2 {
+    max-width: none;
+    font-size: clamp(2.2rem, 3.2vw, 3rem);
+    line-height: 1.12;
+    text-wrap: pretty;
+}
+
+.page-business-service-detail .service-detail-cta__content p {
+    max-width: 58rem;
+}
+
+.page-business-service-detail .service-detail-cta__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.25rem;
+    margin-top: 0;
+    flex-wrap: wrap;
+}
+
 @media (min-width: 720px) {
     .open-list--three {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -611,6 +723,24 @@
     }
 }
 
+
+@media (min-width: 1024px) {
+    .page-business-service-detail .service-detail-hero,
+    .page-business-service-detail .service-detail-hero__inner {
+        min-height: calc(100svh - var(--header-height));
+    }
+
+    .page-business-service-detail .service-detail-hero__inner {
+        grid-template-rows: auto 1fr;
+        align-content: stretch;
+        padding-bottom: clamp(3.5rem, 6vw, 6rem);
+    }
+
+    .page-business-service-detail .service-detail-hero__content {
+        align-self: center;
+        width: min(52vw, 52rem);
+    }
+}
 @media (max-width: 1024px) {
     .service-detail-hero__inner {
         min-height: auto;
@@ -628,6 +758,21 @@
 }
 
 @media (max-width: 767px) {
+    .page-business-service-detail .service-detail-cta__inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .page-business-service-detail .service-detail-cta__actions {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .page-business-service-detail .service-detail-cta__actions .button {
+        width: auto;
+    }
+
     .page-service-detail {
         --detail-section-space: 3.2rem;
     }
@@ -679,5 +824,577 @@
 
     .service-detail-cta__content h2 {
         max-width: none;
+    }
+}
+
+
+/* Market-entry page: selected train photography and page-specific typography. */
+.page-market-entry {
+    --detail-hero-image: url("../images/services/details/market-entry.webp");
+    --detail-hero-position: 58% 36%;
+}
+
+.page-market-entry .service-detail-hero::after {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 17, 33, 0.95) 0%,
+            rgba(7, 23, 43, 0.88) 38%,
+            rgba(8, 27, 50, 0.42) 68%,
+            rgba(8, 27, 50, 0.16) 100%
+        ),
+        linear-gradient(180deg, rgba(5, 17, 33, 0.18), rgba(5, 17, 33, 0.34));
+}
+
+.page-market-entry .service-detail-hero__grid,
+.page-market-entry .service-detail-hero__line,
+.page-market-entry .service-detail-hero__glow {
+    display: none;
+}
+
+.page-market-entry .market-entry-hero__title-line {
+    display: block;
+}
+
+.page-market-entry .service-detail-hero h1 {
+    max-width: none;
+    text-wrap: pretty;
+}
+
+.page-market-entry .service-detail-hero__summary {
+    max-width: 45rem;
+}
+
+.page-market-entry .market-entry-intro__heading {
+    max-width: none;
+}
+
+.page-market-entry .market-entry-intro__heading h2 {
+    max-width: 68rem;
+}
+
+.page-market-entry .market-entry-intro__heading > p:not(.eyebrow) {
+    max-width: 66rem;
+}
+
+.page-market-entry .service-detail-section--scope .service-detail-heading,
+.page-market-entry .service-detail-section--participation .service-detail-heading {
+    margin-bottom: 1.75rem;
+}
+
+@media (min-width: 1024px) {
+    .page-market-entry .service-detail-hero__content {
+        width: min(56vw, 58rem);
+    }
+
+    .page-market-entry .service-detail-hero h1 {
+        max-width: none;
+        font-size: clamp(2.7rem, 3.8vw, 4rem);
+        line-height: 1.08;
+        text-wrap: pretty;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-market-entry {
+        --detail-hero-position: 72% center;
+    }
+
+    .page-market-entry .service-detail-hero::after {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(5, 17, 33, 0.94) 0%,
+                rgba(7, 23, 43, 0.82) 68%,
+                rgba(8, 27, 50, 0.5) 100%
+            );
+    }
+
+    .page-market-entry .market-entry-hero__title-line {
+        display: inline;
+    }
+}
+
+
+/* Company-banking page: La Défense photography and page-specific layout. */
+.page-company-banking {
+    --detail-hero-image: url("../images/services/details/company-banking.webp");
+    --detail-hero-position: 70% 50%;
+}
+
+.page-company-banking .service-detail-hero::after {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4, 15, 30, 0.97) 0%,
+            rgba(6, 22, 43, 0.92) 34%,
+            rgba(9, 32, 58, 0.64) 57%,
+            rgba(10, 39, 68, 0.3) 78%,
+            rgba(9, 34, 60, 0.18) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(4, 15, 30, 0.14) 0%,
+            rgba(4, 15, 30, 0.08) 60%,
+            rgba(4, 15, 30, 0.42) 100%
+        );
+}
+
+.page-company-banking .service-detail-hero__grid,
+.page-company-banking .service-detail-hero__line,
+.page-company-banking .service-detail-hero__glow,
+.page-company-banking .company-banking-hero__rail,
+.page-company-banking .company-banking-hero__node {
+    display: none;
+}
+
+.page-company-banking .company-banking-hero__title-line {
+    display: block;
+}
+
+.page-company-banking .service-detail-hero h1 {
+    max-width: none;
+    text-wrap: pretty;
+}
+
+.page-company-banking .service-detail-hero__summary {
+    max-width: 46rem;
+}
+
+.page-company-banking .company-banking-intro__heading {
+    max-width: none;
+    row-gap: 1rem;
+}
+
+.page-company-banking .company-banking-intro__heading h2 {
+    max-width: 74rem;
+    font-size: clamp(2.05rem, 3.2vw, 3.05rem);
+    text-wrap: pretty;
+}
+
+.page-company-banking .company-banking-intro__heading > p:not(.eyebrow) {
+    max-width: 74rem;
+}
+
+.page-company-banking .service-detail-section--scope .service-detail-heading,
+.page-company-banking .service-detail-section--participation .service-detail-heading {
+    margin-bottom: 1.75rem;
+}
+
+.page-company-banking .company-banking-boundaries .service-detail-note {
+    max-width: none;
+}
+
+.page-company-banking .company-banking-boundaries .service-detail-note h2 {
+    max-width: 72rem;
+    font-size: clamp(1.9rem, 2.8vw, 2.65rem);
+    line-height: 1.14;
+    text-wrap: pretty;
+}
+
+.page-company-banking .company-banking-boundaries .service-detail-note__copy {
+    max-width: 74rem;
+}
+
+@media (min-width: 1024px) {
+    .page-company-banking .service-detail-hero__content {
+        width: min(57vw, 60rem);
+    }
+
+    .page-company-banking .service-detail-hero h1 {
+        margin: 0;
+        max-width: none;
+        font-size: clamp(2.65rem, 3.7vw, 4rem);
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        text-wrap: pretty;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-company-banking {
+        --detail-hero-position: 62% center;
+    }
+
+    .page-company-banking .service-detail-hero::after {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(4, 15, 30, 0.95) 0%,
+                rgba(6, 22, 43, 0.84) 68%,
+                rgba(9, 32, 58, 0.52) 100%
+            ),
+            linear-gradient(
+                180deg,
+                rgba(4, 15, 30, 0.1) 0%,
+                rgba(4, 15, 30, 0.38) 100%
+            );
+    }
+
+    .page-company-banking .company-banking-hero__title-line {
+        display: inline;
+    }
+}
+
+
+/* Tax-legal page: Bercy photography and page-specific layout. */
+.page-tax-legal {
+    --detail-hero-image: url("../images/services/details/tax-legal.webp");
+    --detail-hero-position: 70% 40%;
+}
+
+.page-tax-legal .service-detail-hero::after {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4, 15, 30, 0.97) 0%,
+            rgba(6, 22, 43, 0.93) 34%,
+            rgba(9, 32, 58, 0.68) 57%,
+            rgba(10, 39, 68, 0.32) 78%,
+            rgba(9, 34, 60, 0.2) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(4, 15, 30, 0.14) 0%,
+            rgba(4, 15, 30, 0.08) 60%,
+            rgba(4, 15, 30, 0.43) 100%
+        );
+}
+
+.page-tax-legal .service-detail-hero__grid,
+.page-tax-legal .service-detail-hero__line,
+.page-tax-legal .service-detail-hero__glow {
+    display: none;
+}
+
+.page-tax-legal .tax-legal-hero__title-line {
+    display: block;
+}
+
+.page-tax-legal .service-detail-hero h1 {
+    max-width: none;
+    text-wrap: pretty;
+}
+
+.page-tax-legal .service-detail-hero__summary {
+    max-width: 47rem;
+}
+
+.page-tax-legal .tax-legal-intro__heading {
+    max-width: none;
+    row-gap: 1rem;
+}
+
+.page-tax-legal .tax-legal-intro__heading h2 {
+    max-width: 74rem;
+    text-wrap: pretty;
+}
+
+.page-tax-legal .tax-legal-intro__heading > p:not(.eyebrow) {
+    max-width: 74rem;
+}
+
+.page-tax-legal .service-detail-section--scope .service-detail-heading,
+.page-tax-legal .service-detail-section--participation .service-detail-heading {
+    margin-bottom: 1.75rem;
+}
+
+.page-tax-legal .tax-legal-professional-note__heading h2 {
+    margin: 0;
+    max-width: none;
+    font-size: clamp(1.9rem, 2.8vw, 2.65rem);
+    line-height: 1.14;
+    text-wrap: pretty;
+}
+
+.page-tax-legal .tax-legal-professional-note__body {
+    display: grid;
+    gap: 1rem;
+    min-width: 0;
+}
+
+.page-tax-legal .tax-legal-professional-note__body .service-detail-note__copy {
+    max-width: 72rem;
+}
+
+@media (min-width: 1024px) {
+    .page-tax-legal .service-detail-hero__content {
+        width: min(57vw, 60rem);
+    }
+
+    .page-tax-legal .service-detail-hero h1 {
+        margin: 0;
+        max-width: none;
+        font-size: clamp(2.65rem, 3.7vw, 4rem);
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        text-wrap: pretty;
+    }
+
+    .page-tax-legal .tax-legal-professional-note__inner {
+        display: grid;
+        grid-template-columns: minmax(14rem, 0.34fr) minmax(0, 1fr);
+        column-gap: clamp(3rem, 5vw, 6rem);
+        align-items: start;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-tax-legal {
+        --detail-hero-position: 66% center;
+    }
+
+    .page-tax-legal .service-detail-hero::after {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(4, 15, 30, 0.95) 0%,
+                rgba(6, 22, 43, 0.84) 68%,
+                rgba(9, 32, 58, 0.52) 100%
+            ),
+            linear-gradient(
+                180deg,
+                rgba(4, 15, 30, 0.1) 0%,
+                rgba(4, 15, 30, 0.4) 100%
+            );
+    }
+
+    .page-tax-legal .tax-legal-hero__title-line {
+        display: inline;
+    }
+}
+
+
+/* Local-operations page: La Défense commuters and page-specific layout. */
+.page-local-operations {
+    --detail-hero-image: url("../images/services/details/local-operations.webp");
+    --detail-hero-position: 66% 45%;
+}
+
+.page-local-operations .service-detail-hero::after {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4, 15, 30, 0.97) 0%,
+            rgba(6, 22, 43, 0.93) 34%,
+            rgba(9, 32, 58, 0.68) 57%,
+            rgba(10, 39, 68, 0.32) 78%,
+            rgba(9, 34, 60, 0.2) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(4, 15, 30, 0.14) 0%,
+            rgba(4, 15, 30, 0.08) 60%,
+            rgba(4, 15, 30, 0.43) 100%
+        );
+}
+
+.page-local-operations .service-detail-hero__grid,
+.page-local-operations .service-detail-hero__line,
+.page-local-operations .service-detail-hero__glow {
+    display: none;
+}
+
+.page-local-operations .local-operations-hero__title-line {
+    display: block;
+}
+
+.page-local-operations .service-detail-hero h1 {
+    max-width: none;
+    text-wrap: pretty;
+}
+
+.page-local-operations .service-detail-hero__summary {
+    max-width: 46rem;
+}
+
+.page-local-operations .local-operations-intro__heading {
+    max-width: none;
+    row-gap: 1rem;
+}
+
+.page-local-operations .local-operations-intro__heading h2 {
+    max-width: 74rem;
+    text-wrap: pretty;
+}
+
+.page-local-operations .local-operations-intro__heading > p:not(.eyebrow) {
+    max-width: 74rem;
+}
+
+.page-local-operations .service-detail-section--scope .service-detail-heading,
+.page-local-operations .service-detail-section--participation .service-detail-heading {
+    margin-bottom: 1.75rem;
+}
+
+.page-local-operations .local-operations-professional-note__heading h2 {
+    margin: 0;
+    max-width: none;
+    font-size: clamp(1.9rem, 2.8vw, 2.65rem);
+    line-height: 1.14;
+    text-wrap: pretty;
+}
+
+.page-local-operations .local-operations-professional-note__body {
+    display: grid;
+    gap: 1rem;
+    min-width: 0;
+}
+
+.page-local-operations .local-operations-professional-note__body .service-detail-note__copy {
+    max-width: 72rem;
+}
+
+@media (min-width: 1024px) {
+    .page-local-operations .service-detail-hero__content {
+        width: min(56vw, 59rem);
+    }
+
+    .page-local-operations .service-detail-hero h1 {
+        margin: 0;
+        max-width: none;
+        font-size: clamp(2.65rem, 3.7vw, 4rem);
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        text-wrap: pretty;
+    }
+
+    .page-local-operations .local-operations-professional-note__inner {
+        display: grid;
+        grid-template-columns: minmax(14rem, 0.34fr) minmax(0, 1fr);
+        column-gap: clamp(3rem, 5vw, 6rem);
+        align-items: start;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-local-operations {
+        --detail-hero-position: 62% center;
+    }
+
+    .page-local-operations .service-detail-hero::after {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(4, 15, 30, 0.95) 0%,
+                rgba(6, 22, 43, 0.84) 68%,
+                rgba(9, 32, 58, 0.52) 100%
+            ),
+            linear-gradient(
+                180deg,
+                rgba(4, 15, 30, 0.1) 0%,
+                rgba(4, 15, 30, 0.4) 100%
+            );
+    }
+
+    .page-local-operations .local-operations-hero__title-line {
+        display: inline;
+    }
+}
+
+
+/* Business-growth page: professional trade-show photography and page-specific layout. */
+.page-business-growth {
+    --detail-hero-image: url("../images/services/details/business-growth.webp");
+    --detail-hero-position: 68% center;
+}
+
+.page-business-growth .service-detail-hero::after {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4, 15, 30, 0.97) 0%,
+            rgba(6, 22, 43, 0.93) 33%,
+            rgba(9, 32, 58, 0.67) 55%,
+            rgba(10, 39, 68, 0.3) 76%,
+            rgba(9, 34, 60, 0.15) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(4, 15, 30, 0.12) 0%,
+            rgba(4, 15, 30, 0.06) 58%,
+            rgba(4, 15, 30, 0.39) 100%
+        );
+}
+
+.page-business-growth .service-detail-hero__grid,
+.page-business-growth .service-detail-hero__line,
+.page-business-growth .service-detail-hero__glow {
+    display: none;
+}
+
+.page-business-growth .business-growth-hero__title-line {
+    display: block;
+}
+
+.page-business-growth .service-detail-hero h1 {
+    max-width: none;
+    text-wrap: pretty;
+}
+
+.page-business-growth .service-detail-hero__summary {
+    max-width: 46rem;
+}
+
+.page-business-growth .business-growth-intro__heading {
+    max-width: none;
+    row-gap: 1rem;
+}
+
+.page-business-growth .business-growth-intro__heading h2 {
+    max-width: 74rem;
+    text-wrap: pretty;
+}
+
+.page-business-growth .business-growth-intro__heading > p:not(.eyebrow) {
+    max-width: 74rem;
+}
+
+.page-business-growth .service-detail-section--scope .service-detail-heading,
+.page-business-growth .service-detail-section--participation .service-detail-heading {
+    margin-bottom: 1.75rem;
+}
+
+.page-business-growth .service-detail-section--participation {
+    padding-bottom: clamp(3.25rem, 4vw, 4rem);
+}
+
+@media (min-width: 1024px) {
+    .page-business-growth .service-detail-hero__content {
+        width: min(55vw, 58rem);
+    }
+
+    .page-business-growth .service-detail-hero h1 {
+        margin: 0;
+        max-width: none;
+        font-size: clamp(2.65rem, 3.7vw, 4rem);
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        text-wrap: pretty;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-business-growth {
+        --detail-hero-position: 72% center;
+    }
+
+    .page-business-growth .service-detail-hero::after {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(4, 15, 30, 0.95) 0%,
+                rgba(6, 22, 43, 0.84) 68%,
+                rgba(9, 32, 58, 0.5) 100%
+            ),
+            linear-gradient(
+                180deg,
+                rgba(4, 15, 30, 0.1) 0%,
+                rgba(4, 15, 30, 0.38) 100%
+            );
+    }
+
+    .page-business-growth .business-growth-hero__title-line {
+        display: inline;
     }
 }

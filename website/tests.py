@@ -161,7 +161,16 @@ class WebsiteRouteTests(TestCase):
         response = self.client.get(reverse("business_market_entry"))
         content = response.content.decode()
 
-        self.assertContains(response, "在投入资源之前，先建立清晰、可执行的欧洲市场路径")
+        self.assertContains(
+            response,
+            '<span class="market-entry-hero__title-line">在投入资源之前，先建立</span>',
+            html=False,
+        )
+        self.assertContains(
+            response,
+            '<span class="market-entry-hero__title-line">清晰、可执行的欧洲市场路径</span>',
+            html=False,
+        )
         self.assertEqual(content.count("<h1"), 1)
         self.assertContains(response, 'aria-label="面包屑"', html=False)
         self.assertContains(response, ">首页</a>", html=False)
@@ -224,7 +233,16 @@ class WebsiteRouteTests(TestCase):
         response = self.client.get(reverse("business_company_banking"))
         content = response.content.decode()
 
-        self.assertContains(response, "让公司结构、经营需求与金融安排从一开始相互匹配")
+        self.assertContains(
+            response,
+            '<span class="company-banking-hero__title-line">让公司结构、经营需求与金融安排</span>',
+            html=False,
+        )
+        self.assertContains(
+            response,
+            '<span class="company-banking-hero__title-line">从一开始相互匹配</span>',
+            html=False,
+        )
         self.assertEqual(content.count("<h1"), 1)
         self.assertContains(response, 'aria-label="面包屑"', html=False)
         self.assertContains(response, ">首页</a>", html=False)
@@ -287,7 +305,16 @@ class WebsiteRouteTests(TestCase):
         response = self.client.get(reverse("business_tax_legal_compliance"))
         content = response.content.decode()
 
-        self.assertContains(response, "让企业在法国的日常经营保持有序、连续并可持续管理")
+        self.assertContains(
+            response,
+            '<span class="tax-legal-hero__title-line">让企业在法国的日常经营</span>',
+            html=False,
+        )
+        self.assertContains(
+            response,
+            '<span class="tax-legal-hero__title-line">保持有序、连续并可持续管理</span>',
+            html=False,
+        )
         self.assertEqual(content.count("<h1"), 1)
         self.assertContains(response, 'aria-label="面包屑"', html=False)
         self.assertContains(response, ">首页</a>", html=False)
@@ -346,7 +373,16 @@ class WebsiteRouteTests(TestCase):
         response = self.client.get(reverse("business_local_operations"))
         content = response.content.decode()
 
-        self.assertContains(response, "让法国本地团队与日常运营真正运转起来")
+        self.assertContains(
+            response,
+            '<span class="local-operations-hero__title-line">让法国本地团队与日常运营</span>',
+            html=False,
+        )
+        self.assertContains(
+            response,
+            '<span class="local-operations-hero__title-line">真正运转起来</span>',
+            html=False,
+        )
         self.assertEqual(content.count("<h1"), 1)
         self.assertContains(response, 'aria-label="面包屑"', html=False)
         self.assertContains(response, ">首页</a>", html=False)
@@ -405,7 +441,16 @@ class WebsiteRouteTests(TestCase):
         response = self.client.get(reverse("business_growth"))
         content = response.content.decode()
 
-        self.assertContains(response, "让企业在法国市场被看见，并建立真实的商业连接")
+        self.assertContains(
+            response,
+            '<span class="business-growth-hero__title-line">让企业在法国市场被看见</span>',
+            html=False,
+        )
+        self.assertContains(
+            response,
+            '<span class="business-growth-hero__title-line">并建立真实的商业连接</span>',
+            html=False,
+        )
         self.assertEqual(content.count("<h1"), 1)
         self.assertContains(response, 'aria-label="面包屑"', html=False)
         self.assertContains(response, ">首页</a>", html=False)
@@ -414,7 +459,7 @@ class WebsiteRouteTests(TestCase):
         self.assertIn(reverse("contact"), content)
         self.assertIn(reverse("business"), content)
 
-    def test_business_growth_service_page_contains_scope_headings_and_boundary_copy(self):
+    def test_business_growth_service_page_contains_scope_headings_without_removed_boundary_section(self):
         response = self.client.get(reverse("business_growth"))
         content = response.content.decode()
 
@@ -430,7 +475,10 @@ class WebsiteRouteTests(TestCase):
             with self.subTest(heading=heading):
                 self.assertContains(response, heading)
 
-        self.assertIn("具体合作、签约及业务结果不能预先保证。", content)
+        self.assertNotIn("商务合作说明", content)
+        self.assertNotIn("business-growth-boundaries-title", content)
+        self.assertNotIn("具体合作、签约及业务结果不能预先保证。", content)
+
         self.assertNotIn("价格", content)
         self.assertNotIn("固定项目周期", content)
         self.assertNotIn("保证获客", content)
