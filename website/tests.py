@@ -95,7 +95,16 @@ class WebsiteRouteTests(TestCase):
         response = self.client.get(reverse("business"))
         content = response.content.decode()
 
-        self.assertContains(response, "从市场判断到本地增长，构建可持续的欧洲业务体系")
+        self.assertContains(
+            response,
+            '<span class="enterprise-services-hero__title-line">从市场判断到本地增长</span>',
+            html=False,
+        )
+        self.assertContains(
+            response,
+            '<span class="enterprise-services-hero__title-line">构建可持续的欧洲业务体系</span>',
+            html=False,
+        )
         self.assertEqual(content.count("<h1"), 1)
         self.assertContains(response, 'aria-label="面包屑"', html=False)
         self.assertContains(response, ">首页</a>", html=False)

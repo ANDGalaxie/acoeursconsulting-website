@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-<section class="services-hero">
+<section class="services-hero enterprise-services-hero">
     <div class="services-hero__backdrop" aria-hidden="true">
         <span class="services-hero__orb services-hero__orb--one"></span>
         <span class="services-hero__orb services-hero__orb--two"></span>
@@ -25,7 +25,10 @@
         </nav>
         <div class="services-hero__content">
             <p class="eyebrow" data-reveal="text" data-reveal-delay="60">企业服务</p>
-            <h1 data-reveal="title" data-reveal-delay="120">从市场判断到本地增长，构建可持续的欧洲业务体系</h1>
+            <h1 data-reveal="title" data-reveal-delay="120">
+                <span class="enterprise-services-hero__title-line">从市场判断到本地增长</span>
+                <span class="enterprise-services-hero__title-line">构建可持续的欧洲业务体系</span>
+            </h1>
             <p class="services-hero__summary" data-reveal="text" data-reveal-delay="220">
                 我们为中国企业提供从欧洲市场进入判断、公司架构与合规搭建，到本地运营、商业拓展与持续增长的一体化支持。
             </p>
@@ -111,7 +114,7 @@
                     </ul>
                 </div>
                 <div class="service-index__actions">
-                    <a class="service-index__link" href="{% url 'business_market_entry' %}">进入详情页 ↗</a>
+                    <a class="service-index__link" href="{% url 'business_market_entry' %}">查看服务详情 ↗</a>
                 </div>
             </article>
             <article class="service-index__item" data-reveal="item" data-reveal-repeat="true">
@@ -132,7 +135,7 @@
                     </ul>
                 </div>
                 <div class="service-index__actions">
-                    <a class="service-index__link" href="{% url 'business_company_banking' %}">进入详情页 ↗</a>
+                    <a class="service-index__link" href="{% url 'business_company_banking' %}">查看服务详情 ↗</a>
                 </div>
             </article>
             <article class="service-index__item" data-reveal="item" data-reveal-delay="100" data-reveal-repeat="true">
@@ -153,7 +156,7 @@
                     </ul>
                 </div>
                 <div class="service-index__actions">
-                    <a class="service-index__link" href="{% url 'business_tax_legal_compliance' %}">进入详情页 ↗</a>
+                    <a class="service-index__link" href="{% url 'business_tax_legal_compliance' %}">查看服务详情 ↗</a>
                 </div>
             </article>
             <article class="service-index__item" data-reveal="item" data-reveal-delay="180" data-reveal-repeat="true">
@@ -174,7 +177,7 @@
                     </ul>
                 </div>
                 <div class="service-index__actions">
-                    <a class="service-index__link" href="{% url 'business_local_operations' %}">进入详情页 ↗</a>
+                    <a class="service-index__link" href="{% url 'business_local_operations' %}">查看服务详情 ↗</a>
                 </div>
             </article>
             <article class="service-index__item" data-reveal="item" data-reveal-delay="260" data-reveal-repeat="true">
@@ -195,7 +198,7 @@
                     </ul>
                 </div>
                 <div class="service-index__actions">
-                    <a class="service-index__link" href="{% url 'business_growth' %}">进入详情页 ↗</a>
+                    <a class="service-index__link" href="{% url 'business_growth' %}">查看服务详情 ↗</a>
                 </div>
             </article>
         </div>
@@ -330,15 +333,16 @@
 
 <section class="services-section services-cta" aria-labelledby="services-cta-title">
     <div class="container services-cta__inner" data-reveal="panel" data-reveal-repeat="true">
-        <div>
-            <p class="eyebrow">联系我们</p>
+        <div class="services-cta__content">
             <h2 id="services-cta-title">您的欧洲业务正处于哪个阶段？</h2>
             <p>
                 告诉我们当前正在推进的目标、主要问题和需要协调的事项，我们会根据您提交的信息与您取得联系。
             </p>
-            <a class="services-cta__text-link" href="#services-path">或先了解我们的服务流程</a>
         </div>
-        <a class="button button--gold" href="{% url 'contact' %}">联系我们</a>
+        <div class="services-cta__actions">
+            <a class="button button--gold" href="{% url 'contact' %}">联系我们</a>
+            <a class="services-cta__text-link" href="#services-path">了解服务流程</a>
+        </div>
     </div>
 </section>
 {% endblock %}
