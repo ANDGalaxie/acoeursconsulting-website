@@ -14,6 +14,8 @@
 .about-hero {
     position: relative;
     isolation: isolate;
+    min-height: calc(100vh - var(--header-height));
+    min-height: calc(100svh - var(--header-height));
     overflow: clip;
     color: var(--color-white);
     background: var(--color-navy-dark);
@@ -143,7 +145,7 @@
     z-index: 1;
     display: grid;
     align-content: center;
-    min-height: clamp(30rem, 58svh, 39rem);
+    min-height: inherit;
     padding-top: 2.2rem;
     padding-bottom: 3.2rem;
 }
@@ -459,6 +461,10 @@
 @media (max-width: 767px) {
     .page-about {
         --about-section-space: 3.5rem;
+    }
+
+    .about-hero {
+        min-height: auto;
     }
 
     .about-hero::after {

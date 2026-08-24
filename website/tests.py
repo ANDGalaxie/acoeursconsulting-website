@@ -1284,9 +1284,12 @@ class WebsiteRouteTests(TestCase):
         self.assertIn('alt=""', header)
         self.assertIn('width="52"', header)
         self.assertIn('height="48"', header)
-        self.assertIn("Acoeurs Consulting", header)
+        self.assertIn('aria-label="Acoeurs Consulting 首页"', header)
+        self.assertIn('class="site-brand__wordmark" aria-hidden="true"', header)
+        self.assertIn('class="site-brand__wordmark-primary">ACOEURS</span>', header)
+        self.assertIn('class="site-brand__wordmark-secondary">CONSULTING</span>', header)
         self.assertNotIn("images/brand/acoeurs-logo.png", header)
-        self.assertNotIn('aria-hidden="true">Acoeurs Consulting', header)
+        self.assertNotIn("site-brand__name", header)
 
     def test_footer_legal_links_are_valid(self):
         response = self.client.get(reverse("home"))
