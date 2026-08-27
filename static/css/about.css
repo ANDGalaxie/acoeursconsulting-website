@@ -103,7 +103,7 @@
 }
 
 .page-about .breadcrumb {
-    margin-bottom: 2rem;
+    margin-bottom: 0;
 }
 
 .page-about .breadcrumb__list {
@@ -144,13 +144,16 @@
     position: relative;
     z-index: 1;
     display: grid;
-    align-content: center;
+    grid-template-rows: auto minmax(0, 1fr);
+    align-content: stretch;
+    row-gap: 1rem;
     min-height: inherit;
-    padding-top: 2.2rem;
+    padding-top: 2.25rem;
     padding-bottom: 3.2rem;
 }
 
 .about-hero__content {
+    align-self: center;
     width: min(100%, 62rem);
 }
 
@@ -158,12 +161,12 @@
     width: 100%;
     max-width: none;
     margin: 0;
-    font-size: clamp(3.4rem, 6.1vw, 6rem);
-    line-height: 1.02;
-    letter-spacing: -0.035em;
-    text-wrap: initial;
-    line-break: auto;
-    word-break: keep-all;
+    font-size: clamp(2.7rem, 4vw, 4rem);
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    text-wrap: pretty;
+    line-break: strict;
+    word-break: normal;
 }
 
 .about-hero__title-line {
@@ -216,6 +219,15 @@
 
 .about-section {
     padding: var(--about-section-space) 0;
+}
+
+.page-about .about-section .eyebrow {
+    color: var(--color-gold);
+    font-family: var(--font-body);
+    font-size: clamp(0.95rem, 1vw, 1.05rem);
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: 0.1em;
 }
 
 .about-section--identity,
@@ -449,10 +461,6 @@
 }
 
 @media (max-width: 1024px) {
-    .about-hero__title {
-        font-size: clamp(3rem, 6.4vw, 4.2rem);
-    }
-
     .about-cta__title {
         font-size: clamp(2rem, 5vw, 3rem);
     }
@@ -473,14 +481,8 @@
 
     .about-hero__inner {
         min-height: auto;
-        padding-top: 1.8rem;
+        padding-top: 2.25rem;
         padding-bottom: 3rem;
-    }
-
-    .about-hero__title {
-        font-size: clamp(2.45rem, 11.5vw, 3.4rem);
-        line-height: 1.04;
-        letter-spacing: -0.025em;
     }
 
     .about-cta__inner {

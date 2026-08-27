@@ -46,7 +46,7 @@
 }
 
 .page-legal .breadcrumb {
-    margin-bottom: 1.9rem;
+    margin-bottom: 0;
 }
 
 .page-legal .breadcrumb__list {
@@ -87,13 +87,16 @@
     position: relative;
     z-index: 1;
     display: grid;
-    align-content: center;
+    grid-template-rows: auto minmax(0, 1fr);
+    align-content: stretch;
+    row-gap: 1rem;
     min-height: clamp(24rem, 42svh, 31rem);
-    padding-top: 2rem;
+    padding-top: 2.25rem;
     padding-bottom: 2.9rem;
 }
 
 .legal-hero__content {
+    align-self: center;
     width: min(100%, 44rem);
 }
 
@@ -354,7 +357,7 @@
 
     .legal-hero__inner {
         min-height: auto;
-        padding-top: 1.8rem;
+        padding-top: 2.25rem;
         padding-bottom: 2.5rem;
     }
 

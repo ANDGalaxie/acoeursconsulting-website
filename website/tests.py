@@ -1047,7 +1047,7 @@ class WebsiteRouteTests(TestCase):
             "提供法国本地服务",
             "从判断到执行",
             "一套清晰的项目路径",
-            "从市场进入到业务增长的真实实践",
+            "欧洲市场落地的真实实践",
             "为什么选择 Acoeurs",
             "准备开始您的法国及欧洲市场项目？",
         ]
@@ -1076,11 +1076,10 @@ class WebsiteRouteTests(TestCase):
         self.assertNotIn("进入服务 ↗", content)
         self.assertNotIn("从判断到执行，一套清晰的项目路径", content)
         self.assertIn(
-            "<span class=\"case-title-line\">从长期摸索</span>"
-            "<span class=\"case-title-line\">到清晰、可执行的欧洲增长路径</span>",
+            '<h3 class="case-study__title">重塑法国市场进入与增长路径</h3>',
             content,
         )
-        self.assertNotIn("从长期摸索到清晰、可执行的欧洲增长路径", content)
+        self.assertNotIn("case-title-line", content)
 
     def test_homepage_internal_links_resolve(self):
         response = self.client.get(reverse("home"))
@@ -1213,7 +1212,7 @@ class WebsiteRouteTests(TestCase):
         response = self.client.get(reverse("home"))
         content = response.content.decode()
 
-        self.assertContains(response, "从市场进入到业务增长的真实实践")
+        self.assertContains(response, "欧洲市场落地的真实实践")
         self.assertContains(response, "中国上市公司｜法国市场拓展")
         self.assertContains(response, "阶段性成果", count=1)
         self.assertIn(

@@ -754,10 +754,6 @@
     gap: 0.65rem;
 }
 
-.case-title-line {
-    display: inline;
-}
-
 .case-study__header h3 {
     margin: 0;
     max-width: 24ch;
@@ -1085,10 +1081,6 @@ body.has-motion .reveal-on-scroll.is-visible.case-study__visual img {
 }
 
 @media (min-width: 768px) {
-    .case-title-line {
-        display: block;
-    }
-
     .home-hero {
         min-height: calc(100vh - var(--header-height));
         min-height: calc(100svh - var(--header-height));

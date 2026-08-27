@@ -24,7 +24,7 @@
 .contact-page-header {
     position: relative;
     overflow: hidden;
-    padding: clamp(1.15rem, 2vw, 1.7rem) 0 clamp(0.85rem, 1.6vw, 1.2rem);
+    padding: 2.25rem 0 clamp(0.85rem, 1.6vw, 1.2rem);
     background: linear-gradient(180deg, rgba(16, 40, 70, 0.98), rgba(24, 54, 93, 0.95));
     color: var(--color-white);
 }
@@ -106,10 +106,6 @@
 
 .contact-page-header__content {
     max-width: 44rem;
-}
-
-.contact-page-header .eyebrow {
-    margin-bottom: 0.45rem;
 }
 
 .contact-page-header h1 {
@@ -607,10 +603,6 @@
 }
 
 @media (max-width: 767px) {
-    .contact-page-header {
-        padding-top: 1rem;
-    }
-
     .contact-page-header .breadcrumb__list {
         gap: 0.3rem 0.7rem;
     }
