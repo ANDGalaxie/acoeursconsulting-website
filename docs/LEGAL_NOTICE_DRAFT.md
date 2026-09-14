@@ -46,7 +46,7 @@
 
 ## 8. 联系信息
 
-- 邮箱：contact@acoeursconsulting.com
+- 邮箱：info@acoeursconsulting.com
 - 中国电话：400-606-0685
 - 法国电话：+33 (0)9 72 96 05 73
 

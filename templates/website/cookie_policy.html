@@ -83,16 +83,16 @@
                                 <th scope="row">csrftoken</th>
                                 <td>Acoeurs Consulting 网站使用的 Django 系统</td>
                                 <td>帮助保护表单和管理后台请求，防止跨站请求伪造。</td>
-                                <td>当前匿名公开页面通常不设置；在需要 CSRF 保护的页面或 Django Admin 中可能设置。</td>
-                                <td>根据当前 Django 配置，约一年。</td>
+                                <td>匿名访问联系表单时会设置；管理后台登录页也会设置。普通展示页面本身不主动设置。</td>
+                                <td>当前配置为 31,449,600 秒（364 天）；浏览器可提前清除，访问表单时可能刷新有效期。</td>
                                 <td>否。该 Cookie 仅用于严格必要的安全目的。</td>
                             </tr>
                             <tr>
                                 <th scope="row">sessionid</th>
                                 <td>Acoeurs Consulting 网站使用的 Django 系统</td>
                                 <td>在使用会话功能时维持安全会话状态。</td>
-                                <td>当前匿名公开页面未实测到；管理功能或未来必要功能可能使用。</td>
-                                <td>根据当前 Django 配置，通常约两周。</td>
+                                <td>普通匿名页面及联系表单不创建会话；管理员登录后用于维持认证状态。</td>
+                                <td>当前默认有效期为 1,209,600 秒（14 天）；退出登录或清除 Cookie 可提前结束。</td>
                                 <td>否。仅在严格必要用途下使用时，无需事先同意。</td>
                             </tr>
                         </tbody>
@@ -123,7 +123,7 @@
             <section id="cookie-browser" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
                 <h2>浏览器设置</h2>
                 <p>
-                    您可以通过浏览器设置删除或限制 Cookie。请注意，禁用某些严格必要 Cookie 后，网站的安全功能、管理后台访问或未来表单功能可能无法正常工作。
+                    您可以通过浏览器设置删除或限制 Cookie。请注意，禁用某些严格必要 Cookie 后，网站的安全功能、管理后台访问或联系表单可能无法正常工作。
                 </p>
             </section>
 
@@ -137,12 +137,12 @@
             <section id="cookie-contact" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
                 <h2>联系方式</h2>
                 <p>
-                    如您对本 Cookie 政策有疑问，可通过 <a href="mailto:contact@acoeursconsulting.com">contact@acoeursconsulting.com</a> 与我们联系。
+                    如您对本 Cookie 政策有疑问，可通过 <a href="mailto:info@acoeursconsulting.com">info@acoeursconsulting.com</a> 与我们联系。
                 </p>
             </section>
 
             <footer class="legal-article__footer" data-reveal="soft" data-reveal-repeat="true">
-                <p>最后更新：2026年7月</p>
+                <p>最后更新：2026年9月</p>
                 <nav class="legal-links" aria-label="相关法律页面">
                     <a href="{% url 'legal' %}">法律声明</a>
                     <a href="{% url 'privacy' %}">隐私政策</a>

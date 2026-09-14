@@ -16,13 +16,17 @@ if (navToggle && navPanel) {
     const navLinks = Array.from(navPanel.querySelectorAll("a"));
     const getFocusableItems = () => [navToggle, ...navLinks];
 
-    const syncNavigationState = (isOpen) => {
+    const syncNavigationState = (isOpen, moveFocus = false) => {
         navToggle.setAttribute("aria-expanded", String(isOpen));
         navToggle.setAttribute("aria-label", isOpen ? "关闭主导航菜单" : "打开主导航菜单");
         navPanel.classList.toggle("is-open", isOpen);
-        navPanel.setAttribute("aria-hidden", String(!isOpen));
-
         if (window.innerWidth < 768) {
+            navPanel.setAttribute("aria-hidden", String(!isOpen));
+        } else {
+            navPanel.removeAttribute("aria-hidden");
+        }
+
+        if (moveFocus && window.innerWidth < 768) {
             if (isOpen) {
                 navLinks[0]?.focus();
             } else {
@@ -35,7 +39,7 @@ if (navToggle && navPanel) {
 
     navToggle.addEventListener("click", () => {
         const isOpen = navToggle.getAttribute("aria-expanded") === "true";
-        syncNavigationState(!isOpen);
+        syncNavigationState(!isOpen, true);
     });
 
     navLinks.forEach((link) => {
@@ -47,8 +51,8 @@ if (navToggle && navPanel) {
     });
 
     document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-            syncNavigationState(false);
+        if (event.key === "Escape" && navToggle.getAttribute("aria-expanded") === "true") {
+            syncNavigationState(false, true);
         }
 
         if (

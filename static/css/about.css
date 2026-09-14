@@ -31,12 +31,24 @@
 
 .about-hero::before {
     z-index: -2;
-    background: url("../images/about/about-hero-paris-shanghai.webp") center / cover no-repeat;
+    background: url("../images/about/about-hero-sacre-coeur.webp") 56% 45% / cover no-repeat;
 }
 
 .about-hero::after {
     z-index: -1;
-    background: linear-gradient(90deg, rgba(7, 20, 39, 0.94) 0%, rgba(12, 29, 51, 0.83) 48%, rgba(18, 42, 70, 0.56) 100%);
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 20, 39, 0.94) 0%,
+            rgba(12, 29, 51, 0.78) 48%,
+            rgba(18, 42, 70, 0.4) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(7, 20, 39, 0.1) 0%,
+            rgba(7, 20, 39, 0.06) 58%,
+            rgba(7, 20, 39, 0.32) 100%
+        );
 }
 
 .about-hero__backdrop,
@@ -475,8 +487,24 @@
         min-height: auto;
     }
 
+    .about-hero::before {
+        background-position: 64% 100%;
+        background-size: auto 115%;
+    }
+
     .about-hero::after {
-        background: linear-gradient(90deg, rgba(7, 20, 39, 0.95), rgba(12, 29, 51, 0.84));
+        background:
+            linear-gradient(
+                90deg,
+                rgba(7, 20, 39, 0.95) 0%,
+                rgba(12, 29, 51, 0.8) 52%,
+                rgba(18, 42, 70, 0.38) 100%
+            ),
+            linear-gradient(
+                180deg,
+                rgba(7, 20, 39, 0.1) 0%,
+                rgba(7, 20, 39, 0.3) 100%
+            );
     }
 
     .about-hero__inner {

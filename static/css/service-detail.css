@@ -833,10 +833,14 @@
 }
 
 
-/* Market-entry page: selected train photography and page-specific typography. */
+/* Market-entry page: Louvre photography and page-specific typography. */
 .page-market-entry {
     --detail-hero-image: url("../images/services/details/market-entry.webp");
-    --detail-hero-position: 58% 36%;
+    --detail-hero-position: 58% 40%;
+}
+
+.page-market-entry .service-detail-hero::before {
+    transform: scale(1.06);
 }
 
 .page-market-entry .service-detail-hero::after {
@@ -902,7 +906,11 @@
 
 @media (max-width: 767px) {
     .page-market-entry {
-        --detail-hero-position: 72% center;
+        --detail-hero-position: 52% center;
+    }
+
+    .page-market-entry .service-detail-hero::before {
+        transform: none;
     }
 
     .page-market-entry .service-detail-hero::after {
@@ -924,7 +932,11 @@
 /* Company-banking page: La Défense photography and page-specific layout. */
 .page-company-banking {
     --detail-hero-image: url("../images/services/details/company-banking.webp");
-    --detail-hero-position: 70% 50%;
+    --detail-hero-position: 54% center;
+}
+
+.page-company-banking .service-detail-hero::before {
+    transform: scale(1.08);
 }
 
 .page-company-banking .service-detail-hero::after {
@@ -1018,7 +1030,11 @@
 
 @media (max-width: 767px) {
     .page-company-banking {
-        --detail-hero-position: 62% center;
+        --detail-hero-position: 44% center;
+    }
+
+    .page-company-banking .service-detail-hero::before {
+        transform: none;
     }
 
     .page-company-banking .service-detail-hero::after {
@@ -1045,7 +1061,7 @@
 /* Tax-legal page: Bercy photography and page-specific layout. */
 .page-tax-legal {
     --detail-hero-image: url("../images/services/details/tax-legal.webp");
-    --detail-hero-position: 70% 40%;
+    --detail-hero-position: 62% center;
 }
 
 .page-tax-legal .service-detail-hero::after {
@@ -1053,16 +1069,17 @@
         linear-gradient(
             90deg,
             rgba(4, 15, 30, 0.97) 0%,
-            rgba(6, 22, 43, 0.93) 34%,
-            rgba(9, 32, 58, 0.68) 57%,
-            rgba(10, 39, 68, 0.32) 78%,
-            rgba(9, 34, 60, 0.2) 100%
+            rgba(6, 22, 43, 0.93) 32%,
+            rgba(9, 32, 58, 0.72) 46%,
+            rgba(10, 39, 68, 0.55) 60%,
+            rgba(9, 34, 60, 0.12) 76%,
+            rgba(9, 34, 60, 0.05) 100%
         ),
         linear-gradient(
             180deg,
-            rgba(4, 15, 30, 0.14) 0%,
-            rgba(4, 15, 30, 0.08) 60%,
-            rgba(4, 15, 30, 0.43) 100%
+            rgba(4, 15, 30, 0.08) 0%,
+            rgba(4, 15, 30, 0.03) 60%,
+            rgba(4, 15, 30, 0.24) 100%
         );
 }
 
@@ -1170,27 +1187,61 @@
 }
 
 
-/* Local-operations page: La Défense commuters and page-specific layout. */
+/* Local-operations page: landscape Louvre photography and page-specific layout. */
 .page-local-operations {
     --detail-hero-image: url("../images/services/details/local-operations.webp");
-    --detail-hero-position: 66% 45%;
+}
+
+.page-local-operations .service-detail-hero {
+    background: var(--color-navy-dark);
+}
+
+.page-local-operations .service-detail-hero::before {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: min(64vw, 80rem);
+    background-position: right center;
+    background-size: cover;
+    -webkit-mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.08) 10%,
+        rgba(0, 0, 0, 0.55) 24%,
+        #000 42%,
+        #000 100%
+    );
+    mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.08) 10%,
+        rgba(0, 0, 0, 0.55) 24%,
+        #000 42%,
+        #000 100%
+    );
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
 }
 
 .page-local-operations .service-detail-hero::after {
     background:
         linear-gradient(
             90deg,
-            rgba(4, 15, 30, 0.97) 0%,
-            rgba(6, 22, 43, 0.93) 34%,
-            rgba(9, 32, 58, 0.68) 57%,
-            rgba(10, 39, 68, 0.32) 78%,
-            rgba(9, 34, 60, 0.2) 100%
+            rgba(4, 15, 30, 0.98) 0%,
+            rgba(5, 19, 36, 0.96) 28%,
+            rgba(6, 23, 42, 0.88) 45%,
+            rgba(8, 28, 50, 0.6) 60%,
+            rgba(8, 28, 50, 0.24) 76%,
+            rgba(8, 28, 50, 0.08) 100%
         ),
         linear-gradient(
             180deg,
-            rgba(4, 15, 30, 0.14) 0%,
-            rgba(4, 15, 30, 0.08) 60%,
-            rgba(4, 15, 30, 0.43) 100%
+            rgba(4, 15, 30, 0.08) 0%,
+            rgba(4, 15, 30, 0.03) 60%,
+            rgba(4, 15, 30, 0.25) 100%
         );
 }
 
@@ -1211,6 +1262,12 @@
 
 .page-local-operations .service-detail-hero__summary {
     max-width: 46rem;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .page-local-operations .service-detail-hero__summary {
+        max-width: 60%;
+    }
 }
 
 .page-local-operations .local-operations-intro__heading {
@@ -1273,22 +1330,26 @@
 }
 
 @media (max-width: 767px) {
-    .page-local-operations {
-        --detail-hero-position: 62% center;
+    .page-local-operations .service-detail-hero::before {
+        inset: 0;
+        width: auto;
+        background-position: 70% center;
+        background-size: cover;
+        -webkit-mask-image: none;
+        mask-image: none;
     }
 
     .page-local-operations .service-detail-hero::after {
         background:
             linear-gradient(
                 90deg,
-                rgba(4, 15, 30, 0.95) 0%,
-                rgba(6, 22, 43, 0.84) 68%,
-                rgba(9, 32, 58, 0.52) 100%
+                rgba(4, 15, 30, 0.92),
+                rgba(6, 22, 41, 0.68)
             ),
             linear-gradient(
                 180deg,
-                rgba(4, 15, 30, 0.1) 0%,
-                rgba(4, 15, 30, 0.4) 100%
+                rgba(4, 15, 30, 0.28),
+                rgba(4, 15, 30, 0.48)
             );
     }
 
@@ -1301,7 +1362,7 @@
 /* Business-growth page: professional trade-show photography and page-specific layout. */
 .page-business-growth {
     --detail-hero-image: url("../images/services/details/business-growth.webp");
-    --detail-hero-position: 68% center;
+    --detail-hero-position: 62% center;
 }
 
 .page-business-growth .service-detail-hero::after {
@@ -1309,16 +1370,17 @@
         linear-gradient(
             90deg,
             rgba(4, 15, 30, 0.97) 0%,
-            rgba(6, 22, 43, 0.93) 33%,
-            rgba(9, 32, 58, 0.67) 55%,
-            rgba(10, 39, 68, 0.3) 76%,
-            rgba(9, 34, 60, 0.15) 100%
+            rgba(6, 22, 43, 0.93) 32%,
+            rgba(9, 32, 58, 0.72) 46%,
+            rgba(10, 39, 68, 0.50) 60%,
+            rgba(9, 34, 60, 0.12) 76%,
+            rgba(9, 34, 60, 0.05) 100%
         ),
         linear-gradient(
             180deg,
-            rgba(4, 15, 30, 0.12) 0%,
-            rgba(4, 15, 30, 0.06) 58%,
-            rgba(4, 15, 30, 0.39) 100%
+            rgba(4, 15, 30, 0.08) 0%,
+            rgba(4, 15, 30, 0.03) 60%,
+            rgba(4, 15, 30, 0.24) 100%
         );
 }
 
@@ -1381,7 +1443,7 @@
 
 @media (max-width: 767px) {
     .page-business-growth {
-        --detail-hero-position: 72% center;
+        --detail-hero-position: 92% center;
     }
 
     .page-business-growth .service-detail-hero::after {
@@ -1401,5 +1463,20 @@
 
     .page-business-growth .business-growth-hero__title-line {
         display: inline;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .page-tax-legal .service-detail-hero::after,
+    .page-business-growth .service-detail-hero::after {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(4, 15, 30, 0.97) 0%,
+                rgba(6, 22, 43, 0.86) 42%,
+                rgba(9, 32, 58, 0.64) 72%,
+                rgba(9, 34, 60, 0.56) 100%
+            ),
+            linear-gradient(180deg, rgba(4, 15, 30, 0.08), rgba(4, 15, 30, 0.24));
     }
 }

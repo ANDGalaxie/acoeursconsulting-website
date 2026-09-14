@@ -142,7 +142,7 @@ DEBUG = env_bool("DEBUG", default=True)
 
 local_secret_key = "dev-only-acoeurs-secret-key-not-for-production"
 SECRET_KEY = os.getenv("SECRET_KEY", local_secret_key if DEBUG else "")
-if not SECRET_KEY:
+if not SECRET_KEY or (not DEBUG and SECRET_KEY == local_secret_key):
     raise ImproperlyConfigured("SECRET_KEY must be set when DEBUG is False.")
 
 render_hostname = os.getenv("RENDER_EXTERNAL_HOSTNAME")
@@ -167,7 +167,7 @@ CSRF_TRUSTED_ORIGINS = build_csrf_trusted_origins(
 )
 
 SITE_URL = normalize_site_url(env_value("SITE_URL"))
-SITE_NOINDEX = env_bool("SITE_NOINDEX", default=False)
+SITE_NOINDEX = env_bool("SITE_NOINDEX", default=not DEBUG)
 
 EMAIL_BACKEND = env_value("EMAIL_BACKEND") or (
     "django.core.mail.backends.console.EmailBackend"
@@ -180,15 +180,16 @@ EMAIL_HOST_USER = env_value("EMAIL_HOST_USER", aliases=["DJANGO_EMAIL_HOST_USER"
 EMAIL_HOST_PASSWORD = (
     env_value("EMAIL_HOST_PASSWORD", aliases=["DJANGO_EMAIL_HOST_PASSWORD"]) or ""
 )
+EMAIL_TIMEOUT = env_int("EMAIL_TIMEOUT", default=10)
 EMAIL_USE_TLS = env_bool("EMAIL_USE_TLS", default=False)
 EMAIL_USE_SSL = env_bool("EMAIL_USE_SSL", default=False)
 DEFAULT_FROM_EMAIL = (
     env_value("DEFAULT_FROM_EMAIL", aliases=["DJANGO_DEFAULT_FROM_EMAIL"])
-    or "Acoeurs Consulting <contact@acoeursconsulting.com>"
+    or "Acoeurs Consulting <info@acoeursconsulting.com>"
 )
 CONTACT_RECIPIENT_EMAIL = (
     env_value("CONTACT_RECIPIENT_EMAIL", aliases=["DJANGO_CONTACT_RECIPIENT_EMAIL"])
-    or "contact@acoeursconsulting.com"
+    or "info@acoeursconsulting.com"
 )
 
 WHITENOISE_AVAILABLE = importlib.util.find_spec("whitenoise") is not None
@@ -305,16 +306,21 @@ STORAGES = {
     },
 }
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# Enable only behind a proxy that strips untrusted forwarded headers.
+SECURE_PROXY_SSL_HEADER = (
+    ('HTTP_X_FORWARDED_PROTO', 'https')
+    if env_bool('SECURE_PROXY_SSL_HEADER_ENABLED', default=False)
+    else None
+)
 SECURE_SSL_REDIRECT = env_bool('SECURE_SSL_REDIRECT', default=not DEBUG)
-SESSION_COOKIE_SECURE = not DEBUG
-CSRF_COOKIE_SECURE = not DEBUG
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'
-X_FRAME_OPTIONS = 'DENY'
+SESSION_COOKIE_SECURE = env_bool('SESSION_COOKIE_SECURE', default=not DEBUG)
+CSRF_COOKIE_SECURE = env_bool('CSRF_COOKIE_SECURE', default=not DEBUG)
+SECURE_CONTENT_TYPE_NOSNIFF = env_bool('SECURE_CONTENT_TYPE_NOSNIFF', default=True)
+SECURE_REFERRER_POLICY = env_value('SECURE_REFERRER_POLICY') or 'strict-origin-when-cross-origin'
+X_FRAME_OPTIONS = env_value('X_FRAME_OPTIONS') or 'DENY'
 SECURE_HSTS_SECONDS = env_int('SECURE_HSTS_SECONDS', default=0)
-SECURE_HSTS_INCLUDE_SUBDOMAINS = False
-SECURE_HSTS_PRELOAD = False
+SECURE_HSTS_INCLUDE_SUBDOMAINS = env_bool('SECURE_HSTS_INCLUDE_SUBDOMAINS', default=False)
+SECURE_HSTS_PRELOAD = env_bool('SECURE_HSTS_PRELOAD', default=False)
 
 if not DEBUG and SECURE_HSTS_SECONDS < 0:
     raise ImproperlyConfigured('SECURE_HSTS_SECONDS must be 0 or greater.')

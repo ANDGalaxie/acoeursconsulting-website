@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block title %}首页 | Acoeurs Consulting{% endblock %}
+{% block meta_description %}Acoeurs Consulting 为中国企业提供法国及欧洲市场评估、进入策略、公司设立、合规管理、本地运营及业务拓展支持。{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
@@ -47,7 +48,7 @@
                 <a class="button button--secondary" href="{% url 'about' %}">了解我们</a>
             </div>
             <figure class="about-section__visual">
-                <img src="{% static 'images/home/home-about-team.webp' %}" alt="国际商务团队围绕会议桌讨论项目">
+                <img src="{% static 'images/home/home-about-team.webp' %}" alt="国际商务团队围绕会议桌讨论项目" loading="lazy" decoding="async">
             </figure>
         </div>
         <div class="about-capabilities" aria-label="Acoeurs 核心能力">
@@ -350,7 +351,7 @@
         </header>
         <div class="case-overview">
             <figure class="case-study__visual case-overview__media">
-                <img src="{% static 'images/case-study.jpg' %}" alt="工业团队在生产环境中查看项目资料的示意场景">
+                <img src="{% static 'images/case-study.jpg' %}" alt="工业团队在生产环境中查看项目资料的示意场景" loading="lazy" decoding="async">
             </figure>
             <div class="case-overview__content">
                 <div class="case-study__header">

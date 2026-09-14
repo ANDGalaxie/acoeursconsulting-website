@@ -386,7 +386,7 @@ Include:
 - About
 - Consultation
 - Chinese and French phone placeholders
-- Email: contact@acoeursconsulting.com
+- Email: info@acoeursconsulting.com
 - Paris address placeholder
 - Legal notice
 - Privacy policy

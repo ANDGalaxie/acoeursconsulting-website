@@ -1,5 +1,6 @@
 import re
 from pathlib import Path
+from runpy import run_path
 from unittest.mock import patch
 
 import config.settings as project_settings
@@ -735,6 +736,23 @@ class WebsiteRouteTests(TestCase):
         self.assertEqual(response.status_code, 301)
         self.assertEqual(response["Location"], f"{reverse('home')}#case-title")
 
+    def test_contact_success_page_shows_official_email(self):
+        response = self.client.get(reverse("contact"), {"submitted": "1"})
+
+        self.assertContains(response, "信息已提交")
+        details = response.content.decode().split('class="contact-success__details"', 1)[1].split("</dl>", 1)[0]
+        self.assertIn(
+            '<a href="mailto:info@acoeursconsulting.com">info@acoeursconsulting.com</a>',
+            details,
+        )
+
+    def test_contact_email_defaults_use_official_address(self):
+        with patch.dict("os.environ", {}, clear=True):
+            defaults = run_path(project_settings.__file__)
+
+        self.assertEqual(defaults["CONTACT_RECIPIENT_EMAIL"], "info@acoeursconsulting.com")
+        self.assertEqual(defaults["DEFAULT_FROM_EMAIL"], "Acoeurs Consulting <info@acoeursconsulting.com>")
+
     @override_settings(EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend")
     def test_valid_contact_submission_sends_one_email_and_redirects(self):
         response = self.client.post(reverse("contact"), data=self.valid_contact_payload())
@@ -744,7 +762,7 @@ class WebsiteRouteTests(TestCase):
         self.assertEqual(len(mail.outbox), 1)
 
         email = mail.outbox[0]
-        self.assertEqual(email.to, ["contact@acoeursconsulting.com"])
+        self.assertEqual(email.to, ["info@acoeursconsulting.com"])
         self.assertEqual(email.reply_to, ["zhangsan@example.com"])
         self.assertIn("欧洲市场进入与战略", email.subject)
         self.assertIn("计划在法国设立公司", email.subject)
@@ -889,7 +907,7 @@ class WebsiteRouteTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(
             response,
-            "信息暂时未能发送，请稍后重试。您也可以直接发送邮件至 contact@acoeursconsulting.com。",
+            "信息暂时未能发送，请稍后重试。您也可以直接发送邮件至 info@acoeursconsulting.com。",
         )
         self.assertContains(response, 'value="张三"', html=False)
         self.assertNotContains(response, "信息已提交")
@@ -997,7 +1015,7 @@ class WebsiteRouteTests(TestCase):
         self.assertIn("<title>法律声明｜Acoeurs Consulting</title>", content)
         self.assertContains(response, "完整法律声明将在运营主体和托管信息确认后、网站正式上线前发布")
         self.assertContains(response, "acoeursconsulting.com")
-        self.assertContains(response, "contact@acoeursconsulting.com")
+        self.assertContains(response, "info@acoeursconsulting.com")
         self.assertContains(response, "400-606-0685")
         self.assertContains(response, "+33 (0)9 72 96 05 73")
         self.assertNotIn("Render", content)
@@ -1106,7 +1124,7 @@ class WebsiteRouteTests(TestCase):
     def test_homepage_footer_contains_confirmed_contact_information(self):
         response = self.client.get(reverse("home"))
 
-        self.assertContains(response, "contact@acoeursconsulting.com")
+        self.assertContains(response, "info@acoeursconsulting.com")
         self.assertContains(response, "+33 (0)9 72 96 05 73")
         self.assertContains(response, "400-606-0685")
         self.assertContains(response, "32 AV. Kl&eacute;ber", html=False)
@@ -1132,7 +1150,7 @@ class WebsiteRouteTests(TestCase):
         self.assertNotIn("中国热线", footer)
         self.assertIn('href="tel:4006060685"', footer)
         self.assertIn('href="tel:+33972960573"', footer)
-        self.assertIn('href="mailto:contact@acoeursconsulting.com"', footer)
+        self.assertIn('href="mailto:info@acoeursconsulting.com"', footer)
 
     def test_about_and_contact_are_only_in_footer_auxiliary_navigation(self):
         response = self.client.get(reverse("home"))
@@ -1192,7 +1210,7 @@ class WebsiteRouteTests(TestCase):
             "法国电话",
             "+33 (0)9 72 96 05 73",
             "电子邮箱",
-            "contact@acoeursconsulting.com",
+            "info@acoeursconsulting.com",
             "32 AV. Kl&eacute;ber",
             "75116 Paris",
             "办公地点",

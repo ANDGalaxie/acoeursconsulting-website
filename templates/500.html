@@ -2,6 +2,8 @@
 
 {% block title %}暂时无法访问 | Acoeurs Consulting{% endblock %}
 
+{% block robots %}<meta name="robots" content="noindex, nofollow">{% endblock %}
+
 {% block content %}
 <section class="placeholder-page">
     <div class="container">
@@ -12,6 +14,7 @@
                 当前页面暂时无法访问，请稍后重试，或返回首页继续浏览其他内容。
             </p>
             <a class="button button--secondary" href="/">返回首页</a>
+            <a class="button button--secondary" href="/contact/">联系我们</a>
         </div>
     </div>
 </section>

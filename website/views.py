@@ -2,12 +2,16 @@ import logging
 
 from django.conf import settings
 from django.core.mail import EmailMultiAlternatives
-from django.http import JsonResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.utils import timezone
+from django.views.decorators.http import require_safe
+from xml.sax.saxutils import escape
+from urllib.parse import urljoin
 
 from .forms import ContactForm
+from .seo import PUBLIC_PAGE_ROUTES
 
 
 logger = logging.getLogger(__name__)
@@ -241,7 +245,7 @@ def contact(request):
                 logger.exception("Contact form email delivery failed.")
                 form.add_error(
                     None,
-                    "信息暂时未能发送，请稍后重试。您也可以直接发送邮件至 contact@acoeursconsulting.com。",
+                    "信息暂时未能发送，请稍后重试。您也可以直接发送邮件至 info@acoeursconsulting.com。",
                 )
                 return render(
                     request,
@@ -295,3 +299,34 @@ def placeholder(request, title, section):
 
 def health(request):
     return JsonResponse({"status": "ok"})
+
+
+@require_safe
+def robots_txt(request):
+    if settings.SITE_NOINDEX:
+        body = "User-agent: *\nDisallow: /\n"
+    else:
+        body = "User-agent: *\nAllow: /\nDisallow: /admin/\nDisallow: /fr/\nDisallow: /en/\n"
+        if settings.SITE_URL:
+            body += f"Sitemap: {settings.SITE_URL.rstrip('/')}/sitemap.xml\n"
+    response = HttpResponse(body, content_type="text/plain; charset=utf-8")
+    response["Cache-Control"] = "no-store"
+    return response
+
+
+@require_safe
+def sitemap_xml(request):
+    # Never infer the public origin from a request Host or expose drafts in noindex mode.
+    urls = []
+    if settings.SITE_URL and not settings.SITE_NOINDEX:
+        urls = [urljoin(f"{settings.SITE_URL.rstrip('/')}/", reverse(name).lstrip("/"))
+                for name in PUBLIC_PAGE_ROUTES]
+    body = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    body += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+    body += ''.join(f"<url><loc>{escape(url)}</loc></url>" for url in urls)
+    body += '</urlset>'
+    response = HttpResponse(body, content_type="application/xml; charset=utf-8")
+    response["Cache-Control"] = "no-store"
+    if settings.SITE_NOINDEX:
+        response["X-Robots-Tag"] = "noindex, nofollow"
+    return response

@@ -7,6 +7,8 @@ from . import views
 urlpatterns = [
     path("", views.home, name="home"),
     path("health/", views.health, name="health"),
+    path("robots.txt", views.robots_txt, name="robots"),
+    path("sitemap.xml", views.sitemap_xml, name="sitemap"),
     path(
         "business/",
         views.enterprise_services,

@@ -1,12 +1,19 @@
-{% load static %}
+{% load static metadata %}
 <!DOCTYPE html>
 <html lang="zh-Hans">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}Acoeurs Consulting{% endblock %}</title>
-    <meta name="description" content="{% block meta_description %}Acoeurs Consulting corporate introduction website.{% endblock %}">
-    {% if site_noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+    {% capture page_title %}{% block title %}Acoeurs Consulting{% endblock %}{% endcapture %}
+    <title>{{ page_title }}</title>
+    {% capture page_description %}{% block meta_description %}Acoeurs Consulting corporate introduction website.{% endblock %}{% endcapture %}
+    <meta name="description" content="{{ page_description|force_escape }}">
+    <meta property="og:title" content="{{ page_title|force_escape }}">
+    <meta property="og:description" content="{{ page_description|force_escape }}">
+    <meta property="og:type" content="website">
+    {% if site_canonical_url %}<meta property="og:url" content="{{ site_canonical_url }}">{% endif %}
+    <link rel="icon" type="image/svg+xml" href="{% static 'images/branding/acoeurs-mark.svg' %}">
+    {% block robots %}{% if site_noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}{% endblock %}
     {% block canonical %}{% firstof canonical_url site_canonical_url as resolved_canonical %}{% if resolved_canonical %}<link rel="canonical" href="{{ resolved_canonical }}">{% endif %}{% endblock %}
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/components.css' %}">
