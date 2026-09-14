@@ -1,0 +1,69 @@
+{
+  "results": [
+    {
+      "language": "zh",
+      "width": 1440,
+      "stepper": true,
+      "selectedLanguage": "zh",
+      "submissionIntercepted": true
+    },
+    {
+      "language": "fr",
+      "width": 1440,
+      "stepper": true,
+      "selectedLanguage": "fr",
+      "submissionIntercepted": true
+    },
+    {
+      "language": "en",
+      "width": 1440,
+      "stepper": true,
+      "selectedLanguage": "en",
+      "submissionIntercepted": true
+    },
+    {
+      "language": "zh",
+      "width": 390,
+      "stepper": true,
+      "selectedLanguage": "zh",
+      "submissionIntercepted": true
+    },
+    {
+      "language": "fr",
+      "width": 390,
+      "stepper": true,
+      "selectedLanguage": "fr",
+      "submissionIntercepted": true
+    },
+    {
+      "language": "en",
+      "width": 390,
+      "stepper": true,
+      "selectedLanguage": "en",
+      "submissionIntercepted": true
+    },
+    {
+      "language": "zh",
+      "width": 430,
+      "stepper": true,
+      "selectedLanguage": "zh",
+      "submissionIntercepted": true
+    },
+    {
+      "language": "fr",
+      "width": 430,
+      "stepper": true,
+      "selectedLanguage": "fr",
+      "submissionIntercepted": true
+    },
+    {
+      "language": "en",
+      "width": 430,
+      "stepper": true,
+      "selectedLanguage": "en",
+      "submissionIntercepted": true
+    }
+  ],
+  "samePageSwitch": true,
+  "noLanguageCookie": true
+}

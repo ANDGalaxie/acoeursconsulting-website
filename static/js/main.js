@@ -1,5 +1,7 @@
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navPanel = document.querySelector("[data-nav-panel]");
+const languageMenu = document.querySelector("[data-language-menu]");
+const languageToggle = document.querySelector("[data-language-menu-toggle]");
 const siteHeader = document.querySelector("[data-site-header]");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -14,19 +16,33 @@ if (siteHeader) {
 
 if (navToggle && navPanel) {
     const navLinks = Array.from(navPanel.querySelectorAll("a"));
-    const getFocusableItems = () => [navToggle, ...navLinks];
+    const navControls = Array.from(navPanel.querySelectorAll("a, button"));
+    const getFocusableItems = () => [navToggle, ...navControls];
+
+    const syncLanguageMenuState = (isOpen) => {
+        if (!languageMenu || !languageToggle) {
+            return;
+        }
+
+        languageMenu.classList.toggle("is-open", isOpen);
+        languageToggle.setAttribute("aria-expanded", String(isOpen));
+    };
 
     const syncNavigationState = (isOpen, moveFocus = false) => {
         navToggle.setAttribute("aria-expanded", String(isOpen));
-        navToggle.setAttribute("aria-label", isOpen ? "关闭主导航菜单" : "打开主导航菜单");
+        navToggle.setAttribute("aria-label", isOpen ? navToggle.dataset.labelClose : navToggle.dataset.labelOpen);
         navPanel.classList.toggle("is-open", isOpen);
-        if (window.innerWidth < 768) {
+        if (!isOpen) {
+            syncLanguageMenuState(false);
+        }
+
+        if (window.innerWidth < 1024) {
             navPanel.setAttribute("aria-hidden", String(!isOpen));
         } else {
             navPanel.removeAttribute("aria-hidden");
         }
 
-        if (moveFocus && window.innerWidth < 768) {
+        if (moveFocus && window.innerWidth < 1024) {
             if (isOpen) {
                 navLinks[0]?.focus();
             } else {
@@ -36,28 +52,97 @@ if (navToggle && navPanel) {
     };
 
     syncNavigationState(false);
+    syncLanguageMenuState(false);
 
     navToggle.addEventListener("click", () => {
         const isOpen = navToggle.getAttribute("aria-expanded") === "true";
         syncNavigationState(!isOpen, true);
     });
 
+    if (languageMenu && languageToggle) {
+        let isPointerActivation = false;
+
+        languageToggle.addEventListener("pointerdown", () => {
+            isPointerActivation = true;
+        });
+
+        languageToggle.addEventListener("click", (event) => {
+            const isOpen = languageToggle.getAttribute("aria-expanded") === "true";
+            if (window.innerWidth >= 1024 && event.detail > 0) {
+                syncLanguageMenuState(true);
+                isPointerActivation = false;
+                return;
+            }
+
+            if (event.detail === 0 && isOpen) {
+                return;
+            }
+
+            syncLanguageMenuState(!isOpen);
+            isPointerActivation = false;
+        });
+
+        languageToggle.addEventListener("pointercancel", () => {
+            isPointerActivation = false;
+        });
+
+        languageMenu.addEventListener("mouseenter", () => {
+            if (window.innerWidth >= 1024) {
+                syncLanguageMenuState(true);
+            }
+        });
+
+        languageMenu.addEventListener("mouseleave", () => {
+            if (window.innerWidth >= 1024 && !languageMenu.contains(document.activeElement)) {
+                syncLanguageMenuState(false);
+            }
+        });
+
+        languageMenu.addEventListener("focusin", () => {
+            if (!isPointerActivation) {
+                syncLanguageMenuState(true);
+            }
+        });
+
+        languageMenu.addEventListener("focusout", (event) => {
+            if (!languageMenu.contains(event.relatedTarget)) {
+                syncLanguageMenuState(false);
+            }
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!languageMenu.contains(event.target)) {
+                syncLanguageMenuState(false);
+            }
+        });
+    }
+
     navLinks.forEach((link) => {
         link.addEventListener("click", () => {
-            if (window.innerWidth < 768) {
+            if (window.innerWidth < 1024) {
                 syncNavigationState(false);
             }
         });
     });
 
     document.addEventListener("keydown", (event) => {
+        if (
+            event.key === "Escape" &&
+            languageToggle?.getAttribute("aria-expanded") === "true"
+        ) {
+            syncLanguageMenuState(false);
+            languageToggle.focus();
+            event.stopPropagation();
+            return;
+        }
+
         if (event.key === "Escape" && navToggle.getAttribute("aria-expanded") === "true") {
             syncNavigationState(false, true);
         }
 
         if (
             event.key === "Tab" &&
-            window.innerWidth < 768 &&
+            window.innerWidth < 1024 &&
             navToggle.getAttribute("aria-expanded") === "true"
         ) {
             const focusableItems = getFocusableItems();
@@ -75,11 +160,12 @@ if (navToggle && navPanel) {
     });
 
     window.addEventListener("resize", () => {
-        if (window.innerWidth >= 768) {
+        if (window.innerWidth >= 1024) {
             navPanel.removeAttribute("aria-hidden");
             navPanel.classList.remove("is-open");
             navToggle.setAttribute("aria-expanded", "false");
-            navToggle.setAttribute("aria-label", "打开主导航菜单");
+            navToggle.setAttribute("aria-label", navToggle.dataset.labelOpen);
+            syncLanguageMenuState(false);
             return;
         }
 

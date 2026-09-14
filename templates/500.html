@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block title %}暂时无法访问 | Acoeurs Consulting{% endblock %}
+{% block title %}{% translate "暂时无法访问 | Acoeurs Consulting" %}{% endblock %}
 
 {% block robots %}<meta name="robots" content="noindex, nofollow">{% endblock %}
 
@@ -9,12 +10,12 @@
     <div class="container">
         <div class="placeholder-page__inner">
             <p class="eyebrow">500</p>
-            <h1>服务暂时不可用</h1>
+            <h1>{% translate "服务暂时不可用" %}</h1>
             <p class="placeholder-page__copy">
-                当前页面暂时无法访问，请稍后重试，或返回首页继续浏览其他内容。
+                {% translate "当前页面暂时无法访问，请稍后重试，或返回首页继续浏览其他内容。" %}
             </p>
-            <a class="button button--secondary" href="/">返回首页</a>
-            <a class="button button--secondary" href="/contact/">联系我们</a>
+            <a class="button button--secondary" href="/">{% translate "返回首页" %}</a>
+            <a class="button button--secondary" href="/contact/">{% translate "联系我们" %}</a>
         </div>
     </div>
 </section>

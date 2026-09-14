@@ -6,6 +6,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.utils import timezone
+from django.utils.translation import gettext_lazy as _, override
 from django.views.decorators.http import require_safe
 from xml.sax.saxutils import escape
 from urllib.parse import urljoin
@@ -20,59 +21,59 @@ logger = logging.getLogger(__name__)
 CONTACT_DIRECTION_GROUPS = [
     {
         "key": "company",
-        "title": "企业服务方向",
+        "title": _("企业服务方向"),
         "identities": ["company"],
         "options": [
-            ("business_market_entry", "欧洲市场进入与战略"),
-            ("business_company_banking", "公司架构与银行金融"),
-            ("business_tax_legal", "财税、法律与合规"),
-            ("business_local_operations", "本地运营与团队建设"),
-            ("business_growth", "商务拓展与增长"),
-            ("other", "其他事项"),
-            ("unsure", "暂不确定"),
+            ("business_market_entry", _("欧洲市场进入与战略")),
+            ("business_company_banking", _("公司架构与银行金融")),
+            ("business_tax_legal", _("财税、法律与合规")),
+            ("business_local_operations", _("本地运营与团队建设")),
+            ("business_growth", _("商务拓展与增长")),
+            ("other", _("其他事项")),
+            ("unsure", _("暂不确定")),
         ],
     },
     {
         "key": "owner_investor",
-        "title": "企业主与投资人常见方向",
+        "title": _("企业主与投资人常见方向"),
         "identities": ["owner_investor"],
         "options": [
-            ("business_market_entry", "欧洲市场进入与战略"),
-            ("business_company_banking", "公司架构与银行金融"),
-            ("business_tax_legal", "财税、法律与合规"),
-            ("personal_property_assets", "房产与资产配置"),
-            ("personal_cross_border_tax", "跨境税务与风险管理"),
-            ("other", "其他事项"),
-            ("unsure", "暂不确定"),
+            ("business_market_entry", _("欧洲市场进入与战略")),
+            ("business_company_banking", _("公司架构与银行金融")),
+            ("business_tax_legal", _("财税、法律与合规")),
+            ("personal_property_assets", _("房产与资产配置")),
+            ("personal_cross_border_tax", _("跨境税务与风险管理")),
+            ("other", _("其他事项")),
+            ("unsure", _("暂不确定")),
         ],
     },
     {
         "key": "individual_family",
-        "title": "个人与家庭服务方向",
+        "title": _("个人与家庭服务方向"),
         "identities": ["individual_family"],
         "options": [
-            ("personal_residency_family", "居留与家庭定居"),
-            ("personal_property_assets", "房产与资产配置"),
-            ("personal_cross_border_tax", "跨境税务与风险管理"),
-            ("other", "其他事项"),
-            ("unsure", "暂不确定"),
+            ("personal_residency_family", _("居留与家庭定居")),
+            ("personal_property_assets", _("房产与资产配置")),
+            ("personal_cross_border_tax", _("跨境税务与风险管理")),
+            ("other", _("其他事项")),
+            ("unsure", _("暂不确定")),
         ],
     },
     {
         "key": "unsure",
-        "title": "全部咨询方向",
+        "title": _("全部咨询方向"),
         "identities": ["unsure"],
         "options": [
-            ("business_market_entry", "欧洲市场进入与战略"),
-            ("business_company_banking", "公司架构与银行金融"),
-            ("business_tax_legal", "财税、法律与合规"),
-            ("business_local_operations", "本地运营与团队建设"),
-            ("business_growth", "商务拓展与增长"),
-            ("personal_residency_family", "居留与家庭定居"),
-            ("personal_property_assets", "房产与资产配置"),
-            ("personal_cross_border_tax", "跨境税务与风险管理"),
-            ("unsure", "暂不确定"),
-            ("other", "其他事项"),
+            ("business_market_entry", _("欧洲市场进入与战略")),
+            ("business_company_banking", _("公司架构与银行金融")),
+            ("business_tax_legal", _("财税、法律与合规")),
+            ("business_local_operations", _("本地运营与团队建设")),
+            ("business_growth", _("商务拓展与增长")),
+            ("personal_residency_family", _("居留与家庭定居")),
+            ("personal_property_assets", _("房产与资产配置")),
+            ("personal_cross_border_tax", _("跨境税务与风险管理")),
+            ("unsure", _("暂不确定")),
+            ("other", _("其他事项")),
         ],
     },
 ]
@@ -153,6 +154,8 @@ def build_contact_email_body(form):
     )
 
 
+# Internal notifications keep their established Chinese working format.
+@override("zh")
 def send_contact_email(form):
     email = EmailMultiAlternatives(
         subject=build_contact_email_subject(form),
@@ -245,7 +248,7 @@ def contact(request):
                 logger.exception("Contact form email delivery failed.")
                 form.add_error(
                     None,
-                    "信息暂时未能发送，请稍后重试。您也可以直接发送邮件至 info@acoeursconsulting.com。",
+                    _("信息暂时未能发送，请稍后重试。您也可以直接发送邮件至 info@acoeursconsulting.com。"),
                 )
                 return render(
                     request,
@@ -261,7 +264,7 @@ def contact(request):
             build_contact_context(form=form, current_step=get_contact_step_from_errors(form)),
         )
 
-    form = ContactForm(initial={"preferred_language": "zh"})
+    form = ContactForm(initial={"preferred_language": request.LANGUAGE_CODE})
     return render(
         request,
         "website/contact.html",
@@ -289,14 +292,6 @@ def cookie_policy(request):
     return render(request, "website/cookie_policy.html", page_context())
 
 
-def placeholder(request, title, section):
-    context = {
-        "title": title,
-        "section": section,
-    }
-    return render(request, "website/placeholder.html", context)
-
-
 def health(request):
     return JsonResponse({"status": "ok"})
 
@@ -306,7 +301,7 @@ def robots_txt(request):
     if settings.SITE_NOINDEX:
         body = "User-agent: *\nDisallow: /\n"
     else:
-        body = "User-agent: *\nAllow: /\nDisallow: /admin/\nDisallow: /fr/\nDisallow: /en/\n"
+        body = "User-agent: *\nAllow: /\nDisallow: /admin/\n"
         if settings.SITE_URL:
             body += f"Sitemap: {settings.SITE_URL.rstrip('/')}/sitemap.xml\n"
     response = HttpResponse(body, content_type="text/plain; charset=utf-8")
@@ -319,8 +314,10 @@ def sitemap_xml(request):
     # Never infer the public origin from a request Host or expose drafts in noindex mode.
     urls = []
     if settings.SITE_URL and not settings.SITE_NOINDEX:
-        urls = [urljoin(f"{settings.SITE_URL.rstrip('/')}/", reverse(name).lstrip("/"))
-                for name in PUBLIC_PAGE_ROUTES]
+        for language, _label in settings.LANGUAGES:
+            with override(language):
+                urls.extend(urljoin(f"{settings.SITE_URL.rstrip('/')}/", reverse(name).lstrip("/"))
+                            for name in PUBLIC_PAGE_ROUTES)
     body = '<?xml version="1.0" encoding="UTF-8"?>\n'
     body += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
     body += ''.join(f"<url><loc>{escape(url)}</loc></url>" for url in urls)

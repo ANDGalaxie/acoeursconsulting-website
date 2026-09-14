@@ -6,9 +6,6 @@ from . import views
 
 urlpatterns = [
     path("", views.home, name="home"),
-    path("health/", views.health, name="health"),
-    path("robots.txt", views.robots_txt, name="robots"),
-    path("sitemap.xml", views.sitemap_xml, name="sitemap"),
     path(
         "business/",
         views.enterprise_services,
@@ -93,17 +90,5 @@ urlpatterns = [
         "cookies/",
         views.cookie_policy,
         name="cookies",
-    ),
-    path(
-        "fr/",
-        views.placeholder,
-        {"title": "Version francaise", "section": "语言版本预留"},
-        name="fr",
-    ),
-    path(
-        "en/",
-        views.placeholder,
-        {"title": "English Version", "section": "语言版本预留"},
-        name="en",
     ),
 ]

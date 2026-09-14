@@ -1,7 +1,7 @@
-{% load static %}
+{% load i18n static %}
 <header class="site-header" data-site-header>
     <div class="container site-header__inner">
-        <a class="site-brand" href="{% url 'home' %}" aria-label="Acoeurs Consulting 首页">
+        <a class="site-brand" href="{% url 'home' %}" aria-label="{% translate 'Acoeurs Consulting 首页' %}">
             <img
                 class="site-brand__mark"
                 src="{% static 'images/branding/acoeurs-mark.svg' %}"
@@ -19,23 +19,50 @@
             type="button"
             aria-expanded="false"
             aria-controls="site-navigation"
-            aria-label="打开主导航菜单"
-            data-nav-toggle
+            aria-label="{% translate '打开主导航菜单' %}"
+            data-nav-toggle data-label-open="{% translate '打开主导航菜单' %}" data-label-close="{% translate '关闭主导航菜单' %}"
         >
             <span class="nav-toggle__box" aria-hidden="true">
                 <span></span>
                 <span></span>
                 <span></span>
             </span>
-            <span class="nav-toggle__label">菜单</span>
+            <span class="nav-toggle__label">{% translate "菜单" %}</span>
         </button>
-        <nav class="site-nav" id="site-navigation" aria-label="主导航" data-nav-panel>
+        <nav class="site-nav" id="site-navigation" aria-label="{% translate '主导航' %}" data-nav-panel>
             <ul class="site-nav__list">
-                <li><a{% if current_nav == 'home' %} aria-current="page"{% endif %} href="{% url 'home' %}">首页</a></li>
-                <li><a{% if current_nav == 'business' %} aria-current="page"{% endif %} href="{% url 'business' %}">企业服务</a></li>
-                <li><a{% if current_nav == 'personal' %} aria-current="page"{% endif %} href="{% url 'personal' %}">个人服务</a></li>
-                <li><a{% if current_nav == 'about' %} aria-current="page"{% endif %} href="{% url 'about' %}">关于我们</a></li>
-                <li><a class="button button--primary" href="{% url 'contact' %}">联系我们</a></li>
+                <li><a{% if current_nav == 'home' %} aria-current="page"{% endif %} href="{% url 'home' %}">{% translate "首页" context "navigation" %}</a></li>
+                <li><a{% if current_nav == 'business' %} aria-current="page"{% endif %} href="{% url 'business' %}">{% translate "企业服务" context "navigation" %}</a></li>
+                <li><a{% if current_nav == 'personal' %} aria-current="page"{% endif %} href="{% url 'personal' %}">{% translate "个人服务" context "navigation" %}</a></li>
+                <li><a{% if current_nav == 'about' %} aria-current="page"{% endif %} href="{% url 'about' %}">{% translate "关于我们" context "navigation" %}</a></li>
+                <li class="language-menu" data-language-menu>
+                    <button
+                        class="language-menu__toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        aria-controls="language-menu-options"
+                        data-language-menu-toggle
+                    >
+                        <span>Language</span>
+                        <span class="language-menu__chevron" aria-hidden="true"></span>
+                    </button>
+                    <ul
+                        class="language-menu__dropdown"
+                        id="language-menu-options"
+                        aria-label="{% translate '切换语言' %}"
+                        data-language-menu-panel
+                    >
+                        {% for language in language_switch_urls %}
+                        <li>
+                            <a href="{{ language.url }}" lang="{{ language.html_lang }}" hreflang="{{ language.html_lang }}"{% if language.code == current_language %} aria-current="page"{% endif %}>
+                                {{ language.short_label }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li><a class="button button--primary" href="{% url 'contact' %}">{% translate "联系我们" context "navigation" %}</a></li>
             </ul>
         </nav>
     </div>

@@ -137,7 +137,8 @@ textarea {
 .skip-link {
     position: absolute;
     left: 1rem;
-    top: -3rem;
+    top: 0;
+    transform: translateY(-110%);
     padding: 0.75rem 1rem;
     background: var(--color-navy);
     color: var(--color-white);
@@ -146,6 +147,7 @@ textarea {
 
 .skip-link:focus {
     top: 1rem;
+    transform: translateY(0);
 }
 
 .eyebrow {

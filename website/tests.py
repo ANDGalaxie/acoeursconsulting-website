@@ -11,13 +11,16 @@ from django.core.exceptions import ImproperlyConfigured
 from django.test import TestCase
 from django.test import override_settings
 from django.urls import reverse
+from django.utils import translation
 
 
 class WebsiteRouteTests(TestCase):
-    placeholder_routes = [
-        "fr",
-        "en",
-    ]
+    def setUp(self):
+        super().setUp()
+        self.language_override = translation.override('zh')
+        self.language_override.__enter__()
+        self.addCleanup(self.language_override.__exit__, None, None, None)
+
     formal_page_routes = [
         "home",
         "business",
@@ -528,7 +531,7 @@ class WebsiteRouteTests(TestCase):
         self.assertContains(response, 'aria-label="面包屑"', html=False)
         self.assertContains(response, ">首页</a>", html=False)
         self.assertContains(response, 'aria-current="page">个人服务<', html=False)
-        self.assertContains(response, '<a aria-current="page" href="/personal/">个人服务</a>', html=False)
+        self.assertContains(response, '<a aria-current="page" href="/zh/personal/">个人服务</a>', html=False)
         self.assertNotIn('<a aria-current="page" href="/business/">企业服务</a>', content)
         self.assertNotIn(reverse("personal_residency_family"), main_content)
         self.assertNotIn(reverse("personal_property_wealth"), main_content)
@@ -606,9 +609,9 @@ class WebsiteRouteTests(TestCase):
         self.assertContains(response, 'aria-label="面包屑"', html=False)
         self.assertContains(response, ">首页</a>", html=False)
         self.assertContains(response, 'aria-current="page">关于我们<', html=False)
-        self.assertContains(response, '<a aria-current="page" href="/about/">关于我们</a>', html=False)
+        self.assertContains(response, '<a aria-current="page" href="/zh/about/">关于我们</a>', html=False)
         self.assertNotIn('<a aria-current="page" href="/business/">企业服务</a>', content)
-        self.assertNotIn('<a aria-current="page" href="/personal/">个人服务</a>', content)
+        self.assertNotIn('<a aria-current="page" href="/zh/personal/">个人服务</a>', content)
         self.assertIn(reverse("contact"), content)
         self.assertIn(reverse("business"), content)
         self.assertIn(reverse("personal"), content)
@@ -986,7 +989,7 @@ class WebsiteRouteTests(TestCase):
         self.assertContains(response, "当前网站提供在线联系表单")
         self.assertContains(response, "表单信息用于处理访问者主动提交的联系请求")
         self.assertContains(response, "当前阶段，这些表单内容不写入网站咨询数据库、不进入 CRM")
-        self.assertContains(response, "建议自最后一次相关沟通起保存不超过 12 个月")
+        self.assertContains(response, "主动联系邮件的保存也将根据沟通处理和必要后续记录需求确定")
         self.assertNotIn("保存 30 天", content)
         self.assertNotIn("银行级加密", content)
         self.assertNotIn("绝对保密", content)
@@ -1013,7 +1016,7 @@ class WebsiteRouteTests(TestCase):
 
         self.assertEqual(content.count("<h1"), 1)
         self.assertIn("<title>法律声明｜Acoeurs Consulting</title>", content)
-        self.assertContains(response, "完整法律声明将在运营主体和托管信息确认后、网站正式上线前发布")
+        self.assertContains(response, "网站内容仅用于介绍 Acoeurs Consulting 当前公开的服务范围与品牌信息")
         self.assertContains(response, "acoeursconsulting.com")
         self.assertContains(response, "info@acoeursconsulting.com")
         self.assertContains(response, "400-606-0685")
@@ -1111,12 +1114,6 @@ class WebsiteRouteTests(TestCase):
 
     def test_formal_chinese_pages_return_http_200(self):
         for route_name in self.formal_page_routes:
-            with self.subTest(route_name=route_name):
-                response = self.client.get(reverse(route_name))
-                self.assertEqual(response.status_code, 200)
-
-    def test_placeholder_routes_return_http_200(self):
-        for route_name in self.placeholder_routes:
             with self.subTest(route_name=route_name):
                 response = self.client.get(reverse(route_name))
                 self.assertEqual(response.status_code, 200)
@@ -1248,12 +1245,13 @@ class WebsiteRouteTests(TestCase):
                 response = self.client.get(reverse(route_name))
                 self.assertNotIn(reverse("case_listed_company_france"), response.content.decode())
 
-    def test_no_public_language_placeholder_links_are_exposed(self):
-        response = self.client.get(reverse("home"))
-        content = response.content.decode()
-
-        self.assertNotIn(reverse("fr"), content)
-        self.assertNotIn(reverse("en"), content)
+    def test_public_language_links_lead_to_real_homepages(self):
+        response = self.client.get(reverse('home'))
+        for language in ['fr', 'en']:
+            self.assertContains(response, f'href="/{language}/"')
+            page = self.client.get(f'/{language}/')
+            self.assertTemplateUsed(page, 'website/home.html')
+            self.assertNotContains(page, '语言版本预留')
 
     def test_homepage_footer_contains_expected_navigation_links(self):
         response = self.client.get(reverse("home"))
@@ -1443,7 +1441,7 @@ class WebsiteRouteTests(TestCase):
 
         self.assertIn('content="noindex, nofollow"', content)
         self.assertIn(
-            '<link rel="canonical" href="https://staging.acoeursconsulting.com/business/">',
+            '<link rel="canonical" href="https://staging.acoeursconsulting.com/zh/business/">',
             content,
         )
 
@@ -1457,7 +1455,7 @@ class WebsiteRouteTests(TestCase):
 
         self.assertNotIn('content="noindex, nofollow"', content)
         self.assertIn(
-            '<link rel="canonical" href="https://acoeursconsulting.com/about/">',
+            '<link rel="canonical" href="https://acoeursconsulting.com/zh/about/">',
             content,
         )
 

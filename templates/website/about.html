@@ -1,8 +1,8 @@
 {% extends "base.html" %}
-{% load static %}
+{% load i18n static %}
 
-{% block title %}关于Acoeurs｜法国及欧洲市场咨询与本地执行｜Acoeurs Consulting{% endblock %}
-{% block meta_description %}Acoeurs Consulting 专注中国企业在法国和欧洲市场的进入、落地与持续运营，并为企业主、投资人与家庭提供法国本地事务协调服务。{% endblock %}
+{% block title %}{% translate "关于Acoeurs｜法国及欧洲市场咨询与本地执行｜Acoeurs Consulting" %}{% endblock %}
+{% block meta_description %}{% translate "Acoeurs Consulting 专注中国企业在法国和欧洲市场的进入、落地与持续运营，并为企业主、投资人与家庭提供法国本地事务协调服务。" %}{% endblock %}
 {% block body_class %}page-about{% endblock %}
 
 {% block extra_css %}
@@ -19,29 +19,29 @@
         <span class="about-hero__glow about-hero__glow--two"></span>
     </div>
     <div class="container about-hero__inner">
-        <nav class="breadcrumb" aria-label="面包屑" data-reveal="soft">
+        <nav class="breadcrumb" aria-label="{% translate '面包屑' %}" data-reveal="soft">
             <ol class="breadcrumb__list">
-                <li><a href="{% url 'home' %}">首页</a></li>
-                <li aria-current="page">关于我们</li>
+                <li><a href="{% url 'home' %}">{% translate "首页" %}</a></li>
+                <li aria-current="page">{% translate "关于我们" %}</li>
             </ol>
         </nav>
         <div class="about-hero__content">
             <h1 class="about-hero__title" data-reveal="title" data-reveal-delay="120">
-                <span class="about-hero__title-line">扎根法国</span>
-                <span class="about-hero__title-line">连接中国与欧洲</span>
+                <span class="about-hero__title-line">{% translate "扎根法国" %}</span>
+                <span class="about-hero__title-line">{% translate "连接中国与欧洲" %}</span>
             </h1>
             <p class="about-hero__summary" data-reveal="text" data-reveal-delay="220">
-                Acoeurs Consulting 是一家专注于中国企业国际化发展的咨询与落地执行机构，为客户提供从欧洲市场评估、进入策略、本地化落地，到持续运营与业务拓展的全流程支持。
+                {% translate "Acoeurs Consulting 是一家专注于中国企业国际化发展的咨询与落地执行机构，为客户提供从欧洲市场评估、进入策略、本地化落地，到持续运营与业务拓展的全流程支持。" %}
             </p>
             <div class="about-hero__actions" data-reveal="button" data-reveal-delay="320">
-                <a class="button button--gold" href="{% url 'contact' %}">联系我们</a>
-                <a class="button button--hero-secondary" href="#about-services">了解我们的服务</a>
+                <a class="button button--gold" href="{% url 'contact' %}">{% translate "联系我们" %}</a>
+                <a class="button button--hero-secondary" href="#about-services">{% translate "了解我们的服务" %}</a>
             </div>
-            <ul class="about-hero__keywords" aria-label="Acoeurs 核心特点" data-reveal="soft" data-reveal-delay="420">
-                <li>法国本地执行</li>
-                <li>中法双语协同</li>
-                <li>统一项目管理</li>
-                <li>长期陪伴</li>
+            <ul class="about-hero__keywords" aria-label="{% translate 'Acoeurs 核心特点' %}" data-reveal="soft" data-reveal-delay="420">
+                <li>{% translate "法国本地执行" %}</li>
+                <li>{% translate "中法双语协同" %}</li>
+                <li>{% translate "统一项目管理" %}</li>
+                <li>{% translate "长期陪伴" %}</li>
             </ul>
         </div>
     </div>
@@ -50,15 +50,15 @@
 <section class="about-section about-section--identity" aria-labelledby="about-identity-title">
     <div class="container about-identity">
         <div class="about-identity__title">
-            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">我们的定位</p>
-            <h2 id="about-identity-title" data-reveal="title" data-reveal-repeat="true">连接战略判断与法国本地执行</h2>
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">{% translate "我们的定位" %}</p>
+            <h2 id="about-identity-title" data-reveal="title" data-reveal-repeat="true">{% translate "连接战略判断与法国本地执行" %}</h2>
         </div>
         <div class="about-identity__copy">
             <p data-reveal="text" data-reveal-repeat="true">
-                Acoeurs 专注中国企业在法国和欧洲市场的进入、落地与长期发展。我们不仅协助客户处理公司、合规或行政事项，也关注企业能否在当地真正开始运营并推进业务。
+                {% translate "Acoeurs 专注中国企业在法国和欧洲市场的进入、落地与长期发展。我们不仅协助客户处理公司、合规或行政事项，也关注企业能否在当地真正开始运营并推进业务。" %}
             </p>
             <p data-reveal="text" data-reveal-delay="120" data-reveal-repeat="true">
-                在跨境项目中，客户往往需要同时与不同机构、专业人士和本地合作方沟通。Acoeurs 负责需求梳理、信息协调和项目跟进，让中国管理层拥有一个法国本地沟通窗口。
+                {% translate "在跨境项目中，客户往往需要同时与不同机构、专业人士和本地合作方沟通。Acoeurs 负责需求梳理、信息协调和项目跟进，让中国管理层拥有一个法国本地沟通窗口。" %}
             </p>
         </div>
     </div>
@@ -67,39 +67,39 @@
 <section class="about-section about-section--audiences" aria-labelledby="about-audiences-title">
     <div class="container">
         <header class="section-heading about-heading about-heading--wide">
-            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">服务对象</p>
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">{% translate "服务对象" %}</p>
             <h2 id="about-audiences-title" data-reveal="title" data-reveal-repeat="true">
-                <span class="about-heading-line">面向进入欧洲的企业</span>
-                <span class="about-heading-line">也服务在法发展的企业主与家庭</span>
+                <span class="about-heading-line">{% translate "面向进入欧洲的企业" %}</span>
+                <span class="about-heading-line">{% translate "也服务在法发展的企业主与家庭" %}</span>
             </h2>
         </header>
-        <div class="about-grid about-grid--two" aria-label="Acoeurs 服务对象">
+        <div class="about-grid about-grid--two" aria-label="{% translate 'Acoeurs 服务对象' %}">
             <article class="about-item" data-reveal="item" data-reveal-repeat="true">
                 <span class="about-item__index">01</span>
                 <div class="about-item__body">
-                    <h3>计划进入欧洲市场的中国企业</h3>
-                    <p>需要判断市场方向、建立法国主体并推进本地业务的企业。</p>
+                    <h3>{% translate "计划进入欧洲市场的中国企业" %}</h3>
+                    <p>{% translate "需要判断市场方向、建立法国主体并推进本地业务的企业。" %}</p>
                 </div>
             </article>
             <article class="about-item" data-reveal="item" data-reveal-delay="120" data-reveal-repeat="true">
                 <span class="about-item__index">02</span>
                 <div class="about-item__body">
-                    <h3>已在法国经营的企业</h3>
-                    <p>需要持续协调运营、财税合规、人员或商务事项的企业。</p>
+                    <h3>{% translate "已在法国经营的企业" %}</h3>
+                    <p>{% translate "需要持续协调运营、财税合规、人员或商务事项的企业。" %}</p>
                 </div>
             </article>
             <article class="about-item" data-reveal="item" data-reveal-delay="240" data-reveal-repeat="true">
                 <span class="about-item__index">03</span>
                 <div class="about-item__body">
-                    <h3>企业主与投资人</h3>
-                    <p>需要协调公司、房产、跨境税务或法国本地事务的企业主与投资人。</p>
+                    <h3>{% translate "企业主与投资人" %}</h3>
+                    <p>{% translate "需要协调公司、房产、跨境税务或法国本地事务的企业主与投资人。" %}</p>
                 </div>
             </article>
             <article class="about-item" data-reveal="item" data-reveal-delay="360" data-reveal-repeat="true">
                 <span class="about-item__index">04</span>
                 <div class="about-item__body">
-                    <h3>在法生活与发展的家庭</h3>
-                    <p>需要协调居留、家庭、教育、医疗或其他法国本地事项的家庭。</p>
+                    <h3>{% translate "在法生活与发展的家庭" %}</h3>
+                    <p>{% translate "需要协调居留、家庭、教育、医疗或其他法国本地事项的家庭。" %}</p>
                 </div>
             </article>
         </div>
@@ -109,39 +109,39 @@
 <section class="about-section about-section--roles" aria-labelledby="about-roles-title">
     <div class="container">
         <header class="section-heading about-heading about-heading--wide">
-            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">我们的角色</p>
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">{% translate "我们的角色" %}</p>
             <h2 id="about-roles-title" data-reveal="title" data-reveal-repeat="true">
-                <span class="about-heading-line">一个本地窗口</span>
-                <span class="about-heading-line">连接中国总部与法国执行</span>
+                <span class="about-heading-line">{% translate "一个本地窗口" %}</span>
+                <span class="about-heading-line">{% translate "连接中国总部与法国执行" %}</span>
             </h2>
         </header>
-        <div class="about-grid about-grid--two" aria-label="Acoeurs 在项目中的角色">
+        <div class="about-grid about-grid--two" aria-label="{% translate 'Acoeurs 在项目中的角色' %}">
             <article class="about-item" data-reveal="item" data-reveal-repeat="true">
                 <span class="about-item__index">01</span>
                 <div class="about-item__body">
-                    <h3>法国本地执行</h3>
-                    <p>在法国本地协调机构、专业服务方及项目参与方。</p>
+                    <h3>{% translate "法国本地执行" %}</h3>
+                    <p>{% translate "在法国本地协调机构、专业服务方及项目参与方。" %}</p>
                 </div>
             </article>
             <article class="about-item" data-reveal="item" data-reveal-delay="120" data-reveal-repeat="true">
                 <span class="about-item__index">02</span>
                 <div class="about-item__body">
-                    <h3>中法双语协同</h3>
-                    <p>帮助中国管理层与法国团队保持准确、连续的沟通。</p>
+                    <h3>{% translate "中法双语协同" %}</h3>
+                    <p>{% translate "帮助中国管理层与法国团队保持准确、连续的沟通。" %}</p>
                 </div>
             </article>
             <article class="about-item" data-reveal="item" data-reveal-delay="240" data-reveal-repeat="true">
                 <span class="about-item__index">03</span>
                 <div class="about-item__body">
-                    <h3>统一项目管理</h3>
-                    <p>梳理事项、汇总信息并跟进已经确认的工作进度。</p>
+                    <h3>{% translate "统一项目管理" %}</h3>
+                    <p>{% translate "梳理事项、汇总信息并跟进已经确认的工作进度。" %}</p>
                 </div>
             </article>
             <article class="about-item" data-reveal="item" data-reveal-delay="360" data-reveal-repeat="true">
                 <span class="about-item__index">04</span>
                 <div class="about-item__body">
-                    <h3>长期陪伴</h3>
-                    <p>从前期判断、落地执行到后续运营与业务推进持续提供支持。</p>
+                    <h3>{% translate "长期陪伴" %}</h3>
+                    <p>{% translate "从前期判断、落地执行到后续运营与业务推进持续提供支持。" %}</p>
                 </div>
             </article>
         </div>
@@ -151,36 +151,36 @@
 <section class="about-section about-section--services" id="about-services" aria-labelledby="about-services-title">
     <div class="container">
         <header class="section-heading about-heading about-heading--wide">
-            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">服务能力</p>
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">{% translate "服务能力" %}</p>
             <h2 id="about-services-title" data-reveal="title" data-reveal-repeat="true">
-                <span class="about-heading-line">从企业发展到个人事务</span>
-                <span class="about-heading-line">提供法国本地协调支持</span>
+                <span class="about-heading-line">{% translate "从企业发展到个人事务" %}</span>
+                <span class="about-heading-line">{% translate "提供法国本地协调支持" %}</span>
             </h2>
         </header>
         <div class="about-services">
             <article class="about-services__column" data-reveal="panel" data-reveal-repeat="true">
-                <p class="about-services__label">企业服务</p>
-                <h3>企业服务</h3>
-                <p>围绕市场进入、公司架构、财税合规、本地运营和商务拓展，为企业提供连续的法国及欧洲市场支持。</p>
-                <ul class="about-services__list" aria-label="企业服务分类">
-                    <li>欧洲市场进入与战略</li>
-                    <li>公司架构与银行金融</li>
-                    <li>财税、法律与合规</li>
-                    <li>本地运营与团队建设</li>
-                    <li>商务拓展与增长</li>
+                <p class="about-services__label">{% translate "企业服务" %}</p>
+                <h3>{% translate "企业服务" %}</h3>
+                <p>{% translate "围绕市场进入、公司架构、财税合规、本地运营和商务拓展，为企业提供连续的法国及欧洲市场支持。" %}</p>
+                <ul class="about-services__list" aria-label="{% translate '企业服务分类' %}">
+                    <li>{% translate "欧洲市场进入与战略" %}</li>
+                    <li>{% translate "公司架构与银行金融" %}</li>
+                    <li>{% translate "财税、法律与合规" %}</li>
+                    <li>{% translate "本地运营与团队建设" %}</li>
+                    <li>{% translate "商务拓展与增长" %}</li>
                 </ul>
-                <a class="about-services__link" href="{% url 'business' %}">查看企业服务 ↗</a>
+                <a class="about-services__link" href="{% url 'business' %}">{% translate "查看企业服务 ↗" %}</a>
             </article>
             <article class="about-services__column" data-reveal="panel" data-reveal-delay="140" data-reveal-repeat="true">
-                <p class="about-services__label">个人服务</p>
-                <h3>个人服务</h3>
-                <p>面向企业主、投资人与家庭，协调法国居留、房产资产及跨境税务等个人事务。</p>
-                <ul class="about-services__list" aria-label="个人服务分类">
-                    <li>居留与家庭定居</li>
-                    <li>房产与资产配置</li>
-                    <li>跨境税务与风险管理</li>
+                <p class="about-services__label">{% translate "个人服务" %}</p>
+                <h3>{% translate "个人服务" %}</h3>
+                <p>{% translate "面向企业主、投资人与家庭，协调法国居留、房产资产及跨境税务等个人事务。" %}</p>
+                <ul class="about-services__list" aria-label="{% translate '个人服务分类' %}">
+                    <li>{% translate "居留与家庭定居" %}</li>
+                    <li>{% translate "房产与资产配置" %}</li>
+                    <li>{% translate "跨境税务与风险管理" %}</li>
                 </ul>
-                <a class="about-services__link" href="{% url 'personal' %}">查看个人服务 ↗</a>
+                <a class="about-services__link" href="{% url 'personal' %}">{% translate "查看个人服务 ↗" %}</a>
             </article>
         </div>
     </div>
@@ -189,39 +189,39 @@
 <section class="about-section about-section--why" aria-labelledby="about-why-title">
     <div class="container">
         <header class="section-heading about-heading about-heading--wide">
-            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">为什么选择Acoeurs</p>
+            <p class="eyebrow" data-reveal="text" data-reveal-repeat="true">{% translate "为什么选择Acoeurs" %}</p>
             <h2 id="about-why-title" data-reveal="title" data-reveal-repeat="true">
-                <span class="about-heading-line">跨境项目需要的不只是建议</span>
-                <span class="about-heading-line">也需要有人在本地持续推进</span>
+                <span class="about-heading-line">{% translate "跨境项目需要的不只是建议" %}</span>
+                <span class="about-heading-line">{% translate "也需要有人在本地持续推进" %}</span>
             </h2>
         </header>
-        <div class="about-grid about-grid--two" aria-label="选择 Acoeurs 的理由">
+        <div class="about-grid about-grid--two" aria-label="{% translate '选择 Acoeurs 的理由' %}">
             <article class="about-item" data-reveal="item" data-reveal-repeat="true">
                 <span class="about-item__index">01</span>
                 <div class="about-item__body">
-                    <h3>法国本地执行</h3>
-                    <p>熟悉法国商业和专业服务环境，能够在本地协调并跟进具体事项。</p>
+                    <h3>{% translate "法国本地执行" %}</h3>
+                    <p>{% translate "熟悉法国商业和专业服务环境，能够在本地协调并跟进具体事项。" %}</p>
                 </div>
             </article>
             <article class="about-item" data-reveal="item" data-reveal-delay="120" data-reveal-repeat="true">
                 <span class="about-item__index">02</span>
                 <div class="about-item__body">
-                    <h3>中法沟通能力</h3>
-                    <p>减少语言、信息和工作方式差异带来的沟通成本。</p>
+                    <h3>{% translate "中法沟通能力" %}</h3>
+                    <p>{% translate "减少语言、信息和工作方式差异带来的沟通成本。" %}</p>
                 </div>
             </article>
             <article class="about-item" data-reveal="item" data-reveal-delay="240" data-reveal-repeat="true">
                 <span class="about-item__index">03</span>
                 <div class="about-item__body">
-                    <h3>统一事项窗口</h3>
-                    <p>帮助客户避免在不同服务方之间反复传递信息和确认进度。</p>
+                    <h3>{% translate "统一事项窗口" %}</h3>
+                    <p>{% translate "帮助客户避免在不同服务方之间反复传递信息和确认进度。" %}</p>
                 </div>
             </article>
             <article class="about-item" data-reveal="item" data-reveal-delay="360" data-reveal-repeat="true">
                 <span class="about-item__index">04</span>
                 <div class="about-item__body">
-                    <h3>长期项目支持</h3>
-                    <p>服务不止于完成单一事项，并可根据企业或个人情况继续衔接后续需求。</p>
+                    <h3>{% translate "长期项目支持" %}</h3>
+                    <p>{% translate "服务不止于完成单一事项，并可根据企业或个人情况继续衔接后续需求。" %}</p>
                 </div>
             </article>
         </div>
@@ -231,12 +231,12 @@
 <section class="about-cta" aria-labelledby="about-cta-title">
     <div class="container about-cta__inner" data-reveal="panel" data-reveal-repeat="true">
         <div class="about-cta__content">
-            <h2 id="about-cta-title" class="about-cta__title">准备推进您的法国或欧洲项目？</h2>
-            <p>告诉我们您的目标、当前情况和需要协调的事项，我们会根据您提交的信息与您取得联系。</p>
+            <h2 id="about-cta-title" class="about-cta__title">{% translate "准备推进您的法国或欧洲项目？" %}</h2>
+            <p>{% translate "告诉我们您的目标、当前情况和需要协调的事项，我们会根据您提交的信息与您取得联系。" %}</p>
         </div>
         <div class="about-cta__actions">
-            <a class="button button--gold" href="{% url 'contact' %}">联系我们</a>
-            <a class="about-cta__link" href="{% url 'business' %}">了解企业服务</a>
+            <a class="button button--gold" href="{% url 'contact' %}">{% translate "联系我们" %}</a>
+            <a class="about-cta__link" href="{% url 'business' %}">{% translate "了解企业服务" %}</a>
         </div>
     </div>
 </section>

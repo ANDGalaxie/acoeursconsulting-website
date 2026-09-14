@@ -1,8 +1,8 @@
 {% extends "base.html" %}
-{% load static %}
+{% load i18n static %}
 
-{% block title %}首页 | Acoeurs Consulting{% endblock %}
-{% block meta_description %}Acoeurs Consulting 为中国企业提供法国及欧洲市场评估、进入策略、公司设立、合规管理、本地运营及业务拓展支持。{% endblock %}
+{% block title %}{% translate "首页 | Acoeurs Consulting" %}{% endblock %}
+{% block meta_description %}{% translate "Acoeurs Consulting 为中国企业提供法国及欧洲市场评估、进入策略、公司设立、合规管理、本地运营及业务拓展支持。" %}{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
@@ -14,17 +14,17 @@
     <div class="home-hero__overlay" aria-hidden="true"></div>
     <div class="container home-hero__inner">
         <div class="home-hero__content">
-            <h1>您在法国及欧洲市场的战略与执行伙伴</h1>
+            <h1>{% translate "您在法国及欧洲市场的战略与执行伙伴" %}</h1>
             <p class="home-hero__description">
-                <span class="home-hero__description-line">为中国企业提供从市场评估、进入策略，</span>
-                <span class="home-hero__description-line">到公司设立、合规管理、本地运营及业务拓展的一站式服务。</span>
+                <span class="home-hero__description-line">{% translate "为中国企业提供从市场评估、进入策略，" %}</span>
+                <span class="home-hero__description-line">{% translate "到公司设立、合规管理、本地运营及业务拓展的一站式服务。" %}</span>
             </p>
             <div class="home-hero__actions">
-                <a class="button button--gold" href="{% url 'contact' %}">联系我们</a>
-                <a class="button button--hero-secondary" href="{% url 'business' %}">了解企业服务</a>
+                <a class="button button--gold" href="{% url 'contact' %}">{% translate "联系我们" %}</a>
+                <a class="button button--hero-secondary" href="{% url 'business' %}">{% translate "了解企业服务" %}</a>
             </div>
             <p class="home-hero__trust">
-                中欧跨境经验｜法国本地团队｜中法双语服务｜巴黎·上海·香港
+                {% translate "中欧跨境经验｜法国本地团队｜中法双语服务｜巴黎·上海·香港" %}
             </p>
         </div>
     </div>
@@ -34,53 +34,53 @@
     <div class="container about-section">
         <div class="about-section__intro">
             <div class="about-section__copy">
-                <p class="eyebrow">关于 Acoeurs</p>
+                <p class="eyebrow">{% translate "关于 Acoeurs" %}</p>
                 <h2 id="about-title">
-                    <span>扎根法国</span>
-                    <span>连接中国与欧洲</span>
+                    <span>{% translate "扎根法国" %}</span>
+                    <span>{% translate "连接中国与欧洲" %}</span>
                 </h2>
                 <p>
-                    Acoeurs Consulting（艾克斯咨询）是一家专注于中国企业国际化发展的咨询与落地执行机构。我们深耕法国及欧洲市场，熟悉当地商业环境、监管体系和产业生态，致力于成为中国企业拓展欧洲市场的长期合作伙伴。
+                    {% translate "Acoeurs Consulting（艾克斯咨询）是一家专注于中国企业国际化发展的咨询与落地执行机构。我们深耕法国及欧洲市场，熟悉当地商业环境、监管体系和产业生态，致力于成为中国企业拓展欧洲市场的长期合作伙伴。" %}
                 </p>
                 <p>
-                    依托法国本地团队和欧洲资源网络，我们提供从市场评估、进入策略，到公司设立、财税合规、本地运营、团队建设及业务拓展的一体化服务，帮助企业建立可持续运营、持续增长的欧洲业务。
+                    {% translate "依托法国本地团队和欧洲资源网络，我们提供从市场评估、进入策略，到公司设立、财税合规、本地运营、团队建设及业务拓展的一体化服务，帮助企业建立可持续运营、持续增长的欧洲业务。" %}
                 </p>
-                <a class="button button--secondary" href="{% url 'about' %}">了解我们</a>
+                <a class="button button--secondary" href="{% url 'about' %}">{% translate "了解我们" %}</a>
             </div>
             <figure class="about-section__visual">
-                <img src="{% static 'images/home/home-about-team.webp' %}" alt="国际商务团队围绕会议桌讨论项目" loading="lazy" decoding="async">
+                <img src="{% static 'images/home/home-about-team.webp' %}" alt="{% translate '国际商务团队围绕会议桌讨论项目' %}" loading="lazy" decoding="async">
             </figure>
         </div>
-        <div class="about-capabilities" aria-label="Acoeurs 核心能力">
+        <div class="about-capabilities" aria-label="{% translate 'Acoeurs 核心能力' %}">
             <a class="about-capability" href="{% url 'business_market_entry' %}">
                 <span class="about-capability__index">01</span>
                 <div class="about-capability__content">
-                    <h3>市场与进入方式评估</h3>
-                    <p>市场、赛道与进入方式评估</p>
+                    <h3>{% translate "市场与进入方式评估" %}</h3>
+                    <p>{% translate "市场、赛道与进入方式评估" %}</p>
                 </div>
                 <span class="about-capability__arrow" aria-hidden="true">↗</span>
             </a>
             <a class="about-capability" href="{% url 'business_company_banking' %}">
                 <span class="about-capability__index">02</span>
                 <div class="about-capability__content">
-                    <h3>本地落地</h3>
-                    <p>公司架构，银行与合规体系搭建</p>
+                    <h3>{% translate "本地落地" %}</h3>
+                    <p>{% translate "公司架构，银行与合规体系搭建" %}</p>
                 </div>
                 <span class="about-capability__arrow" aria-hidden="true">↗</span>
             </a>
             <a class="about-capability" href="{% url 'business_local_operations' %}">
                 <span class="about-capability__index">03</span>
                 <div class="about-capability__content">
-                    <h3>持续运营</h3>
-                    <p>财税、法律、人力与行政支持</p>
+                    <h3>{% translate "持续运营" %}</h3>
+                    <p>{% translate "财税、法律、人力与行政支持" %}</p>
                 </div>
                 <span class="about-capability__arrow" aria-hidden="true">↗</span>
             </a>
             <a class="about-capability" href="{% url 'business_growth' %}">
                 <span class="about-capability__index">04</span>
                 <div class="about-capability__content">
-                    <h3>商业拓展</h3>
-                    <p>渠道、资源与项目落地推进</p>
+                    <h3>{% translate "商业拓展" %}</h3>
+                    <p>{% translate "渠道、资源与项目落地推进" %}</p>
                 </div>
                 <span class="about-capability__arrow" aria-hidden="true">↗</span>
             </a>
@@ -92,24 +92,24 @@
     <div class="container stage-section">
         <div class="section-heading">
             <h2 id="stage-title">
-                <span class="home-heading-line">您的欧洲业务</span>
-                <span class="home-heading-line">正处于哪个阶段？</span>
+                <span class="home-heading-line">{% translate "您的欧洲业务" %}</span>
+                <span class="home-heading-line">{% translate "正处于哪个阶段？" %}</span>
             </h2>
         </div>
-        <ol class="stage-path" aria-label="欧洲业务四阶段路径">
+        <ol class="stage-path" aria-label="{% translate '欧洲业务四阶段路径' %}">
             <li class="stage-card">
                 <div class="stage-card__rail" aria-hidden="true">
                     <div class="stage-card__marker">1</div>
                 </div>
                 <div class="stage-card__body">
-                    <h3>市场评估</h3>
-                    <p>正在考虑进入法国或欧洲，但尚未确定方向。</p>
+                    <h3>{% translate "市场评估" %}</h3>
+                    <p>{% translate "正在考虑进入法国或欧洲，但尚未确定方向。" %}</p>
                     <details class="stage-card__details">
-                        <summary>查看典型问题</summary>
+                        <summary>{% translate "查看典型问题" %}</summary>
                         <ul>
-                            <li>进入哪个市场</li>
-                            <li>产品和商业模式是否适合欧洲</li>
-                            <li>直接设立公司还是先验证市场</li>
+                            <li>{% translate "进入哪个市场" %}</li>
+                            <li>{% translate "产品和商业模式是否适合欧洲" %}</li>
+                            <li>{% translate "直接设立公司还是先验证市场" %}</li>
                         </ul>
                     </details>
                 </div>
@@ -119,15 +119,15 @@
                     <div class="stage-card__marker">2</div>
                 </div>
                 <div class="stage-card__body">
-                    <h3>落地搭建</h3>
-                    <p>已经决定进入欧洲，需要建立可运营的基础。</p>
+                    <h3>{% translate "落地搭建" %}</h3>
+                    <p>{% translate "已经决定进入欧洲，需要建立可运营的基础。" %}</p>
                     <details class="stage-card__details">
-                        <summary>查看典型问题</summary>
+                        <summary>{% translate "查看典型问题" %}</summary>
                         <ul>
-                            <li>公司与股权架构</li>
-                            <li>银行账户与支付</li>
-                            <li>税务、法律及基础合规</li>
-                            <li>人员和行政准备</li>
+                            <li>{% translate "公司与股权架构" %}</li>
+                            <li>{% translate "银行账户与支付" %}</li>
+                            <li>{% translate "税务、法律及基础合规" %}</li>
+                            <li>{% translate "人员和行政准备" %}</li>
                         </ul>
                     </details>
                 </div>
@@ -137,15 +137,15 @@
                     <div class="stage-card__marker">3</div>
                 </div>
                 <div class="stage-card__body">
-                    <h3>稳定运营</h3>
-                    <p>公司已经设立，但本地管理复杂、成本和风险增加。</p>
+                    <h3>{% translate "稳定运营" %}</h3>
+                    <p>{% translate "公司已经设立，但本地管理复杂、成本和风险增加。" %}</p>
                     <details class="stage-card__details">
-                        <summary>查看典型问题</summary>
+                        <summary>{% translate "查看典型问题" %}</summary>
                         <ul>
-                            <li>会计、税务和工资社保</li>
-                            <li>法律与合规</li>
-                            <li>招聘、团队和行政</li>
-                            <li>中法团队协同</li>
+                            <li>{% translate "会计、税务和工资社保" %}</li>
+                            <li>{% translate "法律与合规" %}</li>
+                            <li>{% translate "招聘、团队和行政" %}</li>
+                            <li>{% translate "中法团队协同" %}</li>
                         </ul>
                     </details>
                 </div>
@@ -155,15 +155,15 @@
                     <div class="stage-card__marker">4</div>
                 </div>
                 <div class="stage-card__body">
-                    <h3>拓展增长</h3>
-                    <p>已经完成落地，希望获得客户、渠道和持续增长。</p>
+                    <h3>{% translate "拓展增长" %}</h3>
+                    <p>{% translate "已经完成落地，希望获得客户、渠道和持续增长。" %}</p>
                     <details class="stage-card__details">
-                        <summary>查看典型问题</summary>
+                        <summary>{% translate "查看典型问题" %}</summary>
                         <ul>
-                            <li>市场拓展</li>
-                            <li>经销商与合作伙伴</li>
-                            <li>本地商业资源</li>
-                            <li>项目、投资与并购</li>
+                            <li>{% translate "市场拓展" %}</li>
+                            <li>{% translate "经销商与合作伙伴" %}</li>
+                            <li>{% translate "本地商业资源" %}</li>
+                            <li>{% translate "项目、投资与并购" %}</li>
                         </ul>
                     </details>
                 </div>
@@ -176,56 +176,56 @@
     <div class="container">
         <div class="section-heading">
             <h2 id="business-services-title">
-                <span class="home-heading-line">覆盖欧洲业务</span>
-                <span class="home-heading-line">全生命周期的企业服务</span>
+                <span class="home-heading-line">{% translate "覆盖欧洲业务" %}</span>
+                <span class="home-heading-line">{% translate "全生命周期的企业服务" %}</span>
             </h2>
             <p>
-                从市场进入判断、公司与合规体系搭建，到本地运营和商业增长，
-                为企业提供相互衔接的战略与执行支持。
+                {% blocktranslate %}从市场进入判断、公司与合规体系搭建，到本地运营和商业增长，
+                为企业提供相互衔接的战略与执行支持。{% endblocktranslate %}
             </p>
         </div>
         <div class="service-layout">
             <a class="service-feature" href="{% url 'business_market_entry' %}">
                 <div class="service-feature__meta">
-                    <span class="service-feature__eyebrow">重点服务</span>
+                    <span class="service-feature__eyebrow">{% translate "重点服务" %}</span>
                     <span class="service-feature__index">01</span>
                 </div>
                 <div class="service-feature__body">
-                    <h3>欧洲市场进入与战略</h3>
-                    <p>判断市场机会，制定清晰、可执行的进入路径。</p>
+                    <h3>{% translate "欧洲市场进入与战略" %}</h3>
+                    <p>{% translate "判断市场机会，制定清晰、可执行的进入路径。" %}</p>
                 </div>
-                <span class="service-feature__link" aria-hidden="true">查看服务详情 ↗</span>
+                <span class="service-feature__link" aria-hidden="true">{% translate "查看服务详情 ↗" %}</span>
             </a>
             <div class="service-list">
                 <a class="service-item" href="{% url 'business_company_banking' %}">
                     <span class="service-item__index">02</span>
                     <div class="service-item__content">
-                        <h3>公司架构与银行金融</h3>
-                        <p>建立能够真正开始经营的欧洲业务基础。</p>
+                        <h3>{% translate "公司架构与银行金融" %}</h3>
+                        <p>{% translate "建立能够真正开始经营的欧洲业务基础。" %}</p>
                     </div>
                     <span class="service-item__arrow" aria-hidden="true">↗</span>
                 </a>
                 <a class="service-item" href="{% url 'business_tax_legal_compliance' %}">
                     <span class="service-item__index">03</span>
                     <div class="service-item__content">
-                        <h3>财税、法律与合规</h3>
-                        <p>降低长期经营风险，建立稳定的合规管理体系。</p>
+                        <h3>{% translate "财税、法律与合规" %}</h3>
+                        <p>{% translate "降低长期经营风险，建立稳定的合规管理体系。" %}</p>
                     </div>
                     <span class="service-item__arrow" aria-hidden="true">↗</span>
                 </a>
                 <a class="service-item" href="{% url 'business_local_operations' %}">
                     <span class="service-item__index">04</span>
                     <div class="service-item__content">
-                        <h3>本地运营与团队建设</h3>
-                        <p>为中国总部提供稳定、可管理的法国本地运营支持。</p>
+                        <h3>{% translate "本地运营与团队建设" %}</h3>
+                        <p>{% translate "为中国总部提供稳定、可管理的法国本地运营支持。" %}</p>
                     </div>
                     <span class="service-item__arrow" aria-hidden="true">↗</span>
                 </a>
                 <a class="service-item" href="{% url 'business_growth' %}">
                     <span class="service-item__index">05</span>
                     <div class="service-item__content">
-                        <h3>商务拓展与增长</h3>
-                        <p>连接本地市场、渠道与合作资源，推动业务持续增长。</p>
+                        <h3>{% translate "商务拓展与增长" %}</h3>
+                        <p>{% translate "连接本地市场、渠道与合作资源，推动业务持续增长。" %}</p>
                     </div>
                     <span class="service-item__arrow" aria-hidden="true">↗</span>
                 </a>
@@ -238,36 +238,36 @@
     <div class="container">
         <div class="section-heading section-heading--light">
             <h2 id="personal-services-title">
-                <span class="home-heading-line">面向企业主、投资人与家庭</span>
-                <span class="home-heading-line">提供法国本地服务</span>
+                <span class="home-heading-line">{% translate "面向企业主、投资人与家庭" %}</span>
+                <span class="home-heading-line">{% translate "提供法国本地服务" %}</span>
             </h2>
             <p>
-                在企业发展之外，为客户在法国的居留、家庭安置、资产配置与长期生活
-                提供专业支持。
+                {% blocktranslate %}在企业发展之外，为客户在法国的居留、家庭安置、资产配置与长期生活
+                提供专业支持。{% endblocktranslate %}
             </p>
         </div>
         <div class="personal-panel">
             <a class="personal-item" href="{% url 'personal_residency_family' %}">
                 <span class="personal-item__index">01</span>
                 <div class="personal-item__content">
-                    <h3>居留与家庭安置</h3>
-                    <p>协助企业主、人才与家庭完成法国居留及长期生活安排。</p>
+                    <h3>{% translate "居留与家庭安置" %}</h3>
+                    <p>{% translate "协助企业主、人才与家庭完成法国居留及长期生活安排。" %}</p>
                 </div>
                 <span class="personal-item__arrow" aria-hidden="true">↗</span>
             </a>
             <a class="personal-item" href="{% url 'personal_property_wealth' %}">
                 <span class="personal-item__index">02</span>
                 <div class="personal-item__content">
-                    <h3>房产与资产配置</h3>
-                    <p>从房产选择、法律尽调到持有架构和后续管理，降低跨境投资风险。</p>
+                    <h3>{% translate "房产与资产配置" %}</h3>
+                    <p>{% translate "从房产选择、法律尽调到持有架构和后续管理，降低跨境投资风险。" %}</p>
                 </div>
                 <span class="personal-item__arrow" aria-hidden="true">↗</span>
             </a>
             <a class="personal-item" href="{% url 'personal_cross_border_tax_risk' %}">
                 <span class="personal-item__index">03</span>
                 <div class="personal-item__content">
-                    <h3>跨境税务与风险管理</h3>
-                    <p>协调个人、家庭与企业之间的跨境税务、传承与风险安排。</p>
+                    <h3>{% translate "跨境税务与风险管理" %}</h3>
+                    <p>{% translate "协调个人、家庭与企业之间的跨境税务、传承与风险安排。" %}</p>
                 </div>
                 <span class="personal-item__arrow" aria-hidden="true">↗</span>
             </a>
@@ -279,22 +279,22 @@
     <div class="container process-section">
         <div class="section-heading">
             <h2 id="process-title">
-                <span class="home-heading-line">从判断到执行</span>
-                <span class="home-heading-line">一套清晰的项目路径</span>
+                <span class="home-heading-line">{% translate "从判断到执行" %}</span>
+                <span class="home-heading-line">{% translate "一套清晰的项目路径" %}</span>
             </h2>
             <p>
-                每个项目由明确的负责人统筹，从需求诊断、方案设计到本地执行和持续支持，
-                让客户清楚掌握项目进度与下一步行动。
+                {% blocktranslate %}每个项目由明确的负责人统筹，从需求诊断、方案设计到本地执行和持续支持，
+                让客户清楚掌握项目进度与下一步行动。{% endblocktranslate %}
             </p>
         </div>
-        <ol class="process-timeline" aria-label="项目执行五步路径">
+        <ol class="process-timeline" aria-label="{% translate '项目执行五步路径' %}">
             <li class="process-stage">
                 <div class="process-stage__rail" aria-hidden="true">
                     <span class="process-stage__number">01</span>
                 </div>
                 <div class="process-stage__content">
-                    <h3>需求诊断</h3>
-                    <p>了解客户当前阶段、目标与核心问题。</p>
+                    <h3>{% translate "需求诊断" %}</h3>
+                    <p>{% translate "了解客户当前阶段、目标与核心问题。" %}</p>
                 </div>
             </li>
             <li class="process-stage">
@@ -302,8 +302,8 @@
                     <span class="process-stage__number">02</span>
                 </div>
                 <div class="process-stage__content">
-                    <h3>评估与路径设计</h3>
-                    <p>判断可行性、风险与优先级，明确实施路径。</p>
+                    <h3>{% translate "评估与路径设计" %}</h3>
+                    <p>{% translate "判断可行性、风险与优先级，明确实施路径。" %}</p>
                 </div>
             </li>
             <li class="process-stage">
@@ -311,8 +311,8 @@
                     <span class="process-stage__number">03</span>
                 </div>
                 <div class="process-stage__content">
-                    <h3>项目确认与启动</h3>
-                    <p>明确交付范围、负责人、时间表与协作方式。</p>
+                    <h3>{% translate "项目确认与启动" %}</h3>
+                    <p>{% translate "明确交付范围、负责人、时间表与协作方式。" %}</p>
                 </div>
             </li>
             <li class="process-stage">
@@ -320,8 +320,8 @@
                     <span class="process-stage__number">04</span>
                 </div>
                 <div class="process-stage__content">
-                    <h3>本地执行与交付</h3>
-                    <p>协调法国及中方团队，推进各项任务真正落地。</p>
+                    <h3>{% translate "本地执行与交付" %}</h3>
+                    <p>{% translate "协调法国及中方团队，推进各项任务真正落地。" %}</p>
                 </div>
             </li>
             <li class="process-stage">
@@ -329,13 +329,13 @@
                     <span class="process-stage__number">05</span>
                 </div>
                 <div class="process-stage__content">
-                    <h3>持续运营与增长</h3>
-                    <p>根据企业后续发展继续提供本地支持。</p>
+                    <h3>{% translate "持续运营与增长" %}</h3>
+                    <p>{% translate "根据企业后续发展继续提供本地支持。" %}</p>
                 </div>
             </li>
         </ol>
         <div class="section-actions">
-            <a class="button button--secondary" href="{% url 'contact' %}">联系我们</a>
+            <a class="button button--secondary" href="{% url 'contact' %}">{% translate "联系我们" %}</a>
         </div>
     </div>
 </section>
@@ -343,43 +343,43 @@
 <section class="home-section home-section--case" aria-labelledby="case-title">
     <div class="container case-study">
         <header class="case-study__intro section-heading">
-            <h2 id="case-title">欧洲市场落地的真实实践</h2>
+            <h2 id="case-title">{% translate "欧洲市场落地的真实实践" %}</h2>
             <p>
-                我们围绕客户的实际问题制定路径，并在法国本地协调资源、推进执行，
-                让战略转化为可持续的业务进展。
+                {% blocktranslate %}我们围绕客户的实际问题制定路径，并在法国本地协调资源、推进执行，
+                让战略转化为可持续的业务进展。{% endblocktranslate %}
             </p>
         </header>
         <div class="case-overview">
             <figure class="case-study__visual case-overview__media">
-                <img src="{% static 'images/case-study.jpg' %}" alt="工业团队在生产环境中查看项目资料的示意场景" loading="lazy" decoding="async">
+                <img src="{% static 'images/case-study.jpg' %}" alt="{% translate '工业团队在生产环境中查看项目资料的示意场景' %}" loading="lazy" decoding="async">
             </figure>
             <div class="case-overview__content">
                 <div class="case-study__header">
-                    <p class="eyebrow">中国上市公司｜法国市场拓展</p>
-                    <h3 class="case-study__title">重塑法国市场进入与增长路径</h3>
+                    <p class="eyebrow">{% translate "中国上市公司｜法国市场拓展" %}</p>
+                    <h3 class="case-study__title">{% translate "重塑法国市场进入与增长路径" %}</h3>
                 </div>
                 <section class="case-study__background" aria-labelledby="case-background-title">
-                    <span class="case-study__section-label">客户背景</span>
+                    <span class="case-study__section-label">{% translate "客户背景" %}</span>
                     <p id="case-background-title">
-                        客户已进入法国市场多年，但市场开拓进展缓慢，商业与销售基础薄弱，
-                        本地资源对接困难，进入路径与战略方向不够清晰。
+                        {% blocktranslate %}客户已进入法国市场多年，但市场开拓进展缓慢，商业与销售基础薄弱，
+                        本地资源对接困难，进入路径与战略方向不够清晰。{% endblocktranslate %}
                     </p>
                 </section>
                 <div class="case-study__analysis">
                     <section class="case-study__section" aria-labelledby="case-challenge-title">
                         <span class="case-study__section-index">01</span>
                         <div class="case-study__section-body">
-                            <h4 id="case-challenge-title">核心挑战</h4>
-                            <p>已有市场存在感未能转化为可持续推进的业务基础，方向分散，资源投入与实际突破之间缺少清晰衔接。</p>
+                            <h4 id="case-challenge-title">{% translate "核心挑战" %}</h4>
+                            <p>{% translate "已有市场存在感未能转化为可持续推进的业务基础，方向分散，资源投入与实际突破之间缺少清晰衔接。" %}</p>
                         </div>
                     </section>
                     <section class="case-study__section" aria-labelledby="case-intervention-title">
                         <span class="case-study__section-index">02</span>
                         <div class="case-study__section-body">
-                            <h4 id="case-intervention-title">Acoeurs 的介入</h4>
+                            <h4 id="case-intervention-title">{% translate "Acoeurs 的介入" %}</h4>
                             <p>
-                                重新评估并重构市场进入逻辑与战略定位，明确识别应战略放弃的方向，聚焦核心机会，
-                                锁定可落地的市场切入点，制定清晰执行路径，协调和激活本地关键资源，推动实质性项目落地。
+                                {% blocktranslate %}重新评估并重构市场进入逻辑与战略定位，明确识别应战略放弃的方向，聚焦核心机会，
+                                锁定可落地的市场切入点，制定清晰执行路径，协调和激活本地关键资源，推动实质性项目落地。{% endblocktranslate %}
                             </p>
                         </div>
                     </section>
@@ -387,27 +387,27 @@
             </div>
         </div>
         <section class="case-study__results-panel" aria-labelledby="case-results-title">
-            <h3 id="case-results-title" class="case-study__section-label">阶段性成果</h3>
+            <h3 id="case-results-title" class="case-study__section-label">{% translate "阶段性成果" %}</h3>
             <ol class="case-study__results">
                 <li>
                     <span class="case-study__result-index">01</span>
-                    <p>成功建立真实、高价值的本地商业接触与合作关系，为后续业务推进奠定坚实基础。</p>
+                    <p>{% translate "成功建立真实、高价值的本地商业接触与合作关系，为后续业务推进奠定坚实基础。" %}</p>
                 </li>
                 <li>
                     <span class="case-study__result-index">02</span>
-                    <p>市场识别度与品牌影响力显著提升，逐步进入法国主流行业与商业网络视野。</p>
+                    <p>{% translate "市场识别度与品牌影响力显著提升，逐步进入法国主流行业与商业网络视野。" %}</p>
                 </li>
                 <li>
                     <span class="case-study__result-index">03</span>
-                    <p>项目由探索阶段进入可持续推进阶段，形成清晰、可执行的增长路径。</p>
+                    <p>{% translate "项目由探索阶段进入可持续推进阶段，形成清晰、可执行的增长路径。" %}</p>
                 </li>
             </ol>
         </section>
         <div class="case-study__footer">
             <blockquote class="case-study__quote">
                 <p>
-                    从“在欧洲存在”到“被市场看见”，从“分散摸索”到“清晰战略”，
-                    推动客户实现欧洲市场的系统性突破。
+                    {% blocktranslate %}从“在欧洲存在”到“被市场看见”，从“分散摸索”到“清晰战略”，
+                    推动客户实现欧洲市场的系统性突破。{% endblocktranslate %}
                 </p>
             </blockquote>
         </div>
@@ -417,71 +417,71 @@
 <section class="home-section home-section--why" aria-labelledby="why-title">
     <div class="container">
         <div class="section-heading why-section__heading">
-            <h2 id="why-title">为什么选择 Acoeurs</h2>
-            <p>Acoeurs 以统一项目管理为基础，协调中法团队与本地专业资源，将分散的跨境事务整合为清晰、可执行、可持续推进的项目路径。</p>
+            <h2 id="why-title">{% translate "为什么选择 Acoeurs" %}</h2>
+            <p>{% translate "Acoeurs 以统一项目管理为基础，协调中法团队与本地专业资源，将分散的跨境事务整合为清晰、可执行、可持续推进的项目路径。" %}</p>
         </div>
         {% comment %}Final public wording and statistical scope below must be verified before production launch.{% endcomment %}
-        <div class="why-stats" aria-label="Acoeurs 服务数据">
+        <div class="why-stats" aria-label="{% translate 'Acoeurs 服务数据' %}">
             <div class="why-stat">
                 <strong>10+</strong>
-                <span>年中欧跨境服务经验</span>
+                <span>{% translate "年中欧跨境服务经验" %}</span>
             </div>
             <div class="why-stat">
                 <strong>500+</strong>
-                <span>累计服务客户</span>
+                <span>{% translate "累计服务客户" %}</span>
             </div>
             <div class="why-stat">
                 <strong>92%</strong>
-                <span>重点专项服务成功率</span>
+                <span>{% translate "重点专项服务成功率" %}</span>
             </div>
         </div>
-        <div class="advantage-list" aria-label="选择 Acoeurs 的六项优势">
+        <div class="advantage-list" aria-label="{% translate '选择 Acoeurs 的六项优势' %}">
             <article class="advantage-row">
                 <span class="advantage-row__index">01</span>
                 <div class="advantage-row__content">
-                    <h3>法国本地、中法双语团队</h3>
-                    <p>减少跨语言与跨文化沟通成本，让总部与本地执行保持一致。</p>
+                    <h3>{% translate "法国本地、中法双语团队" %}</h3>
+                    <p>{% translate "减少跨语言与跨文化沟通成本，让总部与本地执行保持一致。" %}</p>
                 </div>
             </article>
             <article class="advantage-row">
                 <span class="advantage-row__index">02</span>
                 <div class="advantage-row__content">
-                    <h3>战略与执行一体化</h3>
-                    <p>不仅提供方向建议，也将方案拆解为可执行的本地行动。</p>
+                    <h3>{% translate "战略与执行一体化" %}</h3>
+                    <p>{% translate "不仅提供方向建议，也将方案拆解为可执行的本地行动。" %}</p>
                 </div>
             </article>
             <article class="advantage-row">
                 <span class="advantage-row__index">03</span>
                 <div class="advantage-row__content">
-                    <h3>合规与风险管理</h3>
-                    <p>将财税、法律与运营风险前置管理，降低长期经营的不确定性。</p>
+                    <h3>{% translate "合规与风险管理" %}</h3>
+                    <p>{% translate "将财税、法律与运营风险前置管理，降低长期经营的不确定性。" %}</p>
                 </div>
             </article>
             <article class="advantage-row">
                 <span class="advantage-row__index">04</span>
                 <div class="advantage-row__content">
-                    <h3>统一项目管理与高效响应</h3>
-                    <p>以统一窗口统筹多方协作，减少信息分散与推进失序。</p>
+                    <h3>{% translate "统一项目管理与高效响应" %}</h3>
+                    <p>{% translate "以统一窗口统筹多方协作，减少信息分散与推进失序。" %}</p>
                 </div>
             </article>
             <article class="advantage-row">
                 <span class="advantage-row__index">05</span>
                 <div class="advantage-row__content">
-                    <h3>透明范围与分项报价</h3>
-                    <p>明确项目边界、阶段目标与费用结构，便于客户做出决策。</p>
+                    <h3>{% translate "透明范围与分项报价" %}</h3>
+                    <p>{% translate "明确项目边界、阶段目标与费用结构，便于客户做出决策。" %}</p>
                 </div>
             </article>
             <article class="advantage-row">
                 <span class="advantage-row__index">06</span>
                 <div class="advantage-row__content">
-                    <h3>长期陪伴与本地资源网络</h3>
-                    <p>持续支持运营调整与资源连接，帮助企业建立可持续的法国本地能力。</p>
+                    <h3>{% translate "长期陪伴与本地资源网络" %}</h3>
+                    <p>{% translate "持续支持运营调整与资源连接，帮助企业建立可持续的法国本地能力。" %}</p>
                 </div>
             </article>
         </div>
         <div class="why-section__closing">
-            <p>我们交付的不只是一项服务，而是一套能够在法国及欧洲持续运行、不断调整并支持增长的业务体系。</p>
-            <a class="button button--secondary" href="{% url 'about' %}">了解 Acoeurs</a>
+            <p>{% translate "我们交付的不只是一项服务，而是一套能够在法国及欧洲持续运行、不断调整并支持增长的业务体系。" %}</p>
+            <a class="button button--secondary" href="{% url 'about' %}">{% translate "了解 Acoeurs" %}</a>
         </div>
     </div>
 </section>
@@ -490,12 +490,12 @@
     <div class="container">
         <div class="final-cta">
             <div>
-                <h2 id="final-cta-title">准备开始您的法国及欧洲市场项目？</h2>
+                <h2 id="final-cta-title">{% translate "准备开始您的法国及欧洲市场项目？" %}</h2>
                 <p>
-                    告诉我们您正在推进的事项，我们会根据您提交的信息，通过电话或电子邮件与您取得联系。
+                    {% translate "告诉我们您正在推进的事项，我们会根据您提交的信息，通过电话或电子邮件与您取得联系。" %}
                 </p>
             </div>
-            <a class="button button--gold" href="{% url 'contact' %}">联系我们</a>
+            <a class="button button--gold" href="{% url 'contact' %}">{% translate "联系我们" %}</a>
         </div>
     </div>
 </section>

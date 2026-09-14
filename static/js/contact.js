@@ -16,11 +16,9 @@ if (contactForm) {
     const optionalDetails = contactForm.querySelector("[data-contact-optional-details]");
     let currentStep = Number(contactForm.closest("[data-current-step]")?.dataset.currentStep || 1);
 
-    const stepLabels = {
-        1: "关于您",
-        2: "您的需求",
-        3: "联系方式",
-    };
+    const stepLabels = Object.fromEntries(progressItems.map((item, index) => [
+        index + 1, item.querySelector('.contact-progress__label').textContent.trim(),
+    ]));
 
     const getCheckedIdentity = () => {
         const checked = identityInputs.find((input) => input.checked);
@@ -67,7 +65,7 @@ if (contactForm) {
         }
 
         optionalToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
-        optionalToggle.textContent = expanded ? "收起补充信息" : "＋ 补充咨询信息（选填）";
+        optionalToggle.textContent = expanded ? optionalToggle.dataset.labelCollapse : optionalToggle.dataset.labelExpand;
         optionalDetails.hidden = !expanded;
     };
 
@@ -84,7 +82,7 @@ if (contactForm) {
         });
 
         if (mobileStep) {
-            mobileStep.textContent = `第 ${step} 步，共 3 步`;
+            mobileStep.textContent = mobileStep.dataset.stepFormat.replace("{step}", String(step));
         }
         if (mobileLabel) {
             mobileLabel.textContent = stepLabels[step];
@@ -116,11 +114,19 @@ if (contactForm) {
         }, 260);
     };
 
+    const reportFieldValidity = (input, message) => {
+        if (!input) return true;
+        input.setCustomValidity(input.validity.valueMissing || input.validity.typeMismatch ? message : '');
+        const valid = input.reportValidity();
+        input.setCustomValidity('');
+        return valid;
+    };
+
     const validateContactStep = (step) => {
         if (step === 1) {
             const checked = getCheckedIdentity();
             if (!checked) {
-                identityInputs[0]?.reportValidity();
+                reportFieldValidity(identityInputs[0], contactForm.dataset.errorIdentity);
                 return false;
             }
             return true;
@@ -131,7 +137,7 @@ if (contactForm) {
             const checked = directionInputs.find((input) => input.checked);
 
             if (!checked) {
-                directionInputs[0]?.reportValidity();
+                reportFieldValidity(directionInputs.find((input) => !input.disabled), contactForm.dataset.errorDirection);
                 return false;
             }
             return true;
@@ -143,16 +149,16 @@ if (contactForm) {
             const phone = contactForm.querySelector("#id_phone");
             const consent = contactForm.querySelector("#id_privacy_consent");
 
-            if (name && !name.reportValidity()) {
+            if (name && !reportFieldValidity(name, contactForm.dataset.errorName)) {
                 return false;
             }
 
-            if (email && email.value && !email.reportValidity()) {
+            if (email && email.value && !reportFieldValidity(email, contactForm.dataset.errorEmail)) {
                 return false;
             }
 
             if (phone && email && !phone.value.trim() && !email.value.trim()) {
-                const message = "请至少填写联系电话或电子邮箱中的一项。";
+                const message = contactForm.dataset.contactRequired;
                 phone.setCustomValidity(message);
                 email.setCustomValidity(message);
                 const valid = phone.reportValidity();
@@ -161,7 +167,7 @@ if (contactForm) {
                 return valid;
             }
 
-            if (consent && !consent.reportValidity()) {
+            if (consent && !reportFieldValidity(consent, contactForm.dataset.errorConsent)) {
                 return false;
             }
         }

@@ -407,7 +407,7 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .nav-toggle {
         display: none;
     }
@@ -440,6 +440,9 @@
         min-height: 2.75rem;
     }
 
+}
+
+@media (min-width: 768px) {
     .site-footer__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         column-gap: 2.5rem;
@@ -478,3 +481,165 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* Language choices stay compact in the header and expand inside the mobile nav. */
+.language-menu {
+    position: relative;
+}
+
+.language-menu__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.55rem;
+    width: 100%;
+    min-height: 2.5rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--color-text-dark);
+    font: inherit;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+}
+
+.language-menu__toggle:hover {
+    color: var(--color-navy);
+}
+
+.language-menu__chevron {
+    width: 0.48rem;
+    height: 0.48rem;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: translateY(-0.12rem) rotate(45deg);
+    transition: transform var(--motion-fast) var(--motion-ease-interaction);
+}
+
+.language-menu.is-open .language-menu__chevron {
+    transform: translateY(0.12rem) rotate(225deg);
+}
+
+.language-menu__dropdown {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.35rem;
+    list-style: none;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        max-height var(--motion-fast) var(--motion-ease-interaction),
+        margin var(--motion-fast) var(--motion-ease-interaction),
+        opacity var(--motion-fast) var(--motion-ease-interaction);
+}
+
+.language-menu.is-open .language-menu__dropdown {
+    max-height: 4rem;
+    margin-top: 0.35rem;
+    opacity: 1;
+    visibility: visible;
+}
+
+.language-menu__dropdown a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0.45rem 0.65rem;
+    border-radius: var(--radius-pill);
+    color: var(--color-text-dark);
+    font-size: 0.875rem;
+}
+
+.language-menu__dropdown a:hover {
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.language-menu__dropdown a[aria-current="page"] {
+    background: rgba(24, 54, 93, 0.1);
+    color: var(--color-navy-dark);
+    font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+    .site-nav {
+        display: block;
+    }
+
+    .site-nav__list { flex-wrap: nowrap; }
+    .site-nav__list a { white-space: nowrap; }
+
+    .language-menu__toggle {
+        justify-content: center;
+        width: auto;
+        min-height: 2.75rem;
+    }
+
+    .language-menu__dropdown {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+        width: 7.5rem;
+        max-height: none;
+        margin: 0;
+        padding: 0.45rem;
+        overflow: visible;
+        border: 1px solid rgba(24, 54, 93, 0.12);
+        border-radius: 0.8rem;
+        background: var(--color-warm-white);
+        box-shadow: 0 16px 36px rgba(16, 40, 70, 0.14);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translate(-50%, 0.4rem);
+        transition:
+            opacity var(--motion-fast) var(--motion-ease-interaction),
+            transform var(--motion-fast) var(--motion-ease-interaction),
+            visibility var(--motion-fast) var(--motion-ease-interaction);
+    }
+
+    .language-menu:hover .language-menu__dropdown,
+    .language-menu.is-open .language-menu__dropdown {
+        max-height: none;
+        margin: 0;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translate(-50%, 0);
+    }
+}
+/* Longer Latin-script headings wrap within the approved layout. */
+html:not([lang="zh-Hans"]) .site-main h1 {
+    font-size: clamp(2rem, 3.2vw, 3.25rem);
+    line-height: 1.2;
+    overflow-wrap: break-word;
+}
+html:not([lang="zh-Hans"]) .button {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+}
+html:not([lang="zh-Hans"]) .site-main h2,
+html:not([lang="zh-Hans"]) .site-main h3 {
+    overflow-wrap: break-word;
+}
+
+/* Latin scripts use the existing local Latin font fallbacks for natural accents. */
+html:not([lang="zh-Hans"]) :is(.site-main, .site-footer, .site-nav, .nav-toggle) {
+    --font-body: "Helvetica Neue", Arial, sans-serif;
+    --font-display: Georgia, "Times New Roman", serif;
+    font-family: var(--font-body);
+}
+html:not([lang="zh-Hans"]) .home-hero h1 { max-width: 23ch; }
+
+/* Keep the focused step heading below the fixed header after navigation. */
+.contact-step__legend { scroll-margin-top: calc(var(--header-height) + 1rem); }
