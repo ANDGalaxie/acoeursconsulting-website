@@ -756,7 +756,11 @@ class WebsiteRouteTests(TestCase):
         self.assertEqual(defaults["CONTACT_RECIPIENT_EMAIL"], "info@acoeursconsulting.com")
         self.assertEqual(defaults["DEFAULT_FROM_EMAIL"], "Acoeurs Consulting <info@acoeursconsulting.com>")
 
-    @override_settings(EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend")
+    @override_settings(
+        EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend",
+        DEFAULT_FROM_EMAIL="Acoeurs Consulting <info@acoeursconsulting.com>",
+        CONTACT_RECIPIENT_EMAIL="info@acoeursconsulting.com",
+    )
     def test_valid_contact_submission_sends_one_email_and_redirects(self):
         response = self.client.post(reverse("contact"), data=self.valid_contact_payload())
 
@@ -766,7 +770,13 @@ class WebsiteRouteTests(TestCase):
 
         email = mail.outbox[0]
         self.assertEqual(email.to, ["info@acoeursconsulting.com"])
+        self.assertEqual(
+            email.from_email,
+            "Acoeurs Consulting <info@acoeursconsulting.com>",
+        )
         self.assertEqual(email.reply_to, ["zhangsan@example.com"])
+        self.assertNotEqual(email.from_email, "zhangsan@example.com")
+        self.assertEqual(email.message()["Reply-To"], "zhangsan@example.com")
         self.assertIn("欧洲市场进入与战略", email.subject)
         self.assertIn("计划在法国设立公司", email.subject)
         self.assertIn("张三", email.subject)
@@ -785,6 +795,18 @@ class WebsiteRouteTests(TestCase):
         self.assertEqual(follow_up.status_code, 200)
         self.assertEqual(len(mail.outbox), 1)
         self.assertContains(follow_up, "信息已提交")
+
+    @override_settings(EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend")
+    def test_invalid_contact_email_does_not_send_email(self):
+        payload = self.valid_contact_payload(
+            email="attacker@example.com\nBcc: victim@example.com",
+        )
+
+        response = self.client.post(reverse("contact"), data=payload)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(mail.outbox), 0)
+        self.assertContains(response, "请输入有效的电子邮箱地址。")
 
     @override_settings(EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend")
     def test_contact_submission_allows_phone_without_email(self):
