@@ -15,6 +15,17 @@ media/
 # Environment variables
 .env
 .env.*
+*.pem
+*.key
+credentials*.json
+secrets*.json
+
+# Local browser QA artifacts
+.browser-profile/
+playwright-report/
+test-results/
+tmp/screenshots/
+*.har
 
 # Editors
 .vscode/

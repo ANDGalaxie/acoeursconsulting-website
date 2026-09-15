@@ -221,6 +221,12 @@ class MultilingualTests(TestCase):
             self.assertEqual(response.status_code, 404)
             self.assertIn(phrase, response.content.decode())
             self.assertTemplateUsed(response, '404.html')
+            self.assertContains(response, f'href="/{language}/"', status_code=404)
+            self.assertContains(
+                response,
+                f'href="/{language}/contact/"',
+                status_code=404,
+            )
 
     def test_compiled_catalogs_contain_no_empty_public_translations(self):
         for language in ('fr', 'en'):

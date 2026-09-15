@@ -12,7 +12,7 @@
             <p class="placeholder-page__copy">
                 {% translate "当前请求未能被正确处理，请返回首页后重试。" %}
             </p>
-            <a class="button button--secondary" href="/">{% translate "返回首页" %}</a>
+            <a class="button button--secondary" href="{% url 'home' %}">{% translate "返回首页" %}</a>
         </div>
     </div>
 </section>

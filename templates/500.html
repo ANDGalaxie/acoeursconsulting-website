@@ -14,8 +14,8 @@
             <p class="placeholder-page__copy">
                 {% translate "当前页面暂时无法访问，请稍后重试，或返回首页继续浏览其他内容。" %}
             </p>
-            <a class="button button--secondary" href="/">{% translate "返回首页" %}</a>
-            <a class="button button--secondary" href="/contact/">{% translate "联系我们" %}</a>
+            <a class="button button--secondary" href="{% url 'home' %}">{% translate "返回首页" %}</a>
+            <a class="button button--secondary" href="{% url 'contact' %}">{% translate "联系我们" %}</a>
         </div>
     </div>
 </section>

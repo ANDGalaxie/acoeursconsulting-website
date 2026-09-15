@@ -12,7 +12,7 @@
             <p class="placeholder-page__copy">
                 {% translate "您当前没有权限访问此内容，请返回首页继续浏览。" %}
             </p>
-            <a class="button button--secondary" href="/">{% translate "返回首页" %}</a>
+            <a class="button button--secondary" href="{% url 'home' %}">{% translate "返回首页" %}</a>
         </div>
     </div>
 </section>
