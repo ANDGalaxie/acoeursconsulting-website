@@ -24,7 +24,12 @@
                 <a class="button button--hero-secondary" href="{% url 'business' %}">{% translate "了解企业服务" %}</a>
             </div>
             <p class="home-hero__trust">
-                {% translate "中欧跨境经验｜法国本地团队｜中法双语服务｜巴黎·上海·香港" %}
+                {% spaceless %}
+                <span class="home-hero__trust-item">{% translate "中欧跨境经验" context "home hero trust" %}</span>
+                <span class="home-hero__trust-item"><span class="home-hero__trust-separator">{% translate "｜" context "home hero trust" %}</span>{% translate "法国本地团队" context "home hero trust" %}</span>
+                <span class="home-hero__trust-item"><span class="home-hero__trust-separator">{% translate "｜" context "home hero trust" %}</span>{% translate "中法双语服务" context "home hero trust" %}</span>
+                <span class="home-hero__trust-item home-hero__trust-locations"><span class="home-hero__trust-separator home-hero__trust-separator--locations">{% translate "｜" context "home hero trust" %}</span>{% translate "巴黎·上海·香港" context "home hero trust" %}</span>
+                {% endspaceless %}
             </p>
         </div>
     </div>

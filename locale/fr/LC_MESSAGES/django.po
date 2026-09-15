@@ -1682,6 +1682,32 @@ msgstr ""
 "le développement commercial."
 
 #: templates/website/home.html:27
+msgctxt "home hero trust"
+msgid "中欧跨境经验"
+msgstr "Expérience Chine–Europe"
+
+#: templates/website/home.html:28
+msgctxt "home hero trust"
+msgid "法国本地团队"
+msgstr "Équipe en France"
+
+#: templates/website/home.html:29
+msgctxt "home hero trust"
+msgid "中法双语服务"
+msgstr "Services chinois-français"
+
+#: templates/website/home.html:30
+msgctxt "home hero trust"
+msgid "巴黎·上海·香港"
+msgstr "Paris · Shanghai · Hong Kong"
+
+#: templates/website/home.html:28 templates/website/home.html:29
+#: templates/website/home.html:30
+msgctxt "home hero trust"
+msgid "｜"
+msgstr " · "
+
+#: templates/website/home.html:27
 msgid "中欧跨境经验｜法国本地团队｜中法双语服务｜巴黎·上海·香港"
 msgstr ""
 "Expérience Chine–Europe · Équipe en France · Services chinois-français · "
