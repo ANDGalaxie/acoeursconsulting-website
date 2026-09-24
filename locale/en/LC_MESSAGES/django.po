@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Acoeurs Consulting\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-14 22:41+0800\n"
+"POT-Creation-Date: 2026-09-24 18:31+0800\n"
 "PO-Revision-Date: 2026-09-14 12:00+0200\n"
 "Last-Translator: Acoeurs Consulting\n"
 "Language-Team: Acoeurs Consulting\n"
@@ -58,8 +58,8 @@ msgstr "Page Not Found"
 #: templates/404.html:15
 msgid "您访问的页面不存在或已被移动，请返回首页继续浏览。"
 msgstr ""
-"This page does not exist or has been moved. Please return to the homepage to "
-"continue browsing."
+"This page does not exist or has been moved. Please return to the homepage to"
+" continue browsing."
 
 #: templates/404.html:18 templates/500.html:18
 #: templates/includes/footer.html:46 templates/website/about.html:37
@@ -67,8 +67,8 @@ msgstr ""
 #: templates/website/contact.html:27 templates/website/contact.html:39
 #: templates/website/enterprise_services.html:35
 #: templates/website/enterprise_services.html:342
-#: templates/website/home.html:23 templates/website/home.html:338
-#: templates/website/home.html:499 templates/website/personal_services.html:32
+#: templates/website/home.html:23 templates/website/home.html:343
+#: templates/website/home.html:504 templates/website/personal_services.html:32
 #: templates/website/personal_services.html:208
 #: templates/website/personal_services.html:213
 msgid "联系我们"
@@ -113,7 +113,7 @@ msgstr "Business Services Overview"
 
 #: templates/includes/footer.html:9 templates/website/about.html:166
 #: templates/website/enterprise_services.html:103
-#: templates/website/home.html:194
+#: templates/website/home.html:199
 #: templates/website/service_market_entry.html:26 website/forms.py:14
 #: website/views.py:27 website/views.py:41 website/views.py:67
 msgid "欧洲市场进入与战略"
@@ -121,7 +121,7 @@ msgstr "European Market Entry & Strategy"
 
 #: templates/includes/footer.html:10 templates/website/about.html:167
 #: templates/website/enterprise_services.html:124
-#: templates/website/home.html:203
+#: templates/website/home.html:208
 #: templates/website/service_company_banking.html:31 website/forms.py:15
 #: website/views.py:28 website/views.py:42 website/views.py:68
 msgid "公司架构与银行金融"
@@ -129,7 +129,7 @@ msgstr "Corporate Structuring & Banking"
 
 #: templates/includes/footer.html:11 templates/website/about.html:168
 #: templates/website/enterprise_services.html:145
-#: templates/website/home.html:211
+#: templates/website/home.html:216
 #: templates/website/service_tax_legal_compliance.html:26 website/forms.py:16
 #: website/views.py:29 website/views.py:43 website/views.py:69
 msgid "财税、法律与合规"
@@ -137,7 +137,7 @@ msgstr "Tax, Legal & Compliance"
 
 #: templates/includes/footer.html:12 templates/website/about.html:169
 #: templates/website/enterprise_services.html:166
-#: templates/website/home.html:219
+#: templates/website/home.html:224
 #: templates/website/service_local_operations.html:26 website/forms.py:17
 #: website/views.py:30 website/views.py:70
 msgid "本地运营与团队建设"
@@ -145,14 +145,15 @@ msgstr "Local Operations & Team Building"
 
 #: templates/includes/footer.html:13 templates/website/about.html:170
 #: templates/website/enterprise_services.html:187
-#: templates/website/home.html:227
+#: templates/website/home.html:232
 #: templates/website/service_business_growth.html:26 website/forms.py:18
 #: website/views.py:31 website/views.py:71
 msgid "商务拓展与增长"
 msgstr "Business Development & Growth"
 
 #: templates/includes/footer.html:18 templates/website/about.html:175
-#: templates/website/about.html:176 templates/website/personal_services.html:23
+#: templates/website/about.html:176
+#: templates/website/personal_services.html:23
 msgid "个人服务"
 msgstr "Personal Services"
 
@@ -167,22 +168,22 @@ msgid "居留与家庭定居"
 msgstr "Residency & Family Settlement"
 
 #: templates/includes/footer.html:22 templates/website/about.html:180
-#: templates/website/home.html:261 templates/website/personal_services.html:112
-#: website/forms.py:20 website/views.py:44 website/views.py:56
-#: website/views.py:73
+#: templates/website/home.html:266
+#: templates/website/personal_services.html:112 website/forms.py:20
+#: website/views.py:44 website/views.py:56 website/views.py:73
 msgid "房产与资产配置"
 msgstr "Property & Asset Allocation"
 
 #: templates/includes/footer.html:23 templates/website/about.html:181
-#: templates/website/home.html:269 templates/website/personal_services.html:132
-#: website/forms.py:21 website/views.py:45 website/views.py:57
-#: website/views.py:74
+#: templates/website/home.html:274
+#: templates/website/personal_services.html:132 website/forms.py:21
+#: website/views.py:45 website/views.py:57 website/views.py:74
 msgid "跨境税务与风险管理"
 msgstr "Cross-Border Tax & Risk Management"
 
 #: templates/includes/footer.html:28 templates/website/contact.html:77
-#: templates/website/contact.html:84 templates/website/cookie_policy.html:42
-#: templates/website/cookie_policy.html:138
+#: templates/website/contact.html:84 templates/website/cookie_policy.html:41
+#: templates/website/cookie_policy.html:124
 msgid "联系方式"
 msgstr "Contact Details"
 
@@ -219,21 +220,21 @@ msgstr "Footer secondary navigation"
 msgid "关于我们"
 msgstr "About Us"
 
-#: templates/includes/footer.html:47 templates/website/cookie_policy.html:147
+#: templates/includes/footer.html:47 templates/website/cookie_policy.html:131
 #: templates/website/legal_notice.html:18
 #: templates/website/legal_notice.html:22
-#: templates/website/legal_notice.html:44
-#: templates/website/legal_notice.html:94
-#: templates/website/privacy_policy.html:223
+#: templates/website/legal_notice.html:46
+#: templates/website/legal_notice.html:97
+#: templates/website/privacy_policy.html:148
 msgid "法律声明"
 msgstr "Legal Notice"
 
-#: templates/includes/footer.html:48 templates/website/cookie_policy.html:148
-#: templates/website/legal_notice.html:95
+#: templates/includes/footer.html:48 templates/website/cookie_policy.html:132
+#: templates/website/legal_notice.html:98
 #: templates/website/privacy_policy.html:18
 #: templates/website/privacy_policy.html:22
-#: templates/website/privacy_policy.html:55
-#: templates/website/privacy_policy.html:224
+#: templates/website/privacy_policy.html:52
+#: templates/website/privacy_policy.html:149
 msgid "隐私政策"
 msgstr "Privacy Policy"
 
@@ -281,14 +282,14 @@ msgctxt "navigation"
 msgid "关于我们"
 msgstr "About"
 
-#: templates/includes/header.html:38
+#: templates/includes/header.html:53
+msgid "切换语言"
+msgstr "Choose language"
+
+#: templates/includes/header.html:65
 msgctxt "navigation"
 msgid "联系我们"
 msgstr "Contact"
-
-#: templates/includes/header.html:40
-msgid "切换语言"
-msgstr "Choose language"
 
 #: templates/website/about.html:4
 msgid "关于Acoeurs｜法国及欧洲市场咨询与本地执行｜Acoeurs Consulting"
@@ -297,9 +298,7 @@ msgstr ""
 "Consulting"
 
 #: templates/website/about.html:5
-msgid ""
-"Acoeurs Consulting 专注中国企业在法国和欧洲市场的进入、落地与持续运营，并为企"
-"业主、投资人与家庭提供法国本地事务协调服务。"
+msgid "Acoeurs Consulting 专注中国企业在法国和欧洲市场的进入、落地与持续运营，并为企业主、投资人与家庭提供法国本地事务协调服务。"
 msgstr ""
 "Acoeurs Consulting supports Chinese businesses entering, establishing and "
 "operating in France and Europe, and coordinates local matters for business "
@@ -333,23 +332,23 @@ msgstr "Breadcrumb"
 msgid "首页"
 msgstr "Home"
 
-#: templates/website/about.html:30 templates/website/home.html:39
+#: templates/website/about.html:30 templates/website/home.html:44
 msgid "扎根法国"
 msgstr "Rooted in France"
 
-#: templates/website/about.html:31 templates/website/home.html:40
+#: templates/website/about.html:31 templates/website/home.html:45
 msgid "连接中国与欧洲"
 msgstr "Connecting China and Europe"
 
 #: templates/website/about.html:34
 msgid ""
-"Acoeurs Consulting 是一家专注于中国企业国际化发展的咨询与落地执行机构，为客户"
-"提供从欧洲市场评估、进入策略、本地化落地，到持续运营与业务拓展的全流程支持。"
+"Acoeurs Consulting "
+"是一家专注于中国企业国际化发展的咨询与落地执行机构，为客户提供从欧洲市场评估、进入策略、本地化落地，到持续运营与业务拓展的全流程支持。"
 msgstr ""
 "Acoeurs Consulting provides consulting and local execution support for "
 "Chinese businesses expanding internationally, from European market "
-"assessment and entry strategy to local establishment, ongoing operations and "
-"business development."
+"assessment and entry strategy to local establishment, ongoing operations and"
+" business development."
 
 #: templates/website/about.html:38
 msgid "了解我们的服务"
@@ -387,22 +386,22 @@ msgstr "Connecting Strategic Decisions with Local Execution in France"
 
 #: templates/website/about.html:58
 msgid ""
-"Acoeurs 专注中国企业在法国和欧洲市场的进入、落地与长期发展。我们不仅协助客户"
-"处理公司、合规或行政事项，也关注企业能否在当地真正开始运营并推进业务。"
+"Acoeurs "
+"专注中国企业在法国和欧洲市场的进入、落地与长期发展。我们不仅协助客户处理公司、合规或行政事项，也关注企业能否在当地真正开始运营并推进业务。"
 msgstr ""
-"Acoeurs supports Chinese businesses entering, establishing and developing in "
-"France and Europe over the long term. Alongside corporate, compliance and "
-"administrative matters, we focus on their ability to start operating locally "
-"and move their business forward."
+"Acoeurs supports Chinese businesses entering, establishing and developing in"
+" France and Europe over the long term. Alongside corporate, compliance and "
+"administrative matters, we focus on their ability to start operating locally"
+" and move their business forward."
 
 #: templates/website/about.html:61
 msgid ""
 "在跨境项目中，客户往往需要同时与不同机构、专业人士和本地合作方沟通。Acoeurs "
 "负责需求梳理、信息协调和项目跟进，让中国管理层拥有一个法国本地沟通窗口。"
 msgstr ""
-"Cross-border projects often involve multiple institutions, professionals and "
-"local partners. Acoeurs clarifies requirements, coordinates information and "
-"follows up on projects, giving Chinese management teams a local point of "
+"Cross-border projects often involve multiple institutions, professionals and"
+" local partners. Acoeurs clarifies requirements, coordinates information and"
+" follows up on projects, giving Chinese management teams a local point of "
 "contact in France."
 
 #: templates/website/about.html:70
@@ -458,8 +457,8 @@ msgstr "Families Living and Settling in France"
 #: templates/website/about.html:102
 msgid "需要协调居留、家庭、教育、医疗或其他法国本地事项的家庭。"
 msgstr ""
-"Families needing coordination of residency, family, education, healthcare or "
-"other local matters in France."
+"Families needing coordination of residency, family, education, healthcare or"
+" other local matters in France."
 
 #: templates/website/about.html:112
 msgid "我们的角色"
@@ -497,8 +496,8 @@ msgstr ""
 #: templates/website/about.html:144
 msgid "从前期判断、落地执行到后续运营与业务推进持续提供支持。"
 msgstr ""
-"Provide continuing support from initial assessment and establishment through "
-"to ongoing operations and business development."
+"Provide continuing support from initial assessment and establishment through"
+" to ongoing operations and business development."
 
 #: templates/website/about.html:154
 msgid "服务能力"
@@ -513,9 +512,7 @@ msgid "提供法国本地协调支持"
 msgstr "Local Coordination Support in France"
 
 #: templates/website/about.html:164
-msgid ""
-"围绕市场进入、公司架构、财税合规、本地运营和商务拓展，为企业提供连续的法国及"
-"欧洲市场支持。"
+msgid "围绕市场进入、公司架构、财税合规、本地运营和商务拓展，为企业提供连续的法国及欧洲市场支持。"
 msgstr ""
 "Ongoing support in France and Europe covering market entry, corporate "
 "structuring, tax and accounting compliance, local operations and business "
@@ -572,8 +569,8 @@ msgstr "Chinese–French Communication"
 #: templates/website/about.html:210
 msgid "减少语言、信息和工作方式差异带来的沟通成本。"
 msgstr ""
-"Reduce communication costs arising from differences in language, information "
-"and working practices."
+"Reduce communication costs arising from differences in language, information"
+" and working practices."
 
 #: templates/website/about.html:216
 #: templates/website/service_local_operations.html:209
@@ -601,9 +598,7 @@ msgid "准备推进您的法国或欧洲项目？"
 msgstr "Ready to Move Your France or Europe Project Forward?"
 
 #: templates/website/about.html:235
-msgid ""
-"告诉我们您的目标、当前情况和需要协调的事项，我们会根据您提交的信息与您取得联"
-"系。"
+msgid "告诉我们您的目标、当前情况和需要协调的事项，我们会根据您提交的信息与您取得联系。"
 msgstr ""
 "Tell us about your goals, current situation and the matters you need "
 "coordinated. We will contact you using the information you provide."
@@ -617,8 +612,7 @@ msgid "联系我们｜Acoeurs Consulting"
 msgstr "Contact Us — Acoeurs Consulting"
 
 #: templates/website/contact.html:5
-msgid ""
-"联系我们。填写 3 步联系问卷，Acoeurs Consulting 会根据您留下的信息与您联系。"
+msgid "联系我们。填写 3 步联系问卷，Acoeurs Consulting 会根据您留下的信息与您联系。"
 msgstr ""
 "Contact us through our three-step form. Acoeurs Consulting will follow up "
 "using the details you provide."
@@ -633,9 +627,7 @@ msgid "信息已提交"
 msgstr "Your Request Has Been Submitted"
 
 #: templates/website/contact.html:42
-msgid ""
-"我们已经收到您的联系请求。Acoeurs Consulting 会根据您提供的信息，通过电话或电"
-"子邮件与您取得联系。"
+msgid "我们已经收到您的联系请求。Acoeurs Consulting 会根据您提供的信息，通过电话或电子邮件与您取得联系。"
 msgstr ""
 "We have received your enquiry. Acoeurs Consulting will contact you by "
 "telephone or email using the information you provided."
@@ -680,7 +672,8 @@ msgstr "Please select the option that best describes your situation."
 msgid "请选择最接近的咨询方向。"
 msgstr "Please select the closest area of enquiry."
 
-#: templates/website/contact.html:111 website/forms.py:105 website/forms.py:147
+#: templates/website/contact.html:111 website/forms.py:105
+#: website/forms.py:147
 msgid "请填写您的姓名。"
 msgstr "Please enter your name."
 
@@ -755,8 +748,8 @@ msgstr "Summarize your enquiry in one sentence"
 #: templates/website/contact.html:232
 msgid "例如：计划在法国设立公司、家庭准备迁居巴黎、希望了解欧洲市场渠道。"
 msgstr ""
-"For example: setting up a company in France, relocating your family to Paris "
-"or exploring European distribution channels."
+"For example: setting up a company in France, relocating your family to Paris"
+" or exploring European distribution channels."
 
 #: templates/website/contact.html:239 website/forms.py:94
 msgid "情况描述（选填）"
@@ -787,9 +780,7 @@ msgid "我们如何联系您？"
 msgstr "How Can We Contact You?"
 
 #: templates/website/contact.html:266
-msgid ""
-"请至少留下一个有效联系方式。我们会根据您提交的内容，通过电话或电子邮件与您取"
-"得联系。"
+msgid "请至少留下一个有效联系方式。我们会根据您提交的内容，通过电话或电子邮件与您取得联系。"
 msgstr ""
 "Please provide at least one valid contact method. We will contact you by "
 "telephone or email regarding your enquiry."
@@ -840,12 +831,11 @@ msgstr "About Your Submission"
 #: templates/website/contact.html:384
 msgid "提交表单不构成正式委托或专业意见。"
 msgstr ""
-"Submitting this form does not constitute a formal engagement or professional "
-"advice."
+"Submitting this form does not constitute a formal engagement or professional"
+" advice."
 
 #: templates/website/contact.html:387
-msgid ""
-"法律、税务、会计及其他专业事项，由具备相应资格的专业人士或机构独立提供。"
+msgid "法律、税务、会计及其他专业事项，由具备相应资格的专业人士或机构独立提供。"
 msgstr ""
 "Legal, tax, accounting and other professional services are provided "
 "independently by appropriately qualified professionals or organizations."
@@ -857,107 +847,131 @@ msgstr ""
 "is not used for marketing without your consent."
 
 #: templates/website/cookie_policy.html:4
-msgid "Cookie政策｜Acoeurs Consulting"
-msgstr "Cookie Policy — Acoeurs Consulting"
+#| msgid "Cookie政策｜Acoeurs Consulting"
+msgid "Cookie 与类似技术说明｜Acoeurs Consulting"
+msgstr "Cookies and Similar Technologies — Acoeurs Consulting"
 
 #: templates/website/cookie_policy.html:5
-msgid ""
-"了解Acoeurs Consulting网站当前使用的必要Cookie，以及有关追踪技术和浏览器设置"
-"的信息。"
+#| msgid ""
+#| "本政策说明 Acoeurs Consulting 网站当前使用的必要 Cookie、当前未使用的追踪技术，以及浏览器层面的管理方式。"
+msgid "了解 Acoeurs Consulting 网站当前使用的必要 Cookie、当前未使用的追踪技术及同意机制。"
 msgstr ""
 "Learn about the necessary cookies currently used by the Acoeurs Consulting "
-"website, tracking technologies and browser settings."
+"website, the tracking technologies not currently used, and the consent "
+"mechanism."
 
 #: templates/website/cookie_policy.html:18
-#: templates/website/cookie_policy.html:22
-#: templates/website/cookie_policy.html:48
-#: templates/website/cookie_policy.html:149
-#: templates/website/legal_notice.html:96
-#: templates/website/privacy_policy.html:195
-#: templates/website/privacy_policy.html:225
+#: templates/website/cookie_policy.html:47
+#: templates/website/cookie_policy.html:133
+#: templates/website/legal_notice.html:99
+#: templates/website/privacy_policy.html:132
+#: templates/website/privacy_policy.html:150
 msgid "Cookie政策"
 msgstr "Cookie Policy"
 
-#: templates/website/cookie_policy.html:24
-msgid ""
-"本政策说明 Acoeurs Consulting 网站当前使用的必要 Cookie、当前未使用的追踪技"
-"术，以及浏览器层面的管理方式。"
-msgstr ""
-"This policy explains the necessary cookies currently used by the Acoeurs "
-"Consulting website, tracking technologies not currently used, and browser-"
-"level controls."
+#: templates/website/cookie_policy.html:22
+#: templates/website/cookie_policy.html:48
+msgid "Cookie 与类似技术说明"
+msgstr "Cookies and Similar Technologies"
 
-#: templates/website/cookie_policy.html:32
+#: templates/website/cookie_policy.html:23
+#| msgid ""
+#| "本政策说明 Acoeurs Consulting 网站当前使用的必要 Cookie、当前未使用的追踪技术，以及浏览器层面的管理方式。"
+msgid "本说明介绍 Acoeurs Consulting 网站当前使用的必要 Cookie、当前未使用的追踪技术，以及现有的同意机制。"
+msgstr ""
+"This notice describes the necessary cookies currently used by the Acoeurs "
+"Consulting website, the tracking technologies not currently used, and the "
+"current consent mechanism."
+
+#: templates/website/cookie_policy.html:30
 msgid "Cookie政策目录"
 msgstr "Cookie policy contents"
 
-#: templates/website/cookie_policy.html:33
+#: templates/website/cookie_policy.html:31
 #: templates/website/legal_notice.html:33
-#: templates/website/privacy_policy.html:33
+#: templates/website/privacy_policy.html:31
 msgid "目录"
 msgstr "Contents"
 
-#: templates/website/cookie_policy.html:35
-#: templates/website/cookie_policy.html:53
-msgid "本政策的目的"
-msgstr "Purpose of This Policy"
+#: templates/website/cookie_policy.html:33
+#: templates/website/cookie_policy.html:52
+#: templates/website/legal_notice.html:35
+#: templates/website/legal_notice.html:51
+msgid "网站运营主体"
+msgstr "Website Operator"
 
-#: templates/website/cookie_policy.html:36
-#: templates/website/cookie_policy.html:60
+#: templates/website/cookie_policy.html:34
+#: templates/website/cookie_policy.html:57
+msgid "本说明的目的"
+msgstr "Purpose of This Notice"
+
+#: templates/website/cookie_policy.html:35
+#: templates/website/cookie_policy.html:62
 msgid "什么是 Cookie"
 msgstr "What Is a Cookie?"
 
-#: templates/website/cookie_policy.html:37
+#: templates/website/cookie_policy.html:36
 #: templates/website/cookie_policy.html:67
 msgid "当前网站使用的 Cookie"
 msgstr "Cookies Currently Used"
 
-#: templates/website/cookie_policy.html:38
-#: templates/website/cookie_policy.html:107
+#: templates/website/cookie_policy.html:37
+#: templates/website/cookie_policy.html:102
 msgid "当前未使用的追踪技术"
 msgstr "Tracking Technologies Not Currently Used"
 
-#: templates/website/cookie_policy.html:39
-#: templates/website/cookie_policy.html:78
-msgid "是否需要同意"
-msgstr "Is Consent Required?"
+#: templates/website/cookie_policy.html:38
+#: templates/website/cookie_policy.html:108
+msgid "当前 Cookie 与同意机制"
+msgstr "Current Cookies and Consent Mechanism"
 
-#: templates/website/cookie_policy.html:40
-#: templates/website/cookie_policy.html:124
+#: templates/website/cookie_policy.html:39
+#: templates/website/cookie_policy.html:114
 msgid "浏览器设置"
 msgstr "Browser Settings"
 
-#: templates/website/cookie_policy.html:41
-#: templates/website/cookie_policy.html:131
+#: templates/website/cookie_policy.html:40
+#: templates/website/cookie_policy.html:119
 msgid "未来变更"
 msgstr "Future Changes"
 
-#: templates/website/cookie_policy.html:49
-msgid "当前网站状态下的 Cookie 说明"
-msgstr "Cookies in the Current Website"
+#: templates/website/cookie_policy.html:53
+msgid "本网站由"
+msgstr "This website is operated by"
 
-#: templates/website/cookie_policy.html:55
-msgid ""
-"本政策用于说明 Acoeurs Consulting 网站在当前公开版本中，哪些 Cookie 可能被使"
-"用、这些 Cookie 的用途是什么，以及当前是否存在需要用户事先同意的追踪技术。"
-msgstr ""
-"This policy explains which cookies may be used in the current public version "
-"of the Acoeurs Consulting website, their purposes, and whether any tracking "
-"technologies require prior user consent."
+#: templates/website/cookie_policy.html:53
+#| msgid "网站品牌为"
+msgid "运营，网站品牌为"
+msgstr "under the website brand"
 
-#: templates/website/cookie_policy.html:62
-msgid ""
-"Cookie 是网站或相关技术组件在访问设备浏览器中存储的小型文本信息，可用于维持安"
-"全会话、保护表单请求，或在某些网站中支持统计、个性化和第三方内容功能。"
+#: templates/website/cookie_policy.html:53
+#: templates/website/privacy_policy.html:132
+msgid "。"
+msgstr "."
+
+#: templates/website/cookie_policy.html:58
+msgid "本说明用于介绍当前网站可能使用的 Cookie 及类似技术、其用途、保存期限，以及当前的用户告知和同意机制。"
 msgstr ""
-"Cookies are small text files stored in your device’s browser by a website or "
+"This notice describes the cookies and similar technologies that the website "
+"may currently use, their purposes and retention periods, and the current "
+"user notice and consent mechanism."
+
+#: templates/website/cookie_policy.html:63
+#| msgid ""
+#| "Cookie "
+#| "是网站或相关技术组件在访问设备浏览器中存储的小型文本信息，可用于维持安全会话、保护表单请求，或在某些网站中支持统计、个性化和第三方内容功能。"
+msgid ""
+"Cookie 是网站或相关技术组件存储在访问设备浏览器中的小型文本信息，可用于维持安全会话、保护表单请求，或支持统计、个性化和第三方内容功能。"
+msgstr ""
+"Cookies are small text files stored in a visitor’s browser by a website or "
 "related technical components. They can maintain secure sessions, protect "
-"form requests or, on some websites, support analytics, personalization and "
-"third-party content."
+"form requests, or support analytics, personalization, and third-party "
+"content."
 
 #: templates/website/cookie_policy.html:70
-msgid "当前网站可能使用的严格必要 Cookie"
-msgstr "Strictly necessary cookies that may be used"
+#| msgid "当前网站可能使用的严格必要 Cookie"
+msgid "当前网站可能使用的必要 Cookie"
+msgstr "Necessary Cookies the Website May Use"
 
 #: templates/website/cookie_policy.html:73
 msgid "名称"
@@ -979,147 +993,139 @@ msgstr "Current Status"
 msgid "期限"
 msgstr "Duration"
 
-#: templates/website/cookie_policy.html:84
-#: templates/website/cookie_policy.html:92
-msgid "Acoeurs Consulting 网站使用的 Django 系统"
-msgstr "Django system used by the Acoeurs Consulting website"
+#: templates/website/cookie_policy.html:83
+#: templates/website/cookie_policy.html:90
+#| msgid "Acoeurs Consulting 网站使用的 Django 系统"
+msgid "本网站使用的 Django 系统"
+msgstr "Django system used by this website"
 
-#: templates/website/cookie_policy.html:85
-msgid "帮助保护表单和管理后台请求，防止跨站请求伪造。"
+#: templates/website/cookie_policy.html:84
+#| msgid "帮助保护表单和管理后台请求，防止跨站请求伪造。"
+msgid "保护表单和管理后台请求，防止跨站请求伪造。"
 msgstr ""
-"Helps protect form and administration requests against cross-site request "
+"Protects form and administration requests against cross-site request "
 "forgery."
 
-#: templates/website/cookie_policy.html:86
-msgid ""
-"匿名访问联系表单时会设置；管理后台登录页也会设置。普通展示页面本身不主动设"
-"置。"
+#: templates/website/cookie_policy.html:85
+msgid "匿名访问联系表单时会设置；管理后台登录页也会设置。普通展示页面本身不主动设置。"
 msgstr ""
 "Set when an anonymous visitor accesses the contact form and on the admin "
 "login page. Ordinary informational pages do not actively set it."
 
-#: templates/website/cookie_policy.html:87
-msgid ""
-"当前配置为 31,449,600 秒（364 天）；浏览器可提前清除，访问表单时可能刷新有效"
-"期。"
+#: templates/website/cookie_policy.html:86
+msgid "当前配置为 31,449,600 秒（364 天）；浏览器可提前清除，访问表单时可能刷新有效期。"
 msgstr ""
 "Currently configured for 31,449,600 seconds (364 days). Browsers may clear "
 "it earlier, and visiting the form may refresh its expiry."
 
-#: templates/website/cookie_policy.html:88
-msgid "否。该 Cookie 仅用于严格必要的安全目的。"
-msgstr "No. This cookie is used only for strictly necessary security purposes."
+#: templates/website/cookie_policy.html:91
+#| msgid "在使用会话功能时维持安全会话状态。"
+msgid "主要用于管理员认证会话，在使用会话功能时维持安全会话状态。"
+msgstr ""
+"Used mainly for authenticated administrator sessions and to maintain secure "
+"session state when session features are used."
 
-#: templates/website/cookie_policy.html:93
-msgid "在使用会话功能时维持安全会话状态。"
-msgstr "Maintains secure session state when session features are used."
-
-#: templates/website/cookie_policy.html:94
+#: templates/website/cookie_policy.html:92
 msgid "普通匿名页面及联系表单不创建会话；管理员登录后用于维持认证状态。"
 msgstr ""
 "Ordinary anonymous pages and the contact form do not create sessions. This "
 "cookie maintains authentication after an administrator signs in."
 
-#: templates/website/cookie_policy.html:95
-msgid ""
-"当前默认有效期为 1,209,600 秒（14 天）；退出登录或清除 Cookie 可提前结束。"
+#: templates/website/cookie_policy.html:93
+msgid "当前默认有效期为 1,209,600 秒（14 天）；退出登录或清除 Cookie 可提前结束。"
 msgstr ""
 "The current default duration is 1,209,600 seconds (14 days). Signing out or "
 "clearing cookies may end it earlier."
 
-#: templates/website/cookie_policy.html:96
-msgid "否。仅在严格必要用途下使用时，无需事先同意。"
-msgstr ""
-"No prior consent is required when used solely for strictly necessary "
-"purposes."
-
-#: templates/website/cookie_policy.html:102
-msgid ""
-"语言由 URL 前缀决定，网站当前不依赖语言偏好 Cookie 实现语言切换；如未来启用语"
-"言偏好 Cookie，本政策将更新。"
+#: templates/website/cookie_policy.html:98
+#| msgid ""
+#| "语言由 URL 前缀决定，网站当前不依赖语言偏好 Cookie 实现语言切换；如未来启用语言偏好 Cookie，本政策将更新。"
+msgid "语言由 URL 前缀决定，网站当前不依赖语言偏好 Cookie 实现语言切换；如未来启用语言偏好 Cookie，本说明将更新。"
 msgstr ""
 "Language is determined by the URL prefix. The website does not currently "
-"rely on a language preference cookie for language switching. This policy "
+"rely on a language-preference cookie for language switching. This notice "
 "will be updated if such a cookie is introduced."
 
-#: templates/website/cookie_policy.html:109
+#: templates/website/cookie_policy.html:103
 msgid ""
-"根据当前网站代码和公开页面审计，未发现访问分析 Cookie、广告 Cookie、社交媒体"
-"追踪、第三方视频、地图或聊天组件 Cookie，也未发现用于跟踪的网站"
+"当前网站未启用 Google Analytics 或 GA4、Google Tag Manager、Meta Pixel、百度统计、LinkedIn "
+"Insight、Microsoft Clarity 或其他广告及营销追踪。"
 msgstr ""
-"The current code and public-page audit found no analytics or advertising "
-"cookies, social media tracking, or cookies from third-party video, map or "
-"chat components, and no tracking implementation using "
+"The website currently does not use Google Analytics or GA4, Google Tag "
+"Manager, Meta Pixel, Baidu Analytics, LinkedIn Insight, Microsoft Clarity, "
+"or other advertising or marketing tracking."
 
-#: templates/website/cookie_policy.html:109
+#: templates/website/cookie_policy.html:104
+msgid "当前网站也未使用第三方视频、第三方地图、聊天组件，未发现用于追踪的"
+msgstr ""
+"The website also does not use third-party videos, third-party maps, or chat "
+"widgets, and no tracking use of"
+
+#: templates/website/cookie_policy.html:104
 msgid "或"
 msgstr " or "
 
-#: templates/website/cookie_policy.html:109
+#: templates/website/cookie_policy.html:104
 msgid "实现。"
 msgstr "."
 
-#: templates/website/cookie_policy.html:114
-msgid "是否需要用户同意"
-msgstr "Is User Consent Required?"
-
-#: templates/website/cookie_policy.html:116
+#: templates/website/cookie_policy.html:109
 msgid ""
-"当前网站仅存在或可能存在严格必要 Cookie，且未发现需要在同意前阻止的统计、营销"
-"或第三方追踪脚本。因此，网站当前未设置 Cookie 同意 Banner。"
+"当前网站未使用访问分析、广告、营销或其他非必要追踪技术，因此当前未设置针对非必要 Cookie 的专门 Cookie consent Banner。"
 msgstr ""
-"Only strictly necessary cookies are currently present or potentially "
-"present, and no analytics, marketing or third-party tracking scripts "
-"requiring blocking before consent have been identified. The website "
-"therefore does not currently display a cookie consent banner."
+"The website currently does not use analytics, advertising, marketing, or "
+"other non-essential tracking technologies. It therefore does not currently "
+"display a dedicated consent banner for non-essential cookies."
 
-#: templates/website/cookie_policy.html:119
-msgid ""
-"如未来引入非必要统计、营销或第三方追踪技术，网站将更新本政策，并在适用情况下"
-"于相关脚本启用前征求同意。"
+#: templates/website/cookie_policy.html:110
+msgid "如 Cookie 或类似技术涉及个人信息处理，网站将根据适用个人信息保护法律提供相应告知，并在法律要求时取得相应同意。"
 msgstr ""
-"If non-essential analytics, marketing or third-party tracking technologies "
-"are introduced, this policy will be updated and consent will be sought "
-"before the relevant scripts are enabled where applicable."
+"If cookies or similar technologies involve the processing of personal "
+"information, the website will provide the notices required by applicable "
+"personal information protection laws and obtain consent where legally "
+"required."
 
-#: templates/website/cookie_policy.html:126
+#: templates/website/cookie_policy.html:115
+#| msgid ""
+#| "您可以通过浏览器设置删除或限制 Cookie。请注意，禁用某些严格必要 Cookie 后，网站的安全功能、管理后台访问或联系表单可能无法正常工作。"
 msgid ""
-"您可以通过浏览器设置删除或限制 Cookie。请注意，禁用某些严格必要 Cookie 后，网"
-"站的安全功能、管理后台访问或联系表单可能无法正常工作。"
+"您可以通过浏览器设置删除或限制 Cookie。请注意，禁用某些必要 Cookie 后，网站的安全功能、管理后台访问或联系表单可能无法正常工作。"
 msgstr ""
 "You can delete or restrict cookies through your browser settings. Disabling "
-"certain strictly necessary cookies may prevent security features, admin "
-"access or the contact form from working properly."
+"certain necessary cookies may prevent website security features, "
+"administration access, or the contact form from working properly."
 
-#: templates/website/cookie_policy.html:133
+#: templates/website/cookie_policy.html:120
+#| msgid ""
+#| "如果网站未来增加统计工具、视频嵌入、地图、聊天工具或其他第三方服务，本政策将据此更新，以说明新增 Cookie 或追踪技术的用途、期限和同意机制。"
 msgid ""
-"如果网站未来增加统计工具、视频嵌入、地图、聊天工具或其他第三方服务，本政策将"
-"据此更新，以说明新增 Cookie 或追踪技术的用途、期限和同意机制。"
+"如果网站未来引入访问分析、广告、嵌入式视频、地图、聊天或其他第三方追踪技术，我们将重新评估并相应更新 Cookie 说明、隐私政策、用户告知和同意机制。"
 msgstr ""
-"If the website adds analytics tools, embedded videos, maps, chat tools or "
-"other third-party services, this policy will be updated to explain the "
-"purposes, durations and consent mechanisms for any new cookies or tracking "
-"technologies."
+"If the website introduces analytics, advertising, embedded videos, maps, "
+"chat, or other third-party tracking technologies in the future, we will "
+"reassess and update this cookie notice, the Privacy Policy, user notices, "
+"and the consent mechanism as appropriate."
 
-#: templates/website/cookie_policy.html:140
-msgid "如您对本 Cookie 政策有疑问，可通过"
-msgstr "If you have questions about this Cookie Policy, you can contact us at "
+#: templates/website/cookie_policy.html:125
+#| msgid "如您对本 Cookie 政策有疑问，可通过"
+msgid "如您对本说明有疑问，可通过"
+msgstr "If you have questions about this notice, contact us at"
 
-#: templates/website/cookie_policy.html:140
+#: templates/website/cookie_policy.html:125
 msgid "与我们联系。"
 msgstr "."
 
-#: templates/website/cookie_policy.html:145
-#: templates/website/legal_notice.html:92
-#: templates/website/privacy_policy.html:221
+#: templates/website/cookie_policy.html:129
+#: templates/website/legal_notice.html:95
+#: templates/website/privacy_policy.html:146
 msgid "最后更新：2026年9月"
 msgstr "Last Updated: September 2026"
 
-#: templates/website/cookie_policy.html:146
-#: templates/website/legal_notice.html:38
-#: templates/website/legal_notice.html:85
-#: templates/website/legal_notice.html:93
-#: templates/website/privacy_policy.html:222
+#: templates/website/cookie_policy.html:130
+#: templates/website/legal_notice.html:40
+#: templates/website/legal_notice.html:90
+#: templates/website/legal_notice.html:96
+#: templates/website/privacy_policy.html:147
 msgid "相关法律页面"
 msgstr "Related legal pages"
 
@@ -1130,9 +1136,7 @@ msgstr ""
 "Acoeurs Consulting"
 
 #: templates/website/enterprise_services.html:5
-msgid ""
-"Acoeurs Consulting 为中国企业提供欧洲市场进入、公司架构、财税法律合规、本地运"
-"营、团队建设与商务拓展支持。"
+msgid "Acoeurs Consulting 为中国企业提供欧洲市场进入、公司架构、财税法律合规、本地运营、团队建设与商务拓展支持。"
 msgstr ""
 "Acoeurs Consulting supports Chinese businesses with European market entry, "
 "corporate structuring, tax, legal and compliance coordination, local "
@@ -1147,9 +1151,7 @@ msgid "构建可持续的欧洲业务体系"
 msgstr "Build a Sustainable Business in Europe"
 
 #: templates/website/enterprise_services.html:32
-msgid ""
-"我们为中国企业提供从欧洲市场进入判断、公司架构与合规搭建，到本地运营、商业拓"
-"展与持续增长的一体化支持。"
+msgid "我们为中国企业提供从欧洲市场进入判断、公司架构与合规搭建，到本地运营、商业拓展与持续增长的一体化支持。"
 msgstr ""
 "We provide integrated support for Chinese businesses, from assessing "
 "European market entry and establishing corporate and compliance structures "
@@ -1175,9 +1177,7 @@ msgstr "Your European Project Needs More Than Individual Formalities"
 
 #: templates/website/enterprise_services.html:48
 msgid ""
-"进入法国及欧洲市场往往同时涉及市场判断、公司架构、银行金融、财税法律、人力资"
-"源、本地运营与商业拓展。任何一个环节缺乏统筹，都可能造成时间延误、成本增加或"
-"后续经营风险。"
+"进入法国及欧洲市场往往同时涉及市场判断、公司架构、银行金融、财税法律、人力资源、本地运营与商业拓展。任何一个环节缺乏统筹，都可能造成时间延误、成本增加或后续经营风险。"
 msgstr ""
 "Entering France and Europe often involves market assessment, corporate "
 "structuring, banking, tax, legal matters, human resources, local operations "
@@ -1185,9 +1185,7 @@ msgstr ""
 "delays, higher costs or subsequent operating risks."
 
 #: templates/website/enterprise_services.html:51
-msgid ""
-"Acoeurs 以统一项目管理为基础，协调中法团队和本地专业资源，把分散的跨境事项转"
-"化为一条清晰、可执行并能够持续推进的项目路径。"
+msgid "Acoeurs 以统一项目管理为基础，协调中法团队和本地专业资源，把分散的跨境事项转化为一条清晰、可执行并能够持续推进的项目路径。"
 msgstr ""
 "Through coordinated project management, Acoeurs connects Chinese and French "
 "teams with local professional resources, turning fragmented cross-border "
@@ -1214,8 +1212,8 @@ msgstr "Fragmented Establishment Tasks"
 #: templates/website/enterprise_services.html:66
 msgid "公司、银行、财税、法律和人员事务由不同机构处理，缺少统一协调。"
 msgstr ""
-"Corporate, banking, tax, legal and staffing matters are handled by different "
-"organizations without overall coordination."
+"Corporate, banking, tax, legal and staffing matters are handled by different"
+" organizations without overall coordination."
 
 #: templates/website/enterprise_services.html:72
 msgid "公司设立后难以运营"
@@ -1224,8 +1222,8 @@ msgstr "Difficulty Operating After Incorporation"
 #: templates/website/enterprise_services.html:73
 msgid "实体已经建立，但本地团队、行政管理和持续合规尚未形成稳定体系。"
 msgstr ""
-"The entity exists, but local staffing, administration and ongoing compliance "
-"are not yet supported by a stable system."
+"The entity exists, but local staffing, administration and ongoing compliance"
+" are not yet supported by a stable system."
 
 #: templates/website/enterprise_services.html:79
 msgid "市场进入但增长缓慢"
@@ -1246,23 +1244,19 @@ msgid "覆盖欧洲业务全生命周期的企业服务"
 msgstr "Business Services Across the European Business Lifecycle"
 
 #: templates/website/enterprise_services.html:93
-msgid ""
-"根据企业所处阶段，我们将战略判断、专业合规、本地运营和商业增长组织在同一项目"
-"体系中。"
+msgid "根据企业所处阶段，我们将战略判断、专业合规、本地运营和商业增长组织在同一项目体系中。"
 msgstr ""
 "According to your stage of development, we bring strategic assessment, "
 "professional compliance, local operations and business growth into one "
 "coordinated project framework."
 
 #: templates/website/enterprise_services.html:99
-#: templates/website/home.html:190
+#: templates/website/home.html:195
 msgid "重点服务"
 msgstr "Featured Service"
 
 #: templates/website/enterprise_services.html:104
-msgid ""
-"评估市场机会、竞争环境、进入模式和资源优先级，为企业建立清晰、可执行的欧洲市"
-"场路径。"
+msgid "评估市场机会、竞争环境、进入模式和资源优先级，为企业建立清晰、可执行的欧洲市场路径。"
 msgstr ""
 "Assess market opportunities, competition, entry models and resource "
 "priorities to establish a clear, practical path into Europe."
@@ -1301,13 +1295,12 @@ msgstr "Market Entry Roadmap"
 #: templates/website/enterprise_services.html:158
 #: templates/website/enterprise_services.html:179
 #: templates/website/enterprise_services.html:200
-#: templates/website/home.html:197
+#: templates/website/home.html:202
 msgid "查看服务详情 ↗"
 msgstr "Explore Service Details ↗"
 
 #: templates/website/enterprise_services.html:125
-msgid ""
-"根据企业经营目标设计法国及欧洲公司架构，并协调设立、银行和基础金融事项。"
+msgid "根据企业经营目标设计法国及欧洲公司架构，并协调设立、银行和基础金融事项。"
 msgstr ""
 "Structure companies in France and Europe around business objectives, and "
 "coordinate establishment, banking and basic financial matters."
@@ -1337,8 +1330,7 @@ msgid "启动阶段项目管理"
 msgstr "Start-Up Project Management"
 
 #: templates/website/enterprise_services.html:146
-msgid ""
-"协调会计、税务、法律及行业合规资源，帮助企业建立能够长期运行的风险管理体系。"
+msgid "协调会计、税务、法律及行业合规资源，帮助企业建立能够长期运行的风险管理体系。"
 msgstr ""
 "Coordinate accounting, tax, legal and sector compliance resources to help "
 "businesses establish a lasting risk management framework."
@@ -1368,8 +1360,7 @@ msgid "日常合规管理"
 msgstr "Ongoing Compliance Management"
 
 #: templates/website/enterprise_services.html:167
-msgid ""
-"协助企业建立法国本地运营能力，使公司从注册完成进入可持续的正常经营状态。"
+msgid "协助企业建立法国本地运营能力，使公司从注册完成进入可持续的正常经营状态。"
 msgstr ""
 "Help businesses develop local operational capacity in France, moving from "
 "registration to sustainable day-to-day operations."
@@ -1399,12 +1390,10 @@ msgid "中法团队协作机制"
 msgstr "Chinese–French Team Collaboration"
 
 #: templates/website/enterprise_services.html:188
-msgid ""
-"通过本地客户、渠道、合作伙伴和行业网络，推动企业由市场进入逐步转向真实业务增"
-"长。"
+msgid "通过本地客户、渠道、合作伙伴和行业网络，推动企业由市场进入逐步转向真实业务增长。"
 msgstr ""
-"Connect with local clients, channels, partners and industry networks to move "
-"gradually from market entry toward real business growth."
+"Connect with local clients, channels, partners and industry networks to move"
+" gradually from market entry toward real business growth."
 
 #: templates/website/enterprise_services.html:191
 msgid "商务拓展与增长服务要点"
@@ -1435,9 +1424,7 @@ msgid "专业协作说明"
 msgstr "Professional Collaboration"
 
 #: templates/website/enterprise_services.html:207
-msgid ""
-"具体法律、会计及受监管专业事项由具备相应资质的合作专业人士提供或执行，"
-"Acoeurs 负责项目协调与统一管理。"
+msgid "具体法律、会计及受监管专业事项由具备相应资质的合作专业人士提供或执行，Acoeurs 负责项目协调与统一管理。"
 msgstr ""
 "Specific legal, accounting and regulated professional matters are provided "
 "or carried out by appropriately qualified partner professionals. Acoeurs "
@@ -1473,8 +1460,8 @@ msgstr "Local Execution"
 #: templates/website/enterprise_services.html:235
 msgid "协调公司设立、架构、银行、税务与法律合规，建立业务正常运营基础。"
 msgstr ""
-"Coordinate company formation, structuring, banking, tax and legal compliance "
-"to establish a foundation for business operations."
+"Coordinate company formation, structuring, banking, tax and legal compliance"
+" to establish a foundation for business operations."
 
 #: templates/website/enterprise_services.html:243
 msgid "运营支持"
@@ -1483,8 +1470,8 @@ msgstr "Operational Support"
 #: templates/website/enterprise_services.html:244
 msgid "持续统筹财税、法务、行政、人员和申报事项，降低日常经营中的不确定性。"
 msgstr ""
-"Continuously coordinate tax, accounting, legal, administrative, staffing and "
-"filing matters to reduce uncertainty in everyday operations."
+"Continuously coordinate tax, accounting, legal, administrative, staffing and"
+" filing matters to reduce uncertainty in everyday operations."
 
 #: templates/website/enterprise_services.html:252
 msgid "项目对接与增长"
@@ -1506,9 +1493,8 @@ msgstr "One Project Lead to Coordinate Complex Local Collaboration"
 
 #: templates/website/enterprise_services.html:266
 msgid ""
-"跨境项目通常需要企业管理层、法国本地团队以及会计、税务、法律、人力和行业合作"
-"方共同参与。Acoeurs 通过统一负责人、项目路径和阶段管理，减少多方沟通中的信息"
-"断层和责任模糊。"
+"跨境项目通常需要企业管理层、法国本地团队以及会计、税务、法律、人力和行业合作方共同参与。Acoeurs "
+"通过统一负责人、项目路径和阶段管理，减少多方沟通中的信息断层和责任模糊。"
 msgstr ""
 "Cross-border projects typically involve business management, French teams "
 "and accounting, tax, legal, HR and industry partners. Acoeurs uses a "
@@ -1612,9 +1598,7 @@ msgid "您的欧洲业务正处于哪个阶段？"
 msgstr "What Stage Is Your European Business At?"
 
 #: templates/website/enterprise_services.html:338
-msgid ""
-"告诉我们当前正在推进的目标、主要问题和需要协调的事项，我们会根据您提交的信息"
-"与您取得联系。"
+msgid "告诉我们当前正在推进的目标、主要问题和需要协调的事项，我们会根据您提交的信息与您取得联系。"
 msgstr ""
 "Tell us about your current goals, main challenges and the matters you need "
 "coordinated. We will contact you using the information you provide."
@@ -1628,12 +1612,10 @@ msgid "首页 | Acoeurs Consulting"
 msgstr "Home — Acoeurs Consulting"
 
 #: templates/website/home.html:5
-msgid ""
-"Acoeurs Consulting 为中国企业提供法国及欧洲市场评估、进入策略、公司设立、合规"
-"管理、本地运营及业务拓展支持。"
+msgid "Acoeurs Consulting 为中国企业提供法国及欧洲市场评估、进入策略、公司设立、合规管理、本地运营及业务拓展支持。"
 msgstr ""
-"Acoeurs Consulting supports Chinese businesses with market assessment, entry "
-"strategy, company formation, compliance management, local operations and "
+"Acoeurs Consulting supports Chinese businesses with market assessment, entry"
+" strategy, company formation, compliance management, local operations and "
 "business development in France and Europe."
 
 #: templates/website/home.html:17
@@ -1651,59 +1633,50 @@ msgstr ""
 "through company formation, compliance management, local operations and "
 "business development."
 
-#: templates/website/home.html:27
+#: templates/website/home.html:28
 msgctxt "home hero trust"
 msgid "中欧跨境经验"
 msgstr "China–Europe Experience"
 
-#: templates/website/home.html:28
-msgctxt "home hero trust"
-msgid "法国本地团队"
-msgstr "French Local Team"
-
-#: templates/website/home.html:29
-msgctxt "home hero trust"
-msgid "中法双语服务"
-msgstr "Chinese–French Services"
-
-#: templates/website/home.html:30
-msgctxt "home hero trust"
-msgid "巴黎·上海·香港"
-msgstr "Paris · Shanghai · Hong Kong"
-
-#: templates/website/home.html:28 templates/website/home.html:29
-#: templates/website/home.html:30
+#: templates/website/home.html:29 templates/website/home.html:30
+#: templates/website/home.html:31
 msgctxt "home hero trust"
 msgid "｜"
 msgstr " · "
 
-#: templates/website/home.html:27
-msgid "中欧跨境经验｜法国本地团队｜中法双语服务｜巴黎·上海·香港"
-msgstr ""
-"China–Europe Experience · French Local Team · Chinese–French Services · "
-"Paris · Shanghai · Hong Kong"
+#: templates/website/home.html:29
+msgctxt "home hero trust"
+msgid "法国本地团队"
+msgstr "French Local Team"
 
-#: templates/website/home.html:37
+#: templates/website/home.html:30
+msgctxt "home hero trust"
+msgid "中法双语服务"
+msgstr "Chinese–French Services"
+
+#: templates/website/home.html:31
+msgctxt "home hero trust"
+msgid "巴黎·上海·香港"
+msgstr "Paris · Shanghai · Hong Kong"
+
+#: templates/website/home.html:42
 msgid "关于 Acoeurs"
 msgstr "About Acoeurs"
 
-#: templates/website/home.html:43
+#: templates/website/home.html:48
 msgid ""
-"Acoeurs Consulting（艾克斯咨询）是一家专注于中国企业国际化发展的咨询与落地执"
-"行机构。我们深耕法国及欧洲市场，熟悉当地商业环境、监管体系和产业生态，致力于"
-"成为中国企业拓展欧洲市场的长期合作伙伴。"
+"Acoeurs "
+"Consulting（艾克斯咨询）是一家专注于中国企业国际化发展的咨询与落地执行机构。我们深耕法国及欧洲市场，熟悉当地商业环境、监管体系和产业生态，致力于成为中国企业拓展欧洲市场的长期合作伙伴。"
 msgstr ""
-"Acoeurs Consulting (艾克斯咨询) provides consulting and local execution "
-"support for Chinese businesses expanding internationally. With deep "
-"experience in France and Europe, we understand local business environments, "
-"regulatory systems and industry ecosystems, and aim to be a long-term "
-"partner in European expansion."
+"Acoeurs Consulting (艾克斯咨询) provides consulting and local execution support "
+"for Chinese businesses expanding internationally. With deep experience in "
+"France and Europe, we understand local business environments, regulatory "
+"systems and industry ecosystems, and aim to be a long-term partner in "
+"European expansion."
 
-#: templates/website/home.html:46
+#: templates/website/home.html:51
 msgid ""
-"依托法国本地团队和欧洲资源网络，我们提供从市场评估、进入策略，到公司设立、财"
-"税合规、本地运营、团队建设及业务拓展的一体化服务，帮助企业建立可持续运营、持"
-"续增长的欧洲业务。"
+"依托法国本地团队和欧洲资源网络，我们提供从市场评估、进入策略，到公司设立、财税合规、本地运营、团队建设及业务拓展的一体化服务，帮助企业建立可持续运营、持续增长的欧洲业务。"
 msgstr ""
 "Through our French team and European network, we provide integrated support "
 "spanning market assessment, entry strategy, company formation, tax and "
@@ -1711,217 +1684,217 @@ msgstr ""
 "development, helping businesses establish sustainable operations and "
 "continued growth in Europe."
 
-#: templates/website/home.html:48
+#: templates/website/home.html:53
 msgid "了解我们"
 msgstr "Get to Know Us"
 
-#: templates/website/home.html:51
+#: templates/website/home.html:56
 msgid "国际商务团队围绕会议桌讨论项目"
 msgstr ""
 "International business team discussing a project around a meeting table"
 
-#: templates/website/home.html:54
+#: templates/website/home.html:59
 msgid "Acoeurs 核心能力"
 msgstr "Acoeurs’ core capabilities"
 
-#: templates/website/home.html:58
+#: templates/website/home.html:63
 msgid "市场与进入方式评估"
 msgstr "Market & Entry Model Assessment"
 
-#: templates/website/home.html:59
+#: templates/website/home.html:64
 msgid "市场、赛道与进入方式评估"
 msgstr "Market, Sector & Entry Model Assessment"
 
-#: templates/website/home.html:66
+#: templates/website/home.html:71
 msgid "本地落地"
 msgstr "Local Establishment"
 
-#: templates/website/home.html:67
+#: templates/website/home.html:72
 msgid "公司架构，银行与合规体系搭建"
 msgstr "Corporate structuring, banking and compliance setup"
 
-#: templates/website/home.html:74
+#: templates/website/home.html:79
 #: templates/website/service_tax_legal_compliance.html:51
 msgid "持续运营"
 msgstr "Ongoing Operations"
 
-#: templates/website/home.html:75
+#: templates/website/home.html:80
 msgid "财税、法律、人力与行政支持"
 msgstr "Tax, accounting, legal, HR and administrative support"
 
-#: templates/website/home.html:82
+#: templates/website/home.html:87
 msgid "商业拓展"
 msgstr "Business Development"
 
-#: templates/website/home.html:83
+#: templates/website/home.html:88
 msgid "渠道、资源与项目落地推进"
 msgstr "Channels, resources and project execution support"
 
-#: templates/website/home.html:95
+#: templates/website/home.html:100
 msgid "您的欧洲业务"
 msgstr "Your European Business:"
 
-#: templates/website/home.html:96
+#: templates/website/home.html:101
 msgid "正处于哪个阶段？"
 msgstr "What Stage Are You At?"
 
-#: templates/website/home.html:99
+#: templates/website/home.html:104
 msgid "欧洲业务四阶段路径"
 msgstr "Four-stage European business journey"
 
-#: templates/website/home.html:105
+#: templates/website/home.html:110
 msgid "市场评估"
 msgstr "Market Assessment"
 
-#: templates/website/home.html:106
+#: templates/website/home.html:111
 msgid "正在考虑进入法国或欧洲，但尚未确定方向。"
 msgstr "Considering France or Europe, but your direction is not yet clear."
 
-#: templates/website/home.html:108 templates/website/home.html:125
-#: templates/website/home.html:143 templates/website/home.html:161
+#: templates/website/home.html:113 templates/website/home.html:130
+#: templates/website/home.html:148 templates/website/home.html:166
 msgid "查看典型问题"
 msgstr "View Common Questions"
 
-#: templates/website/home.html:110
+#: templates/website/home.html:115
 msgid "进入哪个市场"
 msgstr "Which market to enter"
 
-#: templates/website/home.html:111
+#: templates/website/home.html:116
 msgid "产品和商业模式是否适合欧洲"
 msgstr "Whether the product and business model suit Europe"
 
-#: templates/website/home.html:112
+#: templates/website/home.html:117
 msgid "直接设立公司还是先验证市场"
 msgstr "Whether to establish a company or validate the market first"
 
-#: templates/website/home.html:122
+#: templates/website/home.html:127
 msgid "落地搭建"
 msgstr "Establishment & Setup"
 
-#: templates/website/home.html:123
+#: templates/website/home.html:128
 msgid "已经决定进入欧洲，需要建立可运营的基础。"
 msgstr "You have decided to enter Europe and need an operational foundation."
 
-#: templates/website/home.html:127
+#: templates/website/home.html:132
 msgid "公司与股权架构"
 msgstr "Corporate & Ownership Structure"
 
-#: templates/website/home.html:128
+#: templates/website/home.html:133
 msgid "银行账户与支付"
 msgstr "Bank Accounts & Payments"
 
-#: templates/website/home.html:129
+#: templates/website/home.html:134
 msgid "税务、法律及基础合规"
 msgstr "Tax, Legal & Basic Compliance"
 
-#: templates/website/home.html:130
+#: templates/website/home.html:135
 msgid "人员和行政准备"
 msgstr "Staffing & Administrative Preparation"
 
-#: templates/website/home.html:140
+#: templates/website/home.html:145
 msgid "稳定运营"
 msgstr "Stable Operations"
 
-#: templates/website/home.html:141
+#: templates/website/home.html:146
 msgid "公司已经设立，但本地管理复杂、成本和风险增加。"
 msgstr ""
 "The company is established, but local management is complex and costs and "
 "risks are rising."
 
-#: templates/website/home.html:145
+#: templates/website/home.html:150
 msgid "会计、税务和工资社保"
 msgstr "Accounting, Tax, Payroll & Social Contributions"
 
-#: templates/website/home.html:146
+#: templates/website/home.html:151
 msgid "法律与合规"
 msgstr "Legal & Compliance"
 
-#: templates/website/home.html:147
+#: templates/website/home.html:152
 msgid "招聘、团队和行政"
 msgstr "Recruitment, Teams & Administration"
 
-#: templates/website/home.html:148
+#: templates/website/home.html:153
 msgid "中法团队协同"
 msgstr "Chinese–French Team Coordination"
 
-#: templates/website/home.html:158
+#: templates/website/home.html:163
 msgid "拓展增长"
 msgstr "Expansion & Growth"
 
-#: templates/website/home.html:159
+#: templates/website/home.html:164
 msgid "已经完成落地，希望获得客户、渠道和持续增长。"
 msgstr ""
 "Your local setup is complete and you are looking for clients, channels and "
 "continued growth."
 
-#: templates/website/home.html:163
+#: templates/website/home.html:168
 msgid "市场拓展"
 msgstr "Market Expansion"
 
-#: templates/website/home.html:164
+#: templates/website/home.html:169
 msgid "经销商与合作伙伴"
 msgstr "Distributors & Partners"
 
-#: templates/website/home.html:165
+#: templates/website/home.html:170
 msgid "本地商业资源"
 msgstr "Local Business Resources"
 
-#: templates/website/home.html:166
+#: templates/website/home.html:171
 msgid "项目、投资与并购"
 msgstr "Projects, Investment & Mergers and Acquisitions"
 
-#: templates/website/home.html:179
+#: templates/website/home.html:184
 msgid "覆盖欧洲业务"
 msgstr "Supporting Every Stage"
 
-#: templates/website/home.html:180
+#: templates/website/home.html:185
 msgid "全生命周期的企业服务"
 msgstr "of Your European Business"
 
-#: templates/website/home.html:183
+#: templates/website/home.html:188
 msgid ""
 "从市场进入判断、公司与合规体系搭建，到本地运营和商业增长，\n"
 "                为企业提供相互衔接的战略与执行支持。"
 msgstr ""
 "From market entry assessment and corporate and compliance setup to local "
-"operations and business growth, we provide connected strategic and execution "
-"support."
+"operations and business growth, we provide connected strategic and execution"
+" support."
 
-#: templates/website/home.html:195
+#: templates/website/home.html:200
 msgid "判断市场机会，制定清晰、可执行的进入路径。"
 msgstr "Assess market opportunities and define a clear, practical entry path."
 
-#: templates/website/home.html:204
+#: templates/website/home.html:209
 msgid "建立能够真正开始经营的欧洲业务基础。"
 msgstr ""
 "Build the foundations for a European business that can start operating."
 
-#: templates/website/home.html:212
+#: templates/website/home.html:217
 msgid "降低长期经营风险，建立稳定的合规管理体系。"
 msgstr ""
 "Reduce long-term operating risks and establish stable compliance management."
 
-#: templates/website/home.html:220
+#: templates/website/home.html:225
 msgid "为中国总部提供稳定、可管理的法国本地运营支持。"
 msgstr ""
 "Provide Chinese headquarters with stable, manageable local operational "
 "support in France."
 
-#: templates/website/home.html:228
+#: templates/website/home.html:233
 msgid "连接本地市场、渠道与合作资源，推动业务持续增长。"
 msgstr ""
 "Connect with local markets, channels and partners to support ongoing "
 "business growth."
 
-#: templates/website/home.html:241 templates/website/personal_services.html:27
+#: templates/website/home.html:246 templates/website/personal_services.html:27
 msgid "面向企业主、投资人与家庭"
 msgstr "For Business Owners, Investors and Families"
 
-#: templates/website/home.html:242 templates/website/personal_services.html:27
+#: templates/website/home.html:247 templates/website/personal_services.html:27
 msgid "提供法国本地服务"
 msgstr "Local Services in France"
 
-#: templates/website/home.html:245
+#: templates/website/home.html:250
 msgid ""
 "在企业发展之外，为客户在法国的居留、家庭安置、资产配置与长期生活\n"
 "                提供专业支持。"
@@ -1929,37 +1902,38 @@ msgstr ""
 "Alongside business development, professional support for residency, family "
 "settlement, asset allocation and long-term life in France."
 
-#: templates/website/home.html:253
+#: templates/website/home.html:258
 msgid "居留与家庭安置"
 msgstr "Residency & Family Settlement"
 
-#: templates/website/home.html:254
+#: templates/website/home.html:259
 msgid "协助企业主、人才与家庭完成法国居留及长期生活安排。"
 msgstr ""
 "Assist business owners, skilled professionals and families with French "
 "residency and long-term living arrangements."
 
-#: templates/website/home.html:262
+#: templates/website/home.html:267
 msgid "从房产选择、法律尽调到持有架构和后续管理，降低跨境投资风险。"
 msgstr ""
 "From property selection and legal due diligence coordination to ownership "
-"structures and ongoing management, help reduce cross-border investment risks."
+"structures and ongoing management, help reduce cross-border investment "
+"risks."
 
-#: templates/website/home.html:270
+#: templates/website/home.html:275
 msgid "协调个人、家庭与企业之间的跨境税务、传承与风险安排。"
 msgstr ""
 "Coordinate cross-border tax, succession and risk arrangements involving "
 "individuals, families and businesses."
 
-#: templates/website/home.html:282
+#: templates/website/home.html:287
 msgid "从判断到执行"
 msgstr "From Assessment to Execution"
 
-#: templates/website/home.html:283
+#: templates/website/home.html:288
 msgid "一套清晰的项目路径"
 msgstr "A Clear Project Path"
 
-#: templates/website/home.html:286
+#: templates/website/home.html:291
 msgid ""
 "每个项目由明确的负责人统筹，从需求诊断、方案设计到本地执行和持续支持，\n"
 "                让客户清楚掌握项目进度与下一步行动。"
@@ -1968,57 +1942,59 @@ msgstr ""
 "local execution and ongoing support, keeping clients informed of progress "
 "and next steps."
 
-#: templates/website/home.html:290
+#: templates/website/home.html:295
 msgid "项目执行五步路径"
 msgstr "Five-step project execution path"
 
-#: templates/website/home.html:296
+#: templates/website/home.html:301
 msgid "需求诊断"
 msgstr "Needs Assessment"
 
-#: templates/website/home.html:297
+#: templates/website/home.html:302
 msgid "了解客户当前阶段、目标与核心问题。"
 msgstr "Understand the client’s current stage, goals and key challenges."
 
-#: templates/website/home.html:305
+#: templates/website/home.html:310
 msgid "评估与路径设计"
 msgstr "Assessment & Planning"
 
-#: templates/website/home.html:306
+#: templates/website/home.html:311
 msgid "判断可行性、风险与优先级，明确实施路径。"
 msgstr ""
-"Assess feasibility, risks and priorities, and define the implementation path."
+"Assess feasibility, risks and priorities, and define the implementation "
+"path."
 
-#: templates/website/home.html:314
+#: templates/website/home.html:319
 msgid "项目确认与启动"
 msgstr "Project Confirmation & Launch"
 
-#: templates/website/home.html:315
+#: templates/website/home.html:320
 msgid "明确交付范围、负责人、时间表与协作方式。"
 msgstr ""
 "Define deliverables, responsibilities, timeline and working arrangements."
 
-#: templates/website/home.html:323
+#: templates/website/home.html:328
 msgid "本地执行与交付"
 msgstr "Local Execution & Delivery"
 
-#: templates/website/home.html:324
+#: templates/website/home.html:329
 msgid "协调法国及中方团队，推进各项任务真正落地。"
-msgstr "Coordinate French and Chinese teams to put agreed tasks into practice."
+msgstr ""
+"Coordinate French and Chinese teams to put agreed tasks into practice."
 
-#: templates/website/home.html:332
+#: templates/website/home.html:337
 msgid "持续运营与增长"
 msgstr "Ongoing Operations & Growth"
 
-#: templates/website/home.html:333
+#: templates/website/home.html:338
 msgid "根据企业后续发展继续提供本地支持。"
 msgstr "Continue providing local support as the business develops."
 
-#: templates/website/home.html:346
+#: templates/website/home.html:351
 msgid "欧洲市场落地的真实实践"
 msgstr "European Market Establishment in Practice"
 
-#: templates/website/home.html:348
+#: templates/website/home.html:353
 msgid ""
 "我们围绕客户的实际问题制定路径，并在法国本地协调资源、推进执行，\n"
 "                让战略转化为可持续的业务进展。"
@@ -2026,208 +2002,198 @@ msgstr ""
 "We plan around clients’ practical challenges, coordinating local resources "
 "and execution in France to turn strategy into sustained business progress."
 
-#: templates/website/home.html:354
+#: templates/website/home.html:359
 msgid "工业团队在生产环境中查看项目资料的示意场景"
 msgstr ""
 "Illustrative scene of an industrial team reviewing project documents in a "
 "production environment"
 
-#: templates/website/home.html:358
+#: templates/website/home.html:363
 #: templates/website/service_market_entry.html:230
 msgid "中国上市公司｜法国市场拓展"
 msgstr "Chinese Listed Company — Expansion in France"
 
-#: templates/website/home.html:359
+#: templates/website/home.html:364
 msgid "重塑法国市场进入与增长路径"
 msgstr "Reshaping Market Entry and Growth in France"
 
-#: templates/website/home.html:362
+#: templates/website/home.html:367
 msgid "客户背景"
 msgstr "Client Background"
 
-#: templates/website/home.html:364
+#: templates/website/home.html:369
 msgid ""
 "客户已进入法国市场多年，但市场开拓进展缓慢，商业与销售基础薄弱，\n"
 "                        本地资源对接困难，进入路径与战略方向不够清晰。"
 msgstr ""
 "The client had been in France for several years, but market development was "
-"slow, with weak commercial and sales foundations, difficulty accessing local "
-"resources, and an unclear entry path and strategic direction."
+"slow, with weak commercial and sales foundations, difficulty accessing local"
+" resources, and an unclear entry path and strategic direction."
 
-#: templates/website/home.html:372
+#: templates/website/home.html:377
 msgid "核心挑战"
 msgstr "Core Challenge"
 
-#: templates/website/home.html:373
-msgid ""
-"已有市场存在感未能转化为可持续推进的业务基础，方向分散，资源投入与实际突破之"
-"间缺少清晰衔接。"
+#: templates/website/home.html:378
+msgid "已有市场存在感未能转化为可持续推进的业务基础，方向分散，资源投入与实际突破之间缺少清晰衔接。"
 msgstr ""
 "An existing market presence had not become a sustainable business "
 "foundation. Efforts were fragmented, with no clear link between resources "
 "invested and practical breakthroughs."
 
-#: templates/website/home.html:379
+#: templates/website/home.html:384
 #: templates/website/service_market_entry.html:239
 msgid "Acoeurs 的介入"
 msgstr "Acoeurs’ Involvement"
 
-#: templates/website/home.html:381
+#: templates/website/home.html:386
 msgid ""
-"重新评估并重构市场进入逻辑与战略定位，明确识别应战略放弃的方向，聚焦核心机"
-"会，\n"
-"                                锁定可落地的市场切入点，制定清晰执行路径，协"
-"调和激活本地关键资源，推动实质性项目落地。"
+"重新评估并重构市场进入逻辑与战略定位，明确识别应战略放弃的方向，聚焦核心机会，\n"
+"                                锁定可落地的市场切入点，制定清晰执行路径，协调和激活本地关键资源，推动实质性项目落地。"
 msgstr ""
 "Reassess and restructure the market entry approach and strategic "
 "positioning, identify directions to discontinue, focus on core "
-"opportunities, select viable entry points, establish a clear execution path, "
-"and coordinate and activate key local resources to advance substantive "
+"opportunities, select viable entry points, establish a clear execution path,"
+" and coordinate and activate key local resources to advance substantive "
 "projects."
 
-#: templates/website/home.html:390
+#: templates/website/home.html:395
 msgid "阶段性成果"
 msgstr "Progress Achieved"
 
-#: templates/website/home.html:394
-msgid ""
-"成功建立真实、高价值的本地商业接触与合作关系，为后续业务推进奠定坚实基础。"
+#: templates/website/home.html:399
+msgid "成功建立真实、高价值的本地商业接触与合作关系，为后续业务推进奠定坚实基础。"
 msgstr ""
-"Established meaningful, high-value local business contacts and partnerships, "
-"creating a solid foundation for further business development."
+"Established meaningful, high-value local business contacts and partnerships,"
+" creating a solid foundation for further business development."
 
-#: templates/website/home.html:398
+#: templates/website/home.html:403
 msgid "市场识别度与品牌影响力显著提升，逐步进入法国主流行业与商业网络视野。"
 msgstr ""
-"Market recognition and brand visibility improved significantly, with growing "
-"exposure to mainstream French industry and business networks."
+"Market recognition and brand visibility improved significantly, with growing"
+" exposure to mainstream French industry and business networks."
 
-#: templates/website/home.html:402
+#: templates/website/home.html:407
 msgid "项目由探索阶段进入可持续推进阶段，形成清晰、可执行的增长路径。"
 msgstr ""
 "The project moved from exploration to sustained progress, with a clear, "
 "actionable growth path."
 
-#: templates/website/home.html:409
+#: templates/website/home.html:414
 msgid ""
 "从“在欧洲存在”到“被市场看见”，从“分散摸索”到“清晰战略”，\n"
 "                    推动客户实现欧洲市场的系统性突破。"
 msgstr ""
 "Moving from a presence in Europe to market recognition, and from fragmented "
-"exploration to a clear strategy, supporting a systematic breakthrough in the "
-"European market."
+"exploration to a clear strategy, supporting a systematic breakthrough in the"
+" European market."
 
-#: templates/website/home.html:420
+#: templates/website/home.html:425
 msgid "为什么选择 Acoeurs"
 msgstr "Why Choose Acoeurs"
 
-#: templates/website/home.html:421
-msgid ""
-"Acoeurs 以统一项目管理为基础，协调中法团队与本地专业资源，将分散的跨境事务整"
-"合为清晰、可执行、可持续推进的项目路径。"
+#: templates/website/home.html:426
+msgid "Acoeurs 以统一项目管理为基础，协调中法团队与本地专业资源，将分散的跨境事务整合为清晰、可执行、可持续推进的项目路径。"
 msgstr ""
 "Through coordinated project management, Acoeurs connects Chinese and French "
 "teams and local professional resources, bringing fragmented cross-border "
 "matters into a clear, practical and sustained project path."
 
-#: templates/website/home.html:425
+#: templates/website/home.html:430
 msgid "Acoeurs 服务数据"
 msgstr "Acoeurs service statistics"
 
-#: templates/website/home.html:428
+#: templates/website/home.html:433
 msgid "年中欧跨境服务经验"
 msgstr "Years of China–Europe Experience"
 
-#: templates/website/home.html:432
+#: templates/website/home.html:437
 msgid "累计服务客户"
 msgstr "Clients Served in Total"
 
-#: templates/website/home.html:436
+#: templates/website/home.html:441
 msgid "重点专项服务成功率"
 msgstr "Success Rate on Key Specialist Engagements"
 
-#: templates/website/home.html:439
+#: templates/website/home.html:444
 msgid "选择 Acoeurs 的六项优势"
 msgstr "Six reasons to choose Acoeurs"
 
-#: templates/website/home.html:443
+#: templates/website/home.html:448
 msgid "法国本地、中法双语团队"
 msgstr "A French Local Team, Bilingual in Chinese and French"
 
-#: templates/website/home.html:444
+#: templates/website/home.html:449
 msgid "减少跨语言与跨文化沟通成本，让总部与本地执行保持一致。"
 msgstr ""
 "Reduce language and cultural communication costs, keeping headquarters and "
 "local execution aligned."
 
-#: templates/website/home.html:450
+#: templates/website/home.html:455
 msgid "战略与执行一体化"
 msgstr "Integrated Strategy & Execution"
 
-#: templates/website/home.html:451
+#: templates/website/home.html:456
 msgid "不仅提供方向建议，也将方案拆解为可执行的本地行动。"
-msgstr "Alongside strategic direction, turn plans into actionable local steps."
+msgstr ""
+"Alongside strategic direction, turn plans into actionable local steps."
 
-#: templates/website/home.html:457
+#: templates/website/home.html:462
 msgid "合规与风险管理"
 msgstr "Compliance & Risk Management"
 
-#: templates/website/home.html:458
+#: templates/website/home.html:463
 msgid "将财税、法律与运营风险前置管理，降低长期经营的不确定性。"
 msgstr ""
-"Address tax, legal and operational risks early to reduce uncertainty in long-"
-"term operations."
+"Address tax, legal and operational risks early to reduce uncertainty in "
+"long-term operations."
 
-#: templates/website/home.html:464
+#: templates/website/home.html:469
 msgid "统一项目管理与高效响应"
 msgstr "Coordinated Project Management & Responsive Support"
 
-#: templates/website/home.html:465
+#: templates/website/home.html:470
 msgid "以统一窗口统筹多方协作，减少信息分散与推进失序。"
 msgstr ""
 "Coordinate multiple parties through one point of contact, reducing "
 "fragmented information and disorganized progress."
 
-#: templates/website/home.html:471
+#: templates/website/home.html:476
 msgid "透明范围与分项报价"
 msgstr "Clear Scope & Itemized Quotations"
 
-#: templates/website/home.html:472
+#: templates/website/home.html:477
 msgid "明确项目边界、阶段目标与费用结构，便于客户做出决策。"
 msgstr ""
 "Clarify project boundaries, stage objectives and fee structures to help "
 "clients make decisions."
 
-#: templates/website/home.html:478
+#: templates/website/home.html:483
 msgid "长期陪伴与本地资源网络"
 msgstr "Long-Term Support & Local Networks"
 
-#: templates/website/home.html:479
+#: templates/website/home.html:484
 msgid "持续支持运营调整与资源连接，帮助企业建立可持续的法国本地能力。"
 msgstr ""
-"Continue supporting operational adjustments and resource connections to help "
-"businesses build sustainable local capacity in France."
+"Continue supporting operational adjustments and resource connections to help"
+" businesses build sustainable local capacity in France."
 
-#: templates/website/home.html:484
-msgid ""
-"我们交付的不只是一项服务，而是一套能够在法国及欧洲持续运行、不断调整并支持增"
-"长的业务体系。"
+#: templates/website/home.html:489
+msgid "我们交付的不只是一项服务，而是一套能够在法国及欧洲持续运行、不断调整并支持增长的业务体系。"
 msgstr ""
 "Beyond an individual service, we help establish a business framework that "
 "can operate, adapt and support growth in France and Europe."
 
-#: templates/website/home.html:485
+#: templates/website/home.html:490
 msgid "了解 Acoeurs"
 msgstr "Learn About Acoeurs"
 
-#: templates/website/home.html:494
+#: templates/website/home.html:499
 msgid "准备开始您的法国及欧洲市场项目？"
 msgstr "Ready to Start Your Project in France and Europe?"
 
-#: templates/website/home.html:496
-msgid ""
-"告诉我们您正在推进的事项，我们会根据您提交的信息，通过电话或电子邮件与您取得"
-"联系。"
+#: templates/website/home.html:501
+msgid "告诉我们您正在推进的事项，我们会根据您提交的信息，通过电话或电子邮件与您取得联系。"
 msgstr ""
 "Tell us what you are working on. We will contact you by telephone or email "
 "using the information you provide."
@@ -2237,134 +2203,158 @@ msgid "法律声明｜Acoeurs Consulting"
 msgstr "Legal Notice — Acoeurs Consulting"
 
 #: templates/website/legal_notice.html:5
-msgid ""
-"Acoeurs Consulting 的品牌与联系方式、网站内容性质、知识产权及第三方链接说明。"
+#| msgid "Acoeurs Consulting 的品牌与联系方式、网站内容性质、知识产权及第三方链接说明。"
+msgid "了解 Acoeurs Consulting 网站运营主体、联系方式、托管、知识产权及专业服务边界。"
 msgstr ""
-"Acoeurs Consulting brand and contact information, the nature of website "
-"content, intellectual property and third-party links."
+"Learn about the Acoeurs Consulting website operator, contact details, "
+"hosting, intellectual property, and professional-service boundaries."
 
 #: templates/website/legal_notice.html:24
-msgid ""
-"本页介绍 Acoeurs Consulting 的网站与联系方式，以及网站内容、知识产权和第三方"
-"链接的使用说明。"
+#| msgid "本页介绍 Acoeurs Consulting 的网站与联系方式，以及网站内容、知识产权和第三方链接的使用说明。"
+msgid "本页说明 Acoeurs Consulting 网站的运营主体、联系方式、托管情况，以及网站内容、知识产权和专业服务边界。"
 msgstr ""
-"This page introduces the Acoeurs Consulting website and contact details, and "
-"explains the use of website content, intellectual property and third-party "
-"links."
+"This page identifies the operator of the Acoeurs Consulting website and "
+"explains its contact details, hosting, content, intellectual property, and "
+"professional-service boundaries."
 
 #: templates/website/legal_notice.html:32
 msgid "法律声明目录"
 msgstr "Legal notice contents"
 
-#: templates/website/legal_notice.html:35
-#: templates/website/legal_notice.html:49
+#: templates/website/legal_notice.html:36
+#: templates/website/legal_notice.html:61
 msgid "网站与联系方式"
 msgstr "Website & Contact Details"
 
-#: templates/website/legal_notice.html:36
-#: templates/website/legal_notice.html:68
+#: templates/website/legal_notice.html:37
+#: templates/website/legal_notice.html:72
+msgid "网站托管"
+msgstr "Website Hosting"
+
+#: templates/website/legal_notice.html:38
+#: templates/website/legal_notice.html:77
 msgid "知识产权与内容性质"
 msgstr "Intellectual Property & Nature of Content"
 
-#: templates/website/legal_notice.html:37
-#: templates/website/legal_notice.html:78
-msgid "外部链接与责任限制"
-msgstr "External Links & Limitations of Liability"
+#: templates/website/legal_notice.html:39
+#: templates/website/legal_notice.html:84
+msgid "外部链接与专业服务边界"
+msgstr "External Links and Professional-Service Boundaries"
 
-#: templates/website/legal_notice.html:45
+#: templates/website/legal_notice.html:47
 msgid "网站信息与使用说明"
 msgstr "Website Information & Use"
 
-#: templates/website/legal_notice.html:50
-msgid "品牌与网站名称"
-msgstr "Brand & Website Name"
+#: templates/website/legal_notice.html:53
+msgid "网站运营主体："
+msgstr "Website operator:"
 
-#: templates/website/legal_notice.html:52
-msgid "网站品牌为"
-msgstr "The website brand is "
-
-#: templates/website/legal_notice.html:52
-msgid "Acoeurs Consulting 艾克斯咨询"
-msgstr "Acoeurs Consulting 艾克斯咨询"
-
-#: templates/website/legal_notice.html:52
-#: templates/website/legal_notice.html:56
-#: templates/website/privacy_policy.html:195
-msgid "。"
-msgstr "."
+#: templates/website/legal_notice.html:53
+#: templates/website/privacy_policy.html:64
+msgid "（在中国浙江杭州登记注册的公司）"
+msgstr "(a company registered in Hangzhou, Zhejiang, China)"
 
 #: templates/website/legal_notice.html:54
-msgid "域名"
-msgstr "Domain Names"
+#: templates/website/privacy_policy.html:65
+msgid "统一社会信用代码："
+msgstr "Unified Social Credit Code:"
+
+#: templates/website/legal_notice.html:55
+#: templates/website/privacy_policy.html:66
+#| msgid "注册地址安排"
+msgid "注册地址："
+msgstr "Registered address:"
 
 #: templates/website/legal_notice.html:56
-msgid "网站域名为"
-msgstr "The website domain names are "
+#| msgid "网站品牌为"
+msgid "网站品牌："
+msgstr "Website brand:"
 
-#: templates/website/legal_notice.html:56
-#: templates/website/privacy_policy.html:141
+#: templates/website/legal_notice.html:63
+msgid "公开域名："
+msgstr "Public domains:"
+
+#: templates/website/legal_notice.html:63
 msgid "及"
 msgstr " and "
 
-#: templates/website/legal_notice.html:58
-msgid "联系信息"
-msgstr "Contact Information"
+#: templates/website/legal_notice.html:64
+msgid "联系邮箱："
+msgstr "Contact email:"
 
-#: templates/website/legal_notice.html:60
-msgid "邮箱："
-msgstr "Email: "
-
-#: templates/website/legal_notice.html:61
+#: templates/website/legal_notice.html:65
 msgid "中国电话："
 msgstr "China telephone: "
 
-#: templates/website/legal_notice.html:62
+#: templates/website/legal_notice.html:66
 msgid "法国电话："
 msgstr "France telephone: "
 
-#: templates/website/legal_notice.html:63
-msgid "巴黎联系地址：32 AV. Kléber, 75116 Paris, France"
-msgstr "Paris contact address: 32 AV. Kléber, 75116 Paris, France"
-
-#: templates/website/legal_notice.html:70
-msgid ""
-"本网站的文案、图像、标识及其他内容涉及相应权利人的知识产权。使用或转载相关内"
-"容时，请遵守适用法律及相应授权条件；如有使用需求，请通过本页联系方式与我们联"
-"系。"
+#: templates/website/legal_notice.html:67
+msgid "法国联系地址（非网站运营主体注册地址）："
 msgstr ""
-"The text, images, marks and other content on this website are subject to the "
-"intellectual property rights of their respective owners. Any use or "
-"reproduction must comply with applicable laws and authorization terms. For "
-"usage requests, please contact us using the details on this page."
+"France contact address (not the registered address of the website operator):"
 
 #: templates/website/legal_notice.html:73
-msgid ""
-"网站内容仅用于介绍 Acoeurs Consulting 当前公开的服务范围与品牌信息，不构成对"
-"具体审批、交易、贷款、税务或其他受监管事项结果的保证。"
+msgid "本网站当前托管于 Alibaba Cloud 的中国香港地区基础设施。"
 msgstr ""
-"Website content introduces only Acoeurs Consulting’s currently published "
-"service scope and brand information. It does not guarantee outcomes for any "
-"approval, transaction, loan, tax matter or other regulated activity."
+"This website is currently hosted on Alibaba Cloud infrastructure in Hong "
+"Kong, China."
+
+#: templates/website/legal_notice.html:78
+msgid ""
+"本网站主要用于介绍 Acoeurs Consulting 的品牌、当前公开的服务范围及联系方式。当前网站不提供在线交易、在线支付或前台用户账户。"
+msgstr ""
+"This website is primarily used to present the Acoeurs Consulting brand, its "
+"currently published service scope, and contact details. It does not "
+"currently provide online transactions, online payments, or public user "
+"accounts."
+
+#: templates/website/legal_notice.html:79
+#| msgid ""
+#| "本网站的文案、图像、标识及其他内容涉及相应权利人的知识产权。使用或转载相关内容时，请遵守适用法律及相应授权条件；如有使用需求，请通过本页联系方式与我们联系。"
+msgid ""
+"本网站的文案、图片、品牌标识及其他内容依法受相应知识产权保护。使用或转载相关内容时，请遵守适用法律及相应授权条件；如有使用需求，请通过本页联系方式与我们联系。"
+msgstr ""
+"The text, images, brand identifiers, and other content on this website are "
+"protected by applicable intellectual property rights. Any use or "
+"reproduction must comply with applicable law and authorization terms. For "
+"usage requests, contact us using the details on this page."
 
 #: templates/website/legal_notice.html:80
-msgid ""
-"如访问本网站提供的第三方链接，请同时查阅该网站的使用条件和隐私说明。涉及法"
-"律、税务、会计、公证、贷款、保险及其他受监管专业事项时，相关判断和执行应由具"
-"备相应资质的专业人士或机构完成。"
+#| msgid ""
+#| "网站内容仅用于介绍 Acoeurs Consulting 当前公开的服务范围与品牌信息，不构成对具体审批、交易、贷款、税务或其他受监管事项结果的保证。"
+msgid "网站内容主要用于介绍服务范围、协调方式和项目支持，不构成对具体审批、交易、贷款、税务处理或其他受监管事项结果的保证。"
 msgstr ""
-"When visiting third-party links provided on this website, please also review "
-"that website’s terms of use and privacy information. Decisions and work "
-"concerning legal, tax, accounting, notarial, lending, insurance and other "
-"regulated professional matters should be undertaken by appropriately "
-"qualified professionals or organizations."
+"Website content is intended to describe service scope, coordination methods,"
+" and project support. It does not guarantee the outcome of any approval, "
+"transaction, loan, tax treatment, or other regulated matter."
 
-#: templates/website/legal_notice.html:87
-msgid ""
-"有关当前个人数据处理和 Cookie 使用情况，请查阅本网站的隐私政策和 Cookie 政"
-"策。"
+#: templates/website/legal_notice.html:85
+msgid "如访问本网站提供的第三方链接，请同时查阅该网站的使用条件和隐私说明。"
 msgstr ""
-"For information on current personal data processing and cookie use, please "
-"refer to this website’s Privacy Policy and Cookie Policy."
+"If you visit a third-party link provided on this website, please also review"
+" that website’s terms of use and privacy notice."
+
+#: templates/website/legal_notice.html:86
+#| msgid ""
+#| "如访问本网站提供的第三方链接，请同时查阅该网站的使用条件和隐私说明。涉及法律、税务、会计、公证、贷款、保险及其他受监管专业事项时，相关判断和执行应由具备相应资质的专业人士或机构完成。"
+msgid ""
+"涉及法律、税务、会计、公证、贷款、保险及其他依法需要专业资格或由特定机构决定的事项时，相关专业判断或受监管工作由具备相应资格的专业人士或相关机构完成。"
+msgstr ""
+"For legal, tax, accounting, notarial, lending, insurance, and other matters "
+"that legally require professional qualifications or are decided by "
+"designated institutions, the relevant professional judgment or regulated "
+"work is carried out by appropriately qualified professionals or "
+"institutions."
+
+#: templates/website/legal_notice.html:91
+#| msgid "有关当前个人数据处理和 Cookie 使用情况，请查阅本网站的隐私政策和 Cookie 政策。"
+msgid "有关当前个人信息处理和 Cookie 使用情况，请查阅本网站的隐私政策和 Cookie 与类似技术说明。"
+msgstr ""
+"For information about current personal information processing and cookie "
+"use, please read this website’s Privacy Policy and Cookies and Similar "
+"Technologies notice."
 
 #: templates/website/personal_services.html:4
 msgid "个人服务｜法国居留、家庭与资产事务协调｜Acoeurs Consulting"
@@ -2373,21 +2363,17 @@ msgstr ""
 "Acoeurs Consulting"
 
 #: templates/website/personal_services.html:5
-msgid ""
-"Acoeurs Consulting 为企业主、投资人与家庭提供法国居留、家庭事务、房产资产及跨"
-"境税务等本地协调服务。"
+msgid "Acoeurs Consulting 为企业主、投资人与家庭提供法国居留、家庭事务、房产资产及跨境税务等本地协调服务。"
 msgstr ""
 "Acoeurs Consulting provides local coordination for business owners, "
-"investors and families on French residency, family matters, property, assets "
-"and cross-border tax."
+"investors and families on French residency, family matters, property, assets"
+" and cross-border tax."
 
 #: templates/website/personal_services.html:29
-msgid ""
-"Acoeurs 协助客户协调法国居留、家庭事务、房产资产及跨境税务等事项，并对接相应"
-"的法国本地专业服务方。"
+msgid "Acoeurs 协助客户协调法国居留、家庭事务、房产资产及跨境税务等事项，并对接相应的法国本地专业服务方。"
 msgstr ""
-"Acoeurs helps clients coordinate French residency, family matters, property, "
-"assets and cross-border tax, connecting them with the relevant local "
+"Acoeurs helps clients coordinate French residency, family matters, property,"
+" assets and cross-border tax, connecting them with the relevant local "
 "professional service providers."
 
 #: templates/website/personal_services.html:35
@@ -2419,8 +2405,7 @@ msgstr ""
 
 #: templates/website/personal_services.html:51
 msgid ""
-"在法国处理居留、家庭、房产和跨境税务事项时，客户往往需要与不同机构和专业人士"
-"沟通。Acoeurs 可以协助梳理需求、准备信息并协调法国本地服务方。"
+"在法国处理居留、家庭、房产和跨境税务事项时，客户往往需要与不同机构和专业人士沟通。Acoeurs 可以协助梳理需求、准备信息并协调法国本地服务方。"
 msgstr ""
 "Handling residency, family, property and cross-border tax matters in France "
 "often requires communication with multiple institutions and professionals. "
@@ -2610,7 +2595,8 @@ msgstr "Chinese–French Bilingual Coordination"
 #: templates/website/personal_services.html:169
 msgid "协助客户与法国本地机构及专业人士进行沟通。"
 msgstr ""
-"Help clients communicate with local institutions and professionals in France."
+"Help clients communicate with local institutions and professionals in "
+"France."
 
 #: templates/website/personal_services.html:175
 msgid "专业服务方对接"
@@ -2619,8 +2605,8 @@ msgstr "Professional Provider Introductions"
 #: templates/website/personal_services.html:176
 msgid "根据具体事项，协调律师、税务顾问、公证、保险或其他专业人士。"
 msgstr ""
-"Coordinate lawyers, tax advisers, notaries, insurance professionals or other "
-"specialists according to the matter involved."
+"Coordinate lawyers, tax advisers, notaries, insurance professionals or other"
+" specialists according to the matter involved."
 
 #: templates/website/personal_services.html:182
 msgid "事项进度跟进"
@@ -2639,9 +2625,8 @@ msgstr "Professional Services Note"
 
 #: templates/website/personal_services.html:198
 msgid ""
-"涉及签证居留审批、法律意见、税务处理、公证、贷款、保险及其他受监管专业事项"
-"时，相关决定或专业工作由政府机构、金融机构或具备相应资质的专业人士独立完成。"
-"Acoeurs 负责需求梳理、信息协调与项目跟进。"
+"涉及签证居留审批、法律意见、税务处理、公证、贷款、保险及其他受监管专业事项时，相关决定或专业工作由政府机构、金融机构或具备相应资质的专业人士独立完成。Acoeurs"
+" 负责需求梳理、信息协调与项目跟进。"
 msgstr ""
 "Decisions and professional work relating to visa and residency approvals, "
 "legal opinions, tax treatment, notarial services, lending, insurance and "
@@ -2664,412 +2649,358 @@ msgid "隐私政策｜Acoeurs Consulting"
 msgstr "Privacy Policy — Acoeurs Consulting"
 
 #: templates/website/privacy_policy.html:5
-msgid ""
-"了解Acoeurs Consulting网站当前如何处理访问日志、联系表单、电子邮件联系及相关"
-"个人数据。"
+#| msgid "了解Acoeurs Consulting网站当前如何处理访问日志、联系表单、电子邮件联系及相关个人数据。"
+msgid "了解 Acoeurs Consulting 网站当前如何处理联系表单、电子邮件、访问日志及其他相关个人信息。"
 msgstr ""
-"Learn how the Acoeurs Consulting website currently handles access logs, "
-"contact forms, email enquiries and related personal data."
+"Learn how the Acoeurs Consulting website currently processes contact-form "
+"data, email communications, access logs, and other related personal "
+"information."
 
-#: templates/website/privacy_policy.html:24
-msgid ""
-"本政策说明 Acoeurs Consulting 网站在当前公开版本中可能处理哪些个人数据、出于"
-"何种目的处理，以及您可以如何联系我们行使相关权利。"
+#: templates/website/privacy_policy.html:23
+#| msgid ""
+#| "本政策说明 Acoeurs Consulting 网站在当前公开版本中可能处理哪些个人数据、出于何种目的处理，以及您可以如何联系我们行使相关权利。"
+msgid "本政策说明 Acoeurs Consulting 网站当前处理个人信息的范围、目的、方式及个人可以行使的相关权利。"
 msgstr ""
-"This policy explains what personal data the current public version of the "
-"Acoeurs Consulting website may process, why it is processed, and how to "
-"contact us to exercise relevant rights."
+"This policy explains the scope, purposes, and methods of personal "
+"information processing by the Acoeurs Consulting website and the related "
+"rights individuals may exercise."
 
-#: templates/website/privacy_policy.html:32
+#: templates/website/privacy_policy.html:30
 msgid "隐私政策目录"
 msgstr "Privacy policy contents"
 
-#: templates/website/privacy_policy.html:35
+#: templates/website/privacy_policy.html:33
 msgid "适用范围"
 msgstr "Scope"
 
+#: templates/website/privacy_policy.html:34
+#: templates/website/privacy_policy.html:62
+#| msgid "数据控制者与联系方式"
+msgid "个人信息处理者与联系方式"
+msgstr "Personal Information Processor and Contact Details"
+
+#: templates/website/privacy_policy.html:35
+#: templates/website/privacy_policy.html:72
+#| msgid "当前可能处理的数据"
+msgid "当前可能处理的个人信息"
+msgstr "Personal Information That May Currently Be Processed"
+
 #: templates/website/privacy_policy.html:36
-#: templates/website/privacy_policy.html:67
-msgid "数据控制者与联系方式"
-msgstr "Data Controller & Contact Details"
+#: templates/website/privacy_policy.html:83
+msgid "联系表单与实际数据流"
+msgstr "Contact Form and Actual Data Flow"
 
 #: templates/website/privacy_policy.html:37
-#: templates/website/privacy_policy.html:77
-msgid "当前可能处理的数据"
-msgstr "Data That May Be Processed"
+#: templates/website/privacy_policy.html:91
+#| msgid "处理目的与法律依据"
+msgid "处理目的与处理依据"
+msgstr "Processing Purposes and Grounds"
 
 #: templates/website/privacy_policy.html:38
-#: templates/website/privacy_policy.html:96
-msgid "联系表单"
-msgstr "Contact Form"
-
-#: templates/website/privacy_policy.html:39
-#: templates/website/privacy_policy.html:119
-msgid "处理目的与法律依据"
-msgstr "Purposes & Legal Bases"
-
-#: templates/website/privacy_policy.html:40
+#: templates/website/privacy_policy.html:97
 msgid "接收方和技术服务提供商"
 msgstr "Recipients & Technical Service Providers"
 
-#: templates/website/privacy_policy.html:41
-msgid "域名注册与 DNS 服务说明"
-msgstr "Domain Registration & DNS Services"
+#: templates/website/privacy_policy.html:39
+#: templates/website/privacy_policy.html:103
+msgid "境外处理与个人信息出境"
+msgstr ""
+"Offshore Processing and Cross-Border Transfers of Personal Information"
 
-#: templates/website/privacy_policy.html:42
-#: templates/website/privacy_policy.html:149
-msgid "国际数据传输"
-msgstr "International Data Transfers"
-
-#: templates/website/privacy_policy.html:43
-#: templates/website/privacy_policy.html:159
+#: templates/website/privacy_policy.html:40
+#: templates/website/privacy_policy.html:109
 msgid "保存期限"
 msgstr "Retention Periods"
 
+#: templates/website/privacy_policy.html:41
+#: templates/website/privacy_policy.html:115
+msgid "个人信息安全"
+msgstr "Personal Information Security"
+
+#: templates/website/privacy_policy.html:42
+#: templates/website/privacy_policy.html:120
+msgid "个人信息权利"
+msgstr "Personal Information Rights"
+
+#: templates/website/privacy_policy.html:43
+#: templates/website/privacy_policy.html:126
+msgid "投诉与反馈"
+msgstr "Complaints and Feedback"
+
 #: templates/website/privacy_policy.html:44
-#: templates/website/privacy_policy.html:169
-msgid "数据安全"
-msgstr "Data Security"
+#: templates/website/privacy_policy.html:131
+msgid "Cookie 与类似技术"
+msgstr "Cookies and Similar Technologies"
 
 #: templates/website/privacy_policy.html:45
-#: templates/website/privacy_policy.html:176
-msgid "用户权利"
-msgstr "User Rights"
-
-#: templates/website/privacy_policy.html:46
-#: templates/website/privacy_policy.html:186
-msgid "向 CNIL 投诉"
-msgstr "Complaints to the CNIL"
-
-#: templates/website/privacy_policy.html:48
-#: templates/website/privacy_policy.html:200
+#: templates/website/privacy_policy.html:136
 msgid "未成年人"
 msgstr "Minors"
 
-#: templates/website/privacy_policy.html:49
-#: templates/website/privacy_policy.html:214
+#: templates/website/privacy_policy.html:46
+#: templates/website/privacy_policy.html:141
 msgid "政策变更"
 msgstr "Policy Changes"
 
-#: templates/website/privacy_policy.html:56
-msgid "个人数据处理说明"
-msgstr "Personal Data Processing Information"
+#: templates/website/privacy_policy.html:53
+#| msgid "个人数据处理说明"
+msgid "个人信息处理说明"
+msgstr "Personal Information Processing Notice"
 
-#: templates/website/privacy_policy.html:60
+#: templates/website/privacy_policy.html:57
 msgid "本政策适用范围"
 msgstr "Scope of This Policy"
 
-#: templates/website/privacy_policy.html:62
+#: templates/website/privacy_policy.html:58
+#| msgid ""
+#| "本政策适用于 Acoeurs Consulting 当前公开网站在访问、浏览、提交联系表单以及通过电子邮件主动联系场景下可能涉及的个人数据处理活动。"
 msgid ""
-"本政策适用于 Acoeurs Consulting 当前公开网站在访问、浏览、提交联系表单以及通"
-"过电子邮件主动联系场景下可能涉及的个人数据处理活动。"
+"本政策适用于访问和浏览 Acoeurs Consulting "
+"网站、提交联系表单、主动发送电子邮件，以及网站运行、安全和必要技术日志所涉及的个人信息处理活动。"
 msgstr ""
-"This policy applies to personal data processing that may occur when "
-"accessing or browsing Acoeurs Consulting’s current public website, "
-"submitting its contact form or contacting us voluntarily by email."
+"This policy applies to personal information processing associated with "
+"accessing and browsing the Acoeurs Consulting website, submitting the "
+"contact form, sending emails voluntarily, and the operation, security, and "
+"necessary technical logs of the website."
 
-#: templates/website/privacy_policy.html:69
-msgid "Acoeurs Consulting 网站的运营主体负责本网站相关个人数据处理。"
-msgstr ""
-"The operator of the Acoeurs Consulting website is responsible for personal "
-"data processing related to this website."
+#: templates/website/privacy_policy.html:64
+msgid "个人信息处理者："
+msgstr "Personal information processor:"
 
-#: templates/website/privacy_policy.html:72
-#: templates/website/privacy_policy.html:181
-msgid "您可以通过"
-msgstr "You can contact the website operator at "
+#: templates/website/privacy_policy.html:67
+msgid "个人信息相关联系邮箱："
+msgstr "Personal information contact email:"
 
-#: templates/website/privacy_policy.html:72
-msgid ""
-"与网站运营方联系。该邮箱目前也作为数据权利联系入口；如未来设立隐私专用邮箱，"
-"本政策将更新。"
-msgstr ""
-". This email address also currently serves as the contact point for data "
-"rights requests. If a dedicated privacy address is introduced, this policy "
-"will be updated."
-
-#: templates/website/privacy_policy.html:78
+#: templates/website/privacy_policy.html:73
 msgid "服务器访问和安全日志"
 msgstr "Server Access & Security Logs"
 
-#: templates/website/privacy_policy.html:80
+#: templates/website/privacy_policy.html:74
+#| msgid ""
+#| "在访问网站时，技术托管环境和服务器日志可能记录与网站运行、安全和故障排查有关的技术信息，例如 IP 地址、浏览器和设备基础信息、请求时间、访问路径以及 "
+#| "HTTP 响应状态。"
 msgid ""
-"在访问网站时，技术托管环境和服务器日志可能记录与网站运行、安全和故障排查有关"
-"的技术信息，例如 IP 地址、浏览器和设备基础信息、请求时间、访问路径以及 HTTP "
+"网站托管环境和服务器日志可能记录网站运行、安全和故障排查所需的技术信息，例如 IP 地址、浏览器和设备基础信息、请求时间、访问路径及 HTTP "
 "响应状态。"
 msgstr ""
-"When you visit, the hosting environment and server logs may record technical "
-"information relating to operation, security and troubleshooting, such as IP "
-"address, basic browser and device details, request time, visited path and "
-"HTTP response status."
+"The hosting environment and server logs may record technical information "
+"needed for website operation, security, and troubleshooting, such as IP "
+"address, basic browser and device information, request time, access path, "
+"and HTTP response status."
 
-#: templates/website/privacy_policy.html:82
-msgid "管理后台相关数据"
-msgstr "Administration Data"
+#: templates/website/privacy_policy.html:75
+#| msgid "联系表单"
+msgid "联系表单信息"
+msgstr "Contact Form Information"
 
-#: templates/website/privacy_policy.html:84
+#: templates/website/privacy_policy.html:76
+#| msgid ""
+#| "当前网站提供在线联系表单，用于让访问者说明身份、咨询方向、主题、咨询内容以及联系方式。表单可能处理的字段包括：身份类型、公司或机构名称、咨询方向、咨询主题、咨询内容、姓名、电话、邮箱、沟通语言、方便联系的时间，隐私政策确认状态，以及提交时间和基础服务器日志信息。"
 msgid ""
-"网站管理后台仅供获授权管理员使用，处理管理员账户标识、认证和会话信息，以及后"
-"台操作和安全记录。"
+"联系表单当前可能处理：身份类型、公司或机构名称、咨询方向、咨询主题、咨询内容、姓名、电话、邮箱、沟通语言、方便联系的时间、隐私政策确认状态、提交时间，以及必要的服务器和安全元数据。"
 msgstr ""
-"The website administration area is restricted to authorized administrators. "
-"It processes administrator account identifiers, authentication and session "
-"information, and administration activity and security records."
+"The contact form may currently process: identity type, company or "
+"organization name, enquiry area, enquiry subject, enquiry message, name, "
+"telephone number, email address, preferred communication language, "
+"convenient contact time, privacy-policy confirmation status, submission "
+"time, and necessary server and security metadata."
 
-#: templates/website/privacy_policy.html:86
+#: templates/website/privacy_policy.html:77
 msgid "用户主动发送的电子邮件"
 msgstr "Emails You Send Voluntarily"
 
-#: templates/website/privacy_policy.html:88
-msgid "网站公开了联系邮箱"
-msgstr "The website publishes the contact address "
+#: templates/website/privacy_policy.html:78
+#| msgid "。访问者主动发送邮件时，网站运营方可能处理发件人姓名、邮箱地址、邮件正文及用户自行提供的其他信息。"
+msgid "访问者主动发送电子邮件时，我们可能处理发件人姓名、邮箱地址、邮件正文及访问者自行提供的其他信息。"
+msgstr ""
+"When a visitor sends an email voluntarily, we may process the sender’s name,"
+" email address, message body, and other information provided by the visitor."
 
-#: templates/website/privacy_policy.html:88
+#: templates/website/privacy_policy.html:79
+#| msgid "当前请避免通过普通电子邮件发送不必要的敏感资料。"
+msgid "请避免通过联系表单或普通电子邮件发送与咨询无关或不必要的敏感个人信息。"
+msgstr ""
+"Please avoid sending sensitive personal information that is unrelated to or "
+"unnecessary for your enquiry through the contact form or ordinary email."
+
+#: templates/website/privacy_policy.html:84
 msgid ""
-"。访问者主动发送邮件时，网站运营方可能处理发件人姓名、邮箱地址、邮件正文及用"
-"户自行提供的其他信息。"
+"当前联系表单的数据流为：访问者浏览器提交信息，经 Django 表单验证后，通过 Alibaba Mail 企业邮件服务发送至 "
+"info@acoeursconsulting.com。"
 msgstr ""
-". When a visitor sends an email voluntarily, the website operator may "
-"process the sender’s name, email address, message body and any other "
-"information they provide."
+"The current contact-form data flow is: the visitor’s browser submits the "
+"information; Django validates the form; Alibaba Mail then sends it to "
+"info@acoeursconsulting.com."
 
-#: templates/website/privacy_policy.html:91
-msgid "当前请避免通过普通电子邮件发送不必要的敏感资料。"
+#: templates/website/privacy_policy.html:85
+msgid ""
+"当前联系表单内容不写入 Contact 或 Inquiry 数据库，不进入 "
+"CRM，不支持文件上传，也不用于未经同意的营销推广。网站不进行自动客户画像或自动化决策。"
 msgstr ""
-"Please avoid sending unnecessary sensitive information by ordinary email."
+"Contact-form content is not currently written to a Contact or Inquiry "
+"database, entered into a CRM, or used for marketing without consent. The "
+"form does not support file uploads. The website does not perform automated "
+"customer profiling or automated decision-making."
+
+#: templates/website/privacy_policy.html:86
+msgid ""
+"当前网站不会自动将联系表单内容发送给律师、会计、银行、保险或其他合作方。如后续人工沟通或正式服务需要向专业合作方提供信息，将属于相应的后续服务流程。"
+msgstr ""
+"The website does not automatically send contact-form content to lawyers, "
+"accountants, banks, insurers, or other partners. Any disclosure to "
+"professional partners required during later human communications or formal "
+"services would form part of the relevant subsequent service process."
+
+#: templates/website/privacy_policy.html:87
+msgid "表单使用隐藏的反垃圾字段识别自动提交。该字段仅用于请求校验，不加入联系邮件；被识别为垃圾的请求不会发送咨询邮件。"
+msgstr ""
+"The form uses a hidden anti-spam field to identify automated submissions. It"
+" is used only for request validation and is not included in contact emails. "
+"Requests identified as spam do not generate enquiry emails."
+
+#: templates/website/privacy_policy.html:92
+msgid ""
+"个人信息主要用于提供和维护网站、保障网站及表单安全、防止滥用、处理访问者主动提交的咨询、根据访问者留下的联系方式进行必要后续沟通，以及履行适用法律法规要求。"
+msgstr ""
+"Personal information is used mainly to provide and maintain the website, "
+"protect the website and forms, prevent misuse, handle enquiries submitted "
+"voluntarily by visitors, conduct necessary follow-up using the contact "
+"details provided, and meet applicable legal and regulatory requirements."
+
+#: templates/website/privacy_policy.html:93
+msgid ""
+"根据具体处理场景及适用法律，处理个人信息的依据可能包括：取得个人同意；为订立或履行个人作为一方当事人的合同所必需；为履行法定职责或者法定义务所必需；以及法律法规规定的其他合法处理情形。"
+msgstr ""
+"Depending on the processing context and applicable law, the grounds for "
+"processing personal information may include: obtaining the individual’s "
+"consent; necessity for entering into or performing a contract to which the "
+"individual is a party; necessity for performing statutory duties or legal "
+"obligations; and other lawful processing circumstances provided by laws and "
+"regulations."
 
 #: templates/website/privacy_policy.html:98
-msgid ""
-"当前网站提供在线联系表单，用于让访问者说明身份、咨询方向、主题、咨询内容以及"
-"联系方式。表单可能处理的字段包括：身份类型、公司或机构名称、咨询方向、咨询主"
-"题、咨询内容、姓名、电话、邮箱、沟通语言、方便联系的时间，隐私政策确认状态，"
-"以及提交时间和基础服务器日志信息。"
+msgid "个人信息的接收方或处理所涉及的服务提供商可能包括经授权的公司工作人员、网站托管服务商、企业邮件服务商，以及法律法规要求下的有关主管部门。"
 msgstr ""
-"The website provides an online contact form for visitors to describe their "
-"identity, enquiry area, subject, message and contact details. Fields that "
-"may be processed include identity type, company or organization name, "
-"enquiry area, subject, message, name, telephone, email, communication "
-"language, convenient contact time, privacy policy confirmation, submission "
-"time and basic server log information."
+"Recipients of personal information or service providers involved in its "
+"processing may include authorized company personnel, the website hosting "
+"provider, the enterprise email provider, and competent authorities where "
+"required by laws and regulations."
 
-#: templates/website/privacy_policy.html:101
-msgid ""
-"表单信息用于处理访问者主动提交的联系请求。当前阶段，这些表单内容不写入网站咨"
-"询数据库、不进入 CRM，也不用于未经同意的营销推广。当前网站不支持通过联系表单"
-"上传文件。有效联系请求通过电子邮件发送至 info@acoeursconsulting.com；处理过程"
-"中可能涉及邮件服务提供商。"
+#: templates/website/privacy_policy.html:99
+msgid "当前网站不会自动向律师、会计、银行、保险或其他合作方转发联系表单内容。"
 msgstr ""
-"Form information is used to handle contact requests voluntarily submitted by "
-"visitors. At this stage, it is not written to a website enquiry database, "
-"entered into a CRM or used for marketing without consent. File uploads are "
-"not supported. Valid requests are emailed to info@acoeursconsulting.com; "
-"email service providers may be involved in processing."
+"The website does not currently forward contact-form content automatically to"
+" lawyers, accountants, banks, insurers, or other partners."
 
 #: templates/website/privacy_policy.html:104
 msgid ""
-"表单使用隐藏的反垃圾字段识别自动提交。该字段仅用于请求校验，不加入联系邮件；"
-"被识别为垃圾的请求不会发送咨询邮件。"
+"本网站服务器当前部署于中国香港。您访问网站或提交联系表单时，部分个人信息及与网站运行有关的技术数据可能通过香港地区的 Alibaba Cloud "
+"托管基础设施进行处理。联系请求还会通过 Alibaba Mail 企业邮件服务发送至公司邮箱。"
 msgstr ""
-"The form uses a hidden anti-spam field to identify automated submissions. It "
-"is used only for request validation and is not included in contact emails. "
-"Requests identified as spam do not generate enquiry emails."
+"The website server is currently deployed in Hong Kong, China. When you visit"
+" the website or submit the contact form, some personal information and "
+"technical data related to website operation may be processed through Alibaba"
+" Cloud hosting infrastructure in Hong Kong. Contact requests are also sent "
+"to the company mailbox through the Alibaba Mail enterprise email service."
 
-#: templates/website/privacy_policy.html:109
-msgid "当前不存在的处理"
-msgstr "Processing Not Currently Performed"
+#: templates/website/privacy_policy.html:105
+msgid ""
+"如相关处理构成适用法律规定的个人信息出境，个人信息处理者将根据实际处理活动履行适用的告知、个人信息保护影响评估以及法律法规要求的其他义务；在法律要求取得单独同意的情形下，将依法取得相应同意。"
+msgstr ""
+"If such processing constitutes a cross-border transfer of personal "
+"information under applicable law, the personal information processor will, "
+"based on the actual processing activities, provide the applicable notices, "
+"conduct a personal information protection impact assessment, and fulfill "
+"other obligations required by laws and regulations. Separate consent will be"
+" obtained where required by law."
+
+#: templates/website/privacy_policy.html:110
+msgid "个人信息只在实现相应处理目的所必要的最短合理期间内保存，或者根据合同、财务、争议处理及其他法律义务保存。"
+msgstr ""
+"Personal information is retained only for the shortest reasonable period "
+"necessary to achieve the relevant processing purpose, or as required for "
+"contractual, financial, dispute-handling, or other legal obligations."
 
 #: templates/website/privacy_policy.html:111
 msgid ""
-"当前网站没有前台用户账户、没有在线支付、没有文件上传，也没有网站分析、广告或"
-"营销追踪工具。"
+"安全和技术日志的保存期限取决于网站安全、故障排查和托管配置；普通咨询邮件根据咨询处理和必要后续记录需求保存；后续形成正式客户关系后的业务记录可能根据合同、财务、争议处理或其他法律义务保存。网站目前没有自动删除公司邮箱内邮件的功能。"
 msgstr ""
-"The website currently has no visitor accounts, online payments, file "
-"uploads, website analytics, advertising or marketing tracking tools."
+"Retention of security and technical logs depends on website security, "
+"troubleshooting needs, and hosting configuration. Ordinary enquiry emails "
+"are retained according to enquiry handling and necessary follow-up record "
+"needs. Business records created after a formal client relationship is "
+"established may be retained for contractual, financial, dispute-handling, or"
+" other legal obligations. The website does not currently provide automatic "
+"deletion of messages in the company mailbox."
 
-#: templates/website/privacy_policy.html:114
-msgid "网站不进行自动客户画像或自动化决策，也没有邮件营销或 CRM 集成。"
+#: templates/website/privacy_policy.html:116
+#| msgid ""
+#| "网站运营方将采取与风险相称的技术和组织措施，以维护网站安全、限制后台访问并使用 Django 及托管平台提供的基础安全机制。"
+msgid ""
+"个人信息处理者采取与风险相称的合理技术和组织措施保护个人信息，包括访问控制、HTTPS、安全表单机制，以及 Django 和托管平台提供的基础安全机制。"
 msgstr ""
-"The website does not perform automated customer profiling or automated "
-"decision-making, and has no email marketing or CRM integration."
+"The personal information processor uses reasonable technical and "
+"organizational measures proportionate to the risks to protect personal "
+"information, including access controls, HTTPS, secure form mechanisms, and "
+"the basic security mechanisms provided by Django and the hosting platform."
 
 #: templates/website/privacy_policy.html:121
 msgid ""
-"当前网站相关数据处理主要基于以下目的：提供网站访问、维护网站安全、排查技术故"
-"障，了解访问者通过联系表单或电子邮件提交的联系请求，并通过电话或电子邮件开展"
-"必要的后续沟通。"
+"根据适用法律，您对个人信息处理享有知情权、决定权，并有权限制或拒绝处理；您还可以依法请求查阅、复制、更正、补充或删除个人信息，撤回基于同意的处理，并要求我们解释个人信息处理规则。"
 msgstr ""
-"Current website-related processing primarily supports website access, "
-"security and troubleshooting, understanding enquiries submitted by form or "
-"email, and necessary follow-up communication by telephone or email."
+"Under applicable law, you have the right to know about and decide on the "
+"processing of your personal information, and to restrict or refuse "
+"processing. You may also request access to, a copy of, correction, "
+"supplementation, or deletion of your personal information, withdraw consent-"
+"based processing, and ask us to explain our personal information processing "
+"rules."
 
-#: templates/website/privacy_policy.html:124
+#: templates/website/privacy_policy.html:122
+msgid "您可以通过"
+msgstr "You can contact the website operator at "
+
+#: templates/website/privacy_policy.html:122
+msgid "提出个人信息相关请求。我们可能在处理请求前核验您的身份，并在适用法律规定的范围内回应。"
+msgstr ""
+"to submit a personal information request. We may verify your identity before"
+" handling the request and will respond within the scope required by "
+"applicable law."
+
+#: templates/website/privacy_policy.html:127
 msgid ""
-"根据具体处理目的和适用条件，相关法律依据可能包括：网站运营者维护网站可用性和"
-"安全性的合法利益、根据用户请求开展沟通或采取前期联系措施，以及在适用情况下遵"
-"守法律义务。"
+"如您认为本网站的个人信息处理活动侵害您的合法权益，可以通过 info@acoeursconsulting.com "
+"与我们联系，也可以依法向履行个人信息保护职责的有关部门进行投诉或举报。"
 msgstr ""
-"Depending on the purpose and applicable conditions, legal bases may include "
-"the operator’s legitimate interests in maintaining website availability and "
-"security, communicating or taking preliminary contact steps at the user’s "
-"request, and compliance with legal obligations where applicable."
+"If you believe that personal information processing by this website "
+"infringes your lawful rights or interests, you may contact us at "
+"info@acoeursconsulting.com or submit a complaint or report to a department "
+"that performs personal information protection duties in accordance with law."
 
-#: templates/website/privacy_policy.html:129
-msgid "数据接收方和技术服务提供商"
-msgstr "Data Recipients & Technical Service Providers"
+#: templates/website/privacy_policy.html:132
+msgid "有关网站当前使用的 Cookie、未使用的追踪技术及同意机制，请参阅本网站的"
+msgstr ""
+"For details of the cookies currently used by the website, tracking "
+"technologies not used, and the consent mechanism, please read the website’s"
 
-#: templates/website/privacy_policy.html:131
+#: templates/website/privacy_policy.html:137
+#| msgid ""
+#| "当前网站没有面向未成年人单独设计的在线服务或注册功能。若未来某些服务事项涉及未成年人信息，网站运营方将在适用情况下提供相应说明并谨慎处理。"
 msgid ""
-"当前数据接收方可能包括经授权的网站管理人员、必要的技术托管和邮件服务提供商，"
-"以及在法律要求下的主管机关。"
-msgstr ""
-"Current recipients may include authorized website administrators, necessary "
-"hosting and email service providers, and competent authorities where "
-"required by law."
-
-#: templates/website/privacy_policy.html:134
-msgid ""
-"对于联系表单信息，当前处理方式仅限于支持 Acoeurs Consulting 评估和回应访问者"
-"主动提交的联系请求。除非后续沟通和正式服务需要，网站不会自动将联系表单内容发"
-"送给律师、会计、银行、保险或其他合作方。"
-msgstr ""
-"Contact form information is currently processed only to help Acoeurs "
-"Consulting assess and respond to visitors’ voluntary enquiries. Unless "
-"needed for subsequent communication and formal services, the website does "
-"not automatically forward form contents to lawyers, accountants, banks, "
-"insurers or other partners."
-
-#: templates/website/privacy_policy.html:139
-msgid "域名与基础网络服务说明"
-msgstr "Domain & Basic Network Services"
-
-#: templates/website/privacy_policy.html:141
-msgid "本网站使用"
-msgstr "This website uses "
-
-#: templates/website/privacy_policy.html:141
-msgid "作为公开访问域名。域名解析和网络接入服务用于将访问请求传送至网站。"
-msgstr ""
-" as its public domain. Domain resolution and network access services route "
-"requests to the website."
-
-#: templates/website/privacy_policy.html:144
-msgid "相应服务可能涉及域名查询、连接和请求所需的技术数据。"
-msgstr ""
-"These services may involve technical data needed for domain queries, "
-"connections and requests."
-
-#: templates/website/privacy_policy.html:151
-msgid ""
-"网站运行过程中，必要的技术服务提供商可能在提供托管、安全、网络或运维支持时接"
-"触到访问日志或与网站运行相关的数据。"
-msgstr ""
-"Necessary technical service providers may access logs or website-related "
-"data while providing hosting, security, network or operational support."
-
-#: templates/website/privacy_policy.html:154
-msgid "如个人数据涉及欧洲经济区以外的传输，相关安排需符合适用的数据保护要求。"
-msgstr ""
-"Where personal data is transferred outside the European Economic Area, the "
-"arrangements must comply with applicable data protection requirements."
-
-#: templates/website/privacy_policy.html:161
-msgid ""
-"当前网站相关数据仅在实现相应目的所必要的期间内保存。技术日志期限将取决于安"
-"全、故障排查和托管配置，主动联系邮件的保存也将根据沟通处理和必要后续记录需求"
-"确定。"
-msgstr ""
-"Website-related data is retained only as long as necessary for the relevant "
-"purposes. Technical log retention depends on security, troubleshooting and "
-"hosting configuration. Voluntary contact emails are retained according to "
-"communication handling and necessary follow-up record needs."
-
-#: templates/website/privacy_policy.html:164
-msgid ""
-"若后续形成正式客户关系、合同关系或争议处理需要，相关记录可能根据合同、财务或"
-"法律义务保存。联系邮件的管理和删除通过公司邮箱及内部流程执行；网站没有自动删"
-"除邮件的功能。"
-msgstr ""
-"If a formal client or contractual relationship or dispute subsequently "
-"arises, records may be retained for contractual, financial or legal "
-"obligations. Contact emails are managed and deleted through the company "
-"mailbox and internal processes; the website has no automatic email deletion "
-"function."
-
-#: templates/website/privacy_policy.html:171
-msgid ""
-"网站运营方将采取与风险相称的技术和组织措施，以维护网站安全、限制后台访问并使"
-"用 Django 及托管平台提供的基础安全机制。"
-msgstr ""
-"The website operator will take technical and organizational measures "
-"proportionate to risk to maintain security, restrict administration access "
-"and use the basic security mechanisms provided by Django and the hosting "
-"platform."
-
-#: templates/website/privacy_policy.html:178
-msgid ""
-"在适用情况下，您可以依据相关法律行使访问、更正、删除、限制处理、反对处理和数"
-"据可携带等权利。若某项处理确实基于同意，您也可以依法撤回该同意。"
-msgstr ""
-"Where applicable, you may exercise rights of access, rectification, erasure, "
-"restriction, objection and data portability under relevant law. Where "
-"processing is actually based on consent, you may also withdraw that consent "
-"as provided by law."
-
-#: templates/website/privacy_policy.html:181
-msgid "联系网站运营方以提出相关请求。"
-msgstr " to submit a request."
-
-#: templates/website/privacy_policy.html:188
-msgid ""
-"如果您认为个人数据处理违反了适用法律，您有权向法国国家信息与自由委员会"
-"（CNIL）提出投诉。"
-msgstr ""
-"If you believe personal data processing violates applicable law, you have "
-"the right to lodge a complaint with France’s Commission nationale de "
-"l’informatique et des libertés (CNIL)."
-
-#: templates/website/privacy_policy.html:195
-msgid ""
-"当前网站仅存在或可能存在严格必要 Cookie。有关当前 Cookie 的详细信息，请参阅本"
-"网站的"
-msgstr ""
-"Only strictly necessary cookies are currently present or potentially "
-"present. For details, please refer to this website’s "
-
-#: templates/website/privacy_policy.html:202
-msgid ""
-"当前网站没有面向未成年人单独设计的在线服务或注册功能。若未来某些服务事项涉及"
-"未成年人信息，网站运营方将在适用情况下提供相应说明并谨慎处理。"
+"当前网站没有面向不满十四周岁未成年人单独设计的在线服务或注册功能。如未来实际处理不满十四周岁未成年人的个人信息，个人信息处理者将依据适用法律制定相应处理规则，并在法律要求时取得监护人同意。"
 msgstr ""
 "The website currently has no online services or registration features "
-"specifically designed for minors. If future services involve minors’ "
-"information, the operator will provide relevant information where applicable "
-"and handle it carefully."
+"designed specifically for children under 14. If personal information of "
+"children under 14 is processed in the future, the personal information "
+"processor will establish appropriate processing rules under applicable law "
+"and obtain the guardian’s consent where legally required."
 
-#: templates/website/privacy_policy.html:207
-msgid "咨询表单与后续更新"
-msgstr "Enquiry Form & Future Updates"
-
-#: templates/website/privacy_policy.html:209
-msgid ""
-"当前网站已启用在线联系表单。若后续增加新的收集字段、文件上传、数据库保存、"
-"CRM 集成或其他新的处理方式，网站将在表单附近提供相应信息，并更新本政策，以说"
-"明新增字段、目的、法律依据、接收方和保存期限。"
+#: templates/website/privacy_policy.html:142
+#| msgid "如果网站功能、托管方式、咨询表单处理方式或相关法律要求发生变化，本政策也会相应更新。请以本页标注的更新日期为准。"
+msgid "如果网站功能、托管方式、联系表单处理方式或相关法律要求发生变化，本政策将相应更新。请以本页标注的更新日期为准。"
 msgstr ""
-"The website currently has an active contact form. If new fields, file "
-"uploads, database storage, CRM integration or other processing methods are "
-"added, relevant information will be provided near the form and this policy "
-"will be updated to explain the additional fields, purposes, legal bases, "
-"recipients and retention periods."
-
-#: templates/website/privacy_policy.html:216
-msgid ""
-"如果网站功能、托管方式、咨询表单处理方式或相关法律要求发生变化，本政策也会相"
-"应更新。请以本页标注的更新日期为准。"
-msgstr ""
-"This policy will also be updated if website features, hosting, enquiry "
-"handling or legal requirements change. Please refer to the update date shown "
-"on this page."
+"This policy will be updated if website features, hosting, contact-form "
+"processing, or relevant legal requirements change. Please refer to the "
+"update date shown on this page."
 
 #: templates/website/service_business_growth.html:4
 msgid "商务拓展与增长｜法国市场客户渠道与品牌拓展｜Acoeurs Consulting"
@@ -3079,12 +3010,11 @@ msgstr ""
 
 #: templates/website/service_business_growth.html:5
 msgid ""
-"Acoeurs Consulting 协助中国企业在法国及欧洲推进客户、渠道、合作伙伴、商务活动"
-"和本地市场连接事项，并提供持续的法国本地协调支持。"
+"Acoeurs Consulting 协助中国企业在法国及欧洲推进客户、渠道、合作伙伴、商务活动和本地市场连接事项，并提供持续的法国本地协调支持。"
 msgstr ""
 "Acoeurs Consulting helps Chinese businesses develop clients, channels, "
-"partnerships, business activities and local market connections in France and "
-"Europe, with ongoing local coordination in France."
+"partnerships, business activities and local market connections in France and"
+" Europe, with ongoing local coordination in France."
 
 #: templates/website/service_business_growth.html:30
 msgid "让企业在法国市场被看见"
@@ -3095,9 +3025,7 @@ msgid "并建立真实的商业连接"
 msgstr "And Build Real Business Connections"
 
 #: templates/website/service_business_growth.html:32
-msgid ""
-"Acoeurs 协助企业推进法国及欧洲市场的客户、渠道、合作伙伴和商务活动事项，并持"
-"续协调本地商业关系与项目进展。"
+msgid "Acoeurs 协助企业推进法国及欧洲市场的客户、渠道、合作伙伴和商务活动事项，并持续协调本地商业关系与项目进展。"
 msgstr ""
 "Acoeurs supports client, channel, partner and business activity matters in "
 "France and Europe, and continually coordinates local business relationships "
@@ -3146,18 +3074,14 @@ msgid "进入市场，不等于已经建立业务"
 msgstr "Market Entry Does Not Yet Mean an Established Business"
 
 #: templates/website/service_business_growth.html:54
-msgid ""
-"完成公司设立或进入法国市场，并不代表客户、渠道和合作关系已经形成。企业仍需要"
-"持续建立本地商业接触、合作伙伴关系和市场存在感。"
+msgid "完成公司设立或进入法国市场，并不代表客户、渠道和合作关系已经形成。企业仍需要持续建立本地商业接触、合作伙伴关系和市场存在感。"
 msgstr ""
 "Incorporating or entering the French market does not mean clients, channels "
 "and partnerships are already in place. Businesses still need to build local "
 "commercial contacts, partner relationships and market presence over time."
 
 #: templates/website/service_business_growth.html:57
-msgid ""
-"Acoeurs 的角色，是在法国本地持续协调这些商务事项，并帮助中国团队跟进后续行"
-"动。"
+msgid "Acoeurs 的角色，是在法国本地持续协调这些商务事项，并帮助中国团队跟进后续行动。"
 msgstr ""
 "Acoeurs provides ongoing local coordination of these commercial matters in "
 "France and helps Chinese teams follow through on next actions."
@@ -3269,8 +3193,8 @@ msgstr "Business Meetings & Project Progress"
 #: templates/website/service_business_growth.html:145
 msgid "协调法国本地商务沟通、会议和后续事项，帮助企业持续推进具体合作机会。"
 msgstr ""
-"Coordinate local business communication, meetings and follow-up in France to "
-"help advance specific partnership opportunities."
+"Coordinate local business communication, meetings and follow-up in France to"
+" help advance specific partnership opportunities."
 
 #: templates/website/service_business_growth.html:149
 msgid "商务会议安排"
@@ -3289,8 +3213,7 @@ msgid "展会与行业活动支持"
 msgstr "Trade Show & Industry Event Support"
 
 #: templates/website/service_business_growth.html:164
-msgid ""
-"协助企业围绕法国和欧洲展会及行业活动，协调前期准备、本地沟通和后续商务跟进。"
+msgid "协助企业围绕法国和欧洲展会及行业活动，协调前期准备、本地沟通和后续商务跟进。"
 msgstr ""
 "Help coordinate preparation, local communication and subsequent business "
 "follow-up for trade shows and industry events in France and Europe."
@@ -3318,8 +3241,8 @@ msgstr "Local Resources & Long-Term Market Development"
 #: templates/website/service_business_growth.html:183
 msgid "在企业进入法国市场之后，持续协调客户、渠道、合作伙伴和本地执行事项。"
 msgstr ""
-"After French market entry, continue coordinating clients, channels, partners "
-"and local execution matters."
+"After French market entry, continue coordinating clients, channels, partners"
+" and local execution matters."
 
 #: templates/website/service_business_growth.html:187
 msgid "本地商业资源与行业网络连接"
@@ -3372,8 +3295,8 @@ msgstr "Local Resource & Task Coordination"
 #: templates/website/service_business_growth.html:224
 msgid "协调会议、材料、参与方和后续行动，减少跨境沟通成本。"
 msgstr ""
-"Coordinate meetings, materials, participants and follow-up actions to reduce "
-"cross-border communication costs."
+"Coordinate meetings, materials, participants and follow-up actions to reduce"
+" cross-border communication costs."
 
 #: templates/website/service_business_growth.html:230
 msgid "长期跟进与内部反馈"
@@ -3390,9 +3313,7 @@ msgid "准备在法国建立更多真实的商业连接？"
 msgstr "Ready to Build More Real Business Connections in France?"
 
 #: templates/website/service_business_growth.html:242
-msgid ""
-"告诉我们目标客户、渠道、合作伙伴和当前市场拓展需求，我们会根据您提交的信息与"
-"您取得联系。"
+msgid "告诉我们目标客户、渠道、合作伙伴和当前市场拓展需求，我们会根据您提交的信息与您取得联系。"
 msgstr ""
 "Tell us about your target clients, channels, partners and current market "
 "development needs. We will contact you using the information you provide."
@@ -3413,11 +3334,10 @@ msgstr ""
 
 #: templates/website/service_company_banking.html:5
 msgid ""
-"Acoeurs Consulting 协助中国企业梳理法国及跨境公司架构，协调公司设立、税务基础"
-"登记、银行KYC材料、Fintech账户与支付方案。"
+"Acoeurs Consulting 协助中国企业梳理法国及跨境公司架构，协调公司设立、税务基础登记、银行KYC材料、Fintech账户与支付方案。"
 msgstr ""
-"Acoeurs Consulting helps Chinese businesses organize French and cross-border "
-"corporate structures, coordinate formation and basic tax registrations, "
+"Acoeurs Consulting helps Chinese businesses organize French and cross-border"
+" corporate structures, coordinate formation and basic tax registrations, "
 "prepare banking KYC materials, and arrange Fintech accounts and payment "
 "solutions."
 
@@ -3430,13 +3350,12 @@ msgid "从一开始相互匹配"
 msgstr "From the Start"
 
 #: templates/website/service_company_banking.html:37
-msgid ""
-"Acoeurs 协助企业梳理法国及跨境公司架构，协调公司设立、基础登记、银行与支付准"
-"备，让企业从注册完成进一步具备运营基础。"
+msgid "Acoeurs 协助企业梳理法国及跨境公司架构，协调公司设立、基础登记、银行与支付准备，让企业从注册完成进一步具备运营基础。"
 msgstr ""
 "Acoeurs helps businesses clarify French and cross-border corporate "
 "structures and coordinates formation, basic registrations, banking and "
-"payment preparation, building an operational foundation beyond incorporation."
+"payment preparation, building an operational foundation beyond "
+"incorporation."
 
 #: templates/website/service_company_banking.html:43
 msgid "公司与金融准备关键词"
@@ -3468,8 +3387,7 @@ msgstr "Registration Is a Starting Point: Plan Structure and Banking Together"
 
 #: templates/website/service_company_banking.html:59
 msgid ""
-"公司设立、股权与治理安排、银行开户和基础合规准备通常是同一条执行线上的工作。"
-"注册本身只是程序，真正影响后续运营的是结构、治理和金融安排是否匹配。"
+"公司设立、股权与治理安排、银行开户和基础合规准备通常是同一条执行线上的工作。注册本身只是程序，真正影响后续运营的是结构、治理和金融安排是否匹配。"
 msgstr ""
 "Company formation, ownership, governance, bank account opening and basic "
 "compliance preparation typically sit on the same execution path. "
@@ -3477,13 +3395,11 @@ msgstr ""
 "structure, governance and financial arrangements fit together."
 
 #: templates/website/service_company_banking.html:62
-msgid ""
-"Acoeurs 的工作重点，是把企业功能、股东关系、经营活动、基础登记和账户准备放在"
-"同一条推进线上。"
+msgid "Acoeurs 的工作重点，是把企业功能、股东关系、经营活动、基础登记和账户准备放在同一条推进线上。"
 msgstr ""
 "Acoeurs brings company purpose, shareholder relationships, business "
-"activities, basic registrations and account preparation into one coordinated "
-"process."
+"activities, basic registrations and account preparation into one coordinated"
+" process."
 
 #: templates/website/service_company_banking.html:65
 msgid "公司架构四项核心关系"
@@ -3541,8 +3457,8 @@ msgstr "Company Form & Structure Assessment"
 #: templates/website/service_company_banking.html:112
 msgid "根据企业功能、股东关系和经营安排，比较适合的公司形式和持股关系。"
 msgstr ""
-"Compare suitable company forms and ownership relationships based on business "
-"purpose, shareholders and operating arrangements."
+"Compare suitable company forms and ownership relationships based on business"
+" purpose, shareholders and operating arrangements."
 
 #: templates/website/service_company_banking.html:116
 msgid "法国公司功能定位"
@@ -3645,8 +3561,8 @@ msgstr "Fintech & Payment Setup"
 #: templates/website/service_company_banking.html:188
 msgid "根据企业启动阶段的收付款需求，协调适合的数字账户和支付方案。"
 msgstr ""
-"Coordinate suitable digital accounts and payment solutions based on start-up "
-"payment and collection needs."
+"Coordinate suitable digital accounts and payment solutions based on start-up"
+" payment and collection needs."
 
 #: templates/website/service_company_banking.html:192
 msgid "Qonto 或 Revolut Pro 等 Fintech 账户协调"
@@ -3749,9 +3665,7 @@ msgid "专业事项与审批边界"
 msgstr "Professional Matters & Approval Boundaries"
 
 #: templates/website/service_company_banking.html:268
-msgid ""
-"涉及法律、会计、税务及其他受监管专业事项时，相关工作由具备相应资质的专业人士"
-"提供或执行；Acoeurs 负责需求梳理、材料协调与项目推进。"
+msgid "涉及法律、会计、税务及其他受监管专业事项时，相关工作由具备相应资质的专业人士提供或执行；Acoeurs 负责需求梳理、材料协调与项目推进。"
 msgstr ""
 "Legal, accounting, tax and other regulated professional work is provided or "
 "performed by appropriately qualified professionals. Acoeurs clarifies "
@@ -3759,8 +3673,7 @@ msgstr ""
 
 #: templates/website/service_company_banking.html:271
 msgid ""
-"银行、支付机构及其他金融机构对账户申请拥有独立审核和决定权。Acoeurs 提供的材"
-"料准备、沟通与流程支持不构成开户、授信或其他金融服务获批的保证。"
+"银行、支付机构及其他金融机构对账户申请拥有独立审核和决定权。Acoeurs 提供的材料准备、沟通与流程支持不构成开户、授信或其他金融服务获批的保证。"
 msgstr ""
 "Banks, payment institutions and other financial institutions independently "
 "review and decide on account applications. Acoeurs’ document preparation, "
@@ -3772,9 +3685,7 @@ msgid "准备建立您的法国公司与运营基础？"
 msgstr "Ready to Establish Your French Company and Operational Foundation?"
 
 #: templates/website/service_company_banking.html:281
-msgid ""
-"告诉我们公司功能、股东安排和银行准备需求，我们会根据您提交的信息与您取得联"
-"系。"
+msgid "告诉我们公司功能、股东安排和银行准备需求，我们会根据您提交的信息与您取得联系。"
 msgstr ""
 "Tell us about your company’s purpose, shareholder arrangements and banking "
 "preparation needs. We will contact you using the information you provide."
@@ -3784,9 +3695,7 @@ msgid "本地运营与团队建设｜法国企业运营与团队支持｜Acoeurs
 msgstr "Local Operations & Team Support in France — Acoeurs Consulting"
 
 #: templates/website/service_local_operations.html:5
-msgid ""
-"Acoeurs Consulting 协助中国企业协调法国本地招聘、人员行政、办公与日常运营事"
-"项，连接中国总部、本地团队和专业服务方。"
+msgid "Acoeurs Consulting 协助中国企业协调法国本地招聘、人员行政、办公与日常运营事项，连接中国总部、本地团队和专业服务方。"
 msgstr ""
 "Acoeurs Consulting helps Chinese businesses coordinate local recruitment, "
 "personnel administration, office matters and daily operations in France, "
@@ -3801,13 +3710,11 @@ msgid "真正运转起来"
 msgstr "and Daily Operations Working"
 
 #: templates/website/service_local_operations.html:32
-msgid ""
-"Acoeurs 协助企业协调法国本地招聘、人员管理、办公行政和运营支持事项，并连接中"
-"国总部、本地团队及专业合作方。"
+msgid "Acoeurs 协助企业协调法国本地招聘、人员管理、办公行政和运营支持事项，并连接中国总部、本地团队及专业合作方。"
 msgstr ""
-"Acoeurs helps businesses coordinate local recruitment, personnel management, "
-"office administration and operational support in France, connecting Chinese "
-"headquarters, local teams and professional partners."
+"Acoeurs helps businesses coordinate local recruitment, personnel management,"
+" office administration and operational support in France, connecting Chinese"
+" headquarters, local teams and professional partners."
 
 #: templates/website/service_local_operations.html:38
 msgid "本地运营服务关键词"
@@ -3838,18 +3745,14 @@ msgid "公司完成设立，只是法国业务开始运转的第一步"
 msgstr "Company Formation Is Only the First Step in Operating in France"
 
 #: templates/website/service_local_operations.html:54
-msgid ""
-"企业进入实际经营后，会陆续涉及人员、办公、行政和日常运营事项。中国总部、本地"
-"团队和不同服务方之间也需要持续沟通与跟进。"
+msgid "企业进入实际经营后，会陆续涉及人员、办公、行政和日常运营事项。中国总部、本地团队和不同服务方之间也需要持续沟通与跟进。"
 msgstr ""
 "As operations begin, businesses encounter staffing, office, administrative "
 "and day-to-day operational matters. Chinese headquarters, local teams and "
 "service providers also need ongoing communication and follow-up."
 
 #: templates/website/service_local_operations.html:57
-msgid ""
-"Acoeurs 的角色，是作为法国本地窗口协调这些事项，帮助管理层减少分散跟进带来的"
-"时间负担。"
+msgid "Acoeurs 的角色，是作为法国本地窗口协调这些事项，帮助管理层减少分散跟进带来的时间负担。"
 msgstr ""
 "Acoeurs coordinates these matters as a local point of contact in France, "
 "helping management reduce the time spent on fragmented follow-up."
@@ -3936,8 +3839,8 @@ msgstr "Personnel & Daily Administrative Coordination"
 #: templates/website/service_local_operations.html:126
 msgid "协助企业处理本地人员信息、日常行政和相关服务方之间的沟通。"
 msgstr ""
-"Help businesses handle local personnel information, daily administration and "
-"communication with relevant service providers."
+"Help businesses handle local personnel information, daily administration and"
+" communication with relevant service providers."
 
 #: templates/website/service_local_operations.html:130
 msgid "员工资料整理"
@@ -3988,8 +3891,8 @@ msgstr "Document, Translation & Administrative Support"
 #: templates/website/service_local_operations.html:164
 msgid "协调企业在法国经营中涉及的文件、翻译和日常行政事项。"
 msgstr ""
-"Coordinate documents, translations and daily administrative matters involved "
-"in operating in France."
+"Coordinate documents, translations and daily administrative matters involved"
+" in operating in France."
 
 #: templates/website/service_local_operations.html:168
 msgid "行政支持与文件跟进"
@@ -4051,8 +3954,8 @@ msgstr "Acoeurs’ role in local operations projects"
 #: templates/website/service_local_operations.html:210
 msgid "将人员、行政和运营事项集中到同一个本地沟通窗口。"
 msgstr ""
-"Bring personnel, administrative and operational matters together through one "
-"local point of contact."
+"Bring personnel, administrative and operational matters together through one"
+" local point of contact."
 
 #: templates/website/service_local_operations.html:217
 msgid "帮助中国管理层与法国本地团队及服务方保持准确沟通。"
@@ -4082,9 +3985,8 @@ msgstr ""
 
 #: templates/website/service_local_operations.html:246
 msgid ""
-"涉及劳动法律、工资社保申报、会计税务、商标法律、认证翻译及其他需要专业资质的"
-"事项时，相关工作由具备相应资质的专业人士提供或执行。Acoeurs 负责需求梳理、沟"
-"通协调与项目推进。"
+"涉及劳动法律、工资社保申报、会计税务、商标法律、认证翻译及其他需要专业资质的事项时，相关工作由具备相应资质的专业人士提供或执行。Acoeurs "
+"负责需求梳理、沟通协调与项目推进。"
 msgstr ""
 "Employment law, payroll and social contribution filings, accounting, tax, "
 "trademark law, certified translation and other matters requiring "
@@ -4104,8 +4006,7 @@ msgid "准备建立或完善您的法国本地运营团队？"
 msgstr "Ready to Build or Strengthen Your Local Team in France?"
 
 #: templates/website/service_local_operations.html:260
-msgid ""
-"告诉我们团队、办公、行政和当前运营需求，我们会根据您提交的信息与您取得联系。"
+msgid "告诉我们团队、办公、行政和当前运营需求，我们会根据您提交的信息与您取得联系。"
 msgstr ""
 "Tell us about your team, office, administrative and current operational "
 "needs. We will contact you using the information you provide."
@@ -4116,9 +4017,7 @@ msgstr ""
 "European Market Entry & Strategy — France and Europe — Acoeurs Consulting"
 
 #: templates/website/service_market_entry.html:5
-msgid ""
-"Acoeurs Consulting 帮助中国企业评估欧洲市场机会、竞争环境、进入模式、渠道与风"
-"险，并制定清晰、可执行的市场进入路径。"
+msgid "Acoeurs Consulting 帮助中国企业评估欧洲市场机会、竞争环境、进入模式、渠道与风险，并制定清晰、可执行的市场进入路径。"
 msgstr ""
 "Acoeurs Consulting helps Chinese businesses assess European market "
 "opportunities, competition, entry models, channels and risks, and define a "
@@ -4133,9 +4032,7 @@ msgid "清晰、可执行的欧洲市场路径"
 msgstr "A Clear, Practical Path into Europe"
 
 #: templates/website/service_market_entry.html:32
-msgid ""
-"Acoeurs 帮助中国企业在进入法国和欧洲之前判断市场方向、进入方式和投入重点，并"
-"把前期判断衔接到后续落地。"
+msgid "Acoeurs 帮助中国企业在进入法国和欧洲之前判断市场方向、进入方式和投入重点，并把前期判断衔接到后续落地。"
 msgstr ""
 "Acoeurs helps Chinese businesses assess market direction, entry models and "
 "investment priorities before entering France and Europe, connecting initial "
@@ -4166,18 +4063,14 @@ msgid "欧洲不是快市场，前期判断会直接影响后续投入"
 msgstr "Europe Takes Time: Early Assessment Shapes Later Investment"
 
 #: templates/website/service_market_entry.html:54
-msgid ""
-"欧洲是高价值、高监管、适合长期经营的战略市场。对中国企业而言，是否进入、从哪"
-"里进入、如何进入，都会影响后续资源配置和落地方式。"
+msgid "欧洲是高价值、高监管、适合长期经营的战略市场。对中国企业而言，是否进入、从哪里进入、如何进入，都会影响后续资源配置和落地方式。"
 msgstr ""
 "Europe is a high-value, highly regulated strategic market suited to long-"
 "term operations. For Chinese businesses, whether, where and how to enter "
 "will shape resource allocation and local establishment."
 
 #: templates/website/service_market_entry.html:57
-msgid ""
-"Acoeurs 不只讨论市场方向，也负责把前期判断与法国本地执行、运营支持和业务增长"
-"衔接起来。"
+msgid "Acoeurs 不只讨论市场方向，也负责把前期判断与法国本地执行、运营支持和业务增长衔接起来。"
 msgstr ""
 "Acoeurs addresses market direction and connects initial assessment with "
 "French local execution, operational support and business growth."
@@ -4337,8 +4230,8 @@ msgstr ""
 #: templates/website/service_market_entry.html:212
 msgid "在中文商业目标和法国本地执行之间保持持续沟通。"
 msgstr ""
-"Maintain ongoing communication between Chinese business objectives and local "
-"execution in France."
+"Maintain ongoing communication between Chinese business objectives and local"
+" execution in France."
 
 #: templates/website/service_market_entry.html:218
 msgid "与落地和增长衔接"
@@ -4347,8 +4240,8 @@ msgstr "Connection with Establishment & Growth"
 #: templates/website/service_market_entry.html:219
 msgid "把市场进入与后续公司落地、本地运营和业务增长连接起来。"
 msgstr ""
-"Connect market entry with subsequent company establishment, local operations "
-"and business growth."
+"Connect market entry with subsequent company establishment, local operations"
+" and business growth."
 
 #: templates/website/service_market_entry.html:229
 msgid "客户案例"
@@ -4359,13 +4252,11 @@ msgid "从长期摸索到更明确的法国市场方向"
 msgstr "From Extended Exploration to a Clearer Direction in France"
 
 #: templates/website/service_market_entry.html:233
-msgid ""
-"客户已进入法国市场多年，但市场开拓进展缓慢，商业与销售基础薄弱，本地资源对接"
-"困难，进入路径与战略方向不够清晰。"
+msgid "客户已进入法国市场多年，但市场开拓进展缓慢，商业与销售基础薄弱，本地资源对接困难，进入路径与战略方向不够清晰。"
 msgstr ""
 "The client had been in France for several years, but market development was "
-"slow, with weak commercial and sales foundations, difficulty accessing local "
-"resources, and an unclear entry path and strategic direction."
+"slow, with weak commercial and sales foundations, difficulty accessing local"
+" resources, and an unclear entry path and strategic direction."
 
 #: templates/website/service_market_entry.html:235
 msgid "为保护客户信息，本案例采用匿名方式呈现。"
@@ -4409,9 +4300,7 @@ msgid "您的企业是否已经准备好进入欧洲市场？"
 msgstr "Is Your Business Ready to Enter the European Market?"
 
 #: templates/website/service_market_entry.html:263
-msgid ""
-"告诉我们目标市场、当前阶段和希望协调的事项，我们会根据您提交的信息与您取得联"
-"系。"
+msgid "告诉我们目标市场、当前阶段和希望协调的事项，我们会根据您提交的信息与您取得联系。"
 msgstr ""
 "Tell us about your target market, current stage and the matters you need "
 "coordinated. We will contact you using the information you provide."
@@ -4422,8 +4311,7 @@ msgstr "Tax, Legal & Compliance Coordination in France — Acoeurs Consulting"
 
 #: templates/website/service_tax_legal_compliance.html:5
 msgid ""
-"Acoeurs Consulting 协调法国企业会计报税、工资社保、跨境申报、GDPR、KYC及法律"
-"专业支持，帮助中国企业持续管理本地经营事项。"
+"Acoeurs Consulting 协调法国企业会计报税、工资社保、跨境申报、GDPR、KYC及法律专业支持，帮助中国企业持续管理本地经营事项。"
 msgstr ""
 "Acoeurs Consulting coordinates accounting and tax filings, payroll, social "
 "contributions, cross-border reporting, GDPR, KYC and legal professional "
@@ -4438,9 +4326,7 @@ msgid "保持有序、连续并可持续管理"
 msgstr "Organized, Continuous and Manageable"
 
 #: templates/website/service_tax_legal_compliance.html:32
-msgid ""
-"Acoeurs 协调企业在法国经营过程中涉及的会计、税务、工资社保、跨境申报和法律支"
-"持事项，帮助管理层减少多方沟通与日常跟进负担。"
+msgid "Acoeurs 协调企业在法国经营过程中涉及的会计、税务、工资社保、跨境申报和法律支持事项，帮助管理层减少多方沟通与日常跟进负担。"
 msgstr ""
 "Acoeurs coordinates accounting, tax, payroll, social contributions, cross-"
 "border filings and legal support for operations in France, helping "
@@ -4473,9 +4359,7 @@ msgstr "After Incorporation, the Long-Term Work Begins"
 
 #: templates/website/service_tax_legal_compliance.html:54
 msgid ""
-"企业在法国经营过程中，需要持续处理会计、税务、工资社保、行政申报和法律事项。"
-"相关工作往往由不同专业人士参与，如果缺少统一协调，管理和沟通负担就会持续增"
-"加。"
+"企业在法国经营过程中，需要持续处理会计、税务、工资社保、行政申报和法律事项。相关工作往往由不同专业人士参与，如果缺少统一协调，管理和沟通负担就会持续增加。"
 msgstr ""
 "Operating in France requires ongoing accounting, tax, payroll, social "
 "contribution, administrative filing and legal work. Different professionals "
@@ -4483,9 +4367,7 @@ msgstr ""
 "communication burden continues to grow."
 
 #: templates/website/service_tax_legal_compliance.html:57
-msgid ""
-"Acoeurs 的角色，是作为法国本地窗口持续跟进这些事项，并协调会计、税务、法律及"
-"其他相关专业支持。"
+msgid "Acoeurs 的角色，是作为法国本地窗口持续跟进这些事项，并协调会计、税务、法律及其他相关专业支持。"
 msgstr ""
 "Acoeurs provides ongoing follow-up as a local point of contact in France, "
 "coordinating accounting, tax, legal and other relevant professional support."
@@ -4545,8 +4427,8 @@ msgstr "Bookkeeping & Annual Filings"
 #: templates/website/service_tax_legal_compliance.html:107
 msgid "协调企业日常记账、财务资料整理、定期申报和年度财务工作。"
 msgstr ""
-"Coordinate day-to-day bookkeeping, financial document organization, periodic "
-"filings and annual financial work."
+"Coordinate day-to-day bookkeeping, financial document organization, periodic"
+" filings and annual financial work."
 
 #: templates/website/service_tax_legal_compliance.html:111
 msgid "微型企业会计服务"
@@ -4558,7 +4440,8 @@ msgstr "Bookkeeping & Filings for SAS, SARL and Other Companies"
 
 #: templates/website/service_tax_legal_compliance.html:113
 msgid "电商、多平台、多币种和跨境业务协调"
-msgstr "E-Commerce, Multi-Platform, Multi-Currency & Cross-Border Coordination"
+msgstr ""
+"E-Commerce, Multi-Platform, Multi-Currency & Cross-Border Coordination"
 
 #: templates/website/service_tax_legal_compliance.html:114
 msgid "年度报税、年报及相关财务申报协调"
@@ -4571,8 +4454,8 @@ msgstr "Payroll, Social Contributions & Employee Filings"
 #: templates/website/service_tax_legal_compliance.html:126
 msgid "协调员工工资单、社保申报及与日常用工相关的行政事项。"
 msgstr ""
-"Coordinate employee payslips, social contribution filings and administrative "
-"matters relating to everyday employment."
+"Coordinate employee payslips, social contribution filings and administrative"
+" matters relating to everyday employment."
 
 #: templates/website/service_tax_legal_compliance.html:130
 msgid "工资单"
@@ -4648,12 +4531,11 @@ msgid "合同与法律事务协调"
 msgstr "Contract & Legal Matter Coordination"
 
 #: templates/website/service_tax_legal_compliance.html:183
-msgid ""
-"根据企业经营需要，对接具备相应资质的法律专业人士，并协调合同、谈判和争议事"
-"项。"
+msgid "根据企业经营需要，对接具备相应资质的法律专业人士，并协调合同、谈判和争议事项。"
 msgstr ""
 "Connect businesses with appropriately qualified legal professionals and "
-"coordinate contracts, negotiations and disputes according to operating needs."
+"coordinate contracts, negotiations and disputes according to operating "
+"needs."
 
 #: templates/website/service_tax_legal_compliance.html:187
 msgid "公司法、商法与劳动法相关支持协调"
@@ -4677,7 +4559,8 @@ msgstr "Project Coordination"
 
 #: templates/website/service_tax_legal_compliance.html:203
 msgid "一个本地窗口，协调日常事项与专业合作方"
-msgstr "One Local Point of Contact for Daily Matters and Professional Partners"
+msgstr ""
+"One Local Point of Contact for Daily Matters and Professional Partners"
 
 #: templates/website/service_tax_legal_compliance.html:205
 msgid "财税与合规项目中的 Acoeurs 角色"
@@ -4713,11 +4596,11 @@ msgstr ""
 
 #: templates/website/service_tax_legal_compliance.html:246
 msgid ""
-"涉及会计申报、税务处理、法律意见、诉讼代理及其他受监管专业事项时，相关工作由"
-"具备相应资质的专业人士提供或执行。Acoeurs 负责需求梳理、沟通协调与项目推进。"
+"涉及会计申报、税务处理、法律意见、诉讼代理及其他受监管专业事项时，相关工作由具备相应资质的专业人士提供或执行。Acoeurs "
+"负责需求梳理、沟通协调与项目推进。"
 msgstr ""
-"Accounting filings, tax treatment, legal opinions, litigation representation "
-"and other regulated professional work are provided or performed by "
+"Accounting filings, tax treatment, legal opinions, litigation representation"
+" and other regulated professional work are provided or performed by "
 "appropriately qualified professionals. Acoeurs clarifies requirements, "
 "coordinates communication and advances the project."
 
@@ -4726,9 +4609,7 @@ msgid "需要一个本地团队，持续协调企业的财税与合规事项？"
 msgstr "Need a Local Team to Coordinate Ongoing Tax and Compliance Matters?"
 
 #: templates/website/service_tax_legal_compliance.html:260
-msgid ""
-"告诉我们企业现状、当前需求和希望协调的事项，我们会根据您提交的信息与您取得联"
-"系。"
+msgid "告诉我们企业现状、当前需求和希望协调的事项，我们会根据您提交的信息与您取得联系。"
 msgstr ""
 "Tell us about your business’s situation, current needs and the matters you "
 "need coordinated. We will contact you using the information you provide."
@@ -4780,9 +4661,7 @@ msgid "方便联系的时间"
 msgstr "Convenient Contact Time"
 
 #: website/forms.py:133
-msgid ""
-"我已阅读并同意《隐私政策》，并同意Acoeurs Consulting为处理本次联系请求而使用"
-"我提交的信息。"
+msgid "我已阅读并同意《隐私政策》，并同意Acoeurs Consulting为处理本次联系请求而使用我提交的信息。"
 msgstr ""
 "I have read and agree to the Privacy Policy, and I consent to Acoeurs "
 "Consulting using the information I submit to handle this contact request."
@@ -4812,9 +4691,244 @@ msgid "全部咨询方向"
 msgstr "All Enquiry Areas"
 
 #: website/views.py:251
-msgid ""
-"信息暂时未能发送，请稍后重试。您也可以直接发送邮件至 info@acoeursconsulting."
-"com。"
+msgid "信息暂时未能发送，请稍后重试。您也可以直接发送邮件至 info@acoeursconsulting.com。"
 msgstr ""
 "Your message could not be sent. Please try again later or email "
 "info@acoeursconsulting.com directly."
+
+#~ msgid "了解Acoeurs Consulting网站当前使用的必要Cookie，以及有关追踪技术和浏览器设置的信息。"
+#~ msgstr ""
+#~ "Learn about the necessary cookies currently used by the Acoeurs Consulting "
+#~ "website, tracking technologies and browser settings."
+
+#~ msgid "本政策的目的"
+#~ msgstr "Purpose of This Policy"
+
+#~ msgid "是否需要同意"
+#~ msgstr "Is Consent Required?"
+
+#~ msgid "当前网站状态下的 Cookie 说明"
+#~ msgstr "Cookies in the Current Website"
+
+#~ msgid ""
+#~ "本政策用于说明 Acoeurs Consulting 网站在当前公开版本中，哪些 Cookie 可能被使用、这些 Cookie "
+#~ "的用途是什么，以及当前是否存在需要用户事先同意的追踪技术。"
+#~ msgstr ""
+#~ "This policy explains which cookies may be used in the current public version"
+#~ " of the Acoeurs Consulting website, their purposes, and whether any tracking"
+#~ " technologies require prior user consent."
+
+#~ msgid "否。该 Cookie 仅用于严格必要的安全目的。"
+#~ msgstr ""
+#~ "No. This cookie is used only for strictly necessary security purposes."
+
+#~ msgid "否。仅在严格必要用途下使用时，无需事先同意。"
+#~ msgstr ""
+#~ "No prior consent is required when used solely for strictly necessary "
+#~ "purposes."
+
+#~ msgid ""
+#~ "根据当前网站代码和公开页面审计，未发现访问分析 Cookie、广告 Cookie、社交媒体追踪、第三方视频、地图或聊天组件 "
+#~ "Cookie，也未发现用于跟踪的网站"
+#~ msgstr ""
+#~ "The current code and public-page audit found no analytics or advertising "
+#~ "cookies, social media tracking, or cookies from third-party video, map or "
+#~ "chat components, and no tracking implementation using "
+
+#~ msgid "是否需要用户同意"
+#~ msgstr "Is User Consent Required?"
+
+#~ msgid ""
+#~ "当前网站仅存在或可能存在严格必要 Cookie，且未发现需要在同意前阻止的统计、营销或第三方追踪脚本。因此，网站当前未设置 Cookie 同意 "
+#~ "Banner。"
+#~ msgstr ""
+#~ "Only strictly necessary cookies are currently present or potentially "
+#~ "present, and no analytics, marketing or third-party tracking scripts "
+#~ "requiring blocking before consent have been identified. The website "
+#~ "therefore does not currently display a cookie consent banner."
+
+#~ msgid "如未来引入非必要统计、营销或第三方追踪技术，网站将更新本政策，并在适用情况下于相关脚本启用前征求同意。"
+#~ msgstr ""
+#~ "If non-essential analytics, marketing or third-party tracking technologies "
+#~ "are introduced, this policy will be updated and consent will be sought "
+#~ "before the relevant scripts are enabled where applicable."
+
+#~ msgid "中欧跨境经验｜法国本地团队｜中法双语服务｜巴黎·上海·香港"
+#~ msgstr ""
+#~ "China–Europe Experience · French Local Team · Chinese–French Services · "
+#~ "Paris · Shanghai · Hong Kong"
+
+#~ msgid "外部链接与责任限制"
+#~ msgstr "External Links & Limitations of Liability"
+
+#~ msgid "品牌与网站名称"
+#~ msgstr "Brand & Website Name"
+
+#~ msgid "Acoeurs Consulting 艾克斯咨询"
+#~ msgstr "Acoeurs Consulting 艾克斯咨询"
+
+#~ msgid "域名"
+#~ msgstr "Domain Names"
+
+#~ msgid "网站域名为"
+#~ msgstr "The website domain names are "
+
+#~ msgid "联系信息"
+#~ msgstr "Contact Information"
+
+#~ msgid "邮箱："
+#~ msgstr "Email: "
+
+#~ msgid "巴黎联系地址：32 AV. Kléber, 75116 Paris, France"
+#~ msgstr "Paris contact address: 32 AV. Kléber, 75116 Paris, France"
+
+#~ msgid "域名注册与 DNS 服务说明"
+#~ msgstr "Domain Registration & DNS Services"
+
+#~ msgid "国际数据传输"
+#~ msgstr "International Data Transfers"
+
+#~ msgid "数据安全"
+#~ msgstr "Data Security"
+
+#~ msgid "用户权利"
+#~ msgstr "User Rights"
+
+#~ msgid "Acoeurs Consulting 网站的运营主体负责本网站相关个人数据处理。"
+#~ msgstr ""
+#~ "The operator of the Acoeurs Consulting website is responsible for personal "
+#~ "data processing related to this website."
+
+#~ msgid "与网站运营方联系。该邮箱目前也作为数据权利联系入口；如未来设立隐私专用邮箱，本政策将更新。"
+#~ msgstr ""
+#~ ". This email address also currently serves as the contact point for data "
+#~ "rights requests. If a dedicated privacy address is introduced, this policy "
+#~ "will be updated."
+
+#~ msgid "管理后台相关数据"
+#~ msgstr "Administration Data"
+
+#~ msgid "网站管理后台仅供获授权管理员使用，处理管理员账户标识、认证和会话信息，以及后台操作和安全记录。"
+#~ msgstr ""
+#~ "The website administration area is restricted to authorized administrators. "
+#~ "It processes administrator account identifiers, authentication and session "
+#~ "information, and administration activity and security records."
+
+#~ msgid "网站公开了联系邮箱"
+#~ msgstr "The website publishes the contact address "
+
+#~ msgid ""
+#~ "表单信息用于处理访问者主动提交的联系请求。当前阶段，这些表单内容不写入网站咨询数据库、不进入 "
+#~ "CRM，也不用于未经同意的营销推广。当前网站不支持通过联系表单上传文件。有效联系请求通过电子邮件发送至 "
+#~ "info@acoeursconsulting.com；处理过程中可能涉及邮件服务提供商。"
+#~ msgstr ""
+#~ "Form information is used to handle contact requests voluntarily submitted by"
+#~ " visitors. At this stage, it is not written to a website enquiry database, "
+#~ "entered into a CRM or used for marketing without consent. File uploads are "
+#~ "not supported. Valid requests are emailed to info@acoeursconsulting.com; "
+#~ "email service providers may be involved in processing."
+
+#~ msgid "当前不存在的处理"
+#~ msgstr "Processing Not Currently Performed"
+
+#~ msgid "当前网站没有前台用户账户、没有在线支付、没有文件上传，也没有网站分析、广告或营销追踪工具。"
+#~ msgstr ""
+#~ "The website currently has no visitor accounts, online payments, file "
+#~ "uploads, website analytics, advertising or marketing tracking tools."
+
+#~ msgid "网站不进行自动客户画像或自动化决策，也没有邮件营销或 CRM 集成。"
+#~ msgstr ""
+#~ "The website does not perform automated customer profiling or automated "
+#~ "decision-making, and has no email marketing or CRM integration."
+
+#~ msgid ""
+#~ "当前网站相关数据处理主要基于以下目的：提供网站访问、维护网站安全、排查技术故障，了解访问者通过联系表单或电子邮件提交的联系请求，并通过电话或电子邮件开展必要的后续沟通。"
+#~ msgstr ""
+#~ "Current website-related processing primarily supports website access, "
+#~ "security and troubleshooting, understanding enquiries submitted by form or "
+#~ "email, and necessary follow-up communication by telephone or email."
+
+#~ msgid "数据接收方和技术服务提供商"
+#~ msgstr "Data Recipients & Technical Service Providers"
+
+#~ msgid "当前数据接收方可能包括经授权的网站管理人员、必要的技术托管和邮件服务提供商，以及在法律要求下的主管机关。"
+#~ msgstr ""
+#~ "Current recipients may include authorized website administrators, necessary "
+#~ "hosting and email service providers, and competent authorities where "
+#~ "required by law."
+
+#~ msgid ""
+#~ "对于联系表单信息，当前处理方式仅限于支持 Acoeurs Consulting "
+#~ "评估和回应访问者主动提交的联系请求。除非后续沟通和正式服务需要，网站不会自动将联系表单内容发送给律师、会计、银行、保险或其他合作方。"
+#~ msgstr ""
+#~ "Contact form information is currently processed only to help Acoeurs "
+#~ "Consulting assess and respond to visitors’ voluntary enquiries. Unless "
+#~ "needed for subsequent communication and formal services, the website does "
+#~ "not automatically forward form contents to lawyers, accountants, banks, "
+#~ "insurers or other partners."
+
+#~ msgid "域名与基础网络服务说明"
+#~ msgstr "Domain & Basic Network Services"
+
+#~ msgid "本网站使用"
+#~ msgstr "This website uses "
+
+#~ msgid "作为公开访问域名。域名解析和网络接入服务用于将访问请求传送至网站。"
+#~ msgstr ""
+#~ " as its public domain. Domain resolution and network access services route "
+#~ "requests to the website."
+
+#~ msgid "相应服务可能涉及域名查询、连接和请求所需的技术数据。"
+#~ msgstr ""
+#~ "These services may involve technical data needed for domain queries, "
+#~ "connections and requests."
+
+#~ msgid "网站运行过程中，必要的技术服务提供商可能在提供托管、安全、网络或运维支持时接触到访问日志或与网站运行相关的数据。"
+#~ msgstr ""
+#~ "Necessary technical service providers may access logs or website-related "
+#~ "data while providing hosting, security, network or operational support."
+
+#~ msgid ""
+#~ "当前网站相关数据仅在实现相应目的所必要的期间内保存。技术日志期限将取决于安全、故障排查和托管配置，主动联系邮件的保存也将根据沟通处理和必要后续记录需求确定。"
+#~ msgstr ""
+#~ "Website-related data is retained only as long as necessary for the relevant "
+#~ "purposes. Technical log retention depends on security, troubleshooting and "
+#~ "hosting configuration. Voluntary contact emails are retained according to "
+#~ "communication handling and necessary follow-up record needs."
+
+#~ msgid ""
+#~ "若后续形成正式客户关系、合同关系或争议处理需要，相关记录可能根据合同、财务或法律义务保存。联系邮件的管理和删除通过公司邮箱及内部流程执行；网站没有自动删除邮件的功能。"
+#~ msgstr ""
+#~ "If a formal client or contractual relationship or dispute subsequently "
+#~ "arises, records may be retained for contractual, financial or legal "
+#~ "obligations. Contact emails are managed and deleted through the company "
+#~ "mailbox and internal processes; the website has no automatic email deletion "
+#~ "function."
+
+#~ msgid "在适用情况下，您可以依据相关法律行使访问、更正、删除、限制处理、反对处理和数据可携带等权利。若某项处理确实基于同意，您也可以依法撤回该同意。"
+#~ msgstr ""
+#~ "Where applicable, you may exercise rights of access, rectification, erasure,"
+#~ " restriction, objection and data portability under relevant law. Where "
+#~ "processing is actually based on consent, you may also withdraw that consent "
+#~ "as provided by law."
+
+#~ msgid "联系网站运营方以提出相关请求。"
+#~ msgstr " to submit a request."
+
+#~ msgid "当前网站仅存在或可能存在严格必要 Cookie。有关当前 Cookie 的详细信息，请参阅本网站的"
+#~ msgstr ""
+#~ "Only strictly necessary cookies are currently present or potentially "
+#~ "present. For details, please refer to this website’s "
+
+#~ msgid "咨询表单与后续更新"
+#~ msgstr "Enquiry Form & Future Updates"
+
+#~ msgid ""
+#~ "当前网站已启用在线联系表单。若后续增加新的收集字段、文件上传、数据库保存、CRM "
+#~ "集成或其他新的处理方式，网站将在表单附近提供相应信息，并更新本政策，以说明新增字段、目的、法律依据、接收方和保存期限。"
+#~ msgstr ""
+#~ "The website currently has an active contact form. If new fields, file "
+#~ "uploads, database storage, CRM integration or other processing methods are "
+#~ "added, relevant information will be provided near the form and this policy "
+#~ "will be updated to explain the additional fields, purposes, legal bases, "
+#~ "recipients and retention periods."

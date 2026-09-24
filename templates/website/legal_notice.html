@@ -2,7 +2,7 @@
 {% load i18n static %}
 
 {% block title %}{% translate "法律声明｜Acoeurs Consulting" %}{% endblock %}
-{% block meta_description %}{% translate "Acoeurs Consulting 的品牌与联系方式、网站内容性质、知识产权及第三方链接说明。" %}{% endblock %}
+{% block meta_description %}{% translate "了解 Acoeurs Consulting 网站运营主体、联系方式、托管、知识产权及专业服务边界。" %}{% endblock %}
 {% block body_class %}page-legal page-legal-notice{% endblock %}
 
 {% block extra_css %}
@@ -21,7 +21,7 @@
         <div class="legal-hero__content">
             <h1 data-reveal="title" data-reveal-delay="120">{% translate "法律声明" %}</h1>
             <p class="legal-hero__summary" data-reveal="text" data-reveal-delay="220">
-                {% translate "本页介绍 Acoeurs Consulting 的网站与联系方式，以及网站内容、知识产权和第三方链接的使用说明。" %}
+                {% translate "本页说明 Acoeurs Consulting 网站的运营主体、联系方式、托管情况，以及网站内容、知识产权和专业服务边界。" %}
             </p>
         </div>
     </div>
@@ -32,9 +32,11 @@
         <nav class="legal-toc" aria-label="{% translate '法律声明目录' %}" data-reveal="panel" data-reveal-repeat="true">
             <p class="legal-toc__eyebrow">{% translate "目录" %}</p>
             <ol class="legal-toc__list">
-                <li><a href="#legal-site-info">{% translate "网站与联系方式" %}</a></li>
+                <li><a href="#legal-operator">{% translate "网站运营主体" %}</a></li>
+                <li><a href="#legal-contact">{% translate "网站与联系方式" %}</a></li>
+                <li><a href="#legal-hosting">{% translate "网站托管" %}</a></li>
                 <li><a href="#legal-ip">{% translate "知识产权与内容性质" %}</a></li>
-                <li><a href="#legal-links">{% translate "外部链接与责任限制" %}</a></li>
+                <li><a href="#legal-links">{% translate "外部链接与专业服务边界" %}</a></li>
                 <li><a href="#legal-related">{% translate "相关法律页面" %}</a></li>
             </ol>
         </nav>
@@ -45,47 +47,48 @@
                 <h2 id="legal-notice-title">{% translate "网站信息与使用说明" %}</h2>
             </header>
 
-            <section id="legal-site-info" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
-                <h2>{% translate "网站与联系方式" %}</h2>
-                <h3>{% translate "品牌与网站名称" %}</h3>
-                <p>
-                    {% translate "网站品牌为" %} <strong>{% translate "Acoeurs Consulting 艾克斯咨询" %}</strong>{% translate "。" %}
-                </p>
-                <h3>{% translate "域名" %}</h3>
-                <p>
-                    {% translate "网站域名为" %} <strong>acoeursconsulting.com</strong>{% translate "及" %} <strong>www.acoeursconsulting.com</strong>{% translate "。" %}
-                </p>
-                <h3>{% translate "联系信息" %}</h3>
+            <section id="legal-operator" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>{% translate "网站运营主体" %}</h2>
                 <ul class="legal-plain-list">
-                    <li>{% translate "邮箱：" %}<a href="mailto:info@acoeursconsulting.com">info@acoeursconsulting.com</a></li>
+                    <li>{% translate "网站运营主体：" %}<strong>艾克斯（杭州）咨询服务有限公司</strong> {% translate "（在中国浙江杭州登记注册的公司）" %}</li>
+                    <li>{% translate "统一社会信用代码：" %}<strong>91330110MAC40RHUXB</strong></li>
+                    <li>{% translate "注册地址：" %}<strong>浙江省杭州市余杭区仓前街道文一西路1217号11幢806室</strong></li>
+                    <li>{% translate "网站品牌：" %}<strong>Acoeurs Consulting / 艾克斯咨询</strong></li>
+                </ul>
+            </section>
+
+            <section id="legal-contact" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>{% translate "网站与联系方式" %}</h2>
+                <ul class="legal-plain-list">
+                    <li>{% translate "公开域名：" %}<strong>acoeursconsulting.com</strong>{% translate "及" %} <strong>www.acoeursconsulting.com</strong></li>
+                    <li>{% translate "联系邮箱：" %}<a href="mailto:info@acoeursconsulting.com">info@acoeursconsulting.com</a></li>
                     <li>{% translate "中国电话：" %}<a href="tel:4006060685">400-606-0685</a></li>
                     <li>{% translate "法国电话：" %}<a href="tel:+33972960573">+33 (0)9 72 96 05 73</a></li>
-                    <li>{% translate "巴黎联系地址：32 AV. Kléber, 75116 Paris, France" %}</li>
+                    <li>{% translate "法国联系地址（非网站运营主体注册地址）：" %}<strong>32 AV. Kléber, 75116 Paris, France</strong></li>
                 </ul>
+            </section>
+
+            <section id="legal-hosting" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
+                <h2>{% translate "网站托管" %}</h2>
+                <p>{% translate "本网站当前托管于 Alibaba Cloud 的中国香港地区基础设施。" %}</p>
             </section>
 
             <section id="legal-ip" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
                 <h2>{% translate "知识产权与内容性质" %}</h2>
-                <p>
-                    {% translate "本网站的文案、图像、标识及其他内容涉及相应权利人的知识产权。使用或转载相关内容时，请遵守适用法律及相应授权条件；如有使用需求，请通过本页联系方式与我们联系。" %}
-                </p>
-                <p>
-                    {% translate "网站内容仅用于介绍 Acoeurs Consulting 当前公开的服务范围与品牌信息，不构成对具体审批、交易、贷款、税务或其他受监管事项结果的保证。" %}
-                </p>
+                <p>{% translate "本网站主要用于介绍 Acoeurs Consulting 的品牌、当前公开的服务范围及联系方式。当前网站不提供在线交易、在线支付或前台用户账户。" %}</p>
+                <p>{% translate "本网站的文案、图片、品牌标识及其他内容依法受相应知识产权保护。使用或转载相关内容时，请遵守适用法律及相应授权条件；如有使用需求，请通过本页联系方式与我们联系。" %}</p>
+                <p>{% translate "网站内容主要用于介绍服务范围、协调方式和项目支持，不构成对具体审批、交易、贷款、税务处理或其他受监管事项结果的保证。" %}</p>
             </section>
 
             <section id="legal-links" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
-                <h2>{% translate "外部链接与责任限制" %}</h2>
-                <p>
-                    {% translate "如访问本网站提供的第三方链接，请同时查阅该网站的使用条件和隐私说明。涉及法律、税务、会计、公证、贷款、保险及其他受监管专业事项时，相关判断和执行应由具备相应资质的专业人士或机构完成。" %}
-                </p>
+                <h2>{% translate "外部链接与专业服务边界" %}</h2>
+                <p>{% translate "如访问本网站提供的第三方链接，请同时查阅该网站的使用条件和隐私说明。" %}</p>
+                <p>{% translate "涉及法律、税务、会计、公证、贷款、保险及其他依法需要专业资格或由特定机构决定的事项时，相关专业判断或受监管工作由具备相应资格的专业人士或相关机构完成。" %}</p>
             </section>
 
             <section id="legal-related" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
                 <h2>{% translate "相关法律页面" %}</h2>
-                <p>
-                    {% translate "有关当前个人数据处理和 Cookie 使用情况，请查阅本网站的隐私政策和 Cookie 政策。" %}
-                </p>
+                <p>{% translate "有关当前个人信息处理和 Cookie 使用情况，请查阅本网站的隐私政策和 Cookie 与类似技术说明。" %}</p>
             </section>
 
             <footer class="legal-article__footer" data-reveal="soft" data-reveal-repeat="true">

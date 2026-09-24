@@ -54,9 +54,19 @@ class MultilingualTests(TestCase):
                         self.assertNotIn('{% ', content)
                         self.assertNotIn('语言版本预留', content)
                         if language != 'zh':
-                            # Chinese is intentional in the brand and language autonym only.
+                            # The language autonym and bilingual brand are intentional.
+                            approved_chinese_strings = [
+                                '艾克斯咨询',
+                                '中文',
+                            ]
+                            if name in {'legal', 'privacy', 'cookies'}:
+                                approved_chinese_strings.extend([
+                                    '艾克斯（杭州）咨询服务有限公司',
+                                    '浙江省杭州市余杭区仓前街道文一西路1217号11幢806室',
+                                ])
                             checked = re.sub(r'<!--.*?-->', '', content, flags=re.S)
-                            checked = checked.replace('艾克斯咨询', '').replace('中文', '')
+                            for approved_string in approved_chinese_strings:
+                                checked = checked.replace(approved_string, '')
                             self.assertIsNone(re.search(r'[\u4e00-\u9fff]', checked))
                         for href in re.findall(r'href="([^"?#]+)', content):
                             if not href.startswith('/') or href.startswith('/static/') or href in visited:
