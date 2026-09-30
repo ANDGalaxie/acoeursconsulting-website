@@ -33,7 +33,7 @@
                 <li><a href="#privacy-scope">{% translate "适用范围" %}</a></li>
                 <li><a href="#privacy-processor">{% translate "个人信息处理者与联系方式" %}</a></li>
                 <li><a href="#privacy-current-data">{% translate "当前可能处理的个人信息" %}</a></li>
-                <li><a href="#privacy-contact-form">{% translate "联系表单与实际数据流" %}</a></li>
+                <li><a href="#privacy-contact-form">{% translate "联系表单与信息处理" %}</a></li>
                 <li><a href="#privacy-basis">{% translate "处理目的与处理依据" %}</a></li>
                 <li><a href="#privacy-recipients">{% translate "接收方和技术服务提供商" %}</a></li>
                 <li><a href="#privacy-transfer">{% translate "境外处理与个人信息出境" %}</a></li>
@@ -73,18 +73,18 @@
                 <h3>{% translate "服务器访问和安全日志" %}</h3>
                 <p>{% translate "网站托管环境和服务器日志可能记录网站运行、安全和故障排查所需的技术信息，例如 IP 地址、浏览器和设备基础信息、请求时间、访问路径及 HTTP 响应状态。" %}</p>
                 <h3>{% translate "联系表单信息" %}</h3>
-                <p>{% translate "联系表单当前可能处理：身份类型、公司或机构名称、咨询方向、咨询主题、咨询内容、姓名、电话、邮箱、沟通语言、方便联系的时间、隐私政策确认状态、提交时间，以及必要的服务器和安全元数据。" %}</p>
+                <p>{% translate "联系表单可能处理身份类型、公司或机构名称、咨询方向、咨询主题、咨询内容、姓名、电话、邮箱、沟通语言、方便联系的时间、隐私政策确认状态、提交时间，以及必要的服务器和安全信息。" %}</p>
                 <h3>{% translate "用户主动发送的电子邮件" %}</h3>
                 <p>{% translate "访问者主动发送电子邮件时，我们可能处理发件人姓名、邮箱地址、邮件正文及访问者自行提供的其他信息。" %}</p>
-                <p class="legal-article__note">{% translate "请避免通过联系表单或普通电子邮件发送与咨询无关或不必要的敏感个人信息。" %}</p>
+                <p class="legal-article__note">{% translate "普通咨询表单不用于提交不必要的身份证件、金融账户、健康信息或不满十四周岁儿童的个人信息，也请勿通过普通电子邮件发送与咨询无关的敏感个人信息。" %}</p>
             </section>
 
             <section id="privacy-contact-form" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
-                <h2>{% translate "联系表单与实际数据流" %}</h2>
-                <p>{% translate "当前联系表单的数据流为：访问者浏览器提交信息，经 Django 表单验证后，通过 Alibaba Mail 企业邮件服务发送至 info@acoeursconsulting.com。" %}</p>
-                <p>{% translate "当前联系表单内容不写入 Contact 或 Inquiry 数据库，不进入 CRM，不支持文件上传，也不用于未经同意的营销推广。网站不进行自动客户画像或自动化决策。" %}</p>
+                <h2>{% translate "联系表单与信息处理" %}</h2>
+                <p>{% translate "提交咨询时，身份类型、咨询方向、姓名、沟通语言和隐私政策确认状态为必填信息，电话或电子邮箱至少填写一项。公司或机构名称、咨询主题、咨询内容和方便联系的时间为选填信息。未提供必要信息时，表单无法提交或我们可能无法处理咨询。" %}</p>
+                <p>{% translate "信息经网站处理后，通过企业邮件服务发送至 info@acoeursconsulting.com，并在公司邮箱中保存。网站不另行建立咨询数据库，也未接入客户关系管理系统。" %}</p>
+                <p>{% translate "联系表单不支持文件上传，不用于未经同意的营销推广，也不进行自动客户画像或自动化决策。" %}</p>
                 <p>{% translate "当前网站不会自动将联系表单内容发送给律师、会计、银行、保险或其他合作方。如后续人工沟通或正式服务需要向专业合作方提供信息，将属于相应的后续服务流程。" %}</p>
-                <p>{% translate "表单使用隐藏的反垃圾字段识别自动提交。该字段仅用于请求校验，不加入联系邮件；被识别为垃圾的请求不会发送咨询邮件。" %}</p>
             </section>
 
             <section id="privacy-basis" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
@@ -95,7 +95,7 @@
 
             <section id="privacy-recipients" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
                 <h2>{% translate "接收方和技术服务提供商" %}</h2>
-                <p>{% translate "个人信息的接收方或处理所涉及的服务提供商可能包括经授权的公司工作人员、网站托管服务商、企业邮件服务商，以及法律法规要求下的有关主管部门。" %}</p>
+                <p>{% translate "个人信息的接收方可能包括经授权的公司工作人员，以及法律法规要求下的有关主管部门。网站托管服务商为网站运行和安全提供技术支持，企业邮件服务商用于传递和保存联系邮件。" %}</p>
                 <p>{% translate "当前网站不会自动向律师、会计、银行、保险或其他合作方转发联系表单内容。" %}</p>
             </section>
 
@@ -107,19 +107,21 @@
 
             <section id="privacy-retention" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
                 <h2>{% translate "保存期限" %}</h2>
-                <p>{% translate "个人信息只在实现相应处理目的所必要的最短合理期间内保存，或者根据合同、财务、争议处理及其他法律义务保存。" %}</p>
-                <p>{% translate "安全和技术日志的保存期限取决于网站安全、故障排查和托管配置；普通咨询邮件根据咨询处理和必要后续记录需求保存；后续形成正式客户关系后的业务记录可能根据合同、财务、争议处理或其他法律义务保存。网站目前没有自动删除公司邮箱内邮件的功能。" %}</p>
+                <p>{% translate "未形成客户关系的普通咨询信息，自最后一次实质性沟通之日起保存不超过6个月，期满后删除或匿名化处理。自动营销邮件或仅限内部的操作不会重新计算该期限。" %}</p>
+                <p>{% translate "处理目的已实现且无继续保存必要，或依法应当提前删除的，我们将提前处理。形成正式客户关系的资料，按相应服务目的及适用法律要求另行确定保存期限。" %}</p>
+                <p>{% translate "上述6个月是公司对普通咨询信息采用的保存规则，不适用于所有安全日志、Cookie 或依法需要保存的记录。安全和技术日志根据网站安全、故障排查和托管配置在必要期限内保存。" %}</p>
             </section>
 
             <section id="privacy-security" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
                 <h2>{% translate "个人信息安全" %}</h2>
-                <p>{% translate "个人信息处理者采取与风险相称的合理技术和组织措施保护个人信息，包括访问控制、HTTPS、安全表单机制，以及 Django 和托管平台提供的基础安全机制。" %}</p>
+                <p>{% translate "个人信息处理者采取与风险相称的合理技术和组织措施保护个人信息，包括访问控制、HTTPS 和安全表单机制。" %}</p>
             </section>
 
             <section id="privacy-rights" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
                 <h2>{% translate "个人信息权利" %}</h2>
-                <p>{% translate "根据适用法律，您对个人信息处理享有知情权、决定权，并有权限制或拒绝处理；您还可以依法请求查阅、复制、更正、补充或删除个人信息，撤回基于同意的处理，并要求我们解释个人信息处理规则。" %}</p>
-                <p>{% translate "您可以通过" %} <a href="mailto:info@acoeursconsulting.com">info@acoeursconsulting.com</a> {% translate "提出个人信息相关请求。我们可能在处理请求前核验您的身份，并在适用法律规定的范围内回应。" %}</p>
+                <p>{% translate "根据适用法律，您对个人信息处理享有知情权、决定权，并有权限制或拒绝处理；您还可以依法请求查阅、复制、更正、补充或删除个人信息，撤回同意，要求解释个人信息处理规则，并在符合法律规定条件时请求将个人信息转移至指定的个人信息处理者。" %}</p>
+                <p>{% translate "撤回同意不影响撤回前基于同意进行的个人信息处理活动的效力。" %}</p>
+                <p>{% translate "您可以通过" %} <a href="mailto:info@acoeursconsulting.com">info@acoeursconsulting.com</a> {% translate "提出个人信息相关请求。我们仅在处理请求所必要的范围内核验身份，并在适用法律规定的范围内回应；如拒绝请求，将说明理由。" %}</p>
             </section>
 
             <section id="privacy-complaints" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
@@ -134,12 +136,12 @@
 
             <section id="privacy-minors" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
                 <h2>{% translate "未成年人" %}</h2>
-                <p>{% translate "当前网站没有面向不满十四周岁未成年人单独设计的在线服务或注册功能。如未来实际处理不满十四周岁未成年人的个人信息，个人信息处理者将依据适用法律制定相应处理规则，并在法律要求时取得监护人同意。" %}</p>
+                <p>{% translate "当前网站没有面向不满十四周岁未成年人单独设计的在线服务或注册功能，普通咨询表单也不用于提交不满十四周岁儿童的个人信息。如未来实际处理此类信息，个人信息处理者将依据适用法律制定相应处理规则，并在法律要求时取得监护人同意。" %}</p>
             </section>
 
             <section id="privacy-updates" class="legal-article__section" data-reveal="text" data-reveal-repeat="true">
                 <h2>{% translate "政策变更" %}</h2>
-                <p>{% translate "如果网站功能、托管方式、联系表单处理方式或相关法律要求发生变化，本政策将相应更新。请以本页标注的更新日期为准。" %}</p>
+                <p>{% translate "如果网站功能、托管方式、联系表单处理方式或相关法律要求发生变化，本政策将相应更新。对于重要变化，我们将以适当方式告知；依法需要重新取得同意的，将重新取得同意。" %}</p>
             </section>
 
             <footer class="legal-article__footer" data-reveal="soft" data-reveal-repeat="true">

@@ -74,6 +74,28 @@ class MultilingualTests(TestCase):
                             visited.add(href)
                             self.assertEqual(self.client.get(href, follow=True).status_code, 200, href)
 
+    def test_legal_page_toc_targets_exist_and_match_across_languages(self):
+        for page in ("legal", "privacy", "cookies"):
+            structures = []
+            for language in ("zh", "fr", "en"):
+                with self.subTest(page=page, language=language):
+                    response = self.client.get(f"/{language}/{page}/")
+                    self.assertEqual(response.status_code, 200)
+                    content = response.content.decode()
+                    toc = re.search(
+                        r'<nav class="legal-toc".*?</nav>',
+                        content,
+                        flags=re.S,
+                    )
+                    self.assertIsNotNone(toc)
+                    targets = re.findall(r'href="#([^"]+)"', toc.group(0))
+                    section_ids = re.findall(r'<section id="([^"]+)"', content)
+                    self.assertTrue(targets)
+                    self.assertTrue(set(targets).issubset(section_ids))
+                    structures.append(section_ids)
+            self.assertEqual(structures[0], structures[1])
+            self.assertEqual(structures[1], structures[2])
+
     def test_representative_translated_content(self):
         for language, nav, hero, label in [
             ('fr', 'Entreprises', 'Votre partenaire en stratégie', 'Adresse e-mail'),

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Acoeurs Consulting\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-24 18:31+0800\n"
+"POT-Creation-Date: 2026-09-30 20:46+0800\n"
 "PO-Revision-Date: 2026-09-14 12:00+0200\n"
 "Last-Translator: Acoeurs Consulting\n"
 "Language-Team: Acoeurs Consulting\n"
@@ -180,8 +180,8 @@ msgid "跨境税务与风险管理"
 msgstr "Fiscalité transfrontalière & gestion des risques"
 
 #: templates/includes/footer.html:28 templates/website/contact.html:77
-#: templates/website/contact.html:84 templates/website/cookie_policy.html:41
-#: templates/website/cookie_policy.html:124
+#: templates/website/contact.html:84 templates/website/cookie_policy.html:38
+#: templates/website/cookie_policy.html:103
 msgid "联系方式"
 msgstr "Coordonnées"
 
@@ -218,21 +218,21 @@ msgstr "Navigation complémentaire du pied de page"
 msgid "关于我们"
 msgstr "À propos"
 
-#: templates/includes/footer.html:47 templates/website/cookie_policy.html:131
+#: templates/includes/footer.html:47 templates/website/cookie_policy.html:110
 #: templates/website/legal_notice.html:18
 #: templates/website/legal_notice.html:22
-#: templates/website/legal_notice.html:46
-#: templates/website/legal_notice.html:97
-#: templates/website/privacy_policy.html:148
+#: templates/website/legal_notice.html:45
+#: templates/website/legal_notice.html:91
+#: templates/website/privacy_policy.html:150
 msgid "法律声明"
 msgstr "Mentions légales"
 
-#: templates/includes/footer.html:48 templates/website/cookie_policy.html:132
-#: templates/website/legal_notice.html:98
+#: templates/includes/footer.html:48 templates/website/cookie_policy.html:111
+#: templates/website/legal_notice.html:92
 #: templates/website/privacy_policy.html:18
 #: templates/website/privacy_policy.html:22
 #: templates/website/privacy_policy.html:52
-#: templates/website/privacy_policy.html:149
+#: templates/website/privacy_policy.html:151
 msgid "隐私政策"
 msgstr "Politique de confidentialité"
 
@@ -855,41 +855,38 @@ msgstr ""
 " sont pas utilisées à des fins de prospection sans votre consentement."
 
 #: templates/website/cookie_policy.html:4
-#| msgid "Cookie政策｜Acoeurs Consulting"
 msgid "Cookie 与类似技术说明｜Acoeurs Consulting"
 msgstr "Cookies et technologies similaires — Acoeurs Consulting"
 
 #: templates/website/cookie_policy.html:5
-#| msgid ""
-#| "本政策说明 Acoeurs Consulting 网站当前使用的必要 Cookie、当前未使用的追踪技术，以及浏览器层面的管理方式。"
-msgid "了解 Acoeurs Consulting 网站当前使用的必要 Cookie、当前未使用的追踪技术及同意机制。"
+#| msgid "了解 Acoeurs Consulting 网站当前使用的必要 Cookie、当前未使用的追踪技术及同意机制。"
+msgid "了解 Acoeurs Consulting 网站当前使用的必要 Cookie、追踪技术现状及同意机制。"
 msgstr ""
 "Informations sur les cookies nécessaires actuellement utilisés par le site "
-"Acoeurs Consulting, les technologies de suivi non utilisées et le mécanisme "
+"Acoeurs Consulting, l’état actuel des technologies de suivi et le mécanisme "
 "de consentement."
 
 #: templates/website/cookie_policy.html:18
-#: templates/website/cookie_policy.html:47
-#: templates/website/cookie_policy.html:133
-#: templates/website/legal_notice.html:99
-#: templates/website/privacy_policy.html:132
-#: templates/website/privacy_policy.html:150
+#: templates/website/cookie_policy.html:44
+#: templates/website/cookie_policy.html:112
+#: templates/website/legal_notice.html:93
+#: templates/website/privacy_policy.html:134
+#: templates/website/privacy_policy.html:152
 msgid "Cookie政策"
 msgstr "Politique relative aux cookies"
 
 #: templates/website/cookie_policy.html:22
-#: templates/website/cookie_policy.html:48
+#: templates/website/cookie_policy.html:45
 msgid "Cookie 与类似技术说明"
 msgstr "Cookies et technologies similaires"
 
 #: templates/website/cookie_policy.html:23
 #| msgid ""
-#| "本政策说明 Acoeurs Consulting 网站当前使用的必要 Cookie、当前未使用的追踪技术，以及浏览器层面的管理方式。"
-msgid "本说明介绍 Acoeurs Consulting 网站当前使用的必要 Cookie、当前未使用的追踪技术，以及现有的同意机制。"
+#| "本说明介绍 Acoeurs Consulting 网站当前使用的必要 Cookie、当前未使用的追踪技术，以及现有的同意机制。"
+msgid "本说明介绍网站当前使用的必要 Cookie、追踪技术现状及管理方式。"
 msgstr ""
-"Cette notice décrit les cookies nécessaires actuellement utilisés par le "
-"site Acoeurs Consulting, les technologies de suivi non utilisées et le "
-"mécanisme de consentement en place."
+"Cette notice présente les cookies nécessaires actuellement utilisés par le "
+"site, l’état actuel des technologies de suivi et les moyens de gestion."
 
 #: templates/website/cookie_policy.html:30
 msgid "Cookie政策目录"
@@ -902,206 +899,134 @@ msgid "目录"
 msgstr "Sommaire"
 
 #: templates/website/cookie_policy.html:33
-#: templates/website/cookie_policy.html:52
-#: templates/website/legal_notice.html:35
-#: templates/website/legal_notice.html:51
-msgid "网站运营主体"
-msgstr "Exploitant du site"
+#: templates/website/cookie_policy.html:49
+msgid "说明范围"
+msgstr "Champ de la présente notice"
 
 #: templates/website/cookie_policy.html:34
-#: templates/website/cookie_policy.html:57
-msgid "本说明的目的"
-msgstr "Objet de la présente notice"
-
-#: templates/website/cookie_policy.html:35
-#: templates/website/cookie_policy.html:62
-msgid "什么是 Cookie"
-msgstr "Qu’est-ce qu’un cookie ?"
-
-#: templates/website/cookie_policy.html:36
-#: templates/website/cookie_policy.html:67
+#: templates/website/cookie_policy.html:55
 msgid "当前网站使用的 Cookie"
 msgstr "Cookies actuellement utilisés"
 
-#: templates/website/cookie_policy.html:37
-#: templates/website/cookie_policy.html:102
-msgid "当前未使用的追踪技术"
-msgstr "Technologies de suivi non utilisées"
+#: templates/website/cookie_policy.html:35
+#: templates/website/cookie_policy.html:87
+msgid "追踪技术与同意机制"
+msgstr "Technologies de suivi et mécanisme de consentement"
 
-#: templates/website/cookie_policy.html:38
-#: templates/website/cookie_policy.html:108
-msgid "当前 Cookie 与同意机制"
-msgstr "Cookies actuels et mécanisme de consentement"
-
-#: templates/website/cookie_policy.html:39
-#: templates/website/cookie_policy.html:114
+#: templates/website/cookie_policy.html:36
+#: templates/website/cookie_policy.html:93
 msgid "浏览器设置"
 msgstr "Réglages du navigateur"
 
-#: templates/website/cookie_policy.html:40
-#: templates/website/cookie_policy.html:119
+#: templates/website/cookie_policy.html:37
+#: templates/website/cookie_policy.html:98
 msgid "未来变更"
 msgstr "Évolutions futures"
 
-#: templates/website/cookie_policy.html:53
+#: templates/website/cookie_policy.html:50
 msgid "本网站由"
 msgstr "Ce site est exploité par"
 
-#: templates/website/cookie_policy.html:53
-#| msgid "网站品牌为"
+#: templates/website/cookie_policy.html:50
 msgid "运营，网站品牌为"
 msgstr "sous la marque"
 
-#: templates/website/cookie_policy.html:53
-#: templates/website/privacy_policy.html:132
+#: templates/website/cookie_policy.html:50
+#: templates/website/privacy_policy.html:134
 msgid "。"
 msgstr "."
 
+#: templates/website/cookie_policy.html:51
+msgid "Cookie 是存储在浏览器中的小型文本信息。本说明介绍网站当前使用的 Cookie、使用场景、有效期及相关管理方式。"
+msgstr ""
+"Les cookies sont de petits fichiers texte enregistrés dans le navigateur. "
+"Cette notice présente les cookies actuellement utilisés par le site, leurs "
+"situations d’utilisation, leur durée de validité et les moyens de gestion "
+"associés."
+
 #: templates/website/cookie_policy.html:58
-msgid "本说明用于介绍当前网站可能使用的 Cookie 及类似技术、其用途、保存期限，以及当前的用户告知和同意机制。"
-msgstr ""
-"Cette notice présente les cookies et technologies similaires que le site est"
-" susceptible d’utiliser actuellement, leurs finalités et durées de "
-"conservation, ainsi que le dispositif actuel d’information et de "
-"consentement des utilisateurs."
-
-#: templates/website/cookie_policy.html:63
-#| msgid ""
-#| "Cookie "
-#| "是网站或相关技术组件在访问设备浏览器中存储的小型文本信息，可用于维持安全会话、保护表单请求，或在某些网站中支持统计、个性化和第三方内容功能。"
-msgid ""
-"Cookie 是网站或相关技术组件存储在访问设备浏览器中的小型文本信息，可用于维持安全会话、保护表单请求，或支持统计、个性化和第三方内容功能。"
-msgstr ""
-"Les cookies sont de petits fichiers texte enregistrés dans le navigateur de "
-"l’appareil par un site ou ses composants techniques. Ils peuvent servir à "
-"maintenir une session sécurisée, à protéger les formulaires ou à fournir des"
-" statistiques, de la personnalisation et des contenus tiers."
-
-#: templates/website/cookie_policy.html:70
-#| msgid "当前网站可能使用的严格必要 Cookie"
 msgid "当前网站可能使用的必要 Cookie"
 msgstr "Cookies nécessaires susceptibles d’être utilisés par le site"
 
-#: templates/website/cookie_policy.html:73
+#: templates/website/cookie_policy.html:61
 msgid "名称"
 msgstr "Nom"
 
-#: templates/website/cookie_policy.html:74
-msgid "来源"
-msgstr "Origine"
-
-#: templates/website/cookie_policy.html:75
+#: templates/website/cookie_policy.html:62
 msgid "用途"
 msgstr "Finalité"
 
-#: templates/website/cookie_policy.html:76
-msgid "当前状态"
-msgstr "Situation actuelle"
+#: templates/website/cookie_policy.html:63
+msgid "何时使用"
+msgstr "Moment d’utilisation"
 
-#: templates/website/cookie_policy.html:77
-msgid "期限"
-msgstr "Durée"
+#: templates/website/cookie_policy.html:64
+msgid "有效期"
+msgstr "Durée de validité"
 
-#: templates/website/cookie_policy.html:83
-#: templates/website/cookie_policy.html:90
-#| msgid "Acoeurs Consulting 网站使用的 Django 系统"
-msgid "本网站使用的 Django 系统"
-msgstr "Système Django utilisé par ce site"
-
-#: templates/website/cookie_policy.html:84
-#| msgid "帮助保护表单和管理后台请求，防止跨站请求伪造。"
+#: templates/website/cookie_policy.html:70
 msgid "保护表单和管理后台请求，防止跨站请求伪造。"
 msgstr ""
 "Protège les formulaires et les requêtes d’administration contre la "
 "falsification de requêtes intersites."
 
-#: templates/website/cookie_policy.html:85
-msgid "匿名访问联系表单时会设置；管理后台登录页也会设置。普通展示页面本身不主动设置。"
+#: templates/website/cookie_policy.html:71
+#| msgid "匿名访问联系表单时会设置；管理后台登录页也会设置。普通展示页面本身不主动设置。"
+msgid "访问联系表单或管理后台登录页面时设置；普通展示页面本身不主动设置。"
 msgstr ""
-"Défini lors d’une visite anonyme du formulaire de contact et sur la page de "
-"connexion de l’administration. Les pages de présentation ordinaires ne le "
-"définissent pas d’elles-mêmes."
+"Défini lors de l’accès au formulaire de contact ou à la page de connexion à "
+"l’administration ; les pages de présentation ordinaires ne le définissent "
+"pas."
 
-#: templates/website/cookie_policy.html:86
+#: templates/website/cookie_policy.html:72
 msgid "当前配置为 31,449,600 秒（364 天）；浏览器可提前清除，访问表单时可能刷新有效期。"
 msgstr ""
 "Durée actuelle : 31 449 600 secondes (364 jours). Le navigateur peut le "
 "supprimer avant ce terme ; une visite du formulaire peut renouveler sa "
 "validité."
 
-#: templates/website/cookie_policy.html:91
-#| msgid "在使用会话功能时维持安全会话状态。"
-msgid "主要用于管理员认证会话，在使用会话功能时维持安全会话状态。"
+#: templates/website/cookie_policy.html:76
+msgid "维持管理员登录后的认证会话。"
 msgstr ""
-"Principalement utilisé pour les sessions administrateur authentifiées et "
-"pour maintenir un état de session sécurisé lorsque les fonctions de session "
-"sont utilisées."
+"Maintient la session authentifiée après la connexion d’un administrateur."
 
-#: templates/website/cookie_policy.html:92
-msgid "普通匿名页面及联系表单不创建会话；管理员登录后用于维持认证状态。"
+#: templates/website/cookie_policy.html:77
+msgid "管理员登录后设置；普通匿名页面及联系表单不创建该会话。"
 msgstr ""
-"Les pages anonymes ordinaires et le formulaire de contact ne créent pas de "
-"session. Ce cookie maintient l’authentification des administrateurs "
-"connectés."
+"Défini après la connexion d’un administrateur ; les pages anonymes "
+"ordinaires et le formulaire de contact ne créent pas cette session."
 
-#: templates/website/cookie_policy.html:93
+#: templates/website/cookie_policy.html:78
 msgid "当前默认有效期为 1,209,600 秒（14 天）；退出登录或清除 Cookie 可提前结束。"
 msgstr ""
 "Durée par défaut : 1 209 600 secondes (14 jours). La déconnexion ou la "
 "suppression des cookies peut y mettre fin plus tôt."
 
-#: templates/website/cookie_policy.html:98
-#| msgid ""
-#| "语言由 URL 前缀决定，网站当前不依赖语言偏好 Cookie 实现语言切换；如未来启用语言偏好 Cookie，本政策将更新。"
-msgid "语言由 URL 前缀决定，网站当前不依赖语言偏好 Cookie 实现语言切换；如未来启用语言偏好 Cookie，本说明将更新。"
+#: templates/website/cookie_policy.html:83
+msgid "网站语言由 URL 前缀决定，当前不使用语言偏好 Cookie。"
 msgstr ""
-"La langue est déterminée par le préfixe de l’URL. Le site n’utilise "
-"actuellement aucun cookie de préférence linguistique pour changer de langue."
-" Cette notice sera mise à jour si un tel cookie est introduit."
+"La langue du site est déterminée par le préfixe de l’URL ; aucun cookie de "
+"préférence linguistique n’est actuellement utilisé."
 
-#: templates/website/cookie_policy.html:103
+#: templates/website/cookie_policy.html:88
+msgid "当前网站未启用访问分析、广告或营销追踪，也未嵌入具有此类追踪用途的第三方内容。"
+msgstr ""
+"Le site n’utilise actuellement ni mesure d’audience, ni suivi publicitaire "
+"ou marketing, et n’intègre aucun contenu tiers destiné à de tels suivis."
+
+#: templates/website/cookie_policy.html:89
+#| msgid "如 Cookie 或类似技术涉及个人信息处理，网站将根据适用个人信息保护法律提供相应告知，并在法律要求时取得相应同意。"
 msgid ""
-"当前网站未启用 Google Analytics 或 GA4、Google Tag Manager、Meta Pixel、百度统计、LinkedIn "
-"Insight、Microsoft Clarity 或其他广告及营销追踪。"
+"因此，当前网站未设置用于选择非必要 Cookie 的弹窗。如 Cookie "
+"或类似技术涉及个人信息处理，网站将根据适用法律提供相应告知，并在法律要求时取得相应同意。"
 msgstr ""
-"Le site n’utilise actuellement ni Google Analytics ou GA4, ni Google Tag "
-"Manager, Meta Pixel, Baidu Analytics, LinkedIn Insight, Microsoft Clarity, "
-"ni aucun autre suivi publicitaire ou marketing."
+"Le site n’affiche donc actuellement aucune fenêtre de choix pour les cookies"
+" non nécessaires. Si des cookies ou technologies similaires impliquent un "
+"traitement d’informations personnelles, le site fournira les informations "
+"prévues par la loi applicable et recueillera le consentement lorsque la loi "
+"l’exige."
 
-#: templates/website/cookie_policy.html:104
-msgid "当前网站也未使用第三方视频、第三方地图、聊天组件，未发现用于追踪的"
-msgstr ""
-"Le site n’utilise pas non plus de vidéos tierces, de cartes tierces ni de "
-"module de discussion, et aucun usage à des fins de suivi de"
-
-#: templates/website/cookie_policy.html:104
-msgid "或"
-msgstr " ou "
-
-#: templates/website/cookie_policy.html:104
-msgid "实现。"
-msgstr "."
-
-#: templates/website/cookie_policy.html:109
-msgid ""
-"当前网站未使用访问分析、广告、营销或其他非必要追踪技术，因此当前未设置针对非必要 Cookie 的专门 Cookie consent Banner。"
-msgstr ""
-"Le site n’utilise actuellement aucune technologie non nécessaire de mesure "
-"d’audience, de publicité, de marketing ou de suivi. Il n’affiche donc "
-"actuellement aucune bannière de consentement dédiée aux cookies non "
-"nécessaires."
-
-#: templates/website/cookie_policy.html:110
-msgid "如 Cookie 或类似技术涉及个人信息处理，网站将根据适用个人信息保护法律提供相应告知，并在法律要求时取得相应同意。"
-msgstr ""
-"Si des cookies ou technologies similaires impliquent un traitement "
-"d’informations personnelles, le site fournira les informations prévues par "
-"les lois applicables en matière de protection des informations personnelles "
-"et recueillera le consentement lorsque la loi l’exige."
-
-#: templates/website/cookie_policy.html:115
-#| msgid ""
-#| "您可以通过浏览器设置删除或限制 Cookie。请注意，禁用某些严格必要 Cookie 后，网站的安全功能、管理后台访问或联系表单可能无法正常工作。"
+#: templates/website/cookie_policy.html:94
 msgid ""
 "您可以通过浏览器设置删除或限制 Cookie。请注意，禁用某些必要 Cookie 后，网站的安全功能、管理后台访问或联系表单可能无法正常工作。"
 msgstr ""
@@ -1110,38 +1035,33 @@ msgstr ""
 "perturber les fonctions de sécurité, l’accès à l’administration ou le "
 "formulaire de contact."
 
-#: templates/website/cookie_policy.html:120
+#: templates/website/cookie_policy.html:99
 #| msgid ""
-#| "如果网站未来增加统计工具、视频嵌入、地图、聊天工具或其他第三方服务，本政策将据此更新，以说明新增 Cookie 或追踪技术的用途、期限和同意机制。"
-msgid ""
-"如果网站未来引入访问分析、广告、嵌入式视频、地图、聊天或其他第三方追踪技术，我们将重新评估并相应更新 Cookie 说明、隐私政策、用户告知和同意机制。"
+#| "如果网站未来引入访问分析、广告、嵌入式视频、地图、聊天或其他第三方追踪技术，我们将重新评估并相应更新 Cookie 说明、隐私政策、用户告知和同意机制。"
+msgid "如果网站未来引入新的分析、广告、营销或第三方追踪技术，我们将重新评估并相应更新本说明、隐私政策、用户告知和同意机制。"
 msgstr ""
-"Si le site introduit à l’avenir des outils de mesure d’audience, de la "
-"publicité, des vidéos intégrées, des cartes, un module de discussion ou "
-"d’autres technologies de suivi tierces, nous réévaluerons et actualiserons "
-"en conséquence cette notice, la politique de confidentialité, l’information "
-"des utilisateurs et le mécanisme de consentement."
+"Si le site introduit de nouveaux outils d’analyse, de publicité, de "
+"marketing ou de suivi par des tiers, nous réévaluerons et actualiserons en "
+"conséquence cette notice, la politique de confidentialité, l’information des"
+" utilisateurs et le mécanisme de consentement."
 
-#: templates/website/cookie_policy.html:125
-#| msgid "如您对本 Cookie 政策有疑问，可通过"
+#: templates/website/cookie_policy.html:104
 msgid "如您对本说明有疑问，可通过"
 msgstr "Pour toute question sur cette notice, contactez-nous à l’adresse"
 
-#: templates/website/cookie_policy.html:125
+#: templates/website/cookie_policy.html:104
 msgid "与我们联系。"
 msgstr "."
 
-#: templates/website/cookie_policy.html:129
-#: templates/website/legal_notice.html:95
-#: templates/website/privacy_policy.html:146
+#: templates/website/cookie_policy.html:108
+#: templates/website/legal_notice.html:89
+#: templates/website/privacy_policy.html:148
 msgid "最后更新：2026年9月"
 msgstr "Dernière mise à jour : septembre 2026"
 
-#: templates/website/cookie_policy.html:130
-#: templates/website/legal_notice.html:40
+#: templates/website/cookie_policy.html:109
 #: templates/website/legal_notice.html:90
-#: templates/website/legal_notice.html:96
-#: templates/website/privacy_policy.html:147
+#: templates/website/privacy_policy.html:149
 msgid "相关法律页面"
 msgstr "Pages juridiques associées"
 
@@ -2248,7 +2168,6 @@ msgid "法律声明｜Acoeurs Consulting"
 msgstr "Mentions légales — Acoeurs Consulting"
 
 #: templates/website/legal_notice.html:5
-#| msgid "Acoeurs Consulting 的品牌与联系方式、网站内容性质、知识产权及第三方链接说明。"
 msgid "了解 Acoeurs Consulting 网站运营主体、联系方式、托管、知识产权及专业服务边界。"
 msgstr ""
 "Informations sur l’exploitant du site Acoeurs Consulting, ses coordonnées, "
@@ -2256,111 +2175,112 @@ msgstr ""
 "professionnels."
 
 #: templates/website/legal_notice.html:24
-#| msgid "本页介绍 Acoeurs Consulting 的网站与联系方式，以及网站内容、知识产权和第三方链接的使用说明。"
-msgid "本页说明 Acoeurs Consulting 网站的运营主体、联系方式、托管情况，以及网站内容、知识产权和专业服务边界。"
+#| msgid "本页说明 Acoeurs Consulting 网站的运营主体、联系方式、托管情况，以及网站内容、知识产权和专业服务边界。"
+msgid "本页说明网站运营主体、联系与托管信息，以及网站内容和专业服务边界。"
 msgstr ""
-"Cette page identifie l’exploitant du site Acoeurs Consulting et présente ses"
-" coordonnées, son hébergement, les contenus du site, la propriété "
-"intellectuelle et les limites des services professionnels."
+"Cette page identifie l’exploitant du site et présente les coordonnées, "
+"l’hébergement, ainsi que les limites des contenus du site et des services "
+"professionnels."
 
 #: templates/website/legal_notice.html:32
 msgid "法律声明目录"
 msgstr "Sommaire des mentions légales"
 
+#: templates/website/legal_notice.html:35
+#: templates/website/legal_notice.html:50
+msgid "网站运营主体"
+msgstr "Exploitant du site"
+
 #: templates/website/legal_notice.html:36
-#: templates/website/legal_notice.html:61
+#: templates/website/legal_notice.html:60
 msgid "网站与联系方式"
 msgstr "Site et coordonnées"
 
 #: templates/website/legal_notice.html:37
-#: templates/website/legal_notice.html:72
+#: templates/website/legal_notice.html:71
 msgid "网站托管"
 msgstr "Hébergement du site"
 
 #: templates/website/legal_notice.html:38
-#: templates/website/legal_notice.html:77
-msgid "知识产权与内容性质"
-msgstr "Propriété intellectuelle et nature des contenus"
+#: templates/website/legal_notice.html:76
+msgid "网站性质与知识产权"
+msgstr "Nature du site et propriété intellectuelle"
 
 #: templates/website/legal_notice.html:39
-#: templates/website/legal_notice.html:84
+#: templates/website/legal_notice.html:82
 msgid "外部链接与专业服务边界"
 msgstr "Liens externes et limites des services professionnels"
 
-#: templates/website/legal_notice.html:47
+#: templates/website/legal_notice.html:46
 msgid "网站信息与使用说明"
 msgstr "Informations sur le site et son utilisation"
 
-#: templates/website/legal_notice.html:53
+#: templates/website/legal_notice.html:52
 msgid "网站运营主体："
 msgstr "Exploitant du site :"
 
-#: templates/website/legal_notice.html:53
+#: templates/website/legal_notice.html:52
 #: templates/website/privacy_policy.html:64
 msgid "（在中国浙江杭州登记注册的公司）"
 msgstr ""
 "(société enregistrée à Hangzhou, dans la province du Zhejiang, en Chine)"
 
-#: templates/website/legal_notice.html:54
+#: templates/website/legal_notice.html:53
 #: templates/website/privacy_policy.html:65
 msgid "统一社会信用代码："
 msgstr "Code unifié de crédit social :"
 
-#: templates/website/legal_notice.html:55
+#: templates/website/legal_notice.html:54
 #: templates/website/privacy_policy.html:66
-#| msgid "注册地址安排"
 msgid "注册地址："
 msgstr "Adresse enregistrée :"
 
-#: templates/website/legal_notice.html:56
-#| msgid "网站品牌为"
+#: templates/website/legal_notice.html:55
 msgid "网站品牌："
 msgstr "Marque du site :"
 
-#: templates/website/legal_notice.html:63
+#: templates/website/legal_notice.html:62
 msgid "公开域名："
 msgstr "Domaines publics :"
 
-#: templates/website/legal_notice.html:63
+#: templates/website/legal_notice.html:62
 msgid "及"
 msgstr " et "
 
-#: templates/website/legal_notice.html:64
+#: templates/website/legal_notice.html:63
 msgid "联系邮箱："
 msgstr "Adresse e-mail de contact :"
 
-#: templates/website/legal_notice.html:65
+#: templates/website/legal_notice.html:64
 msgid "中国电话："
 msgstr "Téléphone en Chine : "
 
-#: templates/website/legal_notice.html:66
+#: templates/website/legal_notice.html:65
 msgid "法国电话："
 msgstr "Téléphone en France : "
 
-#: templates/website/legal_notice.html:67
+#: templates/website/legal_notice.html:66
 msgid "法国联系地址（非网站运营主体注册地址）："
 msgstr ""
 "Adresse de contact en France (qui n’est pas l’adresse enregistrée de "
 "l’exploitant du site) :"
 
-#: templates/website/legal_notice.html:73
+#: templates/website/legal_notice.html:72
 msgid "本网站当前托管于 Alibaba Cloud 的中国香港地区基础设施。"
 msgstr ""
 "Ce site est actuellement hébergé sur l’infrastructure d’Alibaba Cloud située"
 " à Hong Kong, Chine."
 
-#: templates/website/legal_notice.html:78
-msgid ""
-"本网站主要用于介绍 Acoeurs Consulting 的品牌、当前公开的服务范围及联系方式。当前网站不提供在线交易、在线支付或前台用户账户。"
-msgstr ""
-"Ce site sert principalement à présenter la marque Acoeurs Consulting, les "
-"services actuellement publiés et les coordonnées de contact. Il ne propose "
-"actuellement ni transaction en ligne, ni paiement en ligne, ni compte "
-"utilisateur public."
-
-#: templates/website/legal_notice.html:79
+#: templates/website/legal_notice.html:77
 #| msgid ""
-#| "本网站的文案、图像、标识及其他内容涉及相应权利人的知识产权。使用或转载相关内容时，请遵守适用法律及相应授权条件；如有使用需求，请通过本页联系方式与我们联系。"
+#| "本网站主要用于介绍 Acoeurs Consulting 的品牌、当前公开的服务范围及联系方式。当前网站不提供在线交易、在线支付或前台用户账户。"
+msgid "本网站用于介绍 Acoeurs Consulting 的品牌、公开服务范围及联系方式，不提供在线交易、在线支付或前台用户账户。"
+msgstr ""
+"Ce site présente la marque Acoeurs Consulting, les services publiés et les "
+"coordonnées de contact. Il ne propose ni transaction en ligne, ni paiement "
+"en ligne, ni compte utilisateur public."
+
+#: templates/website/legal_notice.html:78
 msgid ""
 "本网站的文案、图片、品牌标识及其他内容依法受相应知识产权保护。使用或转载相关内容时，请遵守适用法律及相应授权条件；如有使用需求，请通过本页联系方式与我们联系。"
 msgstr ""
@@ -2370,26 +2290,14 @@ msgstr ""
 "d’autorisation applicables. Pour toute demande d’utilisation, contactez-nous"
 " aux coordonnées figurant sur cette page."
 
-#: templates/website/legal_notice.html:80
-#| msgid ""
-#| "网站内容仅用于介绍 Acoeurs Consulting 当前公开的服务范围与品牌信息，不构成对具体审批、交易、贷款、税务或其他受监管事项结果的保证。"
-msgid "网站内容主要用于介绍服务范围、协调方式和项目支持，不构成对具体审批、交易、贷款、税务处理或其他受监管事项结果的保证。"
-msgstr ""
-"Les contenus du site présentent principalement les services, les modalités "
-"de coordination et l’accompagnement de projet. Ils ne garantissent aucun "
-"résultat concernant une autorisation, une transaction, un prêt, un "
-"traitement fiscal ou toute autre matière réglementée."
-
-#: templates/website/legal_notice.html:85
+#: templates/website/legal_notice.html:83
 msgid "如访问本网站提供的第三方链接，请同时查阅该网站的使用条件和隐私说明。"
 msgstr ""
 "Si vous consultez un lien tiers proposé sur ce site, veuillez également lire"
 " les conditions d’utilisation et les informations de confidentialité du site"
 " concerné."
 
-#: templates/website/legal_notice.html:86
-#| msgid ""
-#| "如访问本网站提供的第三方链接，请同时查阅该网站的使用条件和隐私说明。涉及法律、税务、会计、公证、贷款、保险及其他受监管专业事项时，相关判断和执行应由具备相应资质的专业人士或机构完成。"
+#: templates/website/legal_notice.html:84
 msgid ""
 "涉及法律、税务、会计、公证、贷款、保险及其他依法需要专业资格或由特定机构决定的事项时，相关专业判断或受监管工作由具备相应资格的专业人士或相关机构完成。"
 msgstr ""
@@ -2399,13 +2307,14 @@ msgstr ""
 "professionnelle ou les travaux réglementés sont réalisés par des "
 "professionnels ou organismes disposant des qualifications requises."
 
-#: templates/website/legal_notice.html:91
-#| msgid "有关当前个人数据处理和 Cookie 使用情况，请查阅本网站的隐私政策和 Cookie 政策。"
-msgid "有关当前个人信息处理和 Cookie 使用情况，请查阅本网站的隐私政策和 Cookie 与类似技术说明。"
+#: templates/website/legal_notice.html:85
+#| msgid "网站内容主要用于介绍服务范围、协调方式和项目支持，不构成对具体审批、交易、贷款、税务处理或其他受监管事项结果的保证。"
+msgid "网站内容用于介绍服务范围、协调方式和项目支持，不构成对具体审批、贷款、税务处理或其他受监管事项结果的保证。"
 msgstr ""
-"Pour connaître les traitements actuels d’informations personnelles et "
-"l’utilisation des cookies, consultez la politique de confidentialité et la "
-"notice relative aux cookies et technologies similaires du site."
+"Les contenus du site présentent les services, les modalités de coordination "
+"et l’accompagnement de projet. Ils ne garantissent aucun résultat concernant"
+" une autorisation, un prêt, un traitement fiscal ou toute autre matière "
+"réglementée."
 
 #: templates/website/personal_services.html:4
 msgid "个人服务｜法国居留、家庭与资产事务协调｜Acoeurs Consulting"
@@ -2704,7 +2613,6 @@ msgid "隐私政策｜Acoeurs Consulting"
 msgstr "Politique de confidentialité — Acoeurs Consulting"
 
 #: templates/website/privacy_policy.html:5
-#| msgid "了解Acoeurs Consulting网站当前如何处理访问日志、联系表单、电子邮件联系及相关个人数据。"
 msgid "了解 Acoeurs Consulting 网站当前如何处理联系表单、电子邮件、访问日志及其他相关个人信息。"
 msgstr ""
 "Découvrez comment le site Acoeurs Consulting traite actuellement les données"
@@ -2712,8 +2620,6 @@ msgstr ""
 "les autres informations personnelles associées."
 
 #: templates/website/privacy_policy.html:23
-#| msgid ""
-#| "本政策说明 Acoeurs Consulting 网站在当前公开版本中可能处理哪些个人数据、出于何种目的处理，以及您可以如何联系我们行使相关权利。"
 msgid "本政策说明 Acoeurs Consulting 网站当前处理个人信息的范围、目的、方式及个人可以行使的相关权利。"
 msgstr ""
 "Cette politique décrit la portée, les finalités et les modalités des "
@@ -2730,24 +2636,22 @@ msgstr "Champ d’application"
 
 #: templates/website/privacy_policy.html:34
 #: templates/website/privacy_policy.html:62
-#| msgid "数据控制者与联系方式"
 msgid "个人信息处理者与联系方式"
 msgstr "Entité traitant les informations personnelles et coordonnées"
 
 #: templates/website/privacy_policy.html:35
 #: templates/website/privacy_policy.html:72
-#| msgid "当前可能处理的数据"
 msgid "当前可能处理的个人信息"
 msgstr "Informations personnelles susceptibles d’être traitées"
 
 #: templates/website/privacy_policy.html:36
 #: templates/website/privacy_policy.html:83
-msgid "联系表单与实际数据流"
-msgstr "Formulaire de contact et flux de données réel"
+#| msgid "联系表单信息"
+msgid "联系表单与信息处理"
+msgstr "Formulaire de contact et traitement des informations"
 
 #: templates/website/privacy_policy.html:37
 #: templates/website/privacy_policy.html:91
-#| msgid "处理目的与法律依据"
 msgid "处理目的与处理依据"
 msgstr "Finalités et fondements du traitement"
 
@@ -2769,37 +2673,36 @@ msgid "保存期限"
 msgstr "Durées de conservation"
 
 #: templates/website/privacy_policy.html:41
-#: templates/website/privacy_policy.html:115
+#: templates/website/privacy_policy.html:116
 msgid "个人信息安全"
 msgstr "Sécurité des informations personnelles"
 
 #: templates/website/privacy_policy.html:42
-#: templates/website/privacy_policy.html:120
+#: templates/website/privacy_policy.html:121
 msgid "个人信息权利"
 msgstr "Droits relatifs aux informations personnelles"
 
 #: templates/website/privacy_policy.html:43
-#: templates/website/privacy_policy.html:126
+#: templates/website/privacy_policy.html:128
 msgid "投诉与反馈"
 msgstr "Réclamations et retours"
 
 #: templates/website/privacy_policy.html:44
-#: templates/website/privacy_policy.html:131
+#: templates/website/privacy_policy.html:133
 msgid "Cookie 与类似技术"
 msgstr "Cookies et technologies similaires"
 
 #: templates/website/privacy_policy.html:45
-#: templates/website/privacy_policy.html:136
+#: templates/website/privacy_policy.html:138
 msgid "未成年人"
 msgstr "Mineurs"
 
 #: templates/website/privacy_policy.html:46
-#: templates/website/privacy_policy.html:141
+#: templates/website/privacy_policy.html:143
 msgid "政策变更"
 msgstr "Modifications de la politique"
 
 #: templates/website/privacy_policy.html:53
-#| msgid "个人数据处理说明"
 msgid "个人信息处理说明"
 msgstr "Notice sur le traitement des informations personnelles"
 
@@ -2808,8 +2711,6 @@ msgid "本政策适用范围"
 msgstr "Champ d’application de cette politique"
 
 #: templates/website/privacy_policy.html:58
-#| msgid ""
-#| "本政策适用于 Acoeurs Consulting 当前公开网站在访问、浏览、提交联系表单以及通过电子邮件主动联系场景下可能涉及的个人数据处理活动。"
 msgid ""
 "本政策适用于访问和浏览 Acoeurs Consulting "
 "网站、提交联系表单、主动发送电子邮件，以及网站运行、安全和必要技术日志所涉及的个人信息处理活动。"
@@ -2833,9 +2734,6 @@ msgid "服务器访问和安全日志"
 msgstr "Journaux d’accès et de sécurité du serveur"
 
 #: templates/website/privacy_policy.html:74
-#| msgid ""
-#| "在访问网站时，技术托管环境和服务器日志可能记录与网站运行、安全和故障排查有关的技术信息，例如 IP 地址、浏览器和设备基础信息、请求时间、访问路径以及 "
-#| "HTTP 响应状态。"
 msgid ""
 "网站托管环境和服务器日志可能记录网站运行、安全和故障排查所需的技术信息，例如 IP 地址、浏览器和设备基础信息、请求时间、访问路径及 HTTP "
 "响应状态。"
@@ -2847,29 +2745,27 @@ msgstr ""
 "et le statut de réponse HTTP."
 
 #: templates/website/privacy_policy.html:75
-#| msgid "联系表单"
 msgid "联系表单信息"
 msgstr "Informations du formulaire de contact"
 
 #: templates/website/privacy_policy.html:76
 #| msgid ""
-#| "当前网站提供在线联系表单，用于让访问者说明身份、咨询方向、主题、咨询内容以及联系方式。表单可能处理的字段包括：身份类型、公司或机构名称、咨询方向、咨询主题、咨询内容、姓名、电话、邮箱、沟通语言、方便联系的时间，隐私政策确认状态，以及提交时间和基础服务器日志信息。"
+#| "联系表单当前可能处理：身份类型、公司或机构名称、咨询方向、咨询主题、咨询内容、姓名、电话、邮箱、沟通语言、方便联系的时间、隐私政策确认状态、提交时间，以及必要的服务器和安全元数据。"
 msgid ""
-"联系表单当前可能处理：身份类型、公司或机构名称、咨询方向、咨询主题、咨询内容、姓名、电话、邮箱、沟通语言、方便联系的时间、隐私政策确认状态、提交时间，以及必要的服务器和安全元数据。"
+"联系表单可能处理身份类型、公司或机构名称、咨询方向、咨询主题、咨询内容、姓名、电话、邮箱、沟通语言、方便联系的时间、隐私政策确认状态、提交时间，以及必要的服务器和安全信息。"
 msgstr ""
-"Le formulaire de contact peut actuellement traiter : le type de profil, le "
-"nom de l’entreprise ou de l’organisme, le domaine de la demande, son objet "
-"et son contenu, le nom, le numéro de téléphone, l’adresse e-mail, la langue "
-"de communication, les disponibilités, la confirmation de la politique de "
-"confidentialité, l’heure d’envoi et les métadonnées serveur et de sécurité "
-"nécessaires."
+"Le formulaire de contact peut traiter le type de profil, le nom de "
+"l’entreprise ou de l’organisme, le domaine, l’objet et le contenu de la "
+"demande, le nom, le numéro de téléphone, l’adresse e-mail, la langue de "
+"communication, les disponibilités, la confirmation de la politique de "
+"confidentialité, l’heure d’envoi ainsi que les informations serveur et de "
+"sécurité nécessaires."
 
 #: templates/website/privacy_policy.html:77
 msgid "用户主动发送的电子邮件"
 msgstr "E-mails envoyés à votre initiative"
 
 #: templates/website/privacy_policy.html:78
-#| msgid "。访问者主动发送邮件时，网站运营方可能处理发件人姓名、邮箱地址、邮件正文及用户自行提供的其他信息。"
 msgid "访问者主动发送电子邮件时，我们可能处理发件人姓名、邮箱地址、邮件正文及访问者自行提供的其他信息。"
 msgstr ""
 "Lorsqu’un visiteur envoie spontanément un e-mail, nous pouvons traiter son "
@@ -2877,34 +2773,48 @@ msgstr ""
 "qu’il fournit."
 
 #: templates/website/privacy_policy.html:79
-#| msgid "当前请避免通过普通电子邮件发送不必要的敏感资料。"
-msgid "请避免通过联系表单或普通电子邮件发送与咨询无关或不必要的敏感个人信息。"
+msgid "普通咨询表单不用于提交不必要的身份证件、金融账户、健康信息或不满十四周岁儿童的个人信息，也请勿通过普通电子邮件发送与咨询无关的敏感个人信息。"
 msgstr ""
-"Veuillez éviter d’envoyer, par le formulaire de contact ou par e-mail "
-"ordinaire, des informations personnelles sensibles sans rapport avec votre "
-"demande ou non nécessaires à celle-ci."
+"Le formulaire de demande générale n’est pas destiné à recevoir des pièces "
+"d’identité inutiles, des informations de compte financier, des informations "
+"de santé ou des informations personnelles concernant des enfants de moins de"
+" 14 ans. Veuillez également ne pas envoyer par e-mail ordinaire "
+"d’informations personnelles sensibles sans rapport avec votre demande."
 
 #: templates/website/privacy_policy.html:84
 msgid ""
-"当前联系表单的数据流为：访问者浏览器提交信息，经 Django 表单验证后，通过 Alibaba Mail 企业邮件服务发送至 "
-"info@acoeursconsulting.com。"
+"提交咨询时，身份类型、咨询方向、姓名、沟通语言和隐私政策确认状态为必填信息，电话或电子邮箱至少填写一项。公司或机构名称、咨询主题、咨询内容和方便联系的时间为选填信息。未提供必要信息时，表单无法提交或我们可能无法处理咨询。"
 msgstr ""
-"Le flux actuel du formulaire de contact est le suivant : le navigateur du "
-"visiteur transmet les informations ; Django valide le formulaire ; Alibaba "
-"Mail les envoie ensuite à info@acoeursconsulting.com."
+"Pour envoyer une demande, le type de profil, le domaine de la demande, le "
+"nom, la langue de communication et la confirmation de la politique de "
+"confidentialité sont obligatoires ; au moins un numéro de téléphone ou une "
+"adresse e-mail doit être fourni. Le nom de l’entreprise ou de l’organisme, "
+"l’objet et le contenu de la demande ainsi que les disponibilités sont "
+"facultatifs. Sans les informations nécessaires, le formulaire ne peut pas "
+"être envoyé ou nous pouvons être dans l’impossibilité de traiter la demande."
 
 #: templates/website/privacy_policy.html:85
 msgid ""
-"当前联系表单内容不写入 Contact 或 Inquiry 数据库，不进入 "
-"CRM，不支持文件上传，也不用于未经同意的营销推广。网站不进行自动客户画像或自动化决策。"
+"信息经网站处理后，通过企业邮件服务发送至 "
+"info@acoeursconsulting.com，并在公司邮箱中保存。网站不另行建立咨询数据库，也未接入客户关系管理系统。"
 msgstr ""
-"Le contenu du formulaire n’est actuellement ni enregistré dans une base "
-"Contact ou Inquiry, ni intégré à un CRM, ni utilisé à des fins de "
-"prospection sans consentement. Le formulaire ne permet pas le téléversement "
-"de fichiers. Le site ne réalise ni profilage automatisé des clients ni "
-"décision automatisée."
+"Après traitement par le site, les informations sont envoyées à "
+"info@acoeursconsulting.com par un service de messagerie professionnelle et "
+"conservées dans la boîte e-mail de la société. Le site ne tient pas de base "
+"de données distincte pour les demandes et n’est pas relié à un système de "
+"gestion de la relation client."
 
 #: templates/website/privacy_policy.html:86
+#| msgid ""
+#| "当前联系表单内容不写入 Contact 或 Inquiry 数据库，不进入 "
+#| "CRM，不支持文件上传，也不用于未经同意的营销推广。网站不进行自动客户画像或自动化决策。"
+msgid "联系表单不支持文件上传，不用于未经同意的营销推广，也不进行自动客户画像或自动化决策。"
+msgstr ""
+"Le formulaire de contact ne permet pas le téléversement de fichiers, n’est "
+"pas utilisé à des fins de prospection sans consentement et ne réalise ni "
+"profilage automatisé des clients ni décision automatisée."
+
+#: templates/website/privacy_policy.html:87
 msgid ""
 "当前网站不会自动将联系表单内容发送给律师、会计、银行、保险或其他合作方。如后续人工沟通或正式服务需要向专业合作方提供信息，将属于相应的后续服务流程。"
 msgstr ""
@@ -2912,14 +2822,6 @@ msgstr ""
 " comptables, banques, assureurs ou autres partenaires. Toute transmission à "
 "des partenaires professionnels nécessaire lors d’échanges humains ultérieurs"
 " ou de services formels relèvera du processus de service ultérieur concerné."
-
-#: templates/website/privacy_policy.html:87
-msgid "表单使用隐藏的反垃圾字段识别自动提交。该字段仅用于请求校验，不加入联系邮件；被识别为垃圾的请求不会发送咨询邮件。"
-msgstr ""
-"Un champ antispam masqué aide à détecter les envois automatiques. Il sert "
-"uniquement à valider la requête et n’est pas inclus dans l’e-mail. Les "
-"demandes détectées comme indésirables ne donnent pas lieu à l’envoi d’un "
-"e-mail de demande."
 
 #: templates/website/privacy_policy.html:92
 msgid ""
@@ -2943,13 +2845,15 @@ msgstr ""
 "prévues par les lois et règlements."
 
 #: templates/website/privacy_policy.html:98
-msgid "个人信息的接收方或处理所涉及的服务提供商可能包括经授权的公司工作人员、网站托管服务商、企业邮件服务商，以及法律法规要求下的有关主管部门。"
+msgid ""
+"个人信息的接收方可能包括经授权的公司工作人员，以及法律法规要求下的有关主管部门。网站托管服务商为网站运行和安全提供技术支持，企业邮件服务商用于传递和保存联系邮件。"
 msgstr ""
-"Les destinataires des informations personnelles ou les prestataires "
-"participant à leur traitement peuvent comprendre le personnel autorisé de la"
-" société, le prestataire d’hébergement du site, le prestataire de messagerie"
-" professionnelle et les autorités compétentes lorsque les lois et règlements"
-" l’exigent."
+"Les destinataires des informations personnelles peuvent comprendre le "
+"personnel autorisé de la société ainsi que les autorités compétentes lorsque"
+" les lois et règlements l’exigent. Le prestataire d’hébergement apporte le "
+"soutien technique nécessaire au fonctionnement et à la sécurité du site ; le"
+" prestataire de messagerie professionnelle transmet et conserve les e-mails "
+"de contact."
 
 #: templates/website/privacy_policy.html:99
 msgid "当前网站不会自动向律师、会计、银行、保险或其他合作方转发联系表单内容。"
@@ -2983,61 +2887,83 @@ msgstr ""
 "sera recueilli lorsque la loi l’exige."
 
 #: templates/website/privacy_policy.html:110
-msgid "个人信息只在实现相应处理目的所必要的最短合理期间内保存，或者根据合同、财务、争议处理及其他法律义务保存。"
+msgid ""
+"未形成客户关系的普通咨询信息，自最后一次实质性沟通之日起保存不超过6个月，期满后删除或匿名化处理。自动营销邮件或仅限内部的操作不会重新计算该期限。"
 msgstr ""
-"Les informations personnelles ne sont conservées que pendant la durée "
-"raisonnable la plus courte nécessaire à la finalité du traitement, ou pour "
-"répondre à des obligations contractuelles, financières, contentieuses ou "
-"autres obligations légales."
+"Les informations relatives à une demande générale qui n’aboutit pas à une "
+"relation client sont conservées pendant six mois au maximum à compter du "
+"dernier échange substantiel, puis supprimées ou anonymisées. Les e-mails "
+"marketing automatisés et les opérations purement internes ne font pas "
+"repartir ce délai."
 
 #: templates/website/privacy_policy.html:111
-msgid ""
-"安全和技术日志的保存期限取决于网站安全、故障排查和托管配置；普通咨询邮件根据咨询处理和必要后续记录需求保存；后续形成正式客户关系后的业务记录可能根据合同、财务、争议处理或其他法律义务保存。网站目前没有自动删除公司邮箱内邮件的功能。"
+msgid "处理目的已实现且无继续保存必要，或依法应当提前删除的，我们将提前处理。形成正式客户关系的资料，按相应服务目的及适用法律要求另行确定保存期限。"
 msgstr ""
-"La durée de conservation des journaux de sécurité et techniques dépend des "
-"besoins de sécurité et de diagnostic du site ainsi que de la configuration "
-"d’hébergement. Les e-mails de demande ordinaires sont conservés selon les "
-"besoins de traitement et de suivi. Les dossiers commerciaux créés après "
-"l’établissement d’une relation client formelle peuvent être conservés pour "
-"des obligations contractuelles, financières, contentieuses ou autres "
-"obligations légales. Le site ne permet actuellement pas de supprimer "
-"automatiquement les messages de la boîte e-mail de la société."
+"Nous supprimerons ou anonymiserons les informations plus tôt si la finalité "
+"du traitement est atteinte et que leur conservation n’est plus nécessaire, "
+"ou si la loi impose une suppression anticipée. Pour les documents intégrés à"
+" une relation client formelle, la durée de conservation est déterminée "
+"séparément selon la finalité du service concerné et les exigences légales "
+"applicables."
 
-#: templates/website/privacy_policy.html:116
-#| msgid ""
-#| "网站运营方将采取与风险相称的技术和组织措施，以维护网站安全、限制后台访问并使用 Django 及托管平台提供的基础安全机制。"
+#: templates/website/privacy_policy.html:112
 msgid ""
-"个人信息处理者采取与风险相称的合理技术和组织措施保护个人信息，包括访问控制、HTTPS、安全表单机制，以及 Django 和托管平台提供的基础安全机制。"
+"上述6个月是公司对普通咨询信息采用的保存规则，不适用于所有安全日志、Cookie "
+"或依法需要保存的记录。安全和技术日志根据网站安全、故障排查和托管配置在必要期限内保存。"
+msgstr ""
+"La période de six mois ci-dessus est la règle de conservation adoptée par la"
+" société pour les demandes générales ; elle ne s’applique pas à tous les "
+"journaux de sécurité, cookies ou documents devant être conservés en vertu de"
+" la loi. Les journaux de sécurité et techniques sont conservés pendant la "
+"durée nécessaire selon les besoins de sécurité et de diagnostic du site et "
+"la configuration d’hébergement."
+
+#: templates/website/privacy_policy.html:117
+#| msgid ""
+#| "个人信息处理者采取与风险相称的合理技术和组织措施保护个人信息，包括访问控制、HTTPS、安全表单机制，以及 Django 和托管平台提供的基础安全机制。"
+msgid "个人信息处理者采取与风险相称的合理技术和组织措施保护个人信息，包括访问控制、HTTPS 和安全表单机制。"
 msgstr ""
 "L’entité traitant les informations personnelles applique des mesures "
 "techniques et organisationnelles raisonnables et proportionnées aux risques,"
-" notamment des contrôles d’accès, HTTPS, des mécanismes de formulaire "
-"sécurisé et les mécanismes de sécurité de base fournis par Django et la "
-"plateforme d’hébergement."
+" notamment des contrôles d’accès, HTTPS et des mécanismes de formulaire "
+"sécurisé."
 
-#: templates/website/privacy_policy.html:121
+#: templates/website/privacy_policy.html:122
+#| msgid ""
+#| "根据适用法律，您对个人信息处理享有知情权、决定权，并有权限制或拒绝处理；您还可以依法请求查阅、复制、更正、补充或删除个人信息，撤回基于同意的处理，并要求我们解释个人信息处理规则。"
 msgid ""
-"根据适用法律，您对个人信息处理享有知情权、决定权，并有权限制或拒绝处理；您还可以依法请求查阅、复制、更正、补充或删除个人信息，撤回基于同意的处理，并要求我们解释个人信息处理规则。"
+"根据适用法律，您对个人信息处理享有知情权、决定权，并有权限制或拒绝处理；您还可以依法请求查阅、复制、更正、补充或删除个人信息，撤回同意，要求解释个人信息处理规则，并在符合法律规定条件时请求将个人信息转移至指定的个人信息处理者。"
 msgstr ""
 "Selon la loi applicable, vous disposez du droit d’être informé et de décider"
 " du traitement de vos informations personnelles, ainsi que du droit de "
 "limiter ou de refuser ce traitement. Vous pouvez également demander à les "
 "consulter, en obtenir une copie, les rectifier, les compléter ou les "
-"supprimer, retirer votre consentement lorsque le traitement repose sur "
-"celui-ci et nous demander d’expliquer nos règles de traitement."
+"supprimer, retirer votre consentement, demander une explication de nos "
+"règles de traitement et, lorsque les conditions légales sont réunies, "
+"demander le transfert de vos informations personnelles à l’entité que vous "
+"désignez pour les traiter."
 
-#: templates/website/privacy_policy.html:122
+#: templates/website/privacy_policy.html:123
+msgid "撤回同意不影响撤回前基于同意进行的个人信息处理活动的效力。"
+msgstr ""
+"Le retrait du consentement n’affecte pas la validité des traitements "
+"d’informations personnelles effectués sur le fondement du consentement avant"
+" son retrait."
+
+#: templates/website/privacy_policy.html:124
 msgid "您可以通过"
 msgstr "Vous pouvez écrire à "
 
-#: templates/website/privacy_policy.html:122
-msgid "提出个人信息相关请求。我们可能在处理请求前核验您的身份，并在适用法律规定的范围内回应。"
+#: templates/website/privacy_policy.html:124
+#| msgid "提出个人信息相关请求。我们可能在处理请求前核验您的身份，并在适用法律规定的范围内回应。"
+msgid "提出个人信息相关请求。我们仅在处理请求所必要的范围内核验身份，并在适用法律规定的范围内回应；如拒绝请求，将说明理由。"
 msgstr ""
 "pour présenter une demande relative à vos informations personnelles. Nous "
-"pouvons vérifier votre identité avant de traiter votre demande et y "
-"répondrons dans les limites prévues par la loi applicable."
+"vérifions votre identité uniquement dans la mesure nécessaire au traitement "
+"de la demande et répondons dans les limites prévues par la loi applicable ; "
+"en cas de refus, nous en expliquons le motif."
 
-#: templates/website/privacy_policy.html:127
+#: templates/website/privacy_policy.html:129
 msgid ""
 "如您认为本网站的个人信息处理活动侵害您的合法权益，可以通过 info@acoeursconsulting.com "
 "与我们联系，也可以依法向履行个人信息保护职责的有关部门进行投诉或举报。"
@@ -3048,34 +2974,37 @@ msgstr ""
 "signalement, conformément à la loi, à un service chargé de la protection des"
 " informations personnelles."
 
-#: templates/website/privacy_policy.html:132
+#: templates/website/privacy_policy.html:134
 msgid "有关网站当前使用的 Cookie、未使用的追踪技术及同意机制，请参阅本网站的"
 msgstr ""
 "Pour connaître les cookies actuellement utilisés par le site, les "
 "technologies de suivi non utilisées et le mécanisme de consentement, "
 "consultez la"
 
-#: templates/website/privacy_policy.html:137
+#: templates/website/privacy_policy.html:139
 #| msgid ""
-#| "当前网站没有面向未成年人单独设计的在线服务或注册功能。若未来某些服务事项涉及未成年人信息，网站运营方将在适用情况下提供相应说明并谨慎处理。"
+#| "当前网站没有面向不满十四周岁未成年人单独设计的在线服务或注册功能。如未来实际处理不满十四周岁未成年人的个人信息，个人信息处理者将依据适用法律制定相应处理规则，并在法律要求时取得监护人同意。"
 msgid ""
-"当前网站没有面向不满十四周岁未成年人单独设计的在线服务或注册功能。如未来实际处理不满十四周岁未成年人的个人信息，个人信息处理者将依据适用法律制定相应处理规则，并在法律要求时取得监护人同意。"
+"当前网站没有面向不满十四周岁未成年人单独设计的在线服务或注册功能，普通咨询表单也不用于提交不满十四周岁儿童的个人信息。如未来实际处理此类信息，个人信息处理者将依据适用法律制定相应处理规则，并在法律要求时取得监护人同意。"
 msgstr ""
 "Le site ne propose actuellement aucun service en ligne ni inscription "
-"spécialement conçus pour les enfants de moins de 14 ans. Si leurs "
-"informations personnelles sont effectivement traitées à l’avenir, l’entité "
+"spécialement conçus pour les enfants de moins de 14 ans, et le formulaire de"
+" demande générale n’est pas destiné à recevoir leurs informations "
+"personnelles. Si de telles informations sont traitées à l’avenir, l’entité "
 "traitant les informations personnelles établira des règles appropriées "
 "conformément à la loi applicable et recueillera le consentement du "
 "représentant légal lorsque la loi l’exige."
 
-#: templates/website/privacy_policy.html:142
-#| msgid "如果网站功能、托管方式、咨询表单处理方式或相关法律要求发生变化，本政策也会相应更新。请以本页标注的更新日期为准。"
-msgid "如果网站功能、托管方式、联系表单处理方式或相关法律要求发生变化，本政策将相应更新。请以本页标注的更新日期为准。"
+#: templates/website/privacy_policy.html:144
+#| msgid "如果网站功能、托管方式、联系表单处理方式或相关法律要求发生变化，本政策将相应更新。请以本页标注的更新日期为准。"
+msgid ""
+"如果网站功能、托管方式、联系表单处理方式或相关法律要求发生变化，本政策将相应更新。对于重要变化，我们将以适当方式告知；依法需要重新取得同意的，将重新取得同意。"
 msgstr ""
 "Cette politique sera actualisée si les fonctionnalités du site, son "
 "hébergement, le traitement du formulaire de contact ou les exigences légales"
-" applicables évoluent. Reportez-vous à la date de mise à jour indiquée sur "
-"cette page."
+" applicables évoluent. Nous informerons les personnes concernées de manière "
+"appropriée en cas de modification importante et recueillerons de nouveau "
+"leur consentement lorsque la loi l’exige."
 
 #: templates/website/service_business_growth.html:4
 msgid "商务拓展与增长｜法国市场客户渠道与品牌拓展｜Acoeurs Consulting"
@@ -4793,6 +4722,150 @@ msgid "信息暂时未能发送，请稍后重试。您也可以直接发送邮�
 msgstr ""
 "Votre message n’a pas pu être envoyé. Veuillez réessayer plus tard ou écrire"
 " directement à info@acoeursconsulting.com."
+
+#~ msgid "本说明的目的"
+#~ msgstr "Objet de la présente notice"
+
+#~ msgid "什么是 Cookie"
+#~ msgstr "Qu’est-ce qu’un cookie ?"
+
+#~ msgid "当前未使用的追踪技术"
+#~ msgstr "Technologies de suivi non utilisées"
+
+#~ msgid "当前 Cookie 与同意机制"
+#~ msgstr "Cookies actuels et mécanisme de consentement"
+
+#~ msgid "本说明用于介绍当前网站可能使用的 Cookie 及类似技术、其用途、保存期限，以及当前的用户告知和同意机制。"
+#~ msgstr ""
+#~ "Cette notice présente les cookies et technologies similaires que le site est"
+#~ " susceptible d’utiliser actuellement, leurs finalités et durées de "
+#~ "conservation, ainsi que le dispositif actuel d’information et de "
+#~ "consentement des utilisateurs."
+
+#~ msgid ""
+#~ "Cookie 是网站或相关技术组件存储在访问设备浏览器中的小型文本信息，可用于维持安全会话、保护表单请求，或支持统计、个性化和第三方内容功能。"
+#~ msgstr ""
+#~ "Les cookies sont de petits fichiers texte enregistrés dans le navigateur de "
+#~ "l’appareil par un site ou ses composants techniques. Ils peuvent servir à "
+#~ "maintenir une session sécurisée, à protéger les formulaires ou à fournir des"
+#~ " statistiques, de la personnalisation et des contenus tiers."
+
+#~ msgid "来源"
+#~ msgstr "Origine"
+
+#~ msgid "当前状态"
+#~ msgstr "Situation actuelle"
+
+#~ msgid "期限"
+#~ msgstr "Durée"
+
+#~ msgid "本网站使用的 Django 系统"
+#~ msgstr "Système Django utilisé par ce site"
+
+#~ msgid "主要用于管理员认证会话，在使用会话功能时维持安全会话状态。"
+#~ msgstr ""
+#~ "Principalement utilisé pour les sessions administrateur authentifiées et "
+#~ "pour maintenir un état de session sécurisé lorsque les fonctions de session "
+#~ "sont utilisées."
+
+#~ msgid "普通匿名页面及联系表单不创建会话；管理员登录后用于维持认证状态。"
+#~ msgstr ""
+#~ "Les pages anonymes ordinaires et le formulaire de contact ne créent pas de "
+#~ "session. Ce cookie maintient l’authentification des administrateurs "
+#~ "connectés."
+
+#~ msgid "语言由 URL 前缀决定，网站当前不依赖语言偏好 Cookie 实现语言切换；如未来启用语言偏好 Cookie，本说明将更新。"
+#~ msgstr ""
+#~ "La langue est déterminée par le préfixe de l’URL. Le site n’utilise "
+#~ "actuellement aucun cookie de préférence linguistique pour changer de langue."
+#~ " Cette notice sera mise à jour si un tel cookie est introduit."
+
+#~ msgid ""
+#~ "当前网站未启用 Google Analytics 或 GA4、Google Tag Manager、Meta Pixel、百度统计、LinkedIn "
+#~ "Insight、Microsoft Clarity 或其他广告及营销追踪。"
+#~ msgstr ""
+#~ "Le site n’utilise actuellement ni Google Analytics ou GA4, ni Google Tag "
+#~ "Manager, Meta Pixel, Baidu Analytics, LinkedIn Insight, Microsoft Clarity, "
+#~ "ni aucun autre suivi publicitaire ou marketing."
+
+#~ msgid "当前网站也未使用第三方视频、第三方地图、聊天组件，未发现用于追踪的"
+#~ msgstr ""
+#~ "Le site n’utilise pas non plus de vidéos tierces, de cartes tierces ni de "
+#~ "module de discussion, et aucun usage à des fins de suivi de"
+
+#~ msgid "或"
+#~ msgstr " ou "
+
+#~ msgid "实现。"
+#~ msgstr "."
+
+#~ msgid ""
+#~ "当前网站未使用访问分析、广告、营销或其他非必要追踪技术，因此当前未设置针对非必要 Cookie 的专门 Cookie consent Banner。"
+#~ msgstr ""
+#~ "Le site n’utilise actuellement aucune technologie non nécessaire de mesure "
+#~ "d’audience, de publicité, de marketing ou de suivi. Il n’affiche donc "
+#~ "actuellement aucune bannière de consentement dédiée aux cookies non "
+#~ "nécessaires."
+
+#~ msgid "知识产权与内容性质"
+#~ msgstr "Propriété intellectuelle et nature des contenus"
+
+#~ msgid "有关当前个人信息处理和 Cookie 使用情况，请查阅本网站的隐私政策和 Cookie 与类似技术说明。"
+#~ msgstr ""
+#~ "Pour connaître les traitements actuels d’informations personnelles et "
+#~ "l’utilisation des cookies, consultez la politique de confidentialité et la "
+#~ "notice relative aux cookies et technologies similaires du site."
+
+#~ msgid "联系表单与实际数据流"
+#~ msgstr "Formulaire de contact et flux de données réel"
+
+#~ msgid "请避免通过联系表单或普通电子邮件发送与咨询无关或不必要的敏感个人信息。"
+#~ msgstr ""
+#~ "Veuillez éviter d’envoyer, par le formulaire de contact ou par e-mail "
+#~ "ordinaire, des informations personnelles sensibles sans rapport avec votre "
+#~ "demande ou non nécessaires à celle-ci."
+
+#~ msgid ""
+#~ "当前联系表单的数据流为：访问者浏览器提交信息，经 Django 表单验证后，通过 Alibaba Mail 企业邮件服务发送至 "
+#~ "info@acoeursconsulting.com。"
+#~ msgstr ""
+#~ "Le flux actuel du formulaire de contact est le suivant : le navigateur du "
+#~ "visiteur transmet les informations ; Django valide le formulaire ; Alibaba "
+#~ "Mail les envoie ensuite à info@acoeursconsulting.com."
+
+#~ msgid "表单使用隐藏的反垃圾字段识别自动提交。该字段仅用于请求校验，不加入联系邮件；被识别为垃圾的请求不会发送咨询邮件。"
+#~ msgstr ""
+#~ "Un champ antispam masqué aide à détecter les envois automatiques. Il sert "
+#~ "uniquement à valider la requête et n’est pas inclus dans l’e-mail. Les "
+#~ "demandes détectées comme indésirables ne donnent pas lieu à l’envoi d’un "
+#~ "e-mail de demande."
+
+#~ msgid "个人信息的接收方或处理所涉及的服务提供商可能包括经授权的公司工作人员、网站托管服务商、企业邮件服务商，以及法律法规要求下的有关主管部门。"
+#~ msgstr ""
+#~ "Les destinataires des informations personnelles ou les prestataires "
+#~ "participant à leur traitement peuvent comprendre le personnel autorisé de la"
+#~ " société, le prestataire d’hébergement du site, le prestataire de messagerie"
+#~ " professionnelle et les autorités compétentes lorsque les lois et règlements"
+#~ " l’exigent."
+
+#~ msgid "个人信息只在实现相应处理目的所必要的最短合理期间内保存，或者根据合同、财务、争议处理及其他法律义务保存。"
+#~ msgstr ""
+#~ "Les informations personnelles ne sont conservées que pendant la durée "
+#~ "raisonnable la plus courte nécessaire à la finalité du traitement, ou pour "
+#~ "répondre à des obligations contractuelles, financières, contentieuses ou "
+#~ "autres obligations légales."
+
+#~ msgid ""
+#~ "安全和技术日志的保存期限取决于网站安全、故障排查和托管配置；普通咨询邮件根据咨询处理和必要后续记录需求保存；后续形成正式客户关系后的业务记录可能根据合同、财务、争议处理或其他法律义务保存。网站目前没有自动删除公司邮箱内邮件的功能。"
+#~ msgstr ""
+#~ "La durée de conservation des journaux de sécurité et techniques dépend des "
+#~ "besoins de sécurité et de diagnostic du site ainsi que de la configuration "
+#~ "d’hébergement. Les e-mails de demande ordinaires sont conservés selon les "
+#~ "besoins de traitement et de suivi. Les dossiers commerciaux créés après "
+#~ "l’établissement d’une relation client formelle peuvent être conservés pour "
+#~ "des obligations contractuelles, financières, contentieuses ou autres "
+#~ "obligations légales. Le site ne permet actuellement pas de supprimer "
+#~ "automatiquement les messages de la boîte e-mail de la société."
 
 #~ msgid "了解Acoeurs Consulting网站当前使用的必要Cookie，以及有关追踪技术和浏览器设置的信息。"
 #~ msgstr ""
