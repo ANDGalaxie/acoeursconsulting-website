@@ -30,12 +30,24 @@ class MultilingualTests(TestCase):
             'preferred_language': language, 'privacy_consent': 'on', 'website': '',
         }
 
-    def test_root_always_redirects_to_chinese(self):
-        for language in ('zh', 'fr', 'en'):
-            self.client.cookies['django_language'] = language
-            response = self.client.get('/', HTTP_ACCEPT_LANGUAGE=language)
-            self.assertRedirects(response, '/zh/', fetch_redirect_response=False)
-            self.assertNotIn('django_language', response.cookies)
+    def test_root_always_redirects_to_english(self):
+        preferences = (None, 'zh', 'fr', 'en')
+        for browser_language in preferences:
+            headers = {'Accept-Language': browser_language} if browser_language else {}
+            for cookie_language in preferences:
+                with self.subTest(browser=browser_language, cookie=cookie_language):
+                    client = Client()
+                    if cookie_language:
+                        client.cookies[settings.LANGUAGE_COOKIE_NAME] = cookie_language
+                    response = client.get('/', headers=headers, follow=True)
+                    self.assertEqual(response.redirect_chain, [('/en/', 302)])
+                    self.assertEqual(response.status_code, 200)
+                    self.assertEqual(response.headers['Content-Language'], 'en')
+                    self.assertNotIn(settings.LANGUAGE_COOKIE_NAME, response.cookies)
+                    if cookie_language:
+                        self.assertEqual(client.cookies[settings.LANGUAGE_COOKIE_NAME].value, cookie_language)
+                    else:
+                        self.assertNotIn(settings.LANGUAGE_COOKIE_NAME, client.cookies)
 
     def test_all_public_pages_have_translations_and_valid_internal_links(self):
         visited = set()
@@ -98,6 +110,7 @@ class MultilingualTests(TestCase):
 
     def test_representative_translated_content(self):
         for language, nav, hero, label in [
+            ('zh', '企业服务', '您在法国及欧洲市场的战略与执行伙伴', '电子邮箱'),
             ('fr', 'Entreprises', 'Votre partenaire en stratégie', 'Adresse e-mail'),
             ('en', 'Business', 'Your Strategy and Execution Partner', 'Email Address'),
         ]:
@@ -107,15 +120,19 @@ class MultilingualTests(TestCase):
             self.assertContains(self.client.get(f'/{language}/contact/'), label)
 
     def test_switcher_preserves_logical_page_and_query_without_cookie(self):
-        for source, suffix in [('zh', 'business/market-entry/'), ('fr', 'about/')]:
+        for source, suffix in [('zh', 'business/market-entry/'), ('fr', 'about/'), ('en', 'contact/')]:
             response = self.client.get(f'/{source}/{suffix}?source=menu')
-            links = response.context['language_switch_urls']
-            self.assertEqual({item['url'] for item in links}, {
-                f'/{language}/{suffix}?source=menu' for language in ('zh', 'fr', 'en')
-            })
-            for item in links:
-                self.assertNotIn('django_language', self.client.get(item['url']).cookies)
-            self.assertContains(response, f'hreflang="{ "zh-Hans" if source == "zh" else source }" aria-current="page"')
+            for target, html_lang in [('zh', 'zh-Hans'), ('fr', 'fr'), ('en', 'en')]:
+                with self.subTest(source=source, target=target):
+                    url = f'/{target}/{suffix}?source=menu'
+                    link = f'href="{url}" lang="{html_lang}" hreflang="{html_lang}"'
+                    if source == target:
+                        link += ' aria-current="page"'
+                    self.assertContains(response, link)
+                    destination = self.client.get(url)
+                    self.assertEqual(destination.status_code, 200)
+                    self.assertEqual(destination.headers['Content-Language'], target)
+                    self.assertNotIn(settings.LANGUAGE_COOKIE_NAME, destination.cookies)
 
     def test_language_dropdown_is_single_item_before_contact(self):
         response = self.client.get('/en/about/')
@@ -148,7 +165,7 @@ class MultilingualTests(TestCase):
                     response = self.client.get(path + '?source=test')
                     self.assertContains(response, f'<link rel="canonical" href="https://www.acoeursconsulting.com{path}">')
                     self.assertContains(response, f'<meta property="og:url" content="https://www.acoeursconsulting.com{path}">')
-                    for target, tag in [('zh', 'zh-Hans'), ('fr', 'fr'), ('en', 'en'), ('zh', 'x-default')]:
+                    for target, tag in [('zh', 'zh-Hans'), ('fr', 'fr'), ('en', 'en'), ('en', 'x-default')]:
                         with translation.override(target):
                             alternate = reverse(name)
                         self.assertContains(response, f'<link rel="alternate" hreflang="{tag}" href="https://www.acoeursconsulting.com{alternate}">')
@@ -158,6 +175,7 @@ class MultilingualTests(TestCase):
         response = self.client.get('/fr/about/')
         self.assertNotContains(response, 'rel="canonical"')
         self.assertContains(response, 'hreflang="en" href="/en/about/"')
+        self.assertContains(response, 'hreflang="x-default" href="/en/about/"')
 
     def test_infrastructure_routes_are_not_prefixed(self):
         for name, path in [('health', '/health/'), ('robots', '/robots.txt'), ('sitemap', '/sitemap.xml')]:

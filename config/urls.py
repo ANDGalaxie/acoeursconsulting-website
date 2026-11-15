@@ -6,7 +6,7 @@ from django.views.generic import RedirectView
 from website import views
 
 urlpatterns = [
-    path('', RedirectView.as_view(url='/zh/', permanent=False)),
+    path('', RedirectView.as_view(url='/en/', permanent=False)),
     path('admin/', admin.site.urls),
     path('health/', views.health, name='health'),
     path('robots.txt', views.robots_txt, name='robots'),

@@ -33,8 +33,12 @@ def site_meta(request):
             seo_path = translate_url(request.path, code)
             url = urljoin(f"{site_url.rstrip('/')}/", seo_path.lstrip('/')) if site_url else seo_path
             alternates.append({'hreflang': html_tags[code], 'url': url})
-    if alternates:
-        alternates.append({'hreflang': 'x-default', 'url': alternates[0]['url']})
+    english_url = next(
+        (alternate['url'] for alternate in alternates if alternate['hreflang'] == 'en'),
+        None,
+    )
+    if english_url is not None:
+        alternates.append({'hreflang': 'x-default', 'url': english_url})
 
     return {
         'current_language': language,
